@@ -1,4 +1,6 @@
-import { NextRequest } from 'next/server'
+export const runtime = 'edge'
+
+import { NextRequest, NextResponse } from 'next/server'
 import Groq from 'groq-sdk'
 import { AGENTS_CATALOG } from '@/lib/agents-data'
 
@@ -21,12 +23,45 @@ Rules:
 - If the user's need is unclear, ask one clarifying question
 - Never make up agents that are not in the list above`
 
+interface ChatMessage {
+  role: 'user' | 'assistant' | 'system'
+  content: string
+}
+
 export async function POST(req: NextRequest) {
-  const { messages } = await req.json()
+  let messages: ChatMessage[]
+
+  try {
+    const body = await req.json()
+    messages = body.messages
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 })
+  }
+
+  // Validate messages array
+  if (
+    !Array.isArray(messages) ||
+    messages.length === 0 ||
+    !messages.every(
+      m =>
+        m &&
+        typeof m === 'object' &&
+        typeof m.role === 'string' &&
+        typeof m.content === 'string'
+    )
+  ) {
+    return NextResponse.json(
+      { error: 'messages must be a non-empty array with role and content fields.' },
+      { status: 400 }
+    )
+  }
+
+  // Cap at last 20 messages to prevent token overflow
+  const cappedMessages = messages.slice(-20)
 
   const stream = await groq.chat.completions.create({
     model: 'llama-3.3-70b-versatile',
-    messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...messages],
+    messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...cappedMessages],
     stream: true,
     max_tokens: 512,
     temperature: 0.7,
@@ -35,11 +70,14 @@ export async function POST(req: NextRequest) {
   const encoder = new TextEncoder()
   const readable = new ReadableStream({
     async start(controller) {
-      for await (const chunk of stream) {
-        const text = chunk.choices[0]?.delta?.content ?? ''
-        if (text) controller.enqueue(encoder.encode(text))
+      try {
+        for await (const chunk of stream) {
+          const text = chunk.choices[0]?.delta?.content ?? ''
+          if (text) controller.enqueue(encoder.encode(text))
+        }
+      } finally {
+        controller.close()
       }
-      controller.close()
     },
   })
 

@@ -44,13 +44,14 @@ const config: Config = {
       },
       borderRadius: {
         DEFAULT: '8px',
-        sm: '6px', md: '10px', lg: '14px', xl: '18px', '2xl': '24px',
+        sm: '6px', md: '10px', lg: '12px', xl: '16px', '2xl': '20px', full: '9999px',
       },
       boxShadow: {
-        card:         '0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3)',
-        'card-hover': '0 4px 12px rgba(0,0,0,0.5)',
-        'glow-sm':    '0 0 12px rgba(99,102,241,0.35)',
-        'glow-md':    '0 0 24px rgba(99,102,241,0.25)',
+        card:         '0 0 50px -10px rgba(99,102,241,0.08)',
+        'card-hover': '0 0 30px -5px rgba(99,102,241,0.25)',
+        'glow-sm':    '0 0 20px -5px rgba(99,102,241,0.5)',
+        'glow-md':    '0 0 30px -5px rgba(99,102,241,0.6)',
+        'glow-gold':  '0 0 20px rgba(139,92,246,0.3)',
       },
       fontSize: {
         '2xs': ['0.65rem', { lineHeight: '1rem' }],

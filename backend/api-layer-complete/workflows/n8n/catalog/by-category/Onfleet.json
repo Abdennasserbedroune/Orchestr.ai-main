@@ -1,0 +1,39 @@
+[
+  {
+    "id": "0187_Onfleet_GoogleDrive_Create_Triggered",
+    "filename": "0187_Onfleet_GoogleDrive_Create_Triggered.json",
+    "category": "Onfleet",
+    "path": "workflows/Onfleet/0187_Onfleet_GoogleDrive_Create_Triggered.json",
+    "name": "Create an Onfleet task when a file in Google Drive is updated",
+    "description": "Automated workflow: Create an Onfleet task when a file in Google Drive is updated. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.onfleet",
+        "name": "Onfleet"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.onfleet",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

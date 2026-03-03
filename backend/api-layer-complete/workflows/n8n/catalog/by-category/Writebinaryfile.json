@@ -1,0 +1,95 @@
+[
+  {
+    "id": "0010_Writebinaryfile_Create",
+    "filename": "0010_Writebinaryfile_Create.json",
+    "category": "Writebinaryfile",
+    "path": "workflows/Writebinaryfile/0010_Writebinaryfile_Create.json",
+    "name": "Writebinaryfile Workflow",
+    "description": "Automated workflow: Writebinaryfile Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Make Binary"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Create Example Data"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0747_Writebinaryfile_Spreadsheetfile_Automate",
+    "filename": "0747_Writebinaryfile_Spreadsheetfile_Automate.json",
+    "category": "Writebinaryfile",
+    "path": "workflows/Writebinaryfile/0747_Writebinaryfile_Spreadsheetfile_Automate.json",
+    "name": "Postgres Workflow",
+    "description": "Automated workflow: Postgres Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Run Query"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

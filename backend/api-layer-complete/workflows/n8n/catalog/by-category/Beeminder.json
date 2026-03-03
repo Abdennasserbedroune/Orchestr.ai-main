@@ -1,0 +1,39 @@
+[
+  {
+    "id": "0403_Beeminder_Strava_Create_Triggered",
+    "filename": "0403_Beeminder_Strava_Create_Triggered.json",
+    "category": "Beeminder",
+    "path": "workflows/Beeminder/0403_Beeminder_Strava_Create_Triggered.json",
+    "name": "Add a datapoint to Beeminder when new activity is added to Strava",
+    "description": "Automated workflow: Add a datapoint to Beeminder when new activity is added to Strava. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stravaTrigger",
+        "name": "Strava Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.beeminder",
+        "name": "Beeminder"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stravaTrigger",
+      "n8n-nodes-base.beeminder",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

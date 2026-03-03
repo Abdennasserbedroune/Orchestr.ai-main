@@ -1,0 +1,57 @@
+[
+  {
+    "id": "2058_Calcslive_Engineering_Calculations_Manual",
+    "filename": "2058_Calcslive_Engineering_Calculations_Manual.json",
+    "category": "Calcslive",
+    "path": "workflows/Calcslive/2058_Calcslive_Engineering_Calculations_Manual.json",
+    "name": "CalcsLive Demo Workflow Template",
+    "description": "Demonstrates @calcslive/n8n-nodes-calcslive custom node ({{ $env.WEBHOOK_URL }} that brings unit-aware physical quantities (PQ) and calculations to the n8n ecosystem in a composable manner. Example workflow with cylinder mass calculations.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking 'Execute workflow'"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Cylinder Calcs: (D, h) => (A, V)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Speed Calc: (d, t) => v"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mass Calc: (ρ, V) => m"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Fields: (d, t)"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

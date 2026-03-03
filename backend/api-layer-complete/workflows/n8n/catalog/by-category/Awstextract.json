@@ -1,0 +1,49 @@
+[
+  {
+    "id": "0148_Awstextract_Telegram_Automate_Triggered",
+    "filename": "0148_Awstextract_Telegram_Automate_Triggered.json",
+    "category": "Awstextract",
+    "path": "workflows/Awstextract/0148_Awstextract_Telegram_Automate_Triggered.json",
+    "name": "Awstextract Workflow",
+    "description": "Automated workflow: Awstextract Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.awsTextract",
+        "name": "AWS Textract"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "AWS S3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.awsTextract",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.awsS3",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

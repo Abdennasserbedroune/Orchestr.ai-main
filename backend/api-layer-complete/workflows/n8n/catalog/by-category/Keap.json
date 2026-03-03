@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1023_Keap_Automate_Triggered",
+    "filename": "1023_Keap_Automate_Triggered.json",
+    "category": "Keap",
+    "path": "workflows/Keap/1023_Keap_Automate_Triggered.json",
+    "name": "Keaptrigger Workflow",
+    "description": "Automated workflow: Keaptrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.keapTrigger",
+        "name": "Keap Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.keapTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

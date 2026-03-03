@@ -1,0 +1,188 @@
+[
+  {
+    "id": "0525_Bannerbear_Discord_Create_Webhook",
+    "filename": "0525_Bannerbear_Discord_Create_Webhook.json",
+    "category": "Bannerbear",
+    "path": "workflows/Bannerbear/0525_Bannerbear_Discord_Create_Webhook.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, formTrigger, set, discord. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload to Cloudinary"
+      },
+      {
+        "type": "n8n-nodes-base.bannerbear",
+        "name": "Send to Bannerbear Template"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Parameters"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Banner"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate AI Banner Image"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.bannerbear",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1665_Bannerbear_Discord_Automation_Webhook",
+    "filename": "1665_Bannerbear_Discord_Automation_Webhook.json",
+    "category": "Bannerbear",
+    "path": "workflows/Bannerbear/1665_Bannerbear_Discord_Automation_Webhook.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, formTrigger, set, discord. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload to Cloudinary"
+      },
+      {
+        "type": "n8n-nodes-base.bannerbear",
+        "name": "Send to Bannerbear Template"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Parameters"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Banner"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate AI Banner Image"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.bannerbear",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

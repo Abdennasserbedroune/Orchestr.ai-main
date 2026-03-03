@@ -1,0 +1,94 @@
+[
+  {
+    "id": "0994_Mailjet_Automate_Triggered",
+    "filename": "0994_Mailjet_Automate_Triggered.json",
+    "category": "Mailjet",
+    "path": "workflows/Mailjet/0994_Mailjet_Automate_Triggered.json",
+    "name": "Mailjettrigger Workflow",
+    "description": "Automated workflow: Mailjettrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mailjetTrigger",
+        "name": "Mailjet Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mailjetTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1956_Mailjet_Gmail_Create_Triggered",
+    "filename": "1956_Mailjet_Gmail_Create_Triggered.json",
+    "category": "Mailjet",
+    "path": "workflows/Mailjet/1956_Mailjet_Gmail_Create_Triggered.json",
+    "name": "Forward Netflix emails to multiple email addresses with GMail and Mailjet",
+    "description": "Automated workflow: Forward Netflix emails to multiple email addresses with GMail and Mailjet. This workflow integrates 5 different services: stickyNote, gmailTrigger, splitOut, mailjet, set. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.mailjet",
+        "name": "Mailjet"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set all recipients"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out recipients"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.mailjet",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

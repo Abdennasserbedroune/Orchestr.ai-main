@@ -1,0 +1,94 @@
+[
+  {
+    "id": "0972_Cortex_Emailreadimap_Send",
+    "filename": "0972_Cortex_Emailreadimap_Send.json",
+    "category": "Cortex",
+    "path": "workflows/Cortex/0972_Cortex_Emailreadimap_Send.json",
+    "name": "Email",
+    "description": "Automated workflow: Email. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "IMAP Email"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "TheHive"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Create Case"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Case"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Observable"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Analyzer Email"
+      },
+      {
+        "type": "n8n-nodes-base.cortex",
+        "name": "Cortex"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Update Case Domain"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Update Case Email"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Update Case Ip"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "Email Reputation"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "OTX IP"
+      },
+      {
+        "type": "n8n-nodes-base.theHive",
+        "name": "OTX DOMAIN"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.theHive",
+      "n8n-nodes-base.cortex",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.wait"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

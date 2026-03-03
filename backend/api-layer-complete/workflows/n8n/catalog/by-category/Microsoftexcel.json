@@ -1,0 +1,85 @@
+[
+  {
+    "id": "0258_Microsoftexcel_Manual_Create_Triggered",
+    "filename": "0258_Microsoftexcel_Manual_Create_Triggered.json",
+    "category": "Microsoftexcel",
+    "path": "workflows/Microsoftexcel/0258_Microsoftexcel_Manual_Create_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.salesforce",
+        "name": "Search Salesforce accounts"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Keep new companies"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge existing account data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Account found?"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Remove duplicate companies"
+      },
+      {
+        "type": "n8n-nodes-base.renameKeys",
+        "name": "Set Account ID for existing accounts"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Retrieve new company contacts"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set new account name"
+      },
+      {
+        "type": "n8n-nodes-base.salesforce",
+        "name": "Create Salesforce account"
+      },
+      {
+        "type": "n8n-nodes-base.salesforce",
+        "name": "Create Salesforce contact"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftExcel",
+        "name": "Microsoft Excel"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.salesforce",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.renameKeys",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.microsoftExcel",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

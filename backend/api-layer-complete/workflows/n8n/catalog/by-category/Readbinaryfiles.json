@@ -1,0 +1,349 @@
+[
+  {
+    "id": "0171_Readbinaryfiles_Code_Automation_Webhook",
+    "filename": "0171_Readbinaryfiles_Code_Automation_Webhook.json",
+    "category": "Readbinaryfiles",
+    "path": "workflows/Readbinaryfiles/0171_Readbinaryfiles_Code_Automation_Webhook.json",
+    "name": "OpenAI-model-examples",
+    "description": "Automated workflow: OpenAI-model-examples. This workflow integrates 9 different services: stickyNote, httpRequest, code, set, stopAndError. It contains 41 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "davinci-003-complete"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex2"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "davinci-003-edit"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex1.1"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex1.2"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Text-example"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code-ex3.1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "ChatGPT-ex3.1"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex3.2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "DALLE-ex3.3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFiles",
+        "name": "LoadMP3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Whisper-transcribe"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.readBinaryFiles"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1583_Readbinaryfiles_Code_Automation_Webhook",
+    "filename": "1583_Readbinaryfiles_Code_Automation_Webhook.json",
+    "category": "Readbinaryfiles",
+    "path": "workflows/Readbinaryfiles/1583_Readbinaryfiles_Code_Automation_Webhook.json",
+    "name": "OpenAI-model-examples",
+    "description": "Automated workflow: OpenAI-model-examples. This workflow integrates 9 different services: stickyNote, httpRequest, code, set, stopAndError. It contains 41 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "davinci-003-complete"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex2"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "davinci-003-edit"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex1.1"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex1.2"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Text-example"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code-ex3.1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "ChatGPT-ex3.1"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex3.2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "DALLE-ex3.3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML-ex4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "ChatGPT-ex"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFiles",
+        "name": "LoadMP3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Whisper-transcribe"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.readBinaryFiles"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2036_Readbinaryfiles_Filter_Import_Triggered",
+    "filename": "2036_Readbinaryfiles_Filter_Import_Triggered.json",
+    "category": "Readbinaryfiles",
+    "path": "workflows/Readbinaryfiles/2036_Readbinaryfiles_Filter_Import_Triggered.json",
+    "name": "Import multiple CSV to GoogleSheet",
+    "description": "Automated workflow: Import multiple CSV to GoogleSheet. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFiles",
+        "name": "Read Binary Files"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Split In Batches"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Read CSV"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Remove duplicates"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Keep only subscribers"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Sort by date"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Upload to spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Assign source file name"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.readBinaryFiles",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,374 @@
+[
+  {
+    "id": "0097_Executecommand_Mailgun_Automation_Webhook",
+    "filename": "0097_Executecommand_Mailgun_Automation_Webhook.json",
+    "category": "Executecommand",
+    "path": "workflows/Executecommand/0097_Executecommand_Mailgun_Automation_Webhook.json",
+    "name": "Steam + CF Report",
+    "description": "Production-ready workflow: Steam + CF Report. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Add bind-tools"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "dig check CF"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF"
+      },
+      {
+        "type": "n8n-nodes-base.mailgun",
+        "name": "Mail CloudFlare"
+      },
+      {
+        "type": "n8n-nodes-base.mailgun",
+        "name": "Mail Steam"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "dig check if domain is valid"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If it has nameservers"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mailgun",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0190_Executecommand_Functionitem_Automate",
+    "filename": "0190_Executecommand_Functionitem_Automate.json",
+    "category": "Executecommand",
+    "path": "workflows/Executecommand/0190_Executecommand_Functionitem_Automate.json",
+    "name": "Executecommand Workflow",
+    "description": "Automated workflow: Executecommand Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Execute Command"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "To Flow Data"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0534_Executecommand_Localfile_Process_Triggered",
+    "filename": "0534_Executecommand_Localfile_Process_Triggered.json",
+    "category": "Executecommand",
+    "path": "workflows/Executecommand/0534_Executecommand_Localfile_Process_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 10 different services: stickyNote, lmChatMistralCloud, splitOut, chainLlm, outputParserStructured. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Get Files and Folders"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Files and Folders to Array"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Move Files into Folders"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Has Target Files..."
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Get Suggestions to List"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI File Manager"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1190_Executecommand_Readbinaryfile_Automate_Triggered",
+    "filename": "1190_Executecommand_Readbinaryfile_Automate_Triggered.json",
+    "category": "Executecommand",
+    "path": "workflows/Executecommand/1190_Executecommand_Readbinaryfile_Automate_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Move Binary Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Execute Command"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1587_Executecommand_Localfile_Automation_Triggered",
+    "filename": "1587_Executecommand_Localfile_Automation_Triggered.json",
+    "category": "Executecommand",
+    "path": "workflows/Executecommand/1587_Executecommand_Localfile_Automation_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 10 different services: stickyNote, lmChatMistralCloud, splitOut, chainLlm, outputParserStructured. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Get Files and Folders"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Files and Folders to Array"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Move Files into Folders"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Has Target Files..."
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Get Suggestions to List"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI File Manager"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

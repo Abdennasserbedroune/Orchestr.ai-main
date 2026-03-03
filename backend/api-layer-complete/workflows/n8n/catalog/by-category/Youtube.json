@@ -1,0 +1,59 @@
+[
+  {
+    "id": "0197_Youtube_Telegram_Send_Scheduled",
+    "filename": "0197_Youtube_Telegram_Send_Scheduled.json",
+    "category": "Youtube",
+    "path": "workflows/Youtube/0197_Youtube_Telegram_Send_Scheduled.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "CheckTime"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "GetVideosYT"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "SendVideo"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

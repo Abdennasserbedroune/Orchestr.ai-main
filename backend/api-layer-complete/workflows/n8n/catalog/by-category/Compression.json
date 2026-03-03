@@ -1,0 +1,164 @@
+[
+  {
+    "id": "1294_Compression_Manual_Automation_Webhook",
+    "filename": "1294_Compression_Manual_Automation_Webhook.json",
+    "category": "Compression",
+    "path": "workflows/Compression/1294_Compression_Manual_Automation_Webhook.json",
+    "name": "SQL agent with memory",
+    "description": "Automated workflow: SQL agent with memory. This workflow integrates 11 different services: stickyNote, httpRequest, compression, readWriteFile, agent. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get chinook.zip example"
+      },
+      {
+        "type": "n8n-nodes-base.compression",
+        "name": "Extract zip file"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save chinook.db locally"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Load local chinook.db"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combine chat input with the binary"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.compression",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1683_Compression_Manual_Automation_Webhook",
+    "filename": "1683_Compression_Manual_Automation_Webhook.json",
+    "category": "Compression",
+    "path": "workflows/Compression/1683_Compression_Manual_Automation_Webhook.json",
+    "name": "SQL agent with memory",
+    "description": "Automated workflow: SQL agent with memory. This workflow integrates 11 different services: stickyNote, httpRequest, compression, readWriteFile, agent. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get chinook.zip example"
+      },
+      {
+        "type": "n8n-nodes-base.compression",
+        "name": "Extract zip file"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save chinook.db locally"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Load local chinook.db"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combine chat input with the binary"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.compression",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0896_Facebookleadads_Stickynote_Automate_Triggered",
+    "filename": "0896_Facebookleadads_Stickynote_Automate_Triggered.json",
+    "category": "Facebookleadads",
+    "path": "workflows/Facebookleadads/0896_Facebookleadads_Stickynote_Automate_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 3 different services: stickyNote, facebookLeadAdsTrigger, klicktipp. It contains 3 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.facebookLeadAdsTrigger",
+        "name": "Facebook Lead Ads Trigger"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Subscribe lead in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.facebookLeadAdsTrigger",
+      "n8n-nodes-klicktipp.klicktipp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

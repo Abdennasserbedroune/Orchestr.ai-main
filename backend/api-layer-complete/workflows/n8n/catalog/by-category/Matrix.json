@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1236_Matrix_Cron_Automate_Scheduled",
+    "filename": "1236_Matrix_Cron_Automate_Scheduled.json",
+    "category": "Matrix",
+    "path": "workflows/Matrix/1236_Matrix_Cron_Automate_Scheduled.json",
+    "name": "Coffee Bot (Matrix)",
+    "description": "Automated workflow: Coffee Bot (Matrix). This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.matrix",
+        "name": "Greetings"
+      },
+      {
+        "type": "n8n-nodes-base.matrix",
+        "name": "Employees in coffee chat channel"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Weekly trigger on monday1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Divide into groups"
+      },
+      {
+        "type": "n8n-nodes-base.matrix",
+        "name": "Announce groups"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.matrix",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

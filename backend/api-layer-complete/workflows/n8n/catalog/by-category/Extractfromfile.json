@@ -1,0 +1,2505 @@
+[
+  {
+    "id": "0601_Extractfromfile_Manual_Create_Webhook",
+    "filename": "0601_Extractfromfile_Manual_Create_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/0601_Extractfromfile_Manual_Create_Webhook.json",
+    "name": "Whatsapptrigger Workflow",
+    "description": "Automated workflow: Whatsapptrigger Workflow. This workflow integrates 16 different services: stickyNote, httpRequest, textSplitterRecursiveCharacterTextSplitter, vectorStoreInMemory, agent. It contains 35 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.whatsAppTrigger",
+        "name": "WhatsApp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "get Product Brochure"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Handle Message Types"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Sales Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.whatsAppTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0646_Extractfromfile_Form_Export_Webhook",
+    "filename": "0646_Extractfromfile_Form_Export_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/0646_Extractfromfile_Form_Export_Webhook.json",
+    "name": "Extractfromfile Workflow",
+    "description": "Automated workflow: Extractfromfile Workflow. This workflow integrates 11 different services: textClassifier, stickyNote, formTrigger, httpRequest, airtable. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Step 1 of 2 - Upload CV"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Save to Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify Document"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload File to Record"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form Success"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Save to Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Step 2 of 2 - Application Form"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Application Suitability Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "File Upload Retry"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Redirect To Step 2 of 2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Submission Success"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0694_Extractfromfile_Manual_Automation_Webhook",
+    "filename": "0694_Extractfromfile_Manual_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/0694_Extractfromfile_Manual_Automation_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 7 different services: stickyNote, httpRequest, googleDrive, set, stopAndError. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking 'Test workflow'"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Gemini 2.0 Flash with PDF Capabilities"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Claude 3.5 Sonnet with PDF Capabilities"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0741_Extractfromfile_Stickynote_Automation_Triggered",
+    "filename": "0741_Extractfromfile_Stickynote_Automation_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/0741_Extractfromfile_Stickynote_Automation_Triggered.json",
+    "name": "RAG AI Agent with Milvus and Cohere",
+    "description": "Automated workflow: RAG AI Agent with Milvus and Cohere. This workflow integrates 13 different services: stickyNote, googleDriveTrigger, textSplitterRecursiveCharacterTextSplitter, agent, googleDrive. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Cohere"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Watch New Files"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download New"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Insert into Milvus"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "RAG Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrieve from Milvus"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4o"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Cohere embeddings"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Set Chunks"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0828_Extractfromfile_Gmail_Send_Triggered",
+    "filename": "0828_Extractfromfile_Gmail_Send_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/0828_Extractfromfile_Gmail_Send_Triggered.json",
+    "name": "If Workflow",
+    "description": "Automated workflow: If Workflow. This workflow integrates 10 different services: stickyNote, code, gmailTrigger, agent, outputParserStructured. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Check the format"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Reply"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract the HTML"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "HTML from binary"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Email Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Download Attachment"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1246_Extractfromfile_HTTP_Automation_Webhook",
+    "filename": "1246_Extractfromfile_HTTP_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1246_Extractfromfile_HTTP_Automation_Webhook.json",
+    "name": "Httprequest Workflow",
+    "description": "Automated workflow: Httprequest Workflow. This workflow integrates 19 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, merge, switch, lmChatOpenAi. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get All files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract Document PDF"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Create File record2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Get All Files"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Insert into Supabase Vectorstore"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1254_Extractfromfile_Form_Automate_Triggered",
+    "filename": "1254_Extractfromfile_Form_Automate_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1254_Extractfromfile_Form_Automate_Triggered.json",
+    "name": "HR-focused automation pipeline with AI",
+    "description": "Automated workflow: HR-focused automation pipeline with AI. This workflow integrates 13 different services: stickyNote, formTrigger, chainLlm, merge, outputParserStructured. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qualifications"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Profile Wanted"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HR Expert"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personal Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload CV"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1364_Extractfromfile_Manual_Create_Webhook",
+    "filename": "1364_Extractfromfile_Manual_Create_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1364_Extractfromfile_Manual_Create_Webhook.json",
+    "name": "Whatsapptrigger Workflow",
+    "description": "Automated workflow: Whatsapptrigger Workflow. This workflow integrates 16 different services: stickyNote, httpRequest, textSplitterRecursiveCharacterTextSplitter, vectorStoreInMemory, agent. It contains 35 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.whatsAppTrigger",
+        "name": "WhatsApp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "get Product Brochure"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Handle Message Types"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Sales Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.whatsAppTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1365_Extractfromfile_Manual_Create_Webhook",
+    "filename": "1365_Extractfromfile_Manual_Create_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1365_Extractfromfile_Manual_Create_Webhook.json",
+    "name": "Whatsapptrigger Workflow",
+    "description": "Automated workflow: Whatsapptrigger Workflow. This workflow integrates 16 different services: stickyNote, httpRequest, textSplitterRecursiveCharacterTextSplitter, vectorStoreInMemory, agent. It contains 35 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.whatsAppTrigger",
+        "name": "WhatsApp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "get Product Brochure"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Reply To User1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create Product Catalogue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Handle Message Types"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Sales Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.whatsAppTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1438_Extractfromfile_Manual_Process_Webhook",
+    "filename": "1438_Extractfromfile_Manual_Process_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1438_Extractfromfile_Manual_Process_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 7 different services: stickyNote, httpRequest, googleDrive, set, stopAndError. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking 'Test workflow'"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Gemini 2.0 Flash with PDF Capabilities"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Claude 3.5 Sonnet with PDF Capabilities"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1444_Extractfromfile_Converttofile_Automation_Webhook",
+    "filename": "1444_Extractfromfile_Converttofile_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1444_Extractfromfile_Converttofile_Automation_Webhook.json",
+    "name": "Extract text from PDF and image using Vertex AI (Gemini) into CSV",
+    "description": "Automated workflow: Extract text from PDF and image using Vertex AI (Gemini) into CSV. This workflow integrates 10 different services: convertToFile, stickyNote, httpRequest, googleDriveTrigger, lmChatGoogleGemini. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Get PDF or Images"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route based on PDF or Image"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download PDF"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Image"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from PDF"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Google Drive1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vertex A.I. extract text"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1472_Extractfromfile_Converttofile_Create_Triggered",
+    "filename": "1472_Extractfromfile_Converttofile_Create_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1472_Extractfromfile_Converttofile_Create_Triggered.json",
+    "name": "Generate SQL queries from schema only - AI-powered",
+    "description": "Automated workflow: Generate SQL queries from schema only - AI-powered. This workflow integrates 15 different services: convertToFile, stickyNote, mySql, agent, readWriteFile. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "List all tables in a database"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Extract database schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add table name to output"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert data to binary"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save file locally"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from file"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combine schema data and chat input"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Load the schema from the local file"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract SQL query"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if query exists"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format query results"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Run SQL query"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare final output"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine query result and chat answer"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1488_Extractfromfile_Form_Automation_Triggered",
+    "filename": "1488_Extractfromfile_Form_Automation_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1488_Extractfromfile_Form_Automation_Triggered.json",
+    "name": "HR Job Posting and Evaluation with AI",
+    "description": "Automated workflow: HR Job Posting and Evaluation with AI. This workflow integrates 16 different services: stickyNote, formTrigger, airtable, agent, googleDrive. It contains 46 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload CV to google drive"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "applicant details"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "download CV"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "shortlisted?"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Rejected"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Potential Hire"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "generate questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "update questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "job_posting"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "candidate_insights"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personalize email"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Book Meeting"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "update phone meeting time"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Screening Questions"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "job_posting1"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "candidate_insights1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "screening questions"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.googleCalendarTool"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1493_Extractfromfile_Form_Automation_Webhook",
+    "filename": "1493_Extractfromfile_Form_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1493_Extractfromfile_Form_Automation_Webhook.json",
+    "name": "Extractfromfile Workflow",
+    "description": "Automated workflow: Extractfromfile Workflow. This workflow integrates 11 different services: textClassifier, stickyNote, formTrigger, httpRequest, airtable. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Step 1 of 2 - Upload CV"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Save to Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify Document"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload File to Record"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form Success"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Save to Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Step 2 of 2 - Application Form"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Application Suitability Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "File Upload Retry"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Redirect To Step 2 of 2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Submission Success"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1501_Extractfromfile_Form_Automate_Triggered",
+    "filename": "1501_Extractfromfile_Form_Automate_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1501_Extractfromfile_Form_Automate_Triggered.json",
+    "name": "Automated Resume Review System Using OpenAI + Google Sheets",
+    "description": "Automated workflow: Automated Resume Review System Using OpenAI + Google Sheets. This workflow integrates 13 different services: stickyNote, formTrigger, chainLlm, outputParserStructured, merge. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personal Info"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qualification"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HR Expert"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to google drive"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Resume extraction"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "wanted profile"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarizer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1590_Extractfromfile_Converttofile_Create_Triggered",
+    "filename": "1590_Extractfromfile_Converttofile_Create_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1590_Extractfromfile_Converttofile_Create_Triggered.json",
+    "name": "Generate SQL queries from schema only - AI-powered",
+    "description": "Automated workflow: Generate SQL queries from schema only - AI-powered. This workflow integrates 15 different services: convertToFile, stickyNote, mySql, agent, readWriteFile. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "List all tables in a database"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Extract database schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add table name to output"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert data to binary"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save file locally"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from file"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combine schema data and chat input"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Load the schema from the local file"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract SQL query"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if query exists"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format query results"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Run SQL query"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare final output"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine query result and chat answer"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1641_Extractfromfile_Manual_Automation_Webhook",
+    "filename": "1641_Extractfromfile_Manual_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1641_Extractfromfile_Manual_Automation_Webhook.json",
+    "name": "youtube chapter generator",
+    "description": "Automated workflow: youtube chapter generator. This workflow integrates 10 different services: stickyNote, youTube, httpRequest, lmChatGoogleGemini, chainLlm. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Caption ID"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Captions"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract Captions"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Captions"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Get Video Meta Data"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Video ID"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Update Chapters"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tag Chapters in Description"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1764_Extractfromfile_HTTP_Automation_Webhook",
+    "filename": "1764_Extractfromfile_HTTP_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1764_Extractfromfile_HTTP_Automation_Webhook.json",
+    "name": "Attachments Gmail to drive and google sheets",
+    "description": "Automated workflow: Attachments Gmail to drive and google sheets. This workflow integrates 13 different services: stickyNote, httpRequest, gmailTrigger, chainLlm, googleDrive. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Setup1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload PDF to Drive1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Rename file1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Move to the correct folder1"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Append to Reconciliation Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Map Output"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Apply Data Extraction Rules"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Only invoice mails with attachments"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.if"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1847_Extractfromfile_Form_Automation_Triggered",
+    "filename": "1847_Extractfromfile_Form_Automation_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1847_Extractfromfile_Form_Automation_Triggered.json",
+    "name": "HR Job Posting and Evaluation with AI",
+    "description": "Automated workflow: HR Job Posting and Evaluation with AI. This workflow integrates 16 different services: stickyNote, formTrigger, airtable, agent, googleDrive. It contains 46 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload CV to google drive"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "applicant details"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "download CV"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "shortlisted?"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Rejected"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Potential Hire"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "generate questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "update questionnaires"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "job_posting"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "candidate_insights"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personalize email"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Book Meeting"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "update phone meeting time"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Screening Questions"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "job_posting1"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "candidate_insights1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "screening questions"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.googleCalendarTool"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1978_Extractfromfile_Converttofile_Automation_Webhook",
+    "filename": "1978_Extractfromfile_Converttofile_Automation_Webhook.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1978_Extractfromfile_Converttofile_Automation_Webhook.json",
+    "name": "Extract text from PDF and image using Vertex AI (Gemini) into CSV",
+    "description": "Automated workflow: Extract text from PDF and image using Vertex AI (Gemini) into CSV. This workflow integrates 10 different services: convertToFile, stickyNote, httpRequest, googleDriveTrigger, lmChatGoogleGemini. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Get PDF or Images"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route based on PDF or Image"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download PDF"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Image"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from PDF"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Google Drive1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vertex A.I. extract text"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1981_Extractfromfile_Form_Automate_Triggered",
+    "filename": "1981_Extractfromfile_Form_Automate_Triggered.json",
+    "category": "Extractfromfile",
+    "path": "workflows/Extractfromfile/1981_Extractfromfile_Form_Automate_Triggered.json",
+    "name": "HR-focused automation pipeline with AI",
+    "description": "Automated workflow: HR-focused automation pipeline with AI. This workflow integrates 13 different services: stickyNote, formTrigger, chainLlm, merge, outputParserStructured. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qualifications"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Profile Wanted"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HR Expert"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personal Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload CV"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

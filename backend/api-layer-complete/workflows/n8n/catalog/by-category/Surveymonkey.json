@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1020_Surveymonkey_Automate_Triggered",
+    "filename": "1020_Surveymonkey_Automate_Triggered.json",
+    "category": "Surveymonkey",
+    "path": "workflows/Surveymonkey/1020_Surveymonkey_Automate_Triggered.json",
+    "name": "Surveymonkeytrigger Workflow",
+    "description": "Automated workflow: Surveymonkeytrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.surveyMonkeyTrigger",
+        "name": "SurveyMonkey Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.surveyMonkeyTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

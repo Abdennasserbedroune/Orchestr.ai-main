@@ -1,0 +1,199 @@
+[
+  {
+    "id": "1060_Automate_Webhook",
+    "filename": "1060_Automate_Webhook.json",
+    "category": "Automate",
+    "path": "workflows/Automate/1060_Automate_Webhook.json",
+    "name": "POC - Chatbot Order by Sheet Data",
+    "description": "Automated workflow: POC - Chatbot Order by Sheet Data. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Products"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Order Product"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Order"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1123_Automate",
+    "filename": "1123_Automate.json",
+    "category": "Automate",
+    "path": "workflows/Automate/1123_Automate.json",
+    "name": "Function Workflow",
+    "description": "Automated workflow: Function Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Mock Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1271_Automate",
+    "filename": "1271_Automate.json",
+    "category": "Automate",
+    "path": "workflows/Automate/1271_Automate.json",
+    "name": "Unnamed Workflow",
+    "description": "Automated workflow: Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1326_Automate",
+    "filename": "1326_Automate.json",
+    "category": "Automate",
+    "path": "workflows/Automate/1326_Automate.json",
+    "name": "Unnamed Workflow",
+    "description": "Automated workflow: Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1911_Automate",
+    "filename": "1911_Automate.json",
+    "category": "Automate",
+    "path": "workflows/Automate/1911_Automate.json",
+    "name": "Unnamed Workflow",
+    "description": "Automated workflow: Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

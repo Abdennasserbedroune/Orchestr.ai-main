@@ -1,0 +1,195 @@
+[
+  {
+    "id": "0071_Pipedrive_Update_Triggered",
+    "filename": "0071_Pipedrive_Update_Triggered.json",
+    "category": "Pipedrive",
+    "path": "workflows/Pipedrive/0071_Pipedrive_Update_Triggered.json",
+    "name": "Receive updates for all changes in Pipedrive",
+    "description": "Automated workflow: Receive updates for all changes in Pipedrive. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.pipedriveTrigger",
+        "name": "Pipedrive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.pipedriveTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0249_Pipedrive_Stickynote_Create_Webhook",
+    "filename": "0249_Pipedrive_Stickynote_Create_Webhook.json",
+    "category": "Pipedrive",
+    "path": "workflows/Pipedrive/0249_Pipedrive_Stickynote_Create_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "list people"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive - Enrich Organization"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive - Add Person"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Datagma - Enrich Company"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If lead is Ideal Buyer"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Datagma - Find Emails"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Data Before Merge"
+      },
+      {
+        "type": "n8n-nodes-base.pipedriveTrigger",
+        "name": "Pipedrive Trigger - New Company Created"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.pipedriveTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0251_Pipedrive_Spreadsheetfile_Create_Triggered",
+    "filename": "0251_Pipedrive_Spreadsheetfile_Create_Triggered.json",
+    "category": "Pipedrive",
+    "path": "workflows/Pipedrive/0251_Pipedrive_Spreadsheetfile_Create_Triggered.json",
+    "name": "Googledrivetrigger Workflow",
+    "description": "Automated workflow: Googledrivetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Organization"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Person"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Lead"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

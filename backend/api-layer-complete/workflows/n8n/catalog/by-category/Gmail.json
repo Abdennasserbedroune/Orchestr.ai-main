@@ -1,0 +1,497 @@
+[
+  {
+    "id": "0036_Gmail_GoogleDrive_Import",
+    "filename": "0036_Gmail_GoogleDrive_Import.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/0036_Gmail_GoogleDrive_Import.json",
+    "name": "Gmail Workflow",
+    "description": "Automated workflow: Gmail Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload File1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get attachment Link"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0221_Gmail_Movebinarydata_Send",
+    "filename": "0221_Gmail_Movebinarydata_Send.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/0221_Gmail_Movebinarydata_Send.json",
+    "name": "Gmail Workflow",
+    "description": "Automated workflow: Gmail Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "write spreadsheet file"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "move binary data "
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0319_Gmail_Googlecalendartool_Send_Triggered",
+    "filename": "0319_Gmail_Googlecalendartool_Send_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/0319_Gmail_Googlecalendartool_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 8 different services: textClassifier, stickyNote, gmailTrigger, agent, stopAndError. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send reply"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify appointment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Mark as read"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0544_Gmail_GoogleDrive_Create_Triggered",
+    "filename": "0544_Gmail_GoogleDrive_Create_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/0544_Gmail_GoogleDrive_Create_Triggered.json",
+    "name": "Gmailtrigger Workflow",
+    "description": "Automated workflow: Gmailtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Trigger - New Email"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "attach binary data outputs"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "upload files to google drive"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0852_Gmail_GoogleSheets_Create_Triggered",
+    "filename": "0852_Gmail_GoogleSheets_Create_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/0852_Gmail_GoogleSheets_Create_Triggered.json",
+    "name": "Outputparserstructured Workflow",
+    "description": "Automated workflow: Outputparserstructured Workflow. This workflow integrates 8 different services: stickyNote, gmailTrigger, agent, outputParserStructured, stopAndError. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract text from PDF File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent to evaluate Resume"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model (GPT 4o-mini)"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add Resume Evaluation to Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Trigger on new Email Received"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1479_Gmail_Stickynote_Create_Triggered",
+    "filename": "1479_Gmail_Stickynote_Create_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/1479_Gmail_Stickynote_Create_Triggered.json",
+    "name": "Gmail AI auto-responder: create draft replies to incoming emails",
+    "description": "Automated workflow: Gmail AI auto-responder: create draft replies to incoming emails. This workflow integrates 8 different services: stickyNote, gmailTrigger, chainLlm, outputParserStructured, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Needs Reply"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "JSON Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail - Create Draft"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assess if message needs a reply"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate email reply"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1565_Gmail_Stickynote_Create_Triggered",
+    "filename": "1565_Gmail_Stickynote_Create_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/1565_Gmail_Stickynote_Create_Triggered.json",
+    "name": "Save New Sales Opportunities",
+    "description": "Automated workflow: Save New Sales Opportunities. This workflow integrates 6 different services: stickyNote, gmailTrigger, odoo, stopAndError, lmOpenAi. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Received Emails with Sales Label"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Odoo - Create Opportunity"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize Email Content"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.odoo",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1914_Gmail_Stickynote_Send_Triggered",
+    "filename": "1914_Gmail_Stickynote_Send_Triggered.json",
+    "category": "Gmail",
+    "path": "workflows/Gmail/1914_Gmail_Stickynote_Send_Triggered.json",
+    "name": "(G) - Email Classification",
+    "description": "Automated workflow: (G) - Email Classification. This workflow integrates 8 different services: textClassifier, stickyNote, gmailTrigger, agent, lmChatGoogleGemini. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Groq Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classification Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Add Label Promotion"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Add Label (KS Work Related)"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Add Label (High Priority)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1165_Twitter_Telegram_Create_Triggered",
+    "filename": "1165_Twitter_Telegram_Create_Triggered.json",
+    "category": "Twitter",
+    "path": "workflows/Twitter/1165_Twitter_Telegram_Create_Triggered.json",
+    "name": "New WooCommerce Product to Twitter and Telegram",
+    "description": "Automated workflow: New WooCommerce Product to Twitter and Telegram. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.wooCommerceTrigger",
+        "name": "WooCommerce Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.wooCommerceTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1211_Twitter_Strava_Create_Triggered",
+    "filename": "1211_Twitter_Strava_Create_Triggered.json",
+    "category": "Twitter",
+    "path": "workflows/Twitter/1211_Twitter_Strava_Create_Triggered.json",
+    "name": "Receive updates when a new activity gets created and tweet about it",
+    "description": "Automated workflow: Receive updates when a new activity gets created and tweet about it. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stravaTrigger",
+        "name": "Strava Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stravaTrigger",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1212_Twitter_Slack_Automation_Scheduled",
+    "filename": "1212_Twitter_Slack_Automation_Scheduled.json",
+    "category": "Twitter",
+    "path": "workflows/Twitter/1212_Twitter_Slack_Automation_Scheduled.json",
+    "name": "Scrape Twitter for mentions of company",
+    "description": "Automated workflow: Scrape Twitter for mentions of company. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Filter Tweet Data"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Run Every 10 Minutes"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Now - 10 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Get last 50 mentions"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Created since last run?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Setup"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Post to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.dateTime",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

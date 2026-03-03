@@ -1,0 +1,169 @@
+[
+  {
+    "id": "0149_Awss3_Wait_Automate_Triggered",
+    "filename": "0149_Awss3_Wait_Automate_Triggered.json",
+    "category": "Awss3",
+    "path": "workflows/Awss3/0149_Awss3_Wait_Automate_Triggered.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.awsTranscribe",
+        "name": "AWS Transcribe 2"
+      },
+      {
+        "type": "n8n-nodes-base.awsTranscribe",
+        "name": "AWS Transcribe 1"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "AWS S3 1"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "AWS S3 2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger1"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.awsTranscribe",
+      "n8n-nodes-base.awsS3",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0151_Awss3_GoogleDrive_Import_Triggered",
+    "filename": "0151_Awss3_GoogleDrive_Import_Triggered.json",
+    "category": "Awss3",
+    "path": "workflows/Awss3/0151_Awss3_GoogleDrive_Import_Triggered.json",
+    "name": "Googledrivetrigger Workflow",
+    "description": "Automated workflow: Googledrivetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "AWS S3  - get"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "AWS S3 - upload"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.awsS3",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0593_Awss3_Compression_Automate_Triggered",
+    "filename": "0593_Awss3_Compression_Automate_Triggered.json",
+    "category": "Awss3",
+    "path": "workflows/Awss3/0593_Awss3_Compression_Automate_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 5 different services: stickyNote, awsS3, compression, manualTrigger, aggregate. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "List ALL Files*"
+      },
+      {
+        "type": "n8n-nodes-base.awsS3",
+        "name": "Download ALL Files from Folder*"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "All into one Item (include Binary)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      },
+      {
+        "type": "n8n-nodes-base.compression",
+        "name": "Compress all of them to a ZIP"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.awsS3",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.compression",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,381 @@
+[
+  {
+    "id": "0404_Postgrestool_Stickynote_Send_Triggered",
+    "filename": "0404_Postgrestool_Stickynote_Send_Triggered.json",
+    "category": "Postgrestool",
+    "path": "workflows/Postgrestool/0404_Postgrestool_Stickynote_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 7 different services: postgresTool, stickyNote, agent, stopAndError, lmChatOpenAi. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0656_Postgrestool_Stickynote_Send_Triggered",
+    "filename": "0656_Postgrestool_Stickynote_Send_Triggered.json",
+    "category": "Postgrestool",
+    "path": "workflows/Postgrestool/0656_Postgrestool_Stickynote_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: postgresTool, stickyNote, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "DB Schema"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get table definition"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Run SQL Query"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1251_Postgrestool_Stickynote_Automation_Triggered",
+    "filename": "1251_Postgrestool_Stickynote_Automation_Triggered.json",
+    "category": "Postgrestool",
+    "path": "workflows/Postgrestool/1251_Postgrestool_Stickynote_Automation_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: postgresTool, stickyNote, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "DB Schema"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get table definition"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Run SQL Query"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1377_Postgrestool_Stickynote_Automation_Triggered",
+    "filename": "1377_Postgrestool_Stickynote_Automation_Triggered.json",
+    "category": "Postgrestool",
+    "path": "workflows/Postgrestool/1377_Postgrestool_Stickynote_Automation_Triggered.json",
+    "name": "Chat with Postgresql Database",
+    "description": "Automated workflow: Chat with Postgresql Database. This workflow integrates 7 different services: postgresTool, stickyNote, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get Table Definition"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat History"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Execute SQL Query"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get DB Schema and Tables List"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1848_Postgrestool_Stickynote_Automation_Triggered",
+    "filename": "1848_Postgrestool_Stickynote_Automation_Triggered.json",
+    "category": "Postgrestool",
+    "path": "workflows/Postgrestool/1848_Postgrestool_Stickynote_Automation_Triggered.json",
+    "name": "Chat with Postgresql Database",
+    "description": "Automated workflow: Chat with Postgresql Database. This workflow integrates 7 different services: postgresTool, stickyNote, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get Table Definition"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat History"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Execute SQL Query"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Get DB Schema and Tables List"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

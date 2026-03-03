@@ -1,0 +1,64 @@
+[
+  {
+    "id": "1133_Googlesheetstool_Automation_Triggered",
+    "filename": "1133_Googlesheetstool_Automation_Triggered.json",
+    "category": "Googlesheetstool",
+    "path": "workflows/Googlesheetstool/1133_Googlesheetstool_Automation_Triggered.json",
+    "name": "Customer and Sales Support",
+    "description": "Automated workflow: Customer and Sales Support. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Place order"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Update Stock"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Support Agent"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "GetStock"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleSheetsTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

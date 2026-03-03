@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1202_Getresponse_Airtable_Import_Triggered",
+    "filename": "1202_Getresponse_Airtable_Import_Triggered.json",
+    "category": "Getresponse",
+    "path": "workflows/Getresponse/1202_Getresponse_Airtable_Import_Triggered.json",
+    "name": "Airtable Workflow",
+    "description": "Automated workflow: Airtable Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.getResponseTrigger",
+        "name": "GetResponse Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.getResponseTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

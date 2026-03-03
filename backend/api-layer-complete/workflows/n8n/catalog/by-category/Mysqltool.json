@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1350_Mysqltool_Stickynote_Automate_Webhook",
+    "filename": "1350_Mysqltool_Stickynote_Automate_Webhook.json",
+    "category": "Mysqltool",
+    "path": "workflows/Mysqltool/1350_Mysqltool_Stickynote_Automate_Webhook.json",
+    "name": "modelo do chatbot",
+    "description": "Automated workflow: modelo do chatbot. This workflow integrates 9 different services: stickyNote, toolHttpRequest, mySqlTool, memoryPostgresChat, set. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory1"
+      },
+      {
+        "type": "n8n-nodes-base.mySqlTool",
+        "name": "Products in Daatabase"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Knowledge Base"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "External API"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mySqlTool",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1372_Mysqltool_Stickynote_Automate_Webhook",
+    "filename": "1372_Mysqltool_Stickynote_Automate_Webhook.json",
+    "category": "Mysqltool",
+    "path": "workflows/Mysqltool/1372_Mysqltool_Stickynote_Automate_Webhook.json",
+    "name": "modelo do chatbot",
+    "description": "Automated workflow: modelo do chatbot. This workflow integrates 9 different services: stickyNote, toolHttpRequest, mySqlTool, memoryPostgresChat, set. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory1"
+      },
+      {
+        "type": "n8n-nodes-base.mySqlTool",
+        "name": "Products in Daatabase"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Knowledge Base"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "External API"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mySqlTool",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

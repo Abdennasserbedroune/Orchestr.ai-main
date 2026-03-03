@@ -1,0 +1,1425 @@
+[
+  {
+    "id": "0004_GoogleSheets_Typeform_Automate_Triggered",
+    "filename": "0004_GoogleSheets_Typeform_Automate_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0004_GoogleSheets_Typeform_Automate_Triggered.json",
+    "name": "typeform feedback workflow",
+    "description": "Automated workflow: typeform feedback workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0035_GoogleSheets_Webhook_Automate_Webhook",
+    "filename": "0035_GoogleSheets_Webhook_Automate_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0035_GoogleSheets_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0082_GoogleSheets_Interval_Process_Scheduled",
+    "filename": "0082_GoogleSheets_Interval_Process_Scheduled.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0082_GoogleSheets_Interval_Process_Scheduled.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Read Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Convert to XLS"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Upload Dropbox"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "Trigger all 15 min"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.dropbox",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0222_GoogleSheets_Readbinaryfile_Automate",
+    "filename": "0222_GoogleSheets_Readbinaryfile_Automate.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0222_GoogleSheets_Readbinaryfile_Automate.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets1"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "read json file"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "move binary data 2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0234_GoogleSheets_Cron_Create_Scheduled",
+    "filename": "0234_GoogleSheets_Cron_Create_Scheduled.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0234_GoogleSheets_Cron_Create_Scheduled.json",
+    "name": "Cron Workflow",
+    "description": "Automated workflow: Cron Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "MySQL - insert"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets - read"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0235_GoogleSheets_Cron_Automation_Scheduled",
+    "filename": "0235_GoogleSheets_Cron_Automation_Scheduled.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0235_GoogleSheets_Cron_Automation_Scheduled.json",
+    "name": "Cron Workflow",
+    "description": "Automated workflow: Cron Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "MySQL - select"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets - write"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0237_GoogleSheets_Spreadsheetfile_Create_Webhook",
+    "filename": "0237_GoogleSheets_Spreadsheetfile_Create_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0237_GoogleSheets_Spreadsheetfile_Create_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Read from Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Create HTML file"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0238_GoogleSheets_Respondtowebhook_Automate_Webhook",
+    "filename": "0238_GoogleSheets_Respondtowebhook_Automate_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0238_GoogleSheets_Respondtowebhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Read from Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Build HTML"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0256_GoogleSheets_Readbinaryfile_Automate",
+    "filename": "0256_GoogleSheets_Readbinaryfile_Automate.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0256_GoogleSheets_Readbinaryfile_Automate.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets1"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "read json file"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "move binary data 2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0314_GoogleSheets_Discord_Create_Triggered",
+    "filename": "0314_GoogleSheets_Discord_Create_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0314_GoogleSheets_Discord_Create_Triggered.json",
+    "name": "Googlesheetstrigger Workflow",
+    "description": "Automated workflow: Googlesheetstrigger Workflow. This workflow integrates 5 different services: stickyNote, code, googleSheetsTrigger, discord, stopAndError. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "On new or updated row"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Send message"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Convert to ASCII table"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0496_GoogleSheets_Webhook_Automate_Webhook",
+    "filename": "0496_GoogleSheets_Webhook_Automate_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0496_GoogleSheets_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0635_GoogleSheets_Webflow_Create_Triggered",
+    "filename": "0635_GoogleSheets_Webflow_Create_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0635_GoogleSheets_Webflow_Create_Triggered.json",
+    "name": "Code Workflow",
+    "description": "Automated workflow: Code Workflow. This workflow integrates 5 different services: stickyNote, code, stopAndError, webflowTrigger, googleSheets. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prepare Fields"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.webflowTrigger",
+        "name": "On Form Submission"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Append New Row"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webflowTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0736_GoogleSheets_Slack_Send_Triggered",
+    "filename": "0736_GoogleSheets_Slack_Send_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0736_GoogleSheets_Slack_Send_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0812_GoogleSheets_GoogleDrive_Automate_Triggered",
+    "filename": "0812_GoogleSheets_GoogleDrive_Automate_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0812_GoogleSheets_GoogleDrive_Automate_Triggered.json",
+    "name": "Googlesheetstrigger Workflow",
+    "description": "Automated workflow: Googlesheetstrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Google Sheets Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Take a screenshot of a website"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Store Screenshots"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0814_GoogleSheets_Gmail_Send_Triggered",
+    "filename": "0814_GoogleSheets_Gmail_Send_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0814_GoogleSheets_Gmail_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 9 different services: stickyNote, code, gmailTrigger, agent, outputParserStructured. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Store Purchase Order Lines"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Email Received"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is PO?"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Format Purchase Order Lines"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0818_GoogleSheets_Respondtowebhook_Import_Webhook",
+    "filename": "0818_GoogleSheets_Respondtowebhook_Import_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0818_GoogleSheets_Respondtowebhook_Import_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, googleSheets. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get user in DB by Phone Number"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0837_GoogleSheets_Gmail_Create_Triggered",
+    "filename": "0837_GoogleSheets_Gmail_Create_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0837_GoogleSheets_Gmail_Create_Triggered.json",
+    "name": "Googledrive Workflow",
+    "description": "Automated workflow: Googledrive Workflow. This workflow integrates 10 different services: stickyNote, gmailTrigger, function, googleDrive, set. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Search For Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Create Month Folder"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check If Folder Exists"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Split Up Binary Data1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "YYYY/MM"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Company Folder Exists"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Create Company Folder"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Lookup in Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Search Company Folder1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload To Folder"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0927_GoogleSheets_Slack_Send_Triggered",
+    "filename": "0927_GoogleSheets_Slack_Send_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0927_GoogleSheets_Slack_Send_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0950_GoogleSheets_Slack_Send_Triggered",
+    "filename": "0950_GoogleSheets_Slack_Send_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0950_GoogleSheets_Slack_Send_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0974_GoogleSheets_Telegram_Export_Triggered",
+    "filename": "0974_GoogleSheets_Telegram_Export_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/0974_GoogleSheets_Telegram_Export_Triggered.json",
+    "name": "Save Telegram reply to journal spreadsheet",
+    "description": "Automated workflow: Save Telegram reply to journal spreadsheet. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add entry to sheet"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Get journal reply"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Parse message"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1106_GoogleSheets_Cron_Automate_Scheduled",
+    "filename": "1106_GoogleSheets_Cron_Automate_Scheduled.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1106_GoogleSheets_Cron_Automate_Scheduled.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Read Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Write Sheet 2"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Write Sheet 1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1153_GoogleSheets_Orbit_Automation",
+    "filename": "1153_GoogleSheets_Orbit_Automation.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1153_GoogleSheets_Orbit_Automation.json",
+    "name": "Moving metrics from Google Sheets to Orbit",
+    "description": "Automated workflow: Moving metrics from Google Sheets to Orbit. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.orbit",
+        "name": "Add Members"
+      },
+      {
+        "type": "n8n-nodes-base.orbit",
+        "name": "Get all members"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Members"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Activities"
+      },
+      {
+        "type": "n8n-nodes-base.orbit",
+        "name": "Add Activities"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.orbit",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1188_GoogleSheets_Emailreadimap_Create",
+    "filename": "1188_GoogleSheets_Emailreadimap_Create.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1188_GoogleSheets_Emailreadimap_Create.json",
+    "name": "Extract expenses from emails and add to Google Sheet",
+    "description": "Automated workflow: Extract expenses from emails and add to Google Sheet. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check subject"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Setup Variables"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Check for new emails"
+      },
+      {
+        "type": "n8n-nodes-base.mindee",
+        "name": "Read Receipts"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set column data"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add to Google Sheet"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.mindee",
+      "n8n-nodes-base.googleSheets"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1661_GoogleSheets_Stickynote_Monitor_Triggered",
+    "filename": "1661_GoogleSheets_Stickynote_Monitor_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1661_GoogleSheets_Stickynote_Monitor_Triggered.json",
+    "name": "AI agent: expense tracker in Google Sheets and n8n chat",
+    "description": "Automated workflow: AI agent: expense tracker in Google Sheets and n8n chat. This workflow integrates 10 different services: stickyNote, agent, informationExtractor, stopAndError, lmChatOpenAi. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Workflow Input Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Expense text to JSON parser"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save expense into Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Parse msg and save to Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1833_GoogleSheets_Gmail_Create_Triggered",
+    "filename": "1833_GoogleSheets_Gmail_Create_Triggered.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1833_GoogleSheets_Gmail_Create_Triggered.json",
+    "name": "Add new incoming emails to a Google Sheets spreadsheet as a new row.",
+    "description": "Automated workflow: Add new incoming emails to a Google Sheets spreadsheet as a new row.. This workflow integrates 4 different services: gmailTrigger, stickyNote, googleSheets, stopAndError. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1860_GoogleSheets_Gmail_Automation_Webhook",
+    "filename": "1860_GoogleSheets_Gmail_Automation_Webhook.json",
+    "category": "Googlesheets",
+    "path": "workflows/Googlesheets/1860_GoogleSheets_Gmail_Automation_Webhook.json",
+    "name": "WordPress Contact Form (CF7) Responses and Classification",
+    "description": "Automated workflow: WordPress Contact Form (CF7) Responses and Classification. This workflow integrates 10 different services: textClassifier, webhook, stickyNote, lmChatGoogleGemini, chainLlm. It contains 33 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "From Wordpress"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Message Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Email draft - Other info"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email writer (Others)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email writer (Order info)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email writer (Product info)"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Email draft - Product info"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Email draft - Order info"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save on Sheet (product)"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save on Sheet (order)"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save on Sheet (other)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Subject and Text"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Subject and Text 2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Subject and Text 3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

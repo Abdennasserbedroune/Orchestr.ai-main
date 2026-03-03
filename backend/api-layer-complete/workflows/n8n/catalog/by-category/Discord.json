@@ -1,0 +1,138 @@
+[
+  {
+    "id": "0360_Discord_Cron_Automation_Scheduled",
+    "filename": "0360_Discord_Cron_Automation_Scheduled.json",
+    "category": "Discord",
+    "path": "workflows/Discord/0360_Discord_Cron_Automation_Scheduled.json",
+    "name": "cheems",
+    "description": "Automated workflow: cheems. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron1"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord1"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron2"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2028_Discord_Hunter_Automate_Triggered",
+    "filename": "2028_Discord_Hunter_Automate_Triggered.json",
+    "category": "Discord",
+    "path": "workflows/Discord/2028_Discord_Hunter_Automate_Triggered.json",
+    "name": "My workflow",
+    "description": "Automated workflow: My workflow. This workflow integrates 9 different services: stickyNote, formTrigger, hunter, noOp, discord. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

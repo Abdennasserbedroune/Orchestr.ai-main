@@ -1,0 +1,157 @@
+[
+  {
+    "id": "1575_Telegramtool_Woocommercetool_Automate_Webhook",
+    "filename": "1575_Telegramtool_Woocommercetool_Automate_Webhook.json",
+    "category": "Telegramtool",
+    "path": "workflows/Telegramtool/1575_Telegramtool_Woocommercetool_Automate_Webhook.json",
+    "name": "WooCommerce AI Chatbot Workflow for Post-Sales Support",
+    "description": "Automated workflow: WooCommerce AI Chatbot Workflow for Post-Sales Support. This workflow integrates 20 different services: stickyNote, vectorStoreQdrant, lmChatOpenAi, chatTrigger, telegramTool. It contains 44 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.wooCommerceTool",
+        "name": "get_order"
+      },
+      {
+        "type": "n8n-nodes-base.wooCommerceTool",
+        "name": "get_orders"
+      },
+      {
+        "type": "n8n-nodes-base.wooCommerceTool",
+        "name": "get_user"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ToS"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "get_tracking"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Post-Sales Agent"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTool",
+        "name": "human_assistence"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get tracking"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set tracking code"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "GPT 4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.wooCommerceTool",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.telegramTool",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

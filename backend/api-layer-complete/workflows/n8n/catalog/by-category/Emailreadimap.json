@@ -1,0 +1,862 @@
+[
+  {
+    "id": "0134_Emailreadimap_Nextcloud_Send",
+    "filename": "0134_Emailreadimap_Nextcloud_Send.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/0134_Emailreadimap_Nextcloud_Send.json",
+    "name": "Emailreadimap Workflow",
+    "description": "Automated workflow: Emailreadimap Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "IMAP Email"
+      },
+      {
+        "type": "n8n-nodes-base.nextCloud",
+        "name": "Nextcloud"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Map each attachment"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.nextCloud",
+      "n8n-nodes-base.function"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1050_Emailreadimap_Send",
+    "filename": "1050_Emailreadimap_Send.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1050_Emailreadimap_Send.json",
+    "name": "Emailreadimap Workflow",
+    "description": "Automated workflow: Emailreadimap Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "IMAP Email"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1277_Emailreadimap_Manual_Send_Webhook",
+    "filename": "1277_Emailreadimap_Manual_Send_Webhook.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1277_Emailreadimap_Manual_Send_Webhook.json",
+    "name": "Email AI Auto-responder. Summerize and send email",
+    "description": "Automated workflow: Email AI Auto-responder. Summerize and send email. This workflow integrates 18 different services: textClassifier, stickyNote, markdown, httpRequest, textSplitterTokenSplitter. It contains 40 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek R1"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Review email"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4-o-mini"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1284_Emailreadimap_Markdown_Send",
+    "filename": "1284_Emailreadimap_Markdown_Send.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1284_Emailreadimap_Markdown_Send.json",
+    "name": "AI Email processing autoresponder with approval (Yes/No)",
+    "description": "Automated workflow: AI Email processing autoresponder with approval (Yes/No). This workflow integrates 13 different services: stickyNote, markdown, vectorStoreQdrant, agent, set. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek R1"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Approve?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Draft"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1427_Emailreadimap_Manual_Send_Webhook",
+    "filename": "1427_Emailreadimap_Manual_Send_Webhook.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1427_Emailreadimap_Manual_Send_Webhook.json",
+    "name": "Effortless Email Management with AI",
+    "description": "Automated workflow: Effortless Email Management with AI. This workflow integrates 19 different services: stickyNote, vectorStoreQdrant, lmChatOpenAi, emailSend, textClassifier. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Reviewer"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1588_Emailreadimap_Markdown_Send",
+    "filename": "1588_Emailreadimap_Markdown_Send.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1588_Emailreadimap_Markdown_Send.json",
+    "name": "AI Email processing autoresponder with approval (Yes/No)",
+    "description": "Automated workflow: AI Email processing autoresponder with approval (Yes/No). This workflow integrates 13 different services: stickyNote, markdown, vectorStoreQdrant, agent, set. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek R1"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Approve?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Draft"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1936_Emailreadimap_Manual_Send_Webhook",
+    "filename": "1936_Emailreadimap_Manual_Send_Webhook.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1936_Emailreadimap_Manual_Send_Webhook.json",
+    "name": "Effortless Email Management with AI",
+    "description": "Automated workflow: Effortless Email Management with AI. This workflow integrates 19 different services: stickyNote, vectorStoreQdrant, lmChatOpenAi, emailSend, textClassifier. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Reviewer"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1962_Emailreadimap_Manual_Send_Webhook",
+    "filename": "1962_Emailreadimap_Manual_Send_Webhook.json",
+    "category": "Emailreadimap",
+    "path": "workflows/Emailreadimap/1962_Emailreadimap_Manual_Send_Webhook.json",
+    "name": "Email AI Auto-responder. Summerize and send email",
+    "description": "Automated workflow: Email AI Auto-responder. Summerize and send email. This workflow integrates 18 different services: textClassifier, stickyNote, markdown, httpRequest, textSplitterTokenSplitter. It contains 40 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek R1"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Review email"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4-o-mini"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

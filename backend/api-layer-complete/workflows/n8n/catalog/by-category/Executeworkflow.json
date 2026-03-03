@@ -1,0 +1,779 @@
+[
+  {
+    "id": "0371_Executeworkflow_Summarize_Send_Triggered",
+    "filename": "0371_Executeworkflow_Summarize_Send_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0371_Executeworkflow_Summarize_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 13 different services: stickyNote, code, merge, summarize, set. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tool to call the workflow below"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tool: Get current date and time"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "List countries?"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Mapping data"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Concatenate country names"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return country list"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Mapping data1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Get the matching country's details"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return specific capital"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0372_Executeworkflow_Hackernews_Create_Triggered",
+    "filename": "0372_Executeworkflow_Hackernews_Create_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0372_Executeworkflow_Hackernews_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 10 different services: stickyNote, code, agent, hackerNews, set. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Custom tool to call the wf below1"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.hackerNews",
+        "name": "Hacker News"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Clean up data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Stringify"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.hackerNews",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0406_Executeworkflow_Slack_Send_Triggered",
+    "filename": "0406_Executeworkflow_Slack_Send_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0406_Executeworkflow_Slack_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: stickyNote, code, agent, stopAndError, lmChatOpenAi. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if user has provided email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Message Slack for help"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Confirm that we've messaged a human"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prompt the user to provide an email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not sure?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0569_Executeworkflow_Telegram_Update_Triggered",
+    "filename": "0569_Executeworkflow_Telegram_Update_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0569_Executeworkflow_Telegram_Update_Triggered.json",
+    "name": "Telegramtrigger Workflow",
+    "description": "Automated workflow: Telegramtrigger Workflow. This workflow integrates 9 different services: telegramTrigger, stickyNote, telegram, switch, set. It contains 37 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Global data"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram1"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram2"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram3"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram5"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch_MessageType"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram6"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Menu"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Command?"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Change status"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Start bot?"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Register"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Payment Handler"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Trigger Data for Payment"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Trigger Data for Register"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Data for Invoice"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Send Invoice"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch_Commands"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0872_Executeworkflow_Executecommandtool_Create_Triggered",
+    "filename": "0872_Executeworkflow_Executecommandtool_Create_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0872_Executeworkflow_Executecommandtool_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 7 different services: stickyNote, switch, executeCommandTool, mcpTrigger, toolWorkflow. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "FileSystem MCP Server"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommandTool",
+        "name": "ListDirectory"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommandTool",
+        "name": "CreateDirectory"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Operation"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "readOneOrMultipleFiles"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ReadFiles"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "WriteFiles"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "writeOneOrMultipleFiles"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommandTool",
+        "name": "SearchDirectory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeCommandTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0947_Executeworkflow_Stickynote_Automate_Triggered",
+    "filename": "0947_Executeworkflow_Stickynote_Automate_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/0947_Executeworkflow_Stickynote_Automate_Triggered.json",
+    "name": "Workflow Results to Markdown Notes in Your Obsidian Vault, via Google Drive",
+    "description": "Automated workflow: Workflow Results to Markdown Notes in Your Obsidian Vault, via Google Drive. This workflow integrates 9 different services: stickyNote, agent, googleDrive, outputParserStructured, set. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Save Markdown file"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Receive results from any workflow"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If the input has binary attachment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write Zettlekasten note from input1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Restructure JSON"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write YAML Frontmatter"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Save attachment"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1793_Executeworkflow_Airtabletool_Automation_Triggered",
+    "filename": "1793_Executeworkflow_Airtabletool_Automation_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/1793_Executeworkflow_Airtabletool_Automation_Triggered.json",
+    "name": "🤖Contact Agent",
+    "description": "Automated workflow: 🤖Contact Agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Get Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Add or Update Contact"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Contact Agent"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Try Again"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1794_Executeworkflow_Automation_Webhook",
+    "filename": "1794_Executeworkflow_Automation_Webhook.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/1794_Executeworkflow_Automation_Webhook.json",
+    "name": "🤖Content Creator Agent",
+    "description": "Automated workflow: 🤖Content Creator Agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tavily"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Content Creator Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Try Again"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.executeWorkflowTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1918_Executeworkflow_Automation_Triggered",
+    "filename": "1918_Executeworkflow_Automation_Triggered.json",
+    "category": "Executeworkflow",
+    "path": "workflows/Executeworkflow/1918_Executeworkflow_Automation_Triggered.json",
+    "name": "Format US Phone Number",
+    "description": "Automated workflow: Format US Phone Number. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if first digit is valid country code"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add valid country code"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Strip phone number formatting"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check number of digits in phone number"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format phone numbers"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Clear invalid number"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

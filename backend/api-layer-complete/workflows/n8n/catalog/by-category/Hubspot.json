@@ -1,0 +1,443 @@
+[
+  {
+    "id": "0115_HubSpot_Clearbit_Update_Triggered",
+    "filename": "0115_HubSpot_Clearbit_Update_Triggered.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0115_HubSpot_Clearbit_Update_Triggered.json",
+    "name": "Clearbit Workflow",
+    "description": "Automated workflow: Clearbit Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.clearbit",
+        "name": "Clearbit"
+      },
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "Hubspot Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get Contact"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Update Contact"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.clearbit",
+      "n8n-nodes-base.hubspotTrigger",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0129_HubSpot_Cron_Update_Scheduled",
+    "filename": "0129_HubSpot_Cron_Update_Scheduled.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0129_HubSpot_Cron_Update_Scheduled.json",
+    "name": "Cron Workflow",
+    "description": "Automated workflow: Cron Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Update Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Update HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0130_HubSpot_Cron_Automate_Scheduled",
+    "filename": "0130_HubSpot_Cron_Automate_Scheduled.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0130_HubSpot_Cron_Automate_Scheduled.json",
+    "name": "Hubspot Workflow",
+    "description": "Automated workflow: Hubspot Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Hubspot"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot2"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0243_HubSpot_Mailchimp_Create_Scheduled",
+    "filename": "0243_HubSpot_Mailchimp_Create_Scheduled.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0243_HubSpot_Mailchimp_Create_Scheduled.json",
+    "name": "Cron Workflow",
+    "description": "Automated workflow: Cron Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every day at 07:00"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get new contacts"
+      },
+      {
+        "type": "n8n-nodes-base.mailchimp",
+        "name": "Create member"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.mailchimp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0244_HubSpot_Mailchimp_Create_Scheduled",
+    "filename": "0244_HubSpot_Mailchimp_Create_Scheduled.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0244_HubSpot_Mailchimp_Create_Scheduled.json",
+    "name": "Functionitem Workflow",
+    "description": "Automated workflow: Functionitem Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every day at 07:00"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Create/Update contact"
+      },
+      {
+        "type": "n8n-nodes-base.mailchimp",
+        "name": "Get changed members"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.mailchimp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0920_HubSpot_Splitout_Create_Webhook",
+    "filename": "0920_HubSpot_Splitout_Create_Webhook.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/0920_HubSpot_Splitout_Create_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 18 different services: webhook, stickyNote, httpRequest, filter, markdown. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Try Again"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Success"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar Agent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event with Attendee"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Delete Event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Update Event"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "calendarAgent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get list of owners"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out owners"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Get current owner"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "HubSpot Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Enter your company data here"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If a contact is created"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get all info about the contact"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write a personalized message"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send the message"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Set owner to contact"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Transforms markdown to HTML"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.hubspotTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.markdown"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1081_HubSpot_Automate_Triggered",
+    "filename": "1081_HubSpot_Automate_Triggered.json",
+    "category": "Hubspot",
+    "path": "workflows/Hubspot/1081_HubSpot_Automate_Triggered.json",
+    "name": "Hubspottrigger Workflow",
+    "description": "Automated workflow: Hubspottrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "Hubspot Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspotTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

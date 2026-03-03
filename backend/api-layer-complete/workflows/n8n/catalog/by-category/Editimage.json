@@ -1,0 +1,164 @@
+[
+  {
+    "id": "0575_Editimage_Manual_Update_Webhook",
+    "filename": "0575_Editimage_Manual_Update_Webhook.json",
+    "category": "Editimage",
+    "path": "workflows/Editimage/0575_Editimage_Manual_Update_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, lmChatGoogleGemini, chainLlm, outputParserStructured. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Should Proceed To Stage 2?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Resume"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PDF-to-Image API"
+      },
+      {
+        "type": "n8n-nodes-base.editImage",
+        "name": "Resize Converted Image"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Candidate Resume Analyser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.editImage"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1369_Editimage_Manual_Automation_Webhook",
+    "filename": "1369_Editimage_Manual_Automation_Webhook.json",
+    "category": "Editimage",
+    "path": "workflows/Editimage/1369_Editimage_Manual_Automation_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, lmChatGoogleGemini, chainLlm, outputParserStructured. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Should Proceed To Stage 2?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Resume"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PDF-to-Image API"
+      },
+      {
+        "type": "n8n-nodes-base.editImage",
+        "name": "Resize Converted Image"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Candidate Resume Analyser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.editImage"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

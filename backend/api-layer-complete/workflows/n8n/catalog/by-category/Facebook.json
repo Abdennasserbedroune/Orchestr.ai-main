@@ -1,0 +1,39 @@
+[
+  {
+    "id": "0123_Facebook_Mattermost_Update_Triggered",
+    "filename": "0123_Facebook_Mattermost_Update_Triggered.json",
+    "category": "Facebook",
+    "path": "workflows/Facebook/0123_Facebook_Mattermost_Update_Triggered.json",
+    "name": "Receive a Mattermost message when a user updates their profile on Facebook",
+    "description": "Automated workflow: Receive a Mattermost message when a user updates their profile on Facebook. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.facebookTrigger",
+        "name": "Facebook Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.mattermost",
+        "name": "Mattermost"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.facebookTrigger",
+      "n8n-nodes-base.mattermost",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

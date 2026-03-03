@@ -1,0 +1,1576 @@
+[
+  {
+    "id": "0484_Form_Stickynote_Automation_Webhook",
+    "filename": "0484_Form_Stickynote_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/0484_Form_Stickynote_Automation_Webhook.json",
+    "name": "Dynamic credentials using expressions",
+    "description": "Automated workflow: Dynamic credentials using expressions. This workflow integrates 5 different services: stickyNote, formTrigger, respondToWebhook, stopAndError, nasa. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.nasa",
+        "name": "NASA"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.nasa",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0633_Form_GoogleSheets_Create_Triggered",
+    "filename": "0633_Form_GoogleSheets_Create_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0633_Form_GoogleSheets_Create_Triggered.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow integrates 10 different services: stickyNote, formTrigger, crypto, merge, set. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add  to Waitlist Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Clean and Standardize"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Verification Email"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Validate with Verification Code"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get all Data from the Prev Form + Current"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Additional Data for the Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Every Step Data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "is the Code correct?"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Let the User Reenter Code"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save Intend to List"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Save as Verified"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.crypto",
+        "name": "Generate Random Verification Code"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Waitlist Form"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.crypto",
+      "n8n-nodes-base.formTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0648_Form_GoogleSheets_Create_Triggered",
+    "filename": "0648_Form_GoogleSheets_Create_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0648_Form_GoogleSheets_Create_Triggered.json",
+    "name": "Form Workflow",
+    "description": "Automated workflow: Form Workflow. This workflow integrates 6 different services: stickyNote, formTrigger, stopAndError, slack, googleSheets. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "About You"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Your Interests"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Join Beta Testers"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Sign Up Form"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Capture More Info"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Capture Email"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Show Completion Screen"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Notify New Signup!"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0732_Form_Youtube_Update_Triggered",
+    "filename": "0732_Form_Youtube_Update_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0732_Form_Youtube_Update_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 10 different services: stickyNote, formTrigger, youTube, agent, outputParserStructured. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocsTool",
+        "name": "syncbricks information"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Video ID"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Youtube Meta Generator"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "YouTube"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format Tags"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.googleDocsTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0733_Form_Code_Create_Triggered",
+    "filename": "0733_Form_Code_Create_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0733_Form_Code_Create_Triggered.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 7 different services: stickyNote, formTrigger, code, googleDrive, set. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Folder Name"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Search specific folder"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Folder found ?"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Create Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload Files"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prepare Files for Upload"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prepare Files for New Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to New Folder"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0805_Form_Html_Create_Triggered",
+    "filename": "0805_Form_Html_Create_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0805_Form_Html_Create_Triggered.json",
+    "name": "Brightdata Workflow",
+    "description": "Automated workflow: Brightdata Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-brightdata.brightData",
+        "name": "Get MediaMarkt Offers Website"
+      },
+      {
+        "type": "n8n-nodes-document-generator.documentGenerator",
+        "name": "Create HTML for Email"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Extract items from results"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Notify End User by Email"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Show Form Results Page"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "Extract Body and Title from Website"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate List of Deals by Category"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "When User Completes Form"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-brightdata.brightData",
+      "n8n-nodes-document-generator.documentGenerator",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.formTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0890_Form_Stickynote_Send_Triggered",
+    "filename": "0890_Form_Stickynote_Send_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/0890_Form_Stickynote_Send_Triggered.json",
+    "name": "Hubspot Workflow",
+    "description": "Automated workflow: Hubspot Workflow. This workflow integrates 10 different services: stickyNote, formTrigger, hubspot, gmailTool, agent. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Router Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Enter Client Transcript"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define routing emails here"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1316_Form_Stickynote_Automation_Webhook",
+    "filename": "1316_Form_Stickynote_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/1316_Form_Stickynote_Automation_Webhook.json",
+    "name": "Simple OpenAI Image Generator",
+    "description": "Automated workflow: Simple OpenAI Image Generator. This workflow integrates 6 different services: convertToFile, stickyNote, httpRequest, formTrigger, stopAndError. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Prompt and options"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI Image Generation"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Return to form"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1348_Form_Automation_Triggered",
+    "filename": "1348_Form_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1348_Form_Automation_Triggered.json",
+    "name": "Image to license plate number",
+    "description": "Automated workflow: Image to license plate number. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "FormResultPage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter LLM"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "FromTrigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1371_Form_S3_Import_Triggered",
+    "filename": "1371_Form_S3_Import_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1371_Form_S3_Import_Triggered.json",
+    "name": "DigialOceanUpload",
+    "description": "Automated workflow: DigialOceanUpload. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.s3",
+        "name": "S3 Node"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.s3",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1420_Form_Extractfromfile_Automate_Triggered",
+    "filename": "1420_Form_Extractfromfile_Automate_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1420_Form_Extractfromfile_Automate_Triggered.json",
+    "name": "AI CV Screening Workflow",
+    "description": "Automated workflow: AI CV Screening Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Confirmation of CV Submission"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Inform HR New CV Received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Using AI Analysis & Rating"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Convert Binary to Json"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Application Form"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Candidate Lists"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1441_Form_Automation_Triggered",
+    "filename": "1441_Form_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1441_Form_Automation_Triggered.json",
+    "name": "Image to license plate number",
+    "description": "Automated workflow: Image to license plate number. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "FormResultPage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter LLM"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "FromTrigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1537_Form_GoogleSheets_Automation_Triggered",
+    "filename": "1537_Form_GoogleSheets_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1537_Form_GoogleSheets_Automation_Triggered.json",
+    "name": "Contact Form Text Classifier for eCommerce",
+    "description": "Automated workflow: Contact Form Text Classifier for eCommerce. This workflow integrates 7 different services: textClassifier, stickyNote, formTrigger, stopAndError, lmChatOpenAi. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Prod. Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Quote Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Gen. Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Order Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Other Dep."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Quote DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Prod DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "General DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Order DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Other DB"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1554_Form_GoogleSheets_Automation_Triggered",
+    "filename": "1554_Form_GoogleSheets_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1554_Form_GoogleSheets_Automation_Triggered.json",
+    "name": "Contact Form Text Classifier for eCommerce",
+    "description": "Automated workflow: Contact Form Text Classifier for eCommerce. This workflow integrates 7 different services: textClassifier, stickyNote, formTrigger, stopAndError, lmChatOpenAi. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Prod. Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Quote Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Gen. Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Order Dep."
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Other Dep."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Quote DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Prod DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "General DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Order DB"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Other DB"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1611_Form_Stickynote_Automate_Triggered",
+    "filename": "1611_Form_Stickynote_Automate_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1611_Form_Stickynote_Automate_Triggered.json",
+    "name": "Automated Form Submission Data Storage in Airtable",
+    "description": "Automated workflow: Automated Form Submission Data Storage in Airtable. This workflow integrates 3 different services: stickyNote, formTrigger, airtable. It contains 4 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "User Data Storage"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1649_Form_Extractfromfile_Automate_Triggered",
+    "filename": "1649_Form_Extractfromfile_Automate_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1649_Form_Extractfromfile_Automate_Triggered.json",
+    "name": "AI CV Screening Workflow",
+    "description": "Automated workflow: AI CV Screening Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Confirmation of CV Submission"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Inform HR New CV Received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Using AI Analysis & Rating"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Convert Binary to Json"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Application Form"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Candidate Lists"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1762_Form_Aggregate_Automation_Triggered",
+    "filename": "1762_Form_Aggregate_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1762_Form_Aggregate_Automation_Triggered.json",
+    "name": "SEO Blog Generator with GPT-4o, Perplexity, and Telegram Integration",
+    "description": "Automated workflow: SEO Blog Generator with GPT-4o, Perplexity, and Telegram Integration. This workflow integrates 12 different services: stickyNote, formTrigger, telegramTrigger, telegram, agent. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Metadata Generator"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note5"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Blog Content Generator"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Combine Blog Details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Perplexity_Searcher"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Tele HoangSP_Social_Media"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Metadata Extractor"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1767_Form_HTTP_Automation_Webhook",
+    "filename": "1767_Form_HTTP_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/1767_Form_HTTP_Automation_Webhook.json",
+    "name": "Youtube Video Transcript Extraction",
+    "description": "Automated workflow: Youtube Video Transcript Extraction. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "YoutubeVideoURL"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "cleanedTranscript"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "processTranscript"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "extractTranscript"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1873_Form_HTTP_Automation_Webhook",
+    "filename": "1873_Form_HTTP_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/1873_Form_HTTP_Automation_Webhook.json",
+    "name": "🤓 Conversion Rate Optimizer",
+    "description": "Automated workflow: 🤓 Conversion Rate Optimizer. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Landing Page Url"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Scrape Website"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1886_Form_Markdown_Automation_Webhook",
+    "filename": "1886_Form_Markdown_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/1886_Form_Markdown_Automation_Webhook.json",
+    "name": "🤖 On-Page SEO Audit",
+    "description": "Automated workflow: 🤖 On-Page SEO Audit. This workflow integrates 10 different services: stickyNote, httpRequest, formTrigger, markdown, agent. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Landing Page Url"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Scrape Website"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Content Audit"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Technical Audit"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1908_Form_Asana_Automate_Triggered",
+    "filename": "1908_Form_Asana_Automate_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1908_Form_Asana_Automate_Triggered.json",
+    "name": "Automate Your Customer Service With WhatsApp Business Cloud & Asana",
+    "description": "Automated workflow: Automate Your Customer Service With WhatsApp Business Cloud & Asana. This workflow integrates 4 different services: asana, stickyNote, formTrigger, whatsApp. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "WhatsApp Business Cloud"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Asana"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.asana",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1957_Form_Stickynote_Automation_Triggered",
+    "filename": "1957_Form_Stickynote_Automation_Triggered.json",
+    "category": "Form",
+    "path": "workflows/Form/1957_Form_Stickynote_Automation_Triggered.json",
+    "name": "Post on X",
+    "description": "Automated workflow: Post on X. This workflow integrates 5 different services: stickyNote, formTrigger, set, airtop, executeWorkflowTrigger. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Create session"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Create window"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Type text"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Click on Post"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "End session"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Parameters"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtop",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1968_Form_Stickynote_Automation_Webhook",
+    "filename": "1968_Form_Stickynote_Automation_Webhook.json",
+    "category": "Form",
+    "path": "workflows/Form/1968_Form_Stickynote_Automation_Webhook.json",
+    "name": "Social Media Publisher",
+    "description": "Automated workflow: Social Media Publisher. This workflow integrates 8 different services: stickyNote, httpRequest, formTrigger, switch, set. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Post photo"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Post video"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "KO Video"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "OK Video"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "KO Photo"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "OK Photo"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Success Photo?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Success Video?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Result Photo"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Result Video"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Video or Photo?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

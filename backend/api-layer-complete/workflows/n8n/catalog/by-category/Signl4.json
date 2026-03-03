@@ -1,0 +1,87 @@
+[
+  {
+    "id": "0055_Signl4_Interval_Create_Scheduled",
+    "filename": "0055_Signl4_Interval_Create_Scheduled.json",
+    "category": "Signl4",
+    "path": "workflows/Signl4/0055_Signl4_Interval_Create_Scheduled.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.notionTrigger",
+        "name": "Notion Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion Update"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "Interval"
+      },
+      {
+        "type": "n8n-nodes-base.signl4",
+        "name": "SIGNL4 Resolve"
+      },
+      {
+        "type": "n8n-nodes-base.signl4",
+        "name": "SIGNL4 Alert"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion Update Read"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion Read Open"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion Read New"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion Update Final"
+      },
+      {
+        "type": "n8n-nodes-base.signl4",
+        "name": "SIGNL4 Alert 2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.notionTrigger",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.signl4",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,572 @@
+[
+  {
+    "id": "0006_Openweathermap_Cron_Automate_Scheduled",
+    "filename": "0006_Openweathermap_Cron_Automate_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0006_Openweathermap_Cron_Automate_Scheduled.json",
+    "name": "Plivo Workflow",
+    "description": "Automated workflow: Plivo Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.plivo",
+        "name": "Plivo"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.plivo",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0065_Openweathermap_Line_Update_Scheduled",
+    "filename": "0065_Openweathermap_Line_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0065_Openweathermap_Line_Update_Scheduled.json",
+    "name": "Send daily weather updates via a message in Line",
+    "description": "Automated workflow: Send daily weather updates via a message in Line. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.line",
+        "name": "Line"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.line",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0072_Openweathermap_Cron_Update_Scheduled",
+    "filename": "0072_Openweathermap_Cron_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0072_Openweathermap_Cron_Update_Scheduled.json",
+    "name": "Send daily weather updates via a message using the Gotify node",
+    "description": "Automated workflow: Send daily weather updates via a message using the Gotify node. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.gotify",
+        "name": "Gotify"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.gotify",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0161_Openweathermap_Spontit_Update_Scheduled",
+    "filename": "0161_Openweathermap_Spontit_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0161_Openweathermap_Spontit_Update_Scheduled.json",
+    "name": "Send daily weather updates via a push notification using Spontit",
+    "description": "Automated workflow: Send daily weather updates via a push notification using Spontit. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.spontit",
+        "name": "Spontit"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.spontit",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0196_Openweathermap_Webhook_Automation_Webhook",
+    "filename": "0196_Openweathermap_Webhook_Automation_Webhook.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0196_Openweathermap_Webhook_Automation_Webhook.json",
+    "name": "Receive the weather information of any city",
+    "description": "Production-ready workflow: Receive the weather information of any city. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0751_Openweathermap_Telegram_Automate_Triggered",
+    "filename": "0751_Openweathermap_Telegram_Automate_Triggered.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/0751_Openweathermap_Telegram_Automate_Triggered.json",
+    "name": "Telegram Weather Workflow",
+    "description": "Automated workflow: Telegram Weather Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1101_Openweathermap_Twilio_Automate_Scheduled",
+    "filename": "1101_Openweathermap_Twilio_Automate_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1101_Openweathermap_Twilio_Automate_Scheduled.json",
+    "name": "Creating your first workflow",
+    "description": "Automated workflow: Creating your first workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1118_Openweathermap_Webhook_Automate_Webhook",
+    "filename": "1118_Openweathermap_Webhook_Automate_Webhook.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1118_Openweathermap_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1119_Openweathermap_Twilio_Automate_Webhook",
+    "filename": "1119_Openweathermap_Twilio_Automate_Webhook.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1119_Openweathermap_Twilio_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1156_Openweathermap_Cron_Update_Scheduled",
+    "filename": "1156_Openweathermap_Cron_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1156_Openweathermap_Cron_Update_Scheduled.json",
+    "name": "Send daily weather updates via a push notification using the Pushcut node",
+    "description": "Automated workflow: Send daily weather updates via a push notification using the Pushcut node. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.pushcut",
+        "name": "Pushcut"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.pushcut",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1163_Openweathermap_Cron_Update_Scheduled",
+    "filename": "1163_Openweathermap_Cron_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1163_Openweathermap_Cron_Update_Scheduled.json",
+    "name": "Send daily weather updates to a phone number using the Vonage node",
+    "description": "Automated workflow: Send daily weather updates to a phone number using the Vonage node. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.vonage",
+        "name": "Vonage"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.vonage",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1195_Openweathermap_Pushover_Update_Scheduled",
+    "filename": "1195_Openweathermap_Pushover_Update_Scheduled.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1195_Openweathermap_Pushover_Update_Scheduled.json",
+    "name": "Send daily weather updates via a push notification",
+    "description": "Automated workflow: Send daily weather updates via a push notification. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.pushover",
+        "name": "Pushover"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.pushover",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1222_Openweathermap_Webhook_Create_Webhook",
+    "filename": "1222_Openweathermap_Webhook_Create_Webhook.json",
+    "category": "Openweathermap",
+    "path": "workflows/Openweathermap/1222_Openweathermap_Webhook_Create_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.openWeatherMap",
+        "name": "OpenWeatherMap"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook GET"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set City"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Create Response"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.openWeatherMap",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

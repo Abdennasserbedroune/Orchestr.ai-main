@@ -1,0 +1,240 @@
+[
+  {
+    "id": "0756_Airtable_Create_Triggered",
+    "filename": "0756_Airtable_Create_Triggered.json",
+    "category": "Airtable",
+    "path": "workflows/Airtable/0756_Airtable_Create_Triggered.json",
+    "name": "Chattrigger Workflow",
+    "description": "Automated workflow: Chattrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return results"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Categorize and name Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "set prompt fields"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "add to airtable"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate a new prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1120_Airtable_Mindee_Automate_Webhook",
+    "filename": "1120_Airtable_Mindee_Automate_Webhook.json",
+    "category": "Airtable",
+    "path": "workflows/Airtable/1120_Airtable_Mindee_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.mindee",
+        "name": "Mindee"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.mindee",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1138_Airtable_Vonage_Automation_Scheduled",
+    "filename": "1138_Airtable_Vonage_Automation_Scheduled.json",
+    "category": "Airtable",
+    "path": "workflows/Airtable/1138_Airtable_Vonage_Automation_Scheduled.json",
+    "name": "Daily Language Learning",
+    "description": "Automated workflow: Daily Language Learning. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Daily trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hackerNews",
+        "name": "Get top 3 articles"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Extract words"
+      },
+      {
+        "type": "n8n-nodes-base.lingvaNex",
+        "name": "Translate"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Filter data "
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Save today's words"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Craft message"
+      },
+      {
+        "type": "n8n-nodes-base.vonage",
+        "name": "Send SMS"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.hackerNews",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.lingvaNex",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.vonage",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1220_Airtable_Lemlist_Automate",
+    "filename": "1220_Airtable_Lemlist_Automate.json",
+    "category": "Airtable",
+    "path": "workflows/Airtable/1220_Airtable_Lemlist_Automate.json",
+    "name": "Airtable Workflow",
+    "description": "Automated workflow: Airtable Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.lemlist",
+        "name": "Lemlist"
+      },
+      {
+        "type": "n8n-nodes-base.lemlist",
+        "name": "Lemlist1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.lemlist",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

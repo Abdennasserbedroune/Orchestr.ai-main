@@ -1,0 +1,529 @@
+[
+  {
+    "id": "1551_Mondaycom_Schedule_Send_Scheduled",
+    "filename": "1551_Mondaycom_Schedule_Send_Scheduled.json",
+    "category": "Mondaycom",
+    "path": "workflows/Mondaycom/1551_Mondaycom_Schedule_Send_Scheduled.json",
+    "name": "Microsoft Outlook AI Email Assistant",
+    "description": "Automated workflow: Microsoft Outlook AI Email Assistant. This workflow integrates 15 different services: microsoftOutlook, stickyNote, markdown, airtable, scheduleTrigger. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Microsoft Outlook23"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Set Category"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Set Importance"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI: Analyse Email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check Mail Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Update Contacts Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "Monday.com - Get Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable - Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert to Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Email Messages"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Rules"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Categories"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Delete Rules"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Contact"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1553_Mondaycom_Splitout_Automation_Webhook",
+    "filename": "1553_Mondaycom_Splitout_Automation_Webhook.json",
+    "category": "Mondaycom",
+    "path": "workflows/Mondaycom/1553_Mondaycom_Splitout_Automation_Webhook.json",
+    "name": "TEMPLATES",
+    "description": "Automated workflow: TEMPLATES. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "PULL SUBITEMS"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "SPLIT SUBITEMS"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "GET EACH SUBITEM"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "MONDAY UPLOAD"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "PULL LINKEDPULSE"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "GET ITEM"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET LINKEDPULSES"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET BOARD RELATION"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "COLUMN BY NAME"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "COLUMN BY ID"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "SPLIT LINKED PULSES"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.merge"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1781_Mondaycom_Splitout_Import_Triggered",
+    "filename": "1781_Mondaycom_Splitout_Import_Triggered.json",
+    "category": "Mondaycom",
+    "path": "workflows/Mondaycom/1781_Mondaycom_Splitout_Import_Triggered.json",
+    "name": "MONDAY GET FULL ITEM",
+    "description": "Automated workflow: MONDAY GET FULL ITEM. This workflow integrates 9 different services: stickyNote, code, splitOut, merge, set. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET ALL COLUMNS"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET ALL RELATIONS"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "PULL LINKEDPULSE1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET LINKEDPULSES1"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "SPLIT LINKED PULSES1"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "SPLIT SUBITEMS1"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "GET EACH SUBITEM1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET ALL COLUMNS1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET ALL COLUMNS2"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "PULL SUBITEMS"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "GET ITEM"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GET ALL COLUMNS3"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge4"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge2"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge1"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1974_Mondaycom_Schedule_Send_Scheduled",
+    "filename": "1974_Mondaycom_Schedule_Send_Scheduled.json",
+    "category": "Mondaycom",
+    "path": "workflows/Mondaycom/1974_Mondaycom_Schedule_Send_Scheduled.json",
+    "name": "Microsoft Outlook AI Email Assistant",
+    "description": "Automated workflow: Microsoft Outlook AI Email Assistant. This workflow integrates 15 different services: microsoftOutlook, stickyNote, markdown, airtable, scheduleTrigger. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Microsoft Outlook23"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Set Category"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Set Importance"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI: Analyse Email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check Mail Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Update Contacts Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "Monday.com - Get Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable - Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert to Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Email Messages"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Rules"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Categories"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Delete Rules"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Contact"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

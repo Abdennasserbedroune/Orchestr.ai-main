@@ -1,0 +1,214 @@
+[
+  {
+    "id": "0354_Twilio_Typeform_Send_Triggered",
+    "filename": "0354_Twilio_Typeform_Send_Triggered.json",
+    "category": "Twilio",
+    "path": "workflows/Twilio/0354_Twilio_Typeform_Send_Triggered.json",
+    "name": "Send Typeforms leads via Whatsapp (Twilio)",
+    "description": "Automated workflow: Send Typeforms leads via Whatsapp (Twilio). This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0841_Twilio_Stickynote_Send_Triggered",
+    "filename": "0841_Twilio_Stickynote_Send_Triggered.json",
+    "category": "Twilio",
+    "path": "workflows/Twilio/0841_Twilio_Stickynote_Send_Triggered.json",
+    "name": "Twiliotrigger Workflow",
+    "description": "Automated workflow: Twiliotrigger Workflow. This workflow integrates 10 different services: stickyNote, airtable, agent, twilio, set. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twilioTrigger",
+        "name": "Twilio Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Search Available Courses"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Get Course Database Schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get User Message"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send SMS reply"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Append to Call Log"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Course Assistant Agent"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Get List of Professors"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Get List of Departments"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twilioTrigger",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0842_Twilio_Cron_Send_Scheduled",
+    "filename": "0842_Twilio_Cron_Send_Scheduled.json",
+    "category": "Twilio",
+    "path": "workflows/Twilio/0842_Twilio_Cron_Send_Scheduled.json",
+    "name": "Monitoring and alerting",
+    "description": "Automated workflow: Monitoring and alerting. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1198_Twilio_Pushcut_Send_Triggered",
+    "filename": "1198_Twilio_Pushcut_Send_Triggered.json",
+    "category": "Twilio",
+    "path": "workflows/Twilio/1198_Twilio_Pushcut_Send_Triggered.json",
+    "name": "Send an SMS to a number whenever you go out",
+    "description": "Automated workflow: Send an SMS to a number whenever you go out. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.pushcutTrigger",
+        "name": "Pushcut Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.pushcutTrigger",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

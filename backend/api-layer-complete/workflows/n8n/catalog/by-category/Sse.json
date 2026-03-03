@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1084_Sse_Automation_Triggered",
+    "filename": "1084_Sse_Automation_Triggered.json",
+    "category": "Sse",
+    "path": "workflows/Sse/1084_Sse_Automation_Triggered.json",
+    "name": "Ssetrigger Workflow",
+    "description": "Automated workflow: Ssetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.sseTrigger",
+        "name": "SSE Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.sseTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

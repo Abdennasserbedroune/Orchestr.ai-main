@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1209_Raindrop_Automate",
+    "filename": "1209_Raindrop_Automate.json",
+    "category": "Raindrop",
+    "path": "workflows/Raindrop/1209_Raindrop_Automate.json",
+    "name": "Raindrop Workflow",
+    "description": "Automated workflow: Raindrop Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.raindrop",
+        "name": "Raindrop"
+      },
+      {
+        "type": "n8n-nodes-base.raindrop",
+        "name": "Raindrop1"
+      },
+      {
+        "type": "n8n-nodes-base.raindrop",
+        "name": "Raindrop2"
+      },
+      {
+        "type": "n8n-nodes-base.raindrop",
+        "name": "Raindrop3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.raindrop",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

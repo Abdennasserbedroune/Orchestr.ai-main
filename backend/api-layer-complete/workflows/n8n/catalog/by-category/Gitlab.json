@@ -1,0 +1,377 @@
+[
+  {
+    "id": "0557_Gitlab_Filter_Create_Scheduled",
+    "filename": "0557_Gitlab_Filter_Create_Scheduled.json",
+    "category": "Gitlab",
+    "path": "workflows/Gitlab/0557_Gitlab_Filter_Create_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 9 different services: stickyNote, gitlab, filter, scheduleTrigger, n8n. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Backup Now - Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Globals"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Create New File(s)"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Edit Existing File(s)"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Derive Filename From Workflow Name"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Fetch Existing File Content"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Skip Unchanged Files"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Fetch List of Existing Files"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Combine Gitlab Existing Files as Single List Item"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "File Exists in Gitlab?"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.gitlab",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0561_Gitlab_Code_Create_Triggered",
+    "filename": "0561_Gitlab_Code_Create_Triggered.json",
+    "category": "Gitlab",
+    "path": "workflows/Gitlab/0561_Gitlab_Code_Create_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 11 different services: stickyNote, gitlab, code, n8n, switch. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Globals"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Result"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Current workflow"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Workflows"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Get file"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "File status"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Status error"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "End Loop"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Create file"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract From File"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "New file version"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Error output to normal output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Status new"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Status diff"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Status same"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "Retrieve all workflows"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Save each version in a different field"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.gitlab",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0998_Gitlab_Automate_Triggered",
+    "filename": "0998_Gitlab_Automate_Triggered.json",
+    "category": "Gitlab",
+    "path": "workflows/Gitlab/0998_Gitlab_Automate_Triggered.json",
+    "name": "Gitlabtrigger Workflow",
+    "description": "Automated workflow: Gitlabtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gitlabTrigger",
+        "name": "Gitlab Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gitlabTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1895_Gitlab_Code_Automation_Webhook",
+    "filename": "1895_Gitlab_Code_Automation_Webhook.json",
+    "category": "Gitlab",
+    "path": "workflows/Gitlab/1895_Gitlab_Code_Automation_Webhook.json",
+    "name": "GitLab MR Auto-Review & Risk Assessment",
+    "description": "Automated workflow: GitLab MR Auto-Review & Risk Assessment. This workflow integrates 12 different services: stickyNote, httpRequest, code, agent, merge. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Extract Diff"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Distribution List Generator"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Some Change"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Comment Back on MR"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.gitlabTrigger",
+        "name": "GitLab Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send to DL ( Email Notification)"
+      },
+      {
+        "type": "n8n-nodes-base.gitlabTrigger",
+        "name": "GitLab Trigger1"
+      },
+      {
+        "type": "n8n-nodes-base.gitlabTrigger",
+        "name": "GitLab Trigger2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gitlabTrigger",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

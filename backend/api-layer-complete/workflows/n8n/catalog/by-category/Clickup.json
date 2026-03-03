@@ -1,0 +1,136 @@
+[
+  {
+    "id": "0047_Clickup_Update_Triggered",
+    "filename": "0047_Clickup_Update_Triggered.json",
+    "category": "Clickup",
+    "path": "workflows/Clickup/0047_Clickup_Update_Triggered.json",
+    "name": "Receive updates for events in ClickUp",
+    "description": "Automated workflow: Receive updates for events in ClickUp. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.clickUpTrigger",
+        "name": "ClickUp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.clickUpTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0282_Clickup_Notion_Update_Triggered",
+    "filename": "0282_Clickup_Notion_Update_Triggered.json",
+    "category": "Clickup",
+    "path": "workflows/Clickup/0282_Clickup_Notion_Update_Triggered.json",
+    "name": "Notiontrigger Workflow",
+    "description": "Automated workflow: Notiontrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notionTrigger",
+        "name": "On updated database page"
+      },
+      {
+        "type": "n8n-nodes-base.clickUp",
+        "name": "Update an existing task"
+      },
+      {
+        "type": "n8n-nodes-base.clickUpTrigger",
+        "name": "On task status updated"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get database page by ClickUp ID"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update the status of found database page"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notionTrigger",
+      "n8n-nodes-base.clickUp",
+      "n8n-nodes-base.clickUpTrigger",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0469_Clickup_Respondtowebhook_Create_Webhook",
+    "filename": "0469_Clickup_Respondtowebhook_Create_Webhook.json",
+    "category": "Clickup",
+    "path": "workflows/Clickup/0469_Clickup_Respondtowebhook_Create_Webhook.json",
+    "name": "Respondtowebhook Workflow",
+    "description": "Automated workflow: Respondtowebhook Workflow. This workflow integrates 6 different services: webhook, stickyNote, clickUp, set, respondToWebhook. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Receives slack command"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set your nodes"
+      },
+      {
+        "type": "n8n-nodes-base.clickUp",
+        "name": "Create new clickup task"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.clickUp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,1594 @@
+[
+  {
+    "id": "0472_Aggregate_Gmail_Create_Triggered",
+    "filename": "0472_Aggregate_Gmail_Create_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0472_Aggregate_Gmail_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: stickyNote, gmailTrigger, splitOut, chainLlm, outputParserStructured. It contains 20 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get message content"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assign labels for message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "JSON Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set label values"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get all labels"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split out assigned labels"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge corresponding labels"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate label IDs"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Add labels to message"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0480_Aggregate_Telegram_Automate_Triggered",
+    "filename": "0480_Aggregate_Telegram_Automate_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0480_Aggregate_Telegram_Automate_Triggered.json",
+    "name": "Telegramtrigger Workflow",
+    "description": "Automated workflow: Telegramtrigger Workflow. This workflow integrates 7 different services: telegramTrigger, stickyNote, telegram, merge, stopAndError. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0681_Aggregate_HTTP_Create_Webhook",
+    "filename": "0681_Aggregate_HTTP_Create_Webhook.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0681_Aggregate_HTTP_Create_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 16 different services: stickyNote, httpRequest, airtable, agent, merge. It contains 58 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Response"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Response1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search records"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Process data with code"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create map image"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get list of bases"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get base schema"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Bases"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Base/Tables schema"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If filter description exists"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Airtable - Search records"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Generate search filter"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set schema and prompt"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload file to get link"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Download File"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Get messages"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Run assistant"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Send message"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "OpenAI - Create thread"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0691_Aggregate_Jotform_Create_Triggered",
+    "filename": "0691_Aggregate_Jotform_Create_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0691_Aggregate_Jotform_Create_Triggered.json",
+    "name": "Klicktipp Workflow",
+    "description": "Automated workflow: Klicktipp Workflow. This workflow integrates 8 different services: stickyNote, splitOut, merge, set, aggregate. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Subscribe contact in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Convert and set webinar data"
+      },
+      {
+        "type": "n8n-nodes-base.jotFormTrigger",
+        "name": "New webinar booking via JotForm"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Array of tags from Jotform"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out Jotform tags"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact directly in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Tag creation check"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate tags to add to contact"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Create the tag in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate array of created tags"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact KlickTipp after trag creation"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Get list of all existing tags"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-klicktipp.klicktipp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.jotFormTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0695_Aggregate_Stickynote_Create_Webhook",
+    "filename": "0695_Aggregate_Stickynote_Create_Webhook.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0695_Aggregate_Stickynote_Create_Webhook.json",
+    "name": "Klicktipp Workflow",
+    "description": "Automated workflow: Klicktipp Workflow. This workflow integrates 9 different services: webhook, stickyNote, splitOut, merge, set. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Subscribe contact in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Convert and set feedback data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact directly in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Tag creation check"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate tags to add to contact"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Create the tag in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate array of created tags"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact KlickTipp after trag creation"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Get list of all existing tags"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Array of tags from Gravityforms"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out Gravityforms tags"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "New submission via Gravityforms"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-klicktipp.klicktipp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0697_Aggregate_Typeform_Create_Triggered",
+    "filename": "0697_Aggregate_Typeform_Create_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0697_Aggregate_Typeform_Create_Triggered.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow integrates 8 different services: stickyNote, splitOut, merge, typeformTrigger, set. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Convert and set quiz data"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Subscribe contact in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "New quiz sumbmission via Typeform"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Get list of all existing tags"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Array of tags from Typeform"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out Typeform tags"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Tag creation check"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Create the tag in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate tags to add to contact"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact directly in KlickTipp"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate array of created tags"
+      },
+      {
+        "type": "n8n-nodes-klicktipp.klicktipp",
+        "name": "Tag contact KlickTipp after trag creation"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-klicktipp.klicktipp",
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0762_Aggregate_Stickynote_Create_Triggered",
+    "filename": "0762_Aggregate_Stickynote_Create_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0762_Aggregate_Stickynote_Create_Triggered.json",
+    "name": "Executeworkflowtrigger Workflow",
+    "description": "Automated workflow: Executeworkflowtrigger Workflow. This workflow integrates 10 different services: stickyNote, agent, outputParserStructured, merge, set. It contains 30 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Marketing AI Agent Processor"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Product AI Agent Processor"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Sales Data Processor"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Marketing Data Processor"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Product AI Data Processor"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Data Recall Sales"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Data Recall Marketing"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Data Recall Product"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "SF Sales Data Processor"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Azure OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Azure OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Azure OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Create User Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Success Status Generated"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser3"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge all processed data"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Bundle processed Data"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0800_Aggregate_Telegram_Automate_Triggered",
+    "filename": "0800_Aggregate_Telegram_Automate_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/0800_Aggregate_Telegram_Automate_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 9 different services: stickyNote, telegramTrigger, telegram, agent, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Retrive Vocabulary"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate Vocabulary Lists"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Answer to the User"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1324_Aggregate_Gmail_Send_Triggered",
+    "filename": "1324_Aggregate_Gmail_Send_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1324_Aggregate_Gmail_Send_Triggered.json",
+    "name": "Gmailtrigger Workflow",
+    "description": "Automated workflow: Gmailtrigger Workflow. This workflow integrates 11 different services: stickyNote, gmailTrigger, splitOut, chainLlm, merge. It contains 20 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get message content"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set label values"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get all labels"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split out assigned labels"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge corresponding labels"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate label IDs"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Add labels to message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assign labels for message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "JSON Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1374_Aggregate_Stickynote_Create_Triggered",
+    "filename": "1374_Aggregate_Stickynote_Create_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1374_Aggregate_Stickynote_Create_Triggered.json",
+    "name": "Openaiassistant Workflow",
+    "description": "Automated workflow: Openaiassistant Workflow. This workflow integrates 10 different services: stickyNote, set, stopAndError, memoryManager, memoryBufferWindow. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Assistant"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory Manager"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory Manager1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.limit",
+        "name": "Limit"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.limit",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1404_Aggregate_Telegram_Automation_Triggered",
+    "filename": "1404_Aggregate_Telegram_Automation_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1404_Aggregate_Telegram_Automation_Triggered.json",
+    "name": "DSP Agent",
+    "description": "Automated workflow: DSP Agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "memory_tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "contentCreatorAgent"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1413_Aggregate_Telegram_Automation_Triggered",
+    "filename": "1413_Aggregate_Telegram_Automation_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1413_Aggregate_Telegram_Automation_Triggered.json",
+    "name": "Dsp agent",
+    "description": "Automated workflow: Dsp agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "memory_tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "contentCreatorAgent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1430_Aggregate_Schedule_Send_Scheduled",
+    "filename": "1430_Aggregate_Schedule_Send_Scheduled.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1430_Aggregate_Schedule_Send_Scheduled.json",
+    "name": "Email Summary Agent",
+    "description": "Automated workflow: Email Summary Agent. This workflow integrates 6 different services: stickyNote, scheduleTrigger, stopAndError, gmail, aggregate. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Daily 7AM Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Fetch Emails - Past 24 Hours"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Organize Email Data - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize Emails with OpenAI - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Summary - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1506_Aggregate_Telegram_Automation_Triggered",
+    "filename": "1506_Aggregate_Telegram_Automation_Triggered.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1506_Aggregate_Telegram_Automation_Triggered.json",
+    "name": "Telegramtrigger Workflow",
+    "description": "Automated workflow: Telegramtrigger Workflow. This workflow integrates 7 different services: telegramTrigger, stickyNote, telegram, merge, stopAndError. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1544_Aggregate_Schedule_Send_Scheduled",
+    "filename": "1544_Aggregate_Schedule_Send_Scheduled.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1544_Aggregate_Schedule_Send_Scheduled.json",
+    "name": "Email Summary Agent",
+    "description": "Automated workflow: Email Summary Agent. This workflow integrates 6 different services: stickyNote, scheduleTrigger, stopAndError, gmail, aggregate. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Daily 7AM Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Fetch Emails - Past 24 Hours"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Organize Email Data - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize Emails with OpenAI - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Summary - Morning"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1576_Aggregate_Stickynote_Automate_Webhook",
+    "filename": "1576_Aggregate_Stickynote_Automate_Webhook.json",
+    "category": "Aggregate",
+    "path": "workflows/Aggregate/1576_Aggregate_Stickynote_Automate_Webhook.json",
+    "name": "Ahrefs Keyword Research Workflow",
+    "description": "Automated workflow: Ahrefs Keyword Research Workflow. This workflow integrates 9 different services: stickyNote, httpRequest, code, lmChatGoogleGemini, agent. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Keyword Data Response Formatter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Keyword Query Extraction & Cleaning Agent"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Main Keyword & 10 related Keyword data"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate Keyword Data"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Ahrefs Keyword API Request"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

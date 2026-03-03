@@ -1,0 +1,192 @@
+[
+  {
+    "id": "9001_Scalable_Webhook_Orchestrator_Webhook",
+    "filename": "9001_Scalable_Webhook_Orchestrator_Webhook.json",
+    "category": "Templates",
+    "path": "workflows/Templates/9001_Scalable_Webhook_Orchestrator_Webhook.json",
+    "name": "Scalable Webhook Orchestrator",
+    "description": "",
+    "tags": [],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Notas & Testes"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Parse Input"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route by action"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Service A"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Compose Ping"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Compose Result"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.respondToWebhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "9002_Rapid_ETL_HTTP_Transform_Deliver_Manual",
+    "filename": "9002_Rapid_ETL_HTTP_Transform_Deliver_Manual.json",
+    "category": "Templates",
+    "path": "workflows/Templates/9002_Rapid_ETL_HTTP_Transform_Deliver_Manual.json",
+    "name": "Rapid ETL: HTTP -> Transform -> Deliver",
+    "description": "",
+    "tags": [],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Notas & Testes"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Transform"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upsert Endpoint"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.function"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "9003_FanOut_Broadcast_and_Merge_Webhook",
+    "filename": "9003_FanOut_Broadcast_and_Merge_Webhook.json",
+    "category": "Templates",
+    "path": "workflows/Templates/9003_FanOut_Broadcast_and_Merge_Webhook.json",
+    "name": "Fan-Out Broadcast and Merge",
+    "description": "",
+    "tags": [],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Notas & Testes"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Message"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Broadcast A"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Broadcast B"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Results"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.respondToWebhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "9004_AI_Summarizer_Template_Webhook",
+    "filename": "9004_AI_Summarizer_Template_Webhook.json",
+    "category": "Templates",
+    "path": "workflows/Templates/9004_AI_Summarizer_Template_Webhook.json",
+    "name": "AI Summarizer (LLM-ready)",
+    "description": "",
+    "tags": [],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Notas & Testes"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Text"
+      },
+      {
+        "type": "@n8n/n8n-nodes-langchain.openAi",
+        "name": "OpenAI (opcional)"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Local Summarize"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.respondToWebhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

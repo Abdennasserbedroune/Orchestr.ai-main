@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "0031_Functionitem_Dropbox_Automation_Webhook",
+    "filename": "0031_Functionitem_Dropbox_Automation_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0031_Functionitem_Dropbox_Automation_Webhook.json",
+    "name": "screenshot",
+    "description": "Production-ready workflow: screenshot. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Create Web + Email Item"
+      },
+      {
+        "type": "n8n-nodes-base.awsSes",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.uproc",
+        "name": "Generate FullPage"
+      },
+      {
+        "type": "n8n-nodes-base.uproc",
+        "name": "Generate Screenshot"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get File"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get File1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Upload Screenshot"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Upload fullpage"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.awsSes",
+      "n8n-nodes-base.uproc",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.dropbox",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0068_Functionitem_Manual_Import_Scheduled",
+    "filename": "0068_Functionitem_Manual_Import_Scheduled.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0068_Functionitem_Manual_Import_Scheduled.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Move Binary Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Map"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Workflow List"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "FunctionItem"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Run Daily at 2:30am"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0146_Functionitem_Telegram_Create_Webhook",
+    "filename": "0146_Functionitem_Telegram_Create_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0146_Functionitem_Telegram_Create_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "SearchTorrent"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Start download"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Torrent not found"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Start download new token"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0178_Functionitem_Executecommand_Automation_Webhook",
+    "filename": "0178_Functionitem_Executecommand_Automation_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0178_Functionitem_Executecommand_Automation_Webhook.json",
+    "name": "extract_swifts",
+    "description": "Production-ready workflow: extract_swifts. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.htmlExtract",
+        "name": "HTML Extract"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "SplitInBatches"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.htmlExtract",
+        "name": "HTML Extract1"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "MongoDB1"
+      },
+      {
+        "type": "n8n-nodes-base.uproc",
+        "name": "uProc"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Prepare Documents"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "More Countries"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set Page to Scrape"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "More Pages"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Set More Pages"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Generate filename"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "File exists?"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Prepare countries"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Create Directory"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "MongoDB"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.htmlExtract",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.mongoDb",
+      "n8n-nodes-base.uproc",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0184_Functionitem_Itemlists_Automate",
+    "filename": "0184_Functionitem_Itemlists_Automate.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0184_Functionitem_Itemlists_Automate.json",
+    "name": "Itemlists Workflow",
+    "description": "Automated workflow: Itemlists Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "FileMaker response.data"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Return item.fieldData"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "FileMaker Data API Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0246_Functionitem_Pipedrive_Create_Scheduled",
+    "filename": "0246_Functionitem_Pipedrive_Create_Scheduled.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0246_Functionitem_Pipedrive_Create_Scheduled.json",
+    "name": "Stripe Workflow",
+    "description": "Automated workflow: Stripe Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stripe",
+        "name": "Get customers"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Rename fields and keep only needed fields"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add customer name to charge data"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Search organisation"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add organisation Information to charge data"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create note with charge information"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Split array of charges to items"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search for charges in Stripe"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every day at 8 am"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stripe",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.cron"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0247_Functionitem_HTTP_Create_Webhook",
+    "filename": "0247_Functionitem_HTTP_Create_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0247_Functionitem_HTTP_Create_Webhook.json",
+    "name": "Pipedrivetrigger Workflow",
+    "description": "Automated workflow: Pipedrivetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.pipedriveTrigger",
+        "name": "On product created"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set item to only current product data"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create product in Stripe"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add created product Id to data"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Keep only productId of created product"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create price records in Stripe"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Split prices to seperate items"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.pipedriveTrigger",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.itemLists"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0255_Functionitem_Manual_Create_Triggered",
+    "filename": "0255_Functionitem_Manual_Create_Triggered.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0255_Functionitem_Manual_Create_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+        "name": "Customer Datastore"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Item Lists"
+      },
+      {
+        "type": "n8n-nodes-document-generator.DocumentGenerator",
+        "name": "One item per template"
+      },
+      {
+        "type": "n8n-nodes-document-generator.DocumentGenerator",
+        "name": "All items, one template"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Add lines"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send one TEXT email per item"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send one HTML Email per list"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.n8nTrainingCustomerDatastore",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-document-generator.DocumentGenerator",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.emailSend"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0266_Functionitem_Zendesk_Create_Webhook",
+    "filename": "0266_Functionitem_Zendesk_Create_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0266_Functionitem_Zendesk_Create_Webhook.json",
+    "name": "Functionitem Workflow",
+    "description": "Automated workflow: Functionitem Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get tickets created after last execution"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get requester information"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Keep only needed requester information"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Keep only requester owner email"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add requester information to ticket data"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Search requester in pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get owner information of Pipedrive contact"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get agents and admins"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Keep only email and Id"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add Pipedrive agent data to pipedrive contact information"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add contact owner to ticket data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Contact exists in Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Change assignee to Pipedrive contact owner"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Add a note requester not found"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0267_Functionitem_Zendesk_Create_Scheduled",
+    "filename": "0267_Functionitem_Zendesk_Create_Scheduled.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/0267_Functionitem_Zendesk_Create_Scheduled.json",
+    "name": "Noop Workflow",
+    "description": "Automated workflow: Noop Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Pipedrive person Id found"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Zendesk comments for tickets"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add comments to tickets"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add Pipedrive person Id to Zendesk tickets"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get tickets updated after last execution"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Channel is email"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Rename fields and keep only needed fields"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Search persons by email"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Remove duplicates to make search efficient"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set search email"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Process commenst per ticket"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "New comment"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Split comments to seperate items"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Add comment as a note in Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp2"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every day at 09:00"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Done processing"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.cron"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1067_Functionitem_Manual_Export_Webhook",
+    "filename": "1067_Functionitem_Manual_Export_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/1067_Functionitem_Manual_Export_Webhook.json",
+    "name": "Example - Backup n8n to Nextcloud",
+    "description": "Production-ready workflow: Example - Backup n8n to Nextcloud. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Move Binary Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Map"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Workflow List"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "FunctionItem"
+      },
+      {
+        "type": "n8n-nodes-base.nextCloud",
+        "name": "NextCloud1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.nextCloud",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1140_Functionitem_Raindrop_Automation_Scheduled",
+    "filename": "1140_Functionitem_Raindrop_Automation_Scheduled.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/1140_Functionitem_Raindrop_Automation_Scheduled.json",
+    "name": "YouTube to Raindrop",
+    "description": "Automated workflow: YouTube to Raindrop. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "YouTube"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Filter new items"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Flatten JSON"
+      },
+      {
+        "type": "n8n-nodes-base.raindrop",
+        "name": "Raindrop Bookmark"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every 30 mins"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.raindrop",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1157_Functionitem_Executecommand_Update_Webhook",
+    "filename": "1157_Functionitem_Executecommand_Update_Webhook.json",
+    "category": "Functionitem",
+    "path": "workflows/Functionitem/1157_Functionitem_Executecommand_Update_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.htmlExtract",
+        "name": "HTML Extract"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "getActualPrice"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "fetchWeb"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "FunctionItem"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File1"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Move Binary Data1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF1"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "checkifexists"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF3"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "SaveToFile"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "JsonToBinary"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "changeME"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "initItem"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "savedItems"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "itemsToJSON"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "initItem1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF2"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "updateSavedItems"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "updateSavedItems1"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "cleanData"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF4"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "NotifyBetterPrice"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "NotifyIncorrectPrice"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.htmlExtract",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

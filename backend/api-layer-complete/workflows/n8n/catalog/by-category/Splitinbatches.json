@@ -1,0 +1,74 @@
+[
+  {
+    "id": "0070_Splitinbatches_Notion_Export_Scheduled",
+    "filename": "0070_Splitinbatches_Notion_Export_Scheduled.json",
+    "category": "Splitinbatches",
+    "path": "workflows/Splitinbatches/0070_Splitinbatches_Notion_Export_Scheduled.json",
+    "name": "Archive empty pages in Notion Database",
+    "description": "Automated workflow: Archive empty pages in Notion Database. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get All Databases"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get All Database Pages"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get Page Blocks"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Process Blocks"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "SplitInBatches"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Check for empty properties"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Archive Page"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If toDelete"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Empty Properties"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every day @ 2am"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

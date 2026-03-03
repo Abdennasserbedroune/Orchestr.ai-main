@@ -1,0 +1,49 @@
+[
+  {
+    "id": "0211_Interval_Amqp_Automation_Scheduled",
+    "filename": "0211_Interval_Amqp_Automation_Scheduled.json",
+    "category": "Interval",
+    "path": "workflows/Interval/0211_Interval_Amqp_Automation_Scheduled.json",
+    "name": "Smart Factory Data Generator",
+    "description": "Automated workflow: Smart Factory Data Generator. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "Interval"
+      },
+      {
+        "type": "n8n-nodes-base.amqp",
+        "name": "AMQP Sender"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.amqp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

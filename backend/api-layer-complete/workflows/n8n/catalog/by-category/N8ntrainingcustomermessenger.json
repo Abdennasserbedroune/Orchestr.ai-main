@@ -1,0 +1,90 @@
+[
+  {
+    "id": "0230_N8Ntrainingcustomermessenger_Wait_Create_Triggered",
+    "filename": "0230_N8Ntrainingcustomermessenger_Wait_Create_Triggered.json",
+    "category": "N8ntrainingcustomermessenger",
+    "path": "workflows/N8ntrainingcustomermessenger/0230_N8Ntrainingcustomermessenger_Wait_Create_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 9 different services: stickyNote, wait, set, n8nTrainingCustomerMessenger, manualTrigger. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Create approval URL"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait for external approval"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Rest of the workflow placeholder"
+      },
+      {
+        "type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+        "name": "Customer Datastore"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "SplitInBatches"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note4"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait for time interval"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If - Are we Finished?"
+      },
+      {
+        "type": "n8n-nodes-base.n8nTrainingCustomerMessenger",
+        "name": "Customer Messenger - Send URL to merchant"
+      },
+      {
+        "type": "n8n-nodes-base.n8nTrainingCustomerMessenger",
+        "name": "Customer Messenger - Send message to client"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.n8nTrainingCustomerDatastore",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.n8nTrainingCustomerMessenger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

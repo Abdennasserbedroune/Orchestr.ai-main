@@ -1,0 +1,876 @@
+[
+  {
+    "id": "0647_GoogleCalendar_Form_Create_Triggered",
+    "filename": "0647_GoogleCalendar_Form_Create_Triggered.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/0647_GoogleCalendar_Form_Create_Triggered.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 13 different services: textClassifier, stickyNote, formTrigger, chainLlm, set. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form End"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Enter Date & Time"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Form Values"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Terms & Conditions"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Accepted?"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Receipt"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Wait for Approval"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Approval?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Create Appointment"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Rejection"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Decline"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Decline1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Trigger Approval Process"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarise Enquiry"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Enquiry Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0783_GoogleCalendar_Schedule_Create_Scheduled",
+    "filename": "0783_GoogleCalendar_Schedule_Create_Scheduled.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/0783_GoogleCalendar_Schedule_Create_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 13 different services: filter, stickyNote, scheduleTrigger, agent, outputParserStructured. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Get Past Events"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Flag to Follow Up"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Only Follow Ups"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get Emails Since"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Output"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Availability"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Meeting Availability Agent"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Generate Message"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Meetings"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Meeting Booking Agent"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Mark as Seen"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send for Human Approval"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1116_GoogleCalendar_GoogleSheets_Create_Triggered",
+    "filename": "1116_GoogleCalendar_GoogleSheets_Create_Triggered.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1116_GoogleCalendar_GoogleSheets_Create_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Attendee Registrations"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add to Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.mattermost",
+        "name": "Create Account"
+      },
+      {
+        "type": "n8n-nodes-base.mattermost",
+        "name": "Add to team"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Array to Rows"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Session Details"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Data"
+      },
+      {
+        "type": "n8n-nodes-base.mattermost",
+        "name": "Add to channels"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Add to Event"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Welcome Email"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.mattermost",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1346_GoogleCalendar_GoogleSheets_Automate_Triggered",
+    "filename": "1346_GoogleCalendar_GoogleSheets_Automate_Triggered.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1346_GoogleCalendar_GoogleSheets_Automate_Triggered.json",
+    "name": "Automate Event Creation in Google Calendar from Google Sheets",
+    "description": "Automated workflow: Automate Event Creation in Google Calendar from Google Sheets. This workflow integrates 5 different services: stickyNote, googleSheetsTrigger, code, stopAndError, googleCalendar. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Event Date Formatter"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "New Event Entry Listener"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Google Calendar Event Creator"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1361_GoogleCalendar_Webhook_Create_Webhook",
+    "filename": "1361_GoogleCalendar_Webhook_Create_Webhook.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1361_GoogleCalendar_Webhook_Create_Webhook.json",
+    "name": "Build a Chatbot, Voice Agent and Phone Agent with Voiceflow, Google Calendar and RAG",
+    "description": "Automated workflow: Build a Chatbot, Voice Agent and Phone Agent with Voiceflow, Google Calendar and RAG. This workflow integrates 18 different services: webhook, stickyNote, httpRequest, textSplitterTokenSplitter, vectorStoreQdrant. It contains 60 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "n8n_order"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Concert start date"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "n8n_appointment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrive Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "RAG"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrive Agent"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "n8n_rag"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Tracking response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Calendar response"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Webhook tracking response"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "API URL Tracking"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Webhook calendar response"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Webhook RAG response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleDrive"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1573_GoogleCalendar_Slack_Create_Webhook",
+    "filename": "1573_GoogleCalendar_Slack_Create_Webhook.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1573_GoogleCalendar_Slack_Create_Webhook.json",
+    "name": "Generate google meet links in slack",
+    "description": "Automated workflow: Generate google meet links in slack. This workflow integrates 5 different services: webhook, stickyNote, stopAndError, slack, googleCalendar. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Create event with google meet link"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send msg with Google meet link"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Delete temporary calendar event"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1620_GoogleCalendar_Form_Automation_Triggered",
+    "filename": "1620_GoogleCalendar_Form_Automation_Triggered.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1620_GoogleCalendar_Form_Automation_Triggered.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 13 different services: textClassifier, stickyNote, formTrigger, chainLlm, set. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Form End"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Enter Date & Time"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Form Values"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Terms & Conditions"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Accepted?"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Receipt"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Wait for Approval"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Approval?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Create Appointment"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Rejection"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Decline"
+      },
+      {
+        "type": "n8n-nodes-base.form",
+        "name": "Decline1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Trigger Approval Process"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarise Enquiry"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Enquiry Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.form",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1668_GoogleCalendar_Filter_Automation_Triggered",
+    "filename": "1668_GoogleCalendar_Filter_Automation_Triggered.json",
+    "category": "Googlecalendar",
+    "path": "workflows/Googlecalendar/1668_GoogleCalendar_Filter_Automation_Triggered.json",
+    "name": "Calendar_scheduling",
+    "description": "Automated workflow: Calendar_scheduling. This workflow integrates 15 different services: stickyNote, itemLists, filter, gmailTrigger, agent. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Workflow Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Format response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Stringify Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract start, end and name"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter only confirmed and with set time"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is appointment request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify appointment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Sort"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Mark as read"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Reply"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

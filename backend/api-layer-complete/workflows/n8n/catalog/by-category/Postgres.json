@@ -1,0 +1,1725 @@
+[
+  {
+    "id": "0263_Postgres_Code_Automation_Webhook",
+    "filename": "0263_Postgres_Code_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/0263_Postgres_Code_Automation_Webhook.json",
+    "name": "Auto WordPress Blog Generator (GPT + Postgres + WP Media)",
+    "description": "Automated workflow: Auto WordPress Blog Generator (GPT + Postgres + WP Media). This workflow integrates 11 different services: stickyNote, httpRequest, code, scheduleTrigger, agent. It contains 56 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Image"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prepare Post JSON"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note14"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note15"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note16"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note17"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note18"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note19"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note20"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note21"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Load Categories"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Category Filter"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Selecting recent"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Picks Less Used"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "10 latest headlines"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "New article title"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent SEO Headings"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent SEO writer"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge heading"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Combines full post meta"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Updating posts DB"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extracting output"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Placeholder creator"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Media Upload to WP"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Post to WP"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note22"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Config"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0460_Postgres_Filter_Import_Scheduled",
+    "filename": "0460_Postgres_Filter_Import_Scheduled.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/0460_Postgres_Filter_Import_Scheduled.json",
+    "name": "Postgres Workflow",
+    "description": "Automated workflow: Postgres Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Set Default Error Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Vars"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Exclude default_error:false Tagged Workflows"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "Get All Workflows"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0666_Postgres_Webhook_Create_Webhook",
+    "filename": "0666_Postgres_Webhook_Create_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/0666_Postgres_Webhook_Create_Webhook.json",
+    "name": "Openai Workflow",
+    "description": "Automated workflow: Openai Workflow. This workflow integrates 10 different services: postgresTool, stickyNote, httpRequest, webhook, set. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Insert Transcription Part"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Create Note"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create Recall bot"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create OpenAI thread"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Create data record"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Scenario 1 Start - Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Scenario 2 Start - Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Jimmy word"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.if"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1108_Postgres_Googlecloudnaturallanguage_Automation_Scheduled",
+    "filename": "1108_Postgres_Googlecloudnaturallanguage_Automation_Scheduled.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1108_Postgres_Googlecloudnaturallanguage_Automation_Scheduled.json",
+    "name": "ETL pipeline",
+    "description": "Automated workflow: ETL pipeline. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "MongoDB"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Google Cloud Natural Language"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.mongoDb",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1144_Postgres_Code_Automation_Triggered",
+    "filename": "1144_Postgres_Code_Automation_Triggered.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1144_Postgres_Code_Automation_Triggered.json",
+    "name": "SHEETS RAG",
+    "description": "Automated workflow: SHEETS RAG. This workflow integrates 13 different services: stickyNote, googleDriveTrigger, code, lmChatGoogleGemini, manualChatTrigger. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "create table query"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "create insertion query"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "execute_query_tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "get_postgres_schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "change_this"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "is not in database"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "table exists?"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "fetch sheet data"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "remove table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "create table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "perform insertion"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "response output"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "sql query executor"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "schema finder"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "schema to string"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent With SQL Query Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1245_Postgres_Extractfromfile_Automation_Triggered",
+    "filename": "1245_Postgres_Extractfromfile_Automation_Triggered.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1245_Postgres_Extractfromfile_Automation_Triggered.json",
+    "name": "Translate questions about e-mails into SQL queries and run them",
+    "description": "Automated workflow: Translate questions about e-mails into SQL queries and run them. This workflow integrates 14 different services: convertToFile, stickyNote, agent, readWriteFile, merge. It contains 30 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add table name to output"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert data to binary"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save file locally"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from file"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combine schema data and chat input"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Load the schema from the local file"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract SQL query"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if query exists"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format query results"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine query result and chat answer"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "List all columns in a table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "List all tables in a database"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add trailing semicolon"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check for trailing semicolon"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "WorkflowTrigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If ran manually"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If file exists or already retried generating it"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format empty output"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1249_Postgres_Webhook_Automation_Webhook",
+    "filename": "1249_Postgres_Webhook_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1249_Postgres_Webhook_Automation_Webhook.json",
+    "name": "Openai Workflow",
+    "description": "Automated workflow: Openai Workflow. This workflow integrates 10 different services: postgresTool, stickyNote, httpRequest, webhook, set. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Insert Transcription Part"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Create Note"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create Recall bot"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create OpenAI thread"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Create data record"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Scenario 1 Start - Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Scenario 2 Start - Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Jimmy word"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.if"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1421_Postgres_Googlecloudnaturallanguage_Automation_Scheduled",
+    "filename": "1421_Postgres_Googlecloudnaturallanguage_Automation_Scheduled.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1421_Postgres_Googlecloudnaturallanguage_Automation_Scheduled.json",
+    "name": "ETL pipeline",
+    "description": "Automated workflow: ETL pipeline. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "MongoDB"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Google Cloud Natural Language"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.mongoDb",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1752_Postgres_Wordpress_Automation_Webhook",
+    "filename": "1752_Postgres_Wordpress_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1752_Postgres_Wordpress_Automation_Webhook.json",
+    "name": "RAG & GenAI App With WordPress Content",
+    "description": "Automated workflow: RAG & GenAI App With WordPress Content. This workflow integrates 24 different services: stickyNote, scheduleTrigger, merge, switch, lmChatOpenAi. It contains 63 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter1"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress - Get all posts"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress - Get all pages"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields1"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter - Only published & unprotected content"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "HTML To Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Supabase - Store workflow execution"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every 30 seconds"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Wordpress - Get posts modified after last workflow execution"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Wordpress - Get posts modified after last workflow execution1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields2"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter - Only published and unprotected content"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Store documents on Supabase"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Store workflow execution id and timestamptz"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate documents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Create documents table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Create workflow execution history table"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Wordpress Posts and Pages"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge retrieved WordPress posts and pages"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Filter on existing documents"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Supabase - Delete row if documents exists"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase - Retrieve documents from chatinput"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase Vector Store"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1788_Postgres_Code_Automation_Webhook",
+    "filename": "1788_Postgres_Code_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1788_Postgres_Code_Automation_Webhook.json",
+    "name": "Youtube Searcher",
+    "description": "Automated workflow: Youtube Searcher. This workflow integrates 11 different services: stickyNote, httpRequest, youTube, code, set. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "find_video_data1"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "fetch_last_registered"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "get_videos"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if_is_empty"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "insert_items"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "create_table"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "remove_shorts"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "create_query"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "structure_data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if_empty"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "already_populated"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "map_data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "sanitize_data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "see table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "drop table"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1942_Postgres_Wordpress_Automation_Webhook",
+    "filename": "1942_Postgres_Wordpress_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/1942_Postgres_Wordpress_Automation_Webhook.json",
+    "name": "RAG & GenAI App With WordPress Content",
+    "description": "Automated workflow: RAG & GenAI App With WordPress Content. This workflow integrates 24 different services: stickyNote, scheduleTrigger, merge, switch, lmChatOpenAi. It contains 63 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter1"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress - Get all posts"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress - Get all pages"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields1"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter - Only published &  unprotected content"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "HTML To Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Supabase - Store workflow execution"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every 30 seconds"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Wordpress - Get posts modified after last workflow execution"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Wordpress - Get posts modified after last workflow execution1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields2"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter - Only published and unprotected content"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Store documents on Supabase"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Store workflow execution id and timestamptz"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate documents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Create documents table"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Create workflow execution history table"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Wordpress Posts and Pages"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge retrieved WordPress posts and pages"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres - Filter on existing documents"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Supabase - Delete row if documents exists"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase - Retrieve documents from chatinput"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase Vector Store"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2014_Postgres_Webhook_Automation_Webhook",
+    "filename": "2014_Postgres_Webhook_Automation_Webhook.json",
+    "category": "Postgres",
+    "path": "workflows/Postgres/2014_Postgres_Webhook_Automation_Webhook.json",
+    "name": "Suspicious_login_detection",
+    "description": "Automated workflow: Suspicious_login_detection. This workflow integrates 15 different services: webhook, stickyNote, httpRequest, code, merge. It contains 56 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract relevant data"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "New /login event"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Unknown threat?"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Get last 10 logins from the same user"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Query IP API1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "New location?"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Parse User Agent"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "New Device/Browser?"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Complete login info"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Query user by ID"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "New Location"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "New Device/Browser"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "User has email?"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Inform user"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "noise?"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check trust level"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check classification"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "riot?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "🔴 Priority: HIGH"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "🟡 Priority: MEDIUM"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "🟢 Priority: LOW"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GreyNoise"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "IP API"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "UserParser"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Example event"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Known, Do Nothing"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Known Location"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Old Device/Browser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not Riot"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.code"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

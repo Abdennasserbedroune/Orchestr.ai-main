@@ -1,0 +1,433 @@
+[
+  {
+    "id": "1071_Googlecalendartool_Stickynote_Create_Triggered",
+    "filename": "1071_Googlecalendartool_Stickynote_Create_Triggered.json",
+    "category": "Googlecalendartool",
+    "path": "workflows/Googlecalendartool/1071_Googlecalendartool_Stickynote_Create_Triggered.json",
+    "name": "Build an MCP Server with Google Calendar",
+    "description": "Automated workflow: Build an MCP Server with Google Calendar. This workflow integrates 9 different services: stickyNote, agent, mcpClientTool, mcpTrigger, stopAndError. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "SearchEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "CreateEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "UpdateEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "DeleteEvent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Calendar MCP"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar MCP"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1247_Googlecalendartool_Stickynote_Automation_Triggered",
+    "filename": "1247_Googlecalendartool_Stickynote_Automation_Triggered.json",
+    "category": "Googlecalendartool",
+    "path": "workflows/Googlecalendartool/1247_Googlecalendartool_Stickynote_Automation_Triggered.json",
+    "name": "AI Agent : Google calendar assistant using OpenAI",
+    "description": "Automated workflow: AI Agent : Google calendar assistant using OpenAI. This workflow integrates 7 different services: stickyNote, agent, stopAndError, lmChatOpenAi, memoryBufferWindow. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar - Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar - Create events"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1792_Googlecalendartool_Executeworkflow_Automation_Triggered",
+    "filename": "1792_Googlecalendartool_Executeworkflow_Automation_Triggered.json",
+    "category": "Googlecalendartool",
+    "path": "workflows/Googlecalendartool/1792_Googlecalendartool_Executeworkflow_Automation_Triggered.json",
+    "name": "🤖Calendar Agent",
+    "description": "Automated workflow: 🤖Calendar Agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Try Again"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Success"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar Agent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event with Attendee"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Delete Event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Update Event"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1872_Googlecalendartool_Automation_Triggered",
+    "filename": "1872_Googlecalendartool_Automation_Triggered.json",
+    "category": "Googlecalendartool",
+    "path": "workflows/Googlecalendartool/1872_Googlecalendartool_Automation_Triggered.json",
+    "name": "MCP_CALENDAR",
+    "description": "Automated workflow: MCP_CALENDAR. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "GET_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "GET_ALL_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "DELETE_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "UPDATE_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "AVALIABILITY_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "CREATE_CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1928_Googlecalendartool_Stickynote_Automation_Triggered",
+    "filename": "1928_Googlecalendartool_Stickynote_Automation_Triggered.json",
+    "category": "Googlecalendartool",
+    "path": "workflows/Googlecalendartool/1928_Googlecalendartool_Stickynote_Automation_Triggered.json",
+    "name": "Reservation Medcin",
+    "description": "Automated workflow: Reservation Medcin. This workflow integrates 8 different services: stickyNote, agent, stopAndError, googleSheetsTool, lmChatOpenAi. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Check Availability"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Creat event"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Add data"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.googleSheetsTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

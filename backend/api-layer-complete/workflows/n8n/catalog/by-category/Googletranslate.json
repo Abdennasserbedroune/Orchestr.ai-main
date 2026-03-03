@@ -1,0 +1,122 @@
+[
+  {
+    "id": "0788_Googletranslate_Noop_Create_Webhook",
+    "filename": "0788_Googletranslate_Noop_Create_Webhook.json",
+    "category": "Googletranslate",
+    "path": "workflows/Googletranslate/0788_Googletranslate_Noop_Create_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 14 different services: stickyNote, httpRequest, googleTranslate, googleSheetsTrigger, agent. It contains 31 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.googleTranslate",
+        "name": "Google Translate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Trigger Added Row"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload Picture"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Picture"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call API Pexels"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Take initialText"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Image Link"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Final Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Pinyin and Example"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Fields"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "initialText is empty?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add Results in Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleTranslate",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleSheets"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

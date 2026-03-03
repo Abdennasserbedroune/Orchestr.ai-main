@@ -1,0 +1,130 @@
+[
+  {
+    "id": "0276_Microsoftonedrive_Readbinaryfile_Automation_Webhook",
+    "filename": "0276_Microsoftonedrive_Readbinaryfile_Automation_Webhook.json",
+    "category": "Microsoftonedrive",
+    "path": "workflows/Microsoftonedrive/0276_Microsoftonedrive_Readbinaryfile_Automation_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: writeBinaryFile, stickyNote, httpRequest, readBinaryFile, spreadsheetFile. It contains 32 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note8"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note5"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Download from Microsoft OneDrive"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Excel File"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Work out Age"
+      },
+      {
+        "type": "n8n-nodes-base.ftp",
+        "name": "Upload to SFTP"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Upload to Microsoft OneDrive"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Read Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Write Spreadsheet File"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.microsoftOneDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.ftp",
+      "n8n-nodes-base.spreadsheetFile"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

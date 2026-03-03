@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1521_Whatsapp_Stickynote_Automation_Webhook",
+    "filename": "1521_Whatsapp_Stickynote_Automation_Webhook.json",
+    "category": "Whatsapp",
+    "path": "workflows/Whatsapp/1521_Whatsapp_Stickynote_Automation_Webhook.json",
+    "name": "AI Customer-Support Assistant · WhatsApp Ready · Works for Any Business",
+    "description": "Automated workflow: AI Customer-Support Assistant · WhatsApp Ready · Works for Any Business. This workflow integrates 10 different services: stickyNote, code, toolHttpRequest, agent, memoryPostgresChat. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "list_links"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.whatsAppTrigger",
+        "name": "WhatsApp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "cleanAnswer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "get_page"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "24-hour window check"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Send Pre-approved Template Message to Reopen the Conversation"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Send AI Agent's Answer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Users Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.whatsAppTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2030_Whatsapp_Respondtowebhook_Automate_Webhook",
+    "filename": "2030_Whatsapp_Respondtowebhook_Automate_Webhook.json",
+    "category": "Whatsapp",
+    "path": "workflows/Whatsapp/2030_Whatsapp_Respondtowebhook_Automate_Webhook.json",
+    "name": "WhatsApp starter workflow",
+    "description": "Automated workflow: WhatsApp starter workflow. This workflow integrates 6 different services: webhook, stickyNote, respondToWebhook, stopAndError, if. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Verify"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.whatsApp",
+        "name": "Echo the message back"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is message?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Respond"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.whatsApp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

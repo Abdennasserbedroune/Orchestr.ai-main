@@ -1,0 +1,129 @@
+[
+  {
+    "id": "0113_Emailsend_GoogleDrive_Send_Triggered",
+    "filename": "0113_Emailsend_GoogleDrive_Send_Triggered.json",
+    "category": "Emailsend",
+    "path": "workflows/Emailsend/0113_Emailsend_GoogleDrive_Send_Triggered.json",
+    "name": "Googledrivetrigger Workflow",
+    "description": "Automated workflow: Googledrivetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.emailSend"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1628_Emailsend_Code_Automation_Webhook",
+    "filename": "1628_Emailsend_Code_Automation_Webhook.json",
+    "category": "Emailsend",
+    "path": "workflows/Emailsend/1628_Emailsend_Code_Automation_Webhook.json",
+    "name": "Property Lead Contact Enrichment from CRM",
+    "description": "Automated workflow: Property Lead Contact Enrichment from CRM. This workflow integrates 10 different services: stickyNote, httpRequest, spreadsheetFile, code, scheduleTrigger. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Daily Schedule"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search Properties API"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Configure Search Parameters"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Filter Property Results"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Owner Contact Info"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Format Lead Data"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Create Excel Spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Push to CRM"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Email Notification"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Summarize Results"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note - Workflow Overview"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note - Triggers"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note - Property Search"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note - Data Processing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note - Output"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

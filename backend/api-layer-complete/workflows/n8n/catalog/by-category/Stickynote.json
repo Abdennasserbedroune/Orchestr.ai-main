@@ -1,0 +1,4556 @@
+[
+  {
+    "id": "0281_Stickynote_Notion_Create_Webhook",
+    "filename": "0281_Stickynote_Notion_Create_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0281_Stickynote_Notion_Create_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 4 different services: webhook, stickyNote, stopAndError, notion. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "On new invoice in Clockify"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Create database page"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0325_Stickynote_Send_Triggered",
+    "filename": "0325_Stickynote_Send_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0325_Stickynote_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 8 different services: stickyNote, toolSerpApi, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0332_Stickynote_Send_Triggered",
+    "filename": "0332_Stickynote_Send_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0332_Stickynote_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 4 different services: lmOpenHuggingFaceInference, stickyNote, chainLlm, chatTrigger. It contains 4 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Hugging Face Inference Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0368_Stickynote_Webhook_Automate_Webhook",
+    "filename": "0368_Stickynote_Webhook_Automate_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0368_Stickynote_Webhook_Automate_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 4 different services: webhook, stickyNote, set, stopAndError. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0378_Stickynote_Notion_Automate_Webhook",
+    "filename": "0378_Stickynote_Notion_Automate_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0378_Stickynote_Notion_Automate_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 4 different services: webhook, stickyNote, stopAndError, notion. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "POST"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0407_Stickynote_Send_Triggered",
+    "filename": "0407_Stickynote_Send_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0407_Stickynote_Send_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: stickyNote, stopAndError, memoryBufferWindow, openAi, toolCalculator. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0573_Stickynote_Notion_Send_Webhook",
+    "filename": "0573_Stickynote_Notion_Send_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0573_Stickynote_Notion_Send_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 9 different services: stickyNote, toolHttpRequest, agent, set, stopAndError. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search notion database"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get database details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search inside database record"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format schema"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0574_Stickynote_Notion_Create_Triggered",
+    "filename": "0574_Stickynote_Notion_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0574_Stickynote_Notion_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: textClassifier, stickyNote, code, agent, outputParserStructured. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return success to chat"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set schema for eval"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return error to chat"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "standardize schema"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Simplify properties object"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Set input data"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set schem for rerun"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add feedback prompt"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check for WF JSON errors"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Workflow Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Valid n8n workflow JSON?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0684_Stickynote_Respondtowebhook_Send_Webhook",
+    "filename": "0684_Stickynote_Respondtowebhook_Send_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0684_Stickynote_Respondtowebhook_Send_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 7 different services: webhook, stickyNote, switch, respondToWebhook, set. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Incident ID from Response"
+      },
+      {
+        "type": "n8n-nodes-base.serviceNow",
+        "name": "Search For Incident in ServiceNow"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Send Incident Details to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Notify User no Incident was Found"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Notify User of Error with ServiceNow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Parse ServiceNow Response"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.serviceNow",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0689_Stickynote_Gmail_Create_Triggered",
+    "filename": "0689_Stickynote_Gmail_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0689_Stickynote_Gmail_Create_Triggered.json",
+    "name": "Gmailtrigger Workflow",
+    "description": "Automated workflow: Gmailtrigger Workflow. This workflow integrates 8 different services: stickyNote, wait, gmailTrigger, gmailTool, agent. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - read labels"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - get message"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - add label to message"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - create label"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gmail labelling agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0727_Stickynote_Create_Webhook",
+    "filename": "0727_Stickynote_Create_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0727_Stickynote_Create_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 8 different services: stickyNote, toolHttpRequest, agent, stopAndError, toolWikipedia. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On new manual Chat Message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Weather HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0755_Stickynote_Send_Webhook",
+    "filename": "0755_Stickynote_Send_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0755_Stickynote_Send_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic SSH commands"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Execute SSH"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI SysAdmin"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0796_Stickynote_Gmail_Create_Triggered",
+    "filename": "0796_Stickynote_Gmail_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0796_Stickynote_Gmail_Create_Triggered.json",
+    "name": "Gmailtrigger Workflow",
+    "description": "Automated workflow: Gmailtrigger Workflow. This workflow integrates 9 different services: textClassifier, stickyNote, gmailTrigger, lmChatGoogleGemini, stopAndError. It contains 20 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "GuestPost Inquiry"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Youtube Video Inquiry"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Mark as Read"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Apply Label"
+      },
+      {
+        "type": "n8n-nodes-base.sendInBlue",
+        "name": "Create Contact in Brevo"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Emails from Existing Contracts"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Reply"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.sendInBlue",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0873_Stickynote_Postgrestool_Create_Triggered",
+    "filename": "0873_Stickynote_Postgrestool_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0873_Stickynote_Postgrestool_Create_Triggered.json",
+    "name": "Postgrestool Workflow",
+    "description": "Automated workflow: Postgrestool Workflow. This workflow integrates 7 different services: postgresTool, stickyNote, switch, mcpTrigger, postgres. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "GetTableSchema"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "ListTables"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CreateTableRecords"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "ReadTableRecord"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Operation"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "UpdateTableRecord"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "UpdateTableRecords"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "CreateTableRecord"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ReadTableRows"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "PostgreSQL MCP Server"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0874_Stickynote_Executeworkflow_Create_Triggered",
+    "filename": "0874_Stickynote_Executeworkflow_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0874_Stickynote_Executeworkflow_Create_Triggered.json",
+    "name": "Executeworkflowtrigger Workflow",
+    "description": "Automated workflow: Executeworkflowtrigger Workflow. This workflow integrates 7 different services: stickyNote, code, switch, mcpTrigger, toolCode. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Operation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SQLite MCP Server"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "CreateRecord"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "UpdateRecord"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "ReadRecords"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DescribeTables"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ListTables"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CreateRecords"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "UpdateRows"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ReadRows"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0893_Stickynote_Emailreadimap_Create",
+    "filename": "0893_Stickynote_Emailreadimap_Create.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0893_Stickynote_Emailreadimap_Create.json",
+    "name": "Hubspot Workflow",
+    "description": "Automated workflow: Hubspot Workflow. This workflow integrates 9 different services: stickyNote, hubspot, chainLlm, outputParserStructured, set. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Creates an email engagement"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Search for the contact via email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Parse the mail with AI"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "When an email is received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Set the output Json"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "contact exists?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Creates contact"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0978_Stickynote_GoogleDrive_Automate_Triggered",
+    "filename": "0978_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/0978_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "name": "Automated Image Metadata Tagging (Community Node)",
+    "description": "Automated workflow: Automated Image Metadata Tagging (Community Node). This workflow integrates 7 different services: stickyNote, googleDriveTrigger, merge, googleDrive, stopAndError. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Trigger: New file added to Google Drive Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Image File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Analyze Image Content"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Metadata and Image File"
+      },
+      {
+        "type": "n8n-nodes-exif-data.exifData",
+        "name": "Write Metadata into Image"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Update Image File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-exif-data.exifData",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1104_Stickynote_Create_Triggered",
+    "filename": "1104_Stickynote_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1104_Stickynote_Create_Triggered.json",
+    "name": "💥🛠️Build a Web Search Chatbot with GPT-4o and MCP Brave Search",
+    "description": "Automated workflow: 💥🛠️Build a Web Search Chatbot with GPT-4o and MCP Brave Search. This workflow integrates 7 different services: stickyNote, agent, mcpClientTool, stopAndError, lmChatOpenAi. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-mcp.mcpClientTool",
+        "name": "MCP Get Brave Tools"
+      },
+      {
+        "type": "n8n-nodes-mcp.mcpClientTool",
+        "name": "MCP Execute Brave Search"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-mcp.mcpClientTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1141_Stickynote_GoogleDrive_Automate_Triggered",
+    "filename": "1141_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1141_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "name": "RAG Workflow For Company Documents stored in Google Drive",
+    "description": "Automated workflow: RAG Workflow For Company Documents stored in Google Drive. This workflow integrates 13 different services: stickyNote, vectorStorePinecone, embeddingsGoogleGemini, googleDriveTrigger, textSplitterRecursiveCharacterTextSplitter. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pinecone Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Google Gemini"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pinecone Vector Store (Retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Google Gemini (retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download File From Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive File Updated"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive File Created"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model (retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1253_Stickynote_Automation_Webhook",
+    "filename": "1253_Stickynote_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1253_Stickynote_Automation_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 8 different services: stickyNote, toolHttpRequest, agent, stopAndError, toolWikipedia. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On new manual Chat Message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Weather HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1268_Stickynote_Hackernews_Automate_Triggered",
+    "filename": "1268_Stickynote_Hackernews_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1268_Stickynote_Hackernews_Automate_Triggered.json",
+    "name": "Manualchattrigger Workflow",
+    "description": "Automated workflow: Manualchattrigger Workflow. This workflow integrates 10 different services: stickyNote, code, agent, set, hackerNews. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On new manual Chat Message"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hackerNews",
+        "name": "Hacker News"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Clean up data"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Stringify"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Custom tool to call the wf below"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.hackerNews",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1269_Stickynote_Automate_Triggered",
+    "filename": "1269_Stickynote_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1269_Stickynote_Automate_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 8 different services: stickyNote, toolSerpApi, agent, stopAndError, toolWikipedia. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On new manual Chat Message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1353_Stickynote_Gmail_Send_Triggered",
+    "filename": "1353_Stickynote_Gmail_Send_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1353_Stickynote_Gmail_Send_Triggered.json",
+    "name": "Gmailtrigger Workflow",
+    "description": "Automated workflow: Gmailtrigger Workflow. This workflow integrates 8 different services: stickyNote, wait, gmailTrigger, gmailTool, agent. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - read labels"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - get message"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - add label to message"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Gmail - create label"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gmail labelling agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1379_Stickynote_Automation_Triggered",
+    "filename": "1379_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1379_Stickynote_Automation_Triggered.json",
+    "name": "Chat with local LLMs using n8n and Ollama",
+    "description": "Automated workflow: Chat with local LLMs using n8n and Ollama. This workflow integrates 4 different services: stickyNote, chainLlm, lmChatOllama, chatTrigger. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1507_Stickynote_Executeworkflow_Automation_Webhook",
+    "filename": "1507_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1507_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "name": "CoinMarketCap_DEXScan_Agent_Tool",
+    "description": "Automated workflow: CoinMarketCap_DEXScan_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 32 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CoinMarketCap DEXScan Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEXScan Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEXScan Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Metadata"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Networks List"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Listings Quotes"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Pair Quotes Latest"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX OHLCV Historical"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX OHLCV Latest"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Trades Latest"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DEX Spot Pairs Latest"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "DEXScan Agent Guide"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "DEX Usage + Examples"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "DEX Errors + IP Notice"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1509_Stickynote_Automation_Webhook",
+    "filename": "1509_Stickynote_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1509_Stickynote_Automation_Webhook.json",
+    "name": "Integrating AI with Open-Meteo API for Enhanced Weather Forecasting",
+    "description": "Automated workflow: Integrating AI with Open-Meteo API for Enhanced Weather Forecasting. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generic AI Tool Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory Buffer"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "A tool to get the weather forecast based on geolocation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "A tool for inputting the city and obtaining geolocation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1534_Stickynote_Googlecalendartool_Automation_Triggered",
+    "filename": "1534_Stickynote_Googlecalendartool_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1534_Stickynote_Googlecalendartool_Automation_Triggered.json",
+    "name": "Personal Assistant MCP server",
+    "description": "Automated workflow: Personal Assistant MCP server. This workflow integrates 11 different services: stickyNote, lmChatGoogleGemini, gmailTool, mcpClientTool, agent. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Server Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Client"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Update event"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Draft email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Personal Assistant"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Add new row"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Find row"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "Update row"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Find emails"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Find single event"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Find multiple events"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheetsTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1557_Stickynote_Automation_Triggered",
+    "filename": "1557_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1557_Stickynote_Automation_Triggered.json",
+    "name": "🔐🦙🤖 Private & Local Ollama Self-Hosted LLM Router",
+    "description": "Automated workflow: 🔐🦙🤖 Private & Local Ollama Self-Hosted LLM Router. This workflow integrates 5 different services: stickyNote, agent, memoryBufferWindow, lmChatOllama, chatTrigger. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Dynamic LLM"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LLM Router"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent with Dynamic LLM"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama phi4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Router Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agent Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1567_Stickynote_Automation_Webhook",
+    "filename": "1567_Stickynote_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1567_Stickynote_Automation_Webhook.json",
+    "name": "Integrating AI with Open-Meteo API for Enhanced Weather Forecasting",
+    "description": "Automated workflow: Integrating AI with Open-Meteo API for Enhanced Weather Forecasting. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generic AI Tool Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory Buffer"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "A tool to get the weather forecast based on geolocation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "A tool for inputting the city and obtaining geolocation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1568_Stickynote_Notion_Automation_Triggered",
+    "filename": "1568_Stickynote_Notion_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1568_Stickynote_Notion_Automation_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: textClassifier, stickyNote, code, agent, outputParserStructured. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return success to chat"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set schema for eval"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return error to chat"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "standardize schema"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Simplify properties object"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Set input data"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set schem for rerun"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Add feedback prompt"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check for WF JSON errors"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Workflow Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Valid n8n workflow JSON?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1569_Stickynote_Notion_Automation_Webhook",
+    "filename": "1569_Stickynote_Notion_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1569_Stickynote_Notion_Automation_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 9 different services: stickyNote, toolHttpRequest, agent, set, stopAndError. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search notion database"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get database details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search inside database record"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format schema"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1624_Stickynote_Executeworkflow_Automation_Webhook",
+    "filename": "1624_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1624_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "name": "CoinMarketCap_Crypto_Agent_Tool",
+    "description": "Automated workflow: CoinMarketCap_Crypto_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CoinMarketCap Crypto Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CoinMarketCap Price"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto Map"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto Info"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto Listings"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Global Metrics"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Price Conversion"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Crypto Agent Guide"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Usage & Examples"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Errors & Licensing"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1626_Stickynote_GoogleDrive_Automate_Triggered",
+    "filename": "1626_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1626_Stickynote_GoogleDrive_Automate_Triggered.json",
+    "name": "RAG Workflow For Company Documents stored in Google Drive",
+    "description": "Automated workflow: RAG Workflow For Company Documents stored in Google Drive. This workflow integrates 13 different services: stickyNote, vectorStorePinecone, embeddingsGoogleGemini, googleDriveTrigger, textSplitterRecursiveCharacterTextSplitter. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pinecone Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Google Gemini"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pinecone Vector Store (Retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Google Gemini (retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download File From Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive File Updated"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive File Created"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model (retrieval)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1682_Stickynote_Notion_Automation_Triggered",
+    "filename": "1682_Stickynote_Notion_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1682_Stickynote_Notion_Automation_Triggered.json",
+    "name": "Whisper Transkription copy",
+    "description": "Automated workflow: Whisper Transkription copy. This workflow integrates 6 different services: stickyNote, googleDriveTrigger, googleDrive, stopAndError, notion. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1691_Stickynote_Automation_Triggered",
+    "filename": "1691_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1691_Stickynote_Automation_Triggered.json",
+    "name": "🗨️Ollama Chat",
+    "description": "Automated workflow: 🗨️Ollama Chat. This workflow integrates 5 different services: stickyNote, lmOllama, chainLlm, set, chatTrigger. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Structured Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Error Response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "JSON to Object"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1698_Stickynote_Notion_Automation_Triggered",
+    "filename": "1698_Stickynote_Notion_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1698_Stickynote_Notion_Automation_Triggered.json",
+    "name": "Whisper Transkription copy",
+    "description": "Automated workflow: Whisper Transkription copy. This workflow integrates 6 different services: stickyNote, googleDriveTrigger, googleDrive, stopAndError, notion. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1703_Stickynote_Webhook_Automation_Webhook",
+    "filename": "1703_Stickynote_Webhook_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1703_Stickynote_Webhook_Automation_Webhook.json",
+    "name": "Travel Planning Agent with Couchbase Vector Search, Gemini 2.0 Flash and OpenAI",
+    "description": "Automated workflow: Travel Planning Agent with Couchbase Vector Search, Gemini 2.0 Flash and OpenAI. This workflow integrates 11 different services: webhook, stickyNote, textSplitterRecursiveCharacterTextSplitter, vectorStoreCouchbaseSearch, lmChatGoogleGemini. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Travel Agent"
+      },
+      {
+        "type": "n8n-nodes-couchbase.vectorStoreCouchbaseSearch",
+        "name": "Retrieve docs with Couchbase Search Vector"
+      },
+      {
+        "type": "n8n-nodes-couchbase.vectorStoreCouchbaseSearch",
+        "name": "Insert docs with Couchbase Search Vector"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate OpenAI Embeddings using text-embedding-3-small"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate OpenAI Embeddings using text-embedding-3-small1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-couchbase.vectorStoreCouchbaseSearch"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1719_Stickynote_Automation_Triggered",
+    "filename": "1719_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1719_Stickynote_Automation_Triggered.json",
+    "name": "Use any LLM-Model via OpenRouter",
+    "description": "Automated workflow: Use any LLM-Model via OpenRouter. This workflow integrates 7 different services: stickyNote, agent, set, stopAndError, lmChatOpenAi. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LLM Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1734_Stickynote_Automation_Triggered",
+    "filename": "1734_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1734_Stickynote_Automation_Triggered.json",
+    "name": "Use any LLM-Model via OpenRouter",
+    "description": "Automated workflow: Use any LLM-Model via OpenRouter. This workflow integrates 7 different services: stickyNote, agent, set, stopAndError, lmChatOpenAi. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LLM Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1779_Stickynote_Executeworkflow_Automation_Webhook",
+    "filename": "1779_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1779_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "name": "OpenSea NFT Agent Tool",
+    "description": "Automated workflow: OpenSea NFT Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 38 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NFT Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NFT Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea NFT Agent"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Workflow Input Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Account"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Collections"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Contract"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get NFT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get NFTs by Account"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get NFTs by Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get NFTs by Contract"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Payment Token"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Traits"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1804_Stickynote_Automation_Triggered",
+    "filename": "1804_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1804_Stickynote_Automation_Triggered.json",
+    "name": "Chat with local LLMs using n8n and Ollama",
+    "description": "Automated workflow: Chat with local LLMs using n8n and Ollama. This workflow integrates 4 different services: stickyNote, chainLlm, lmChatOllama, chatTrigger. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1816_Stickynote_Executeworkflow_Automation_Webhook",
+    "filename": "1816_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1816_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "name": "OpenSea Marketplace Agent Tool",
+    "description": "Automated workflow: OpenSea Marketplace Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 38 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Marketplace Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Marketplace Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Marketplace Agent"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Workflow Input Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get All Listings by Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get All Offers by Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Best Listing by NFT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Best Listings by Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Best Offer by NFT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Collection Offers"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Item Offers"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Listings"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Trait Offers"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Order"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1846_Stickynote_Executeworkflow_Automate_Triggered",
+    "filename": "1846_Stickynote_Executeworkflow_Automate_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1846_Stickynote_Executeworkflow_Automate_Triggered.json",
+    "name": "My workflow",
+    "description": "Automated workflow: My workflow. This workflow integrates 6 different services: stickyNote, code, chainLlm, outputParserStructured, lmChatOpenRouter. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LLM Bus"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Conform JSON"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1899_Stickynote_Airtabletool_Create_Triggered",
+    "filename": "1899_Stickynote_Airtabletool_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1899_Stickynote_Airtabletool_Create_Triggered.json",
+    "name": "Build an MCP server with Airtable",
+    "description": "Automated workflow: Build an MCP server with Airtable. This workflow integrates 9 different services: stickyNote, agent, mcpClientTool, mcpTrigger, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Airtable MCP Client"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Server Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Get"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Search"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Update"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Delete"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Create"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1902_Stickynote_Executeworkflow_Update_Webhook",
+    "filename": "1902_Stickynote_Executeworkflow_Update_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1902_Stickynote_Executeworkflow_Update_Webhook.json",
+    "name": "CoinMarketCap_Exchange_and_Community_Agent_Tool",
+    "description": "Automated workflow: CoinMarketCap_Exchange_and_Community_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CoinMarketCap Exchange and Community Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Exchange and Community Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Exchange and Community Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Exchange Map"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Exchange Info"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CMC 100 Index"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Fear and Greed Latest"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Exchange Assets"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Exchange & Community Guide"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Usage & Examples"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Errors & Licensing"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1907_Stickynote_Converttofile_Automation_Triggered",
+    "filename": "1907_Stickynote_Converttofile_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1907_Stickynote_Converttofile_Automation_Triggered.json",
+    "name": "Business Canvas Generator",
+    "description": "Automated workflow: Business Canvas Generator. This workflow integrates 8 different services: convertToFile, stickyNote, code, agent, merge. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Key Partners Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Key Activities Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Value Proposition Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Customer Relationship Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Customer Segments Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Key Resources Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Channels Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Cost Structure Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Title Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Revenue Streams Generator"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Key Partners HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Key Activities HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Values proposition HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Customer Relationship HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Customer Segments HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Key Resources HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Channels HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Revenue streams HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Cost Structure HTML Transformer"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Turn to HTML"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "HTML code to HTML file"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge All Data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1926_Stickynote_Splitinbatches_Automation_Triggered",
+    "filename": "1926_Stickynote_Splitinbatches_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1926_Stickynote_Splitinbatches_Automation_Triggered.json",
+    "name": "Multi-Agent Conversation",
+    "description": "Automated workflow: Multi-Agent Conversation. This workflow integrates 9 different services: stickyNote, code, agent, set, memoryBufferWindow. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract mentions"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set last Assistant message as input"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set user message as input"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "First loop?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set lastAssistantMessage"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Combine and format responses"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Define Global Settings"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Define Agent Settings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1927_Stickynote_Automation_Triggered",
+    "filename": "1927_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1927_Stickynote_Automation_Triggered.json",
+    "name": "SearchApi AI Agent",
+    "description": "Automated workflow: SearchApi AI Agent. This workflow integrates 7 different services: stickyNote, agent, stopAndError, lmChatOpenAi, memoryBufferWindow. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SearchApi"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1947_Stickynote_Supabasetool_Automation_Triggered",
+    "filename": "1947_Stickynote_Supabasetool_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1947_Stickynote_Supabasetool_Automation_Triggered.json",
+    "name": "MCP_SUPABASE_AGENT",
+    "description": "Automated workflow: MCP_SUPABASE_AGENT. This workflow integrates 6 different services: stickyNote, supabaseTool, mcpTrigger, stopAndError, embeddingsOpenAi. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP_SUPABASE"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "RAG"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "DELETE_ROW_INSCRICOES_CURSOS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_ROW_AGENT_MESSAGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "CREATE_ROW_AGENT_MESSAGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "DELETE_ROW_AGENT_MESSAGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "UPDATE_ROW_AGENT_MESSAGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_MANY_ROW_AGENT_MESSAGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "CREATE_ROW_AGENT_TASKS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_ROW_AGENT_TASKS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "DELETE_ROW_AGENT_TASKS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "UPDATE_ROW_AGENT_TASKS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_MANY_ROW_AGENT_TASKS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "CREATE_ROW_AGENT_STATUS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_ROW_AGENT_STATUS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "DELETE_ROW_AGENT_STATUS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "UPDATE_ROW_AGENT_STATUS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_MANY_ROW_AGENT_STATUS"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "CREATE_ROW_AGENT_KNOWLEDGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_ROW_AGENT_KNOWLEDGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "UPDATE_ROW_INSCRICOES_AGENT_KNOWLEDGE"
+      },
+      {
+        "type": "n8n-nodes-base.supabaseTool",
+        "name": "GET_MANY_ROW_AGENT_KNOWLEDGE"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.supabaseTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1986_Stickynote_Jira_Create_Webhook",
+    "filename": "1986_Stickynote_Jira_Create_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1986_Stickynote_Jira_Create_Webhook.json",
+    "name": "Create_Unique_Jira_tickets_from_Splunk_alerts",
+    "description": "Automated workflow: Create_Unique_Jira_tickets_from_Splunk_alerts. This workflow integrates 6 different services: webhook, stickyNote, set, stopAndError, jira. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Add Ticket Comment"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Search Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Host Name"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF Ticket Not Exists"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Create Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1987_Stickynote_Airtable_Create_Triggered",
+    "filename": "1987_Stickynote_Airtable_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/1987_Stickynote_Airtable_Create_Triggered.json",
+    "name": "Sync New Files From Google Drive with Airtable",
+    "description": "Automated workflow: Sync New Files From Google Drive with Airtable. This workflow integrates 5 different services: stickyNote, googleDriveTrigger, airtable, googleDrive, stopAndError. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Share File with Recipient"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": " Log File Metadata"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2009_Stickynote_Automate_Webhook",
+    "filename": "2009_Stickynote_Automate_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2009_Stickynote_Automate_Webhook.json",
+    "name": "🌐🪛 AI Agent Chatbot with Jina.ai Webpage Scraper",
+    "description": "Automated workflow: 🌐🪛 AI Agent Chatbot with Jina.ai Webpage Scraper. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note14"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Jina.ai Web Scraping Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Jina.ai Web Scraper Tool"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2015_Stickynote_Automation_Triggered",
+    "filename": "2015_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2015_Stickynote_Automation_Triggered.json",
+    "name": "Discord MCP Chat Agent",
+    "description": "Automated workflow: Discord MCP Chat Agent. This workflow integrates 6 different services: stickyNote, agent, mcpClientTool, stopAndError, lmChatOpenAi. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Discord MCP Client"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2023_Stickynote_Create_Triggered",
+    "filename": "2023_Stickynote_Create_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2023_Stickynote_Create_Triggered.json",
+    "name": "Build Custom AI Agent with LangChain & Gemini (Self-Hosted)",
+    "description": "Automated workflow: Build Custom AI Agent with LangChain & Gemini (Self-Hosted). This workflow integrates 6 different services: stickyNote, code, lmChatGoogleGemini, stopAndError, memoryBufferWindow. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Store conversation history"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Construct & Execute LLM Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2027_Stickynote_Executeworkflow_Automation_Webhook",
+    "filename": "2027_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2027_Stickynote_Executeworkflow_Automation_Webhook.json",
+    "name": "OpenSea Analytics Agent Tool",
+    "description": "Automated workflow: OpenSea Analytics Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Analytics Agent Brain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Analytics Agent Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Collection Stats"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Analytics Agent"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Workflow Input Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Events by Account"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Events by Collection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenSea Get Events by NFT"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2039_Stickynote_Webhook_Automation_Webhook",
+    "filename": "2039_Stickynote_Webhook_Automation_Webhook.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2039_Stickynote_Webhook_Automation_Webhook.json",
+    "name": "Travel AssistantAgent",
+    "description": "Automated workflow: Travel AssistantAgent. This workflow integrates 11 different services: webhook, stickyNote, textSplitterRecursiveCharacterTextSplitter, lmChatGoogleGemini, agent. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MongoDB Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MongoDB Atlas Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Traveling Planner Agent"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MongoDB Atlas Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2048_Stickynote_Automation_Triggered",
+    "filename": "2048_Stickynote_Automation_Triggered.json",
+    "category": "Stickynote",
+    "path": "workflows/Stickynote/2048_Stickynote_Automation_Triggered.json",
+    "name": "🗨️Ollama Chat",
+    "description": "Automated workflow: 🗨️Ollama Chat. This workflow integrates 5 different services: stickyNote, lmOllama, chainLlm, set, chatTrigger. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Structured Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Error Response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "JSON to Object"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

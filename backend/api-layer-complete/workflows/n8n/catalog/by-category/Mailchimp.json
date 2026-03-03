@@ -1,0 +1,76 @@
+[
+  {
+    "id": "0345_Mailchimp_Cron_Create_Scheduled",
+    "filename": "0345_Mailchimp_Cron_Create_Scheduled.json",
+    "category": "Mailchimp",
+    "path": "workflows/Mailchimp/0345_Mailchimp_Cron_Create_Scheduled.json",
+    "name": "Create entry in Mailchimp from Airtable",
+    "description": "Automated workflow: Create entry in Mailchimp from Airtable. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.mailchimp",
+        "name": "Mailchimp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.mailchimp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0989_Mailchimp_Automate_Triggered",
+    "filename": "0989_Mailchimp_Automate_Triggered.json",
+    "category": "Mailchimp",
+    "path": "workflows/Mailchimp/0989_Mailchimp_Automate_Triggered.json",
+    "name": "Mailchimptrigger Workflow",
+    "description": "Automated workflow: Mailchimptrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mailchimpTrigger",
+        "name": "Mailchimp Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mailchimpTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

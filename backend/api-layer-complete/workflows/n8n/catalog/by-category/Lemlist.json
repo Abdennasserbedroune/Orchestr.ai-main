@@ -1,0 +1,286 @@
+[
+  {
+    "id": "0283_Lemlist_Slack_Create_Webhook",
+    "filename": "0283_Lemlist_Slack_Create_Webhook.json",
+    "category": "Lemlist",
+    "path": "workflows/Lemlist/0283_Lemlist_Slack_Create_Webhook.json",
+    "name": "Lemlist Workflow",
+    "description": "Automated workflow: Lemlist Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.lemlist",
+        "name": "Lemlist - Unsubscribe"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "follow up task"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "lemlist - Mark as interested"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot - Create Deal"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot - Get contact ID"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot - Get contact ID1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack1"
+      },
+      {
+        "type": "n8n-nodes-base.lemlistTrigger",
+        "name": "Lemlist - Lead Replied"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "OpenAI"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.lemlist",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.lemlistTrigger",
+      "n8n-nodes-base.openAi"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0504_Lemlist_Slack_Create_Webhook",
+    "filename": "0504_Lemlist_Slack_Create_Webhook.json",
+    "category": "Lemlist",
+    "path": "workflows/Lemlist/0504_Lemlist_Slack_Create_Webhook.json",
+    "name": "Markdown Workflow",
+    "description": "Automated workflow: Markdown Workflow. This workflow integrates 12 different services: stickyNote, markdown, httpRequest, chainLlm, outputParserStructured. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Format text with Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.lemlistTrigger",
+        "name": "Lemlist Trigger - On new reply"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send alert to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.lemlist",
+        "name": "Lemlist - Unsubscribe"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "lemlist - Mark as interested"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Categorize lemlist reply"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route reply to the right branch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.lemlistTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.lemlist",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1382_Lemlist_Slack_Automate_Webhook",
+    "filename": "1382_Lemlist_Slack_Automate_Webhook.json",
+    "category": "Lemlist",
+    "path": "workflows/Lemlist/1382_Lemlist_Slack_Automate_Webhook.json",
+    "name": "Markdown Workflow",
+    "description": "Automated workflow: Markdown Workflow. This workflow integrates 12 different services: stickyNote, markdown, httpRequest, chainLlm, outputParserStructured. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Format text with Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.lemlistTrigger",
+        "name": "Lemlist Trigger - On new reply"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send alert to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.lemlist",
+        "name": "Lemlist - Unsubscribe"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "lemlist - Mark as interested"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Categorize lemlist reply"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route reply to the right branch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.lemlistTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.lemlist",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,215 @@
+[
+  {
+    "id": "0977_Odoo_Code_Import_Scheduled",
+    "filename": "0977_Odoo_Code_Import_Scheduled.json",
+    "category": "Odoo",
+    "path": "workflows/Odoo/0977_Odoo_Code_Import_Scheduled.json",
+    "name": "Import Odoo Product Images from Google Drive",
+    "description": "Automated workflow: Import Odoo Product Images from Google Drive. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter Images"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Find Files"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Decorate Images"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Move Images"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Sum Images"
+      },
+      {
+        "type": "n8n-nodes-base.googleChat",
+        "name": "Announce"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Find Templates"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Images Templates"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Update Images Templates"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Find Products"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Images Products"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Update Images Products"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Convert Base64 Images Templates"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Convert Base64 Images Products"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Search Old Images"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Drop Old Images"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Click Manual"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.googleChat",
+      "n8n-nodes-base.odoo",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1929_Odoo_Schedule_Automate_Scheduled",
+    "filename": "1929_Odoo_Schedule_Automate_Scheduled.json",
+    "category": "Odoo",
+    "path": "workflows/Odoo/1929_Odoo_Schedule_Automate_Scheduled.json",
+    "name": "ERP AI chatbot for Odoo sales module",
+    "description": "Automated workflow: ERP AI chatbot for Odoo sales module. This workflow integrates 16 different services: convertToFile, stickyNote, scheduleTrigger, agent, readWriteFile. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Save Summary to File"
+      },
+      {
+        "type": "n8n-nodes-base.odoo",
+        "name": "Get All Opportunities from Odoo"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Read Summary From File"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Summary Exists"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Merge Opportunities"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract Text From File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Conversational Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize Opportunities"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Summarization Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.odoo",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

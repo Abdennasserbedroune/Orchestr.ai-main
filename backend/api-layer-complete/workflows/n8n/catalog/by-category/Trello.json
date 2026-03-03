@@ -1,0 +1,313 @@
+[
+  {
+    "id": "0044_Trello_Googlecloudnaturallanguage_Automate_Triggered",
+    "filename": "0044_Trello_Googlecloudnaturallanguage_Automate_Triggered.json",
+    "category": "Trello",
+    "path": "workflows/Trello/0044_Trello_Googlecloudnaturallanguage_Automate_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Google Cloud Natural Language"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Trello"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0053_Trello_GoogleCalendar_Create_Scheduled",
+    "filename": "0053_Trello_GoogleCalendar_Create_Scheduled.json",
+    "category": "Trello",
+    "path": "workflows/Trello/0053_Trello_GoogleCalendar_Create_Scheduled.json",
+    "name": "Function Workflow",
+    "description": "Automated workflow: Function Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Get Start & End of day"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Trello Card Details"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Remove Recurring Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Get Todays Events"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Split Events In Batches"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Create Trello Cards"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Delete Task"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Trigger Every Day at 8am"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0076_Trello_Update_Triggered",
+    "filename": "0076_Trello_Update_Triggered.json",
+    "category": "Trello",
+    "path": "workflows/Trello/0076_Trello_Update_Triggered.json",
+    "name": "Receive updates for changes in the specified list in Trello",
+    "description": "Automated workflow: Receive updates for changes in the specified list in Trello. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.trelloTrigger",
+        "name": "Trello Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.trelloTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1298_Trello_Googlecloudnaturallanguage_Create_Triggered",
+    "filename": "1298_Trello_Googlecloudnaturallanguage_Create_Triggered.json",
+    "category": "Trello",
+    "path": "workflows/Trello/1298_Trello_Googlecloudnaturallanguage_Create_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Google Cloud Natural Language"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Trello"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1302_Trello_Limit_Automate_Scheduled",
+    "filename": "1302_Trello_Limit_Automate_Scheduled.json",
+    "category": "Trello",
+    "path": "workflows/Trello/1302_Trello_Limit_Automate_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 11 different services: filter, stickyNote, code, scheduleTrigger, trello. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Read Testing Catalog"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Transform date"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter by date (more than 7 days)"
+      },
+      {
+        "type": "n8n-nodes-base.sort",
+        "name": "Sort by date"
+      },
+      {
+        "type": "n8n-nodes-base.limit",
+        "name": "Limit news to x"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Transform new to MD"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Publish comment"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send revision email"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Read marktechpost"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Read"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.sort",
+      "n8n-nodes-base.limit",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

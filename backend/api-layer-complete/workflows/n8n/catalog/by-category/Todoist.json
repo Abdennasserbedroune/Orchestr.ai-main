@@ -1,0 +1,133 @@
+[
+  {
+    "id": "1749_Todoist_Schedule_Send_Scheduled",
+    "filename": "1749_Todoist_Schedule_Send_Scheduled.json",
+    "category": "Todoist",
+    "path": "workflows/Todoist/1749_Todoist_Schedule_Send_Scheduled.json",
+    "name": "Email mailbox as Todoist tasks",
+    "description": "Automated workflow: Email mailbox as Todoist tasks. This workflow integrates 13 different services: stickyNote, scheduleTrigger, agent, outputParserStructured, merge. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Mark As Read"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Star"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get Starred From Inbox"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get Unread From Inbox"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Task Not Exist"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structure Output Todoist Ready"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If AI responded properly"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Create Todoist Task"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get Full Message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize Message"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Enrich Emails With Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Enrich Tasks with Emails"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Email Unstarred (Not Exist)"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Close Task"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Starred and Unread Messages"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Get Open Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.todoist",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

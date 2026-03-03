@@ -1,0 +1,160 @@
+[
+  {
+    "id": "1184_Debughelper_HTTP_Create_Webhook",
+    "filename": "1184_Debughelper_HTTP_Create_Webhook.json",
+    "category": "Debughelper",
+    "path": "workflows/Debughelper/1184_Debughelper_HTTP_Create_Webhook.json",
+    "name": "Build your first AI MCP Server",
+    "description": "Automated workflow: Build your first AI MCP Server. This workflow integrates 15 different services: stickyNote, httpRequest, agent, mcpClientTool, switch. It contains 39 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "SearchEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "CreateEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "UpdateEvent"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "DeleteEvent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Calendar MCP"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Convert Text to Upper Case"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Convert Text to Lower Case"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Convert Text"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar MCP"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "My Functions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "My Functions Server"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.debugHelper",
+        "name": "Random user data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate random user data"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return only some fields"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Joke Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Random Jokes"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4o"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.debugHelper",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

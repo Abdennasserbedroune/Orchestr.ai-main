@@ -1,0 +1,84 @@
+[
+  {
+    "id": "0186_Quickbooks_Onfleet_Create_Triggered",
+    "filename": "0186_Quickbooks_Onfleet_Create_Triggered.json",
+    "category": "Quickbooks",
+    "path": "workflows/Quickbooks/0186_Quickbooks_Onfleet_Create_Triggered.json",
+    "name": "Create a QuickBooks invoice on a new Onfleet Task creation",
+    "description": "Automated workflow: Create a QuickBooks invoice on a new Onfleet Task creation. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.onfleetTrigger",
+        "name": "Onfleet Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.quickbooks",
+        "name": "QuickBooks Online"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.onfleetTrigger",
+      "n8n-nodes-base.quickbooks",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1208_Quickbooks_Automate",
+    "filename": "1208_Quickbooks_Automate.json",
+    "category": "Quickbooks",
+    "path": "workflows/Quickbooks/1208_Quickbooks_Automate.json",
+    "name": "Quickbooks Workflow",
+    "description": "Automated workflow: Quickbooks Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.quickbooks",
+        "name": "QuickBooks2"
+      },
+      {
+        "type": "n8n-nodes-base.quickbooks",
+        "name": "QuickBooks1"
+      },
+      {
+        "type": "n8n-nodes-base.quickbooks",
+        "name": "QuickBooks"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.quickbooks",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

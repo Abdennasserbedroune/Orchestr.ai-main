@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1213_Gotowebinar_Automate",
+    "filename": "1213_Gotowebinar_Automate.json",
+    "category": "Gotowebinar",
+    "path": "workflows/Gotowebinar/1213_Gotowebinar_Automate.json",
+    "name": "Gotowebinar Workflow",
+    "description": "Automated workflow: Gotowebinar Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.goToWebinar",
+        "name": "GoToWebinar2"
+      },
+      {
+        "type": "n8n-nodes-base.goToWebinar",
+        "name": "GoToWebinar1"
+      },
+      {
+        "type": "n8n-nodes-base.goToWebinar",
+        "name": "GoToWebinar"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.goToWebinar",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

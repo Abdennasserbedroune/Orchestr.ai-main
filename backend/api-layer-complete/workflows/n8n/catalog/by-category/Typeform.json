@@ -1,0 +1,190 @@
+[
+  {
+    "id": "0215_Typeform_Clickup_Automation_Triggered",
+    "filename": "0215_Typeform_Clickup_Automation_Triggered.json",
+    "category": "Typeform",
+    "path": "workflows/Typeform/0215_Typeform_Clickup_Automation_Triggered.json",
+    "name": "User Request Management",
+    "description": "Automated workflow: User Request Management. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.clickUp",
+        "name": "ClickUp"
+      },
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "ListID 54684957"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "ListID 54685003"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "ListID 54685000"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "ListID 54684997"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Pick List"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.clickUp",
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0262_Typeform_Spreadsheetfile_Automate_Triggered",
+    "filename": "0262_Typeform_Spreadsheetfile_Automate_Triggered.json",
+    "category": "Typeform",
+    "path": "workflows/Typeform/0262_Typeform_Spreadsheetfile_Automate_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.nextCloud",
+        "name": "NextCloud"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File1"
+      },
+      {
+        "type": "n8n-nodes-base.nextCloud",
+        "name": "NextCloud1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.nextCloud",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1018_Typeform_Airtable_Automation_Triggered",
+    "filename": "1018_Typeform_Airtable_Automation_Triggered.json",
+    "category": "Typeform",
+    "path": "workflows/Typeform/1018_Typeform_Airtable_Automation_Triggered.json",
+    "name": "CFP Selection 1",
+    "description": "Automated workflow: CFP Selection 1. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1207_Typeform_Demio_Automate_Triggered",
+    "filename": "1207_Typeform_Demio_Automate_Triggered.json",
+    "category": "Typeform",
+    "path": "workflows/Typeform/1207_Typeform_Demio_Automate_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.demio",
+        "name": "Demio"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.demio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

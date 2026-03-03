@@ -1,0 +1,345 @@
+[
+  {
+    "id": "0564_Supabase_Stickynote_Create_Triggered",
+    "filename": "0564_Supabase_Stickynote_Create_Triggered.json",
+    "category": "Supabase",
+    "path": "workflows/Supabase/0564_Supabase_Stickynote_Create_Triggered.json",
+    "name": "Googledrive Workflow",
+    "description": "Automated workflow: Googledrive Workflow. This workflow integrates 13 different services: stickyNote, vectorStoreSupabase, textSplitterRecursiveCharacterTextSplitter, chainRetrievalQa, googleDrive. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Question and Answer Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Customize Response"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrieve by Query"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Retrieval"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Insertion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Placeholder (File/Content to Upsert)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Upserting"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Insert Documents"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Retrieve Rows from Table"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Update Documents"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1677_Supabase_Stickynote_Automation_Triggered",
+    "filename": "1677_Supabase_Stickynote_Automation_Triggered.json",
+    "category": "Supabase",
+    "path": "workflows/Supabase/1677_Supabase_Stickynote_Automation_Triggered.json",
+    "name": "Googledrive Workflow",
+    "description": "Automated workflow: Googledrive Workflow. This workflow integrates 13 different services: stickyNote, vectorStoreSupabase, textSplitterRecursiveCharacterTextSplitter, chainRetrievalQa, googleDrive. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Question and Answer Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Customize Response"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrieve by Query"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Retrieval"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Insertion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Placeholder (File/Content to Upsert)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI Upserting"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Insert Documents"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Retrieve Rows from Table"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Update Documents"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1680_Supabase_Stickynote_Automation_Triggered",
+    "filename": "1680_Supabase_Stickynote_Automation_Triggered.json",
+    "category": "Supabase",
+    "path": "workflows/Supabase/1680_Supabase_Stickynote_Automation_Triggered.json",
+    "name": "A/B Split Testing",
+    "description": "Automated workflow: A/B Split Testing. This workflow integrates 9 different services: stickyNote, agent, memoryPostgresChat, set, stopAndError. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Check If Session Exists"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Session Does Exist"
+      },
+      {
+        "type": "n8n-nodes-base.supabase",
+        "name": "Assign Path To Session"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Path Values"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Correct Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.supabase",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

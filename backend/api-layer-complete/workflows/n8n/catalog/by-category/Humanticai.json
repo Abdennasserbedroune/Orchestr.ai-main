@@ -1,0 +1,48 @@
+[
+  {
+    "id": "0043_Humanticai_Calendly_Automate_Triggered",
+    "filename": "0043_Humanticai_Calendly_Automate_Triggered.json",
+    "category": "Humanticai",
+    "path": "workflows/Humanticai/0043_Humanticai_Calendly_Automate_Triggered.json",
+    "name": "Notion Workflow",
+    "description": "Automated workflow: Notion Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.humanticAi",
+        "name": "Humantic AI"
+      },
+      {
+        "type": "n8n-nodes-base.calendlyTrigger",
+        "name": "Calendly Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.humanticAi",
+        "name": "Humantic AI1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.humanticAi",
+      "n8n-nodes-base.calendlyTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

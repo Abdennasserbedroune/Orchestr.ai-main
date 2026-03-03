@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1681_Airtoptool_Slack_Automation_Triggered",
+    "filename": "1681_Airtoptool_Slack_Automation_Triggered.json",
+    "category": "Airtoptool",
+    "path": "workflows/Airtoptool/1681_Airtoptool_Slack_Automation_Triggered.json",
+    "name": "Airtop Web Agent",
+    "description": "Automated workflow: Airtop Web Agent. This workflow integrates 12 different services: stickyNote, formTrigger, agent, airtopTool, outputParserStructured. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.airtopTool",
+        "name": "Click"
+      },
+      {
+        "type": "n8n-nodes-base.airtopTool",
+        "name": "Query"
+      },
+      {
+        "type": "n8n-nodes-base.airtopTool",
+        "name": "Load URL"
+      },
+      {
+        "type": "n8n-nodes-base.airtopTool",
+        "name": "End session"
+      },
+      {
+        "type": "n8n-nodes-base.airtopTool",
+        "name": "Type"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Start browser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Claude 3.5 Haiku"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Output"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Session"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Window"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return IDs"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtopTool",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtop",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

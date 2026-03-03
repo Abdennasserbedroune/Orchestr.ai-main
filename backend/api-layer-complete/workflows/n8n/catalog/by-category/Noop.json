@@ -1,0 +1,1641 @@
+[
+  {
+    "id": "0061_Noop_GitHub_Automate_Triggered",
+    "filename": "0061_Noop_GitHub_Automate_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0061_Noop_GitHub_Automate_Triggered.json",
+    "name": "Telegramtrigger Workflow",
+    "description": "Automated workflow: Telegramtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0083_Noop_HTTP_Automation_Webhook",
+    "filename": "0083_Noop_HTTP_Automation_Webhook.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0083_Noop_HTTP_Automation_Webhook.json",
+    "name": "Plex Automatic Throttler",
+    "description": "Production-ready workflow: Plex Automatic Throttler. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Resume"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if Local"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Play"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Don't Do Anything"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pause"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Stop"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get QB Cookie"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get QB Cookie1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Global Variables"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Check Throttle State"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if Throttled"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do Nothing"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Check Throttle State2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if Throttled1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do Nothing1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Throttle Connection"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Resume Downloads"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Disable Throttle"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Enable Throttle"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0089_Noop_Telegram_Automate_Triggered",
+    "filename": "0089_Noop_Telegram_Automate_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0089_Noop_Telegram_Automate_Triggered.json",
+    "name": "Telegramtrigger Workflow",
+    "description": "Automated workflow: Telegramtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googlePerspective",
+        "name": "Google Perspective"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.googlePerspective",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0094_Noop_Gmail_Create_Triggered",
+    "filename": "0094_Noop_Gmail_Create_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0094_Noop_Gmail_Create_Triggered.json",
+    "name": "Hubspot Workflow",
+    "description": "Automated workflow: Hubspot Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "create new contact"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "update lead stage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set values"
+      },
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "lead interested"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "send information"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0096_Noop_GitHub_Automate_Triggered",
+    "filename": "0096_Noop_GitHub_Automate_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0096_Noop_GitHub_Automate_Triggered.json",
+    "name": "Automate assigning GitHub issues",
+    "description": "Automated workflow: Automate assigning GitHub issues. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF no assignee?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF wants to work?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF not assigned?"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Assign Issue Creator"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Add Comment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp1"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Assign Commenter"
+      },
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0108_Noop_GitHub_Create_Triggered",
+    "filename": "0108_Noop_GitHub_Create_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0108_Noop_GitHub_Create_Triggered.json",
+    "name": "Githubtrigger Workflow",
+    "description": "Automated workflow: Githubtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Githubtrigger 1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF no assignee?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF wants to work?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF not assigned?"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Assign Issue Creator"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Add Comment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp1"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Assign Commenter"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0172_Noop_GoogleSheets_Create_Webhook",
+    "filename": "0172_Noop_GoogleSheets_Create_Webhook.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0172_Noop_GoogleSheets_Create_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "EnvVariables"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "ConfirmMatch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "AddTimertoSyncro"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0174_Noop_Emailsend_Automation_Scheduled",
+    "filename": "0174_Noop_Emailsend_Automation_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0174_Noop_Emailsend_Automation_Scheduled.json",
+    "name": "Activity Encouragement",
+    "description": "Automated workflow: Activity Encouragement. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.strava",
+        "name": "Strava"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Accountability Settings"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check Activity Level"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Enough Activity"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Check Daily at 11:AM"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.strava",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.cron"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0209_Noop_Kafka_Send_Triggered",
+    "filename": "0209_Noop_Kafka_Send_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0209_Noop_Kafka_Send_Triggered.json",
+    "name": "Receive messages from a topic and send an SMS",
+    "description": "Automated workflow: Receive messages from a topic and send an SMS. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.kafkaTrigger",
+        "name": "Kafka Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.vonage",
+        "name": "Vonage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.kafkaTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.vonage",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0212_Noop_Cratedb_Automation_Triggered",
+    "filename": "0212_Noop_Cratedb_Automation_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0212_Noop_Cratedb_Automation_Triggered.json",
+    "name": "Smart Factory Use Case",
+    "description": "Automated workflow: Smart Factory Use Case. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Values higher than 50°C"
+      },
+      {
+        "type": "n8n-nodes-base.amqpTrigger",
+        "name": "Data from factory sensors"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set sensor data"
+      },
+      {
+        "type": "n8n-nodes-base.crateDb",
+        "name": "Ingest machine data"
+      },
+      {
+        "type": "n8n-nodes-base.crateDb",
+        "name": "Ingest incident data"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set incident info"
+      },
+      {
+        "type": "n8n-nodes-base.pagerDuty",
+        "name": "Create an incident"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Data enrichment (°C to °F)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do  nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.amqpTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.crateDb",
+      "n8n-nodes-base.pagerDuty",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0291_Noop_Rabbitmq_Send_Triggered",
+    "filename": "0291_Noop_Rabbitmq_Send_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0291_Noop_Rabbitmq_Send_Triggered.json",
+    "name": "Receive messages from a queue via RabbitMQ and send an SMS",
+    "description": "Automated workflow: Receive messages from a queue via RabbitMQ and send an SMS. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.rabbitmqTrigger",
+        "name": "RabbitMQ"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.vonage",
+        "name": "Vonage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.rabbitmqTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.vonage",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0327_Noop_Slack_Send_Webhook",
+    "filename": "0327_Noop_Slack_Send_Webhook.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0327_Noop_Slack_Send_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 11 different services: webhook, stickyNote, toolSerpApi, agent, stopAndError. It contains 20 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is user message?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0416_Noop_HubSpot_Create_Webhook",
+    "filename": "0416_Noop_HubSpot_Create_Webhook.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0416_Noop_HubSpot_Create_Webhook.json",
+    "name": "Noop Workflow",
+    "description": "Automated workflow: Noop Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, hubspot, set, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Could not find user"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Enrich user from ExactBuyer"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set keys"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if found email"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Update contact from Hubspot"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get HubSpot contact"
+      },
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "On contact created"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.hubspotTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0610_Noop_Twilio_Automate_Scheduled",
+    "filename": "0610_Noop_Twilio_Automate_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0610_Noop_Twilio_Automate_Scheduled.json",
+    "name": "Congratulations Workflow",
+    "description": "Automated workflow: Congratulations Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Daily Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Congratulations Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Any Event Today?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Do Nothing"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Congratulations Messages"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Personalize Message"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send SMS"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0748_Noop_Telegram_Automation_Scheduled",
+    "filename": "0748_Noop_Telegram_Automation_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0748_Noop_Telegram_Automation_Scheduled.json",
+    "name": "RSS to Telegram",
+    "description": "Automated workflow: RSS to Telegram. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Feed Read"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Latest Read"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Write Latest Read"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0809_Noop_Slack_Send_Scheduled",
+    "filename": "0809_Noop_Slack_Send_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0809_Noop_Slack_Send_Scheduled.json",
+    "name": "Check To Do on Notion and send message on Slack",
+    "description": "Automated workflow: Check To Do on Notion and send message on Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get To Dos"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If task assigned to Harshil?"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Create a Direct Message"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send a Direct Message"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0929_Noop_Extractfromfile_Automation",
+    "filename": "0929_Noop_Extractfromfile_Automation.json",
+    "category": "Noop",
+    "path": "workflows/Noop/0929_Noop_Extractfromfile_Automation.json",
+    "name": "OpenAI e-mail classification - application",
+    "description": "Automated workflow: OpenAI e-mail classification - application. This workflow integrates 8 different services: textClassifier, stickyNote, informationExtractor, stopAndError, lmChatOpenAi. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Extract variables - email & attachment"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract data from attachment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model 2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Workflow 2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Workflow 3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "workflow 4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.extractFromFile"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1091_Noop_Trello_Import_Triggered",
+    "filename": "1091_Noop_Trello_Import_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1091_Noop_Trello_Import_Triggered.json",
+    "name": "Get Product Feedback",
+    "description": "Automated workflow: Get Product Feedback. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Trello"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1130_Noop_Twilio_Send_Scheduled",
+    "filename": "1130_Noop_Twilio_Send_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1130_Noop_Twilio_Send_Scheduled.json",
+    "name": "Get the price of BTC in EUR and send an SMS when the price is larger than EUR 9000",
+    "description": "Automated workflow: Get the price of BTC in EUR and send an SMS when the price is larger than EUR 9000. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.coinGecko",
+        "name": "CoinGecko"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.coinGecko",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1150_Noop_Executecommand_Automation_Scheduled",
+    "filename": "1150_Noop_Executecommand_Automation_Scheduled.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1150_Noop_Executecommand_Automation_Scheduled.json",
+    "name": "Execute a command that gives the hard disk memory used on the host machine",
+    "description": "Automated workflow: Execute a command that gives the hard disk memory used on the host machine. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Execute Command"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1442_Noop_Stickynote_Automation_Triggered",
+    "filename": "1442_Noop_Stickynote_Automation_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1442_Noop_Stickynote_Automation_Triggered.json",
+    "name": "Extract personal data with a self-hosted LLM Mistral NeMo",
+    "description": "Automated workflow: Extract personal data with a self-hosted LLM Mistral NeMo. This workflow integrates 8 different services: stickyNote, chainLlm, outputParserStructured, set, outputParserAutofixing. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On Error"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract JSON Output"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1486_Noop_Stickynote_Automation_Triggered",
+    "filename": "1486_Noop_Stickynote_Automation_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1486_Noop_Stickynote_Automation_Triggered.json",
+    "name": "Extract personal data with a self-hosted LLM Mistral NeMo",
+    "description": "Automated workflow: Extract personal data with a self-hosted LLM Mistral NeMo. This workflow integrates 8 different services: stickyNote, chainLlm, outputParserStructured, set, outputParserAutofixing. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Ollama Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On Error"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract JSON Output"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1838_Noop_Stickynote_Automation_Triggered",
+    "filename": "1838_Noop_Stickynote_Automation_Triggered.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1838_Noop_Stickynote_Automation_Triggered.json",
+    "name": "Dynamically switch between LLMs Template",
+    "description": "Automated workflow: Dynamically switch between LLMs Template. This workflow integrates 10 different services: stickyNote, code, chainLlm, set, stopAndError. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Switch Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set LLM index"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Increase LLM index"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check for expected error"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Loop finished without results"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Unexpected error"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return result"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI 4o"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI o1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Validate response"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1892_Noop_Mautic_Automation_Webhook",
+    "filename": "1892_Noop_Mautic_Automation_Webhook.json",
+    "category": "Noop",
+    "path": "workflows/Noop/1892_Noop_Mautic_Automation_Webhook.json",
+    "name": "Wordpress Form to Mautic",
+    "description": "Automated workflow: Wordpress Form to Mautic. This workflow integrates 7 different services: webhook, stickyNote, mautic, set, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "LeadData"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "WordpressForm"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "CheckEmailValid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "CreateContactMautic"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "LeadMauticDNC"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "End"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

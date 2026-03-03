@@ -1,0 +1,1304 @@
+[
+  {
+    "id": "0008_Slack_Stripe_Create_Triggered",
+    "filename": "0008_Slack_Stripe_Create_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0008_Slack_Stripe_Create_Triggered.json",
+    "name": "On new Stripe Invoice Payment update Hubspot and notify the team in Slack",
+    "description": "Automated workflow: On new Stripe Invoice Payment update Hubspot and notify the team in Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stripeTrigger",
+        "name": "When Invoice Paid"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Update Deal to Paid"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Find Deal based on PO Number"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If no PO Number"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If no deal found for PO"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send invoice paid message"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send no PO Message"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send Deal not found message"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stripeTrigger",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0109_Slack_Cron_Automate_Scheduled",
+    "filename": "0109_Slack_Cron_Automate_Scheduled.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0109_Slack_Cron_Automate_Scheduled.json",
+    "name": "Googlecalendar Workflow",
+    "description": "Automated workflow: Googlecalendar Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Date & Time"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Date & Time1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set1"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Date & Time2"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.dateTime",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0124_Slack_Typeform_Create_Triggered",
+    "filename": "0124_Slack_Typeform_Create_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0124_Slack_Typeform_Create_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable - Contact List"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable - Update Contacts1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set - Contacts to update"
+      },
+      {
+        "type": "n8n-nodes-base.dropcontact",
+        "name": "Dropcontact"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Contact ID empty ?"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable - Create Contacts"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set - Contacts to create"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.dropcontact",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0176_Slack_Onfleet_Send_Triggered",
+    "filename": "0176_Slack_Onfleet_Send_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0176_Slack_Onfleet_Send_Triggered.json",
+    "name": "Onfleet Driver signup message in Slack",
+    "description": "Automated workflow: Onfleet Driver signup message in Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.onfleetTrigger",
+        "name": "Onfleet Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.onfleetTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0423_Slack_Hunter_Send_Webhook",
+    "filename": "0423_Slack_Hunter_Send_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0423_Slack_Hunter_Send_Webhook.json",
+    "name": "Slack Workflow",
+    "description": "Automated workflow: Slack Workflow. This workflow integrates 8 different services: stickyNote, formTrigger, httpRequest, hunter, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Score lead with MadKudu"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Verify email with Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not interesting enough"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if customer fit score > 60"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.hunter"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0552_Slack_Stickynote_Send_Webhook",
+    "filename": "0552_Slack_Stickynote_Send_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0552_Slack_Stickynote_Send_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 7 different services: webhook, stickyNote, lmChatGoogleGemini, agent, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send response back to slack channel"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook to receive message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0761_Slack_Comparedatasets_Create_Triggered",
+    "filename": "0761_Slack_Comparedatasets_Create_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0761_Slack_Comparedatasets_Create_Triggered.json",
+    "name": "Noop Workflow",
+    "description": "Automated workflow: Noop Workflow. This workflow integrates 12 different services: stickyNote, splitInBatches, merge, noOp, set. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Loop to next call"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Create Notion DB Page"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Post Slack Receipt"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "AI Team Processor"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Update Slack Progress"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge call data and parent notion id"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Reduce down to 1 object"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get all older Calls"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Isolate Only Call IDs"
+      },
+      {
+        "type": "n8n-nodes-base.compareDatasets",
+        "name": "Only Process New Calls"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Reduce down to One object"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Bundle Slack Message Data"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Slack and Call Data"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Calls"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Bundle Notion Parent Object Data"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Bundle Processed Calls"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Post Completed Calls Message"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.compareDatasets",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0940_Slack_Manual_Automation_Scheduled",
+    "filename": "0940_Slack_Manual_Automation_Scheduled.json",
+    "category": "Slack",
+    "path": "workflows/Slack/0940_Slack_Manual_Automation_Scheduled.json",
+    "name": "Orlen",
+    "description": "Automated workflow: Orlen. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Current date"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every 23:45"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get Year folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get Month folder"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Orlen Invoice"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload Invoice to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Mark as Read"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": "2022-04-11T17:11:34.040Z",
+    "updatedAt": "2022-04-11T21:59:45.898Z"
+  },
+  {
+    "id": "1063_Slack_Graphql_Automation_Webhook",
+    "filename": "1063_Slack_Graphql_Automation_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1063_Slack_Graphql_Automation_Webhook.json",
+    "name": "Slack-GitHub User Info",
+    "description": "Production-ready workflow: Slack-GitHub User Info. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.graphql",
+        "name": "GraphQL"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.graphql",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1082_Slack_Readbinaryfile_Create",
+    "filename": "1082_Slack_Readbinaryfile_Create.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1082_Slack_Readbinaryfile_Create.json",
+    "name": "Emailreadimap Workflow",
+    "description": "Automated workflow: Emailreadimap Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Read Harvey's Email"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Who Is The Email From?"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Excuses File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Retrieve Excuses Spreadsheet Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Generate Excuse"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Excuse and Mail Data"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack (Louis)"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack (General)"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1172_Slack_HubSpot_Send_Triggered",
+    "filename": "1172_Slack_HubSpot_Send_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1172_Slack_HubSpot_Send_Triggered.json",
+    "name": "Check for valid Hubspot contact email",
+    "description": "Production-ready workflow: Check for valid Hubspot contact email. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "When contact created"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get contact email address"
+      },
+      {
+        "type": "n8n-nodes-base.oneSimpleApi",
+        "name": "validate the email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If email is suspicious"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspotTrigger",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.oneSimpleApi",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1191_Slack_Typeform_Automate_Triggered",
+    "filename": "1191_Slack_Typeform_Automate_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1191_Slack_Typeform_Automate_Triggered.json",
+    "name": "Typeformtrigger Workflow",
+    "description": "Automated workflow: Typeformtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.typeformTrigger",
+        "name": "Typeform Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.typeformTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1194_Slack_Emailreadimap_Create",
+    "filename": "1194_Slack_Emailreadimap_Create.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1194_Slack_Emailreadimap_Create.json",
+    "name": "New invoice email notification",
+    "description": "Automated workflow: New invoice email notification. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Check for new emails"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If email body contains invoice"
+      },
+      {
+        "type": "n8n-nodes-base.mindee",
+        "name": "Extract the total amount"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send new invoice notification"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send email to finance manager"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Amount > 1000"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mindee",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.emailSend"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1318_Slack_Stickynote_Automation_Triggered",
+    "filename": "1318_Slack_Stickynote_Automation_Triggered.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1318_Slack_Stickynote_Automation_Triggered.json",
+    "name": "Ask a human",
+    "description": "Automated workflow: Ask a human. This workflow integrates 11 different services: stickyNote, code, agent, stopAndError, slack. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not sure?"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Prompt the user to provide an email"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Confirm that we've messaged a human"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if user has provided email"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Message Slack for help"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "GPT4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1396_Slack_Stickynote_Automate_Webhook",
+    "filename": "1396_Slack_Stickynote_Automate_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1396_Slack_Stickynote_Automate_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 7 different services: webhook, stickyNote, lmChatGoogleGemini, agent, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send response back to slack channel"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook to receive message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agent"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1592_Slack_Stickynote_Automate_Webhook",
+    "filename": "1592_Slack_Stickynote_Automate_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1592_Slack_Stickynote_Automate_Webhook.json",
+    "name": "My workflow 6",
+    "description": "Automated workflow: My workflow 6. This workflow integrates 7 different services: webhook, stickyNote, chainLlm, switch, stopAndError. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send a Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1643_Slack_Manual_Automate_Webhook",
+    "filename": "1643_Slack_Manual_Automate_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1643_Slack_Manual_Automate_Webhook.json",
+    "name": "Slack AI Chatbot with RAG for company staff",
+    "description": "Automated workflow: Slack AI Chatbot with RAG for company staff. This workflow integrates 15 different services: stickyNote, httpRequest, textSplitterTokenSplitter, vectorStoreQdrant, slackTrigger. It contains 31 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "RAG"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.slackTrigger",
+        "name": "Get message"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send message"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create collection"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Refresh collection"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download Files"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Token Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slackTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1663_Slack_Stickynote_Automate_Webhook",
+    "filename": "1663_Slack_Stickynote_Automate_Webhook.json",
+    "category": "Slack",
+    "path": "workflows/Slack/1663_Slack_Stickynote_Automate_Webhook.json",
+    "name": "My workflow 6",
+    "description": "Automated workflow: My workflow 6. This workflow integrates 7 different services: webhook, stickyNote, chainLlm, switch, stopAndError. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send a Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

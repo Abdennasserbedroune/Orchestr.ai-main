@@ -1,0 +1,368 @@
+[
+  {
+    "id": "0604_Jiratool_Schedule_Create_Scheduled",
+    "filename": "0604_Jiratool_Schedule_Create_Scheduled.json",
+    "category": "Jiratool",
+    "path": "workflows/Jiratool/0604_Jiratool_Schedule_Create_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 18 different services: textClassifier, notionTool, stickyNote, scheduleTrigger, agent. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get Issue Comments"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Close Issue"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Send Reminder"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Join Comments"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Add Autoclose Message"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Ask For Feedback Message"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Thread For AI"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Solution Found?"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Reply to Issue"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Last Message is Not Bot"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Issue Metadata"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Notify Slack Channel"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Close Issue2"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get List of Unresolved Long Lived Issues"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Customer Satisfaction Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "KnowledgeBase Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Issue Reminder Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.jiraTool",
+        "name": "Find Simlar Issues"
+      },
+      {
+        "type": "n8n-nodes-base.notionTool",
+        "name": "Query KnowledgeBase"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Report Unhappy Resolution"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify Current Issue State"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.jiraTool",
+      "n8n-nodes-base.notionTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1328_Jiratool_Schedule_Automate_Scheduled",
+    "filename": "1328_Jiratool_Schedule_Automate_Scheduled.json",
+    "category": "Jiratool",
+    "path": "workflows/Jiratool/1328_Jiratool_Schedule_Automate_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 18 different services: textClassifier, notionTool, stickyNote, scheduleTrigger, agent. It contains 42 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get Issue Comments"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Close Issue"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Send Reminder"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Join Comments"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Add Autoclose Message"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Ask For Feedback Message"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Thread For AI"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Solution Found?"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Reply to Issue"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Last Message is Not Bot"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Issue Metadata"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Notify Slack Channel"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Close Issue2"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get List of Unresolved Long Lived Issues"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Customer Satisfaction Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "KnowledgeBase Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Issue Reminder Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.jiraTool",
+        "name": "Find Simlar Issues"
+      },
+      {
+        "type": "n8n-nodes-base.notionTool",
+        "name": "Query KnowledgeBase"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Report Unhappy Resolution"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classify Current Issue State"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.jiraTool",
+      "n8n-nodes-base.notionTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

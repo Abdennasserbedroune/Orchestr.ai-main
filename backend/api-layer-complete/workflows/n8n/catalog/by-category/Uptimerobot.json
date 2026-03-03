@@ -1,0 +1,47 @@
+[
+  {
+    "id": "0050_Uptimerobot_Automate",
+    "filename": "0050_Uptimerobot_Automate.json",
+    "category": "Uptimerobot",
+    "path": "workflows/Uptimerobot/0050_Uptimerobot_Automate.json",
+    "name": "Uptimerobot Workflow",
+    "description": "Automated workflow: Uptimerobot Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.uptimeRobot",
+        "name": "UptimeRobot2"
+      },
+      {
+        "type": "n8n-nodes-base.uptimeRobot",
+        "name": "UptimeRobot"
+      },
+      {
+        "type": "n8n-nodes-base.uptimeRobot",
+        "name": "UptimeRobot1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.uptimeRobot",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

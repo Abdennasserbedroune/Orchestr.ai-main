@@ -1,0 +1,465 @@
+[
+  {
+    "id": "0188_Rssfeedread_Telegram_Create_Scheduled",
+    "filename": "0188_Rssfeedread_Telegram_Create_Scheduled.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/0188_Rssfeedread_Telegram_Create_Scheduled.json",
+    "name": "Rssfeedread Workflow",
+    "description": "Automated workflow: Rssfeedread Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Feed Read"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "SplitInBatches"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "only get new RSS"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram_IT"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram_Security"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "RSS Source"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram_M365"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF-2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF-1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Clear Function"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1176_Rssfeedread_Slack_Automation_Scheduled",
+    "filename": "1176_Rssfeedread_Slack_Automation_Scheduled.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/1176_Rssfeedread_Slack_Automation_Scheduled.json",
+    "name": "Post RSS feed items from yesterday to Slack",
+    "description": "Automated workflow: Post RSS feed items from yesterday to Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Build our message"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every Morning"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Get Yesterdays Date"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "Get the RSS Feed"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If it was published after yesterday"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Post to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.dateTime",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1180_Rssfeedread_Htmlextract_Create_Scheduled",
+    "filename": "1180_Rssfeedread_Htmlextract_Create_Scheduled.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/1180_Rssfeedread_Htmlextract_Create_Scheduled.json",
+    "name": "Get only new RSS with Photo",
+    "description": "Automated workflow: Get only new RSS with Photo. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Feed Read"
+      },
+      {
+        "type": "n8n-nodes-base.htmlExtract",
+        "name": "Extract Image1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Filter RSS Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Only get new RSS1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.htmlExtract",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1186_Rssfeedread_Telegram_Create_Triggered",
+    "filename": "1186_Rssfeedread_Telegram_Create_Triggered.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/1186_Rssfeedread_Telegram_Create_Triggered.json",
+    "name": "Crypto News & Sentiment",
+    "description": "Automated workflow: Crypto News & Sentiment. This workflow integrates 11 different services: stickyNote, telegramTrigger, telegram, code, agent. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Query"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Crypto News & Sentiment Agent"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Cointelegraph"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Bitcoinmagazine"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Coindesk"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Bitcoinist"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Newsbtc"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Cryptopotato"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS 99bitcoins"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Cryptobriefing"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Crypto.news"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge All Articles"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Filter by Query"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Build Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Adds the sessionId"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarize News & Sentiment (GPT-4o)"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Telegram Message"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Sends Response"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Send Crypto or Company Name for Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1536_Rssfeedread_Extractfromfile_Automation_Webhook",
+    "filename": "1536_Rssfeedread_Extractfromfile_Automation_Webhook.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/1536_Rssfeedread_Extractfromfile_Automation_Webhook.json",
+    "name": "YouTube Videos with AI Summaries on Discord",
+    "description": "Automated workflow: YouTube Videos with AI Summaries on Discord. This workflow integrates 8 different services: stickyNote, httpRequest, rssFeedReadTrigger, discord, set. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.rssFeedReadTrigger",
+        "name": "YouTube Video Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Retrieve Caption Data"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Captions"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Caption File Conversion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Caption Summary with ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Post to Discord"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Find English Captions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.rssFeedReadTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1659_Rssfeedread_Extractfromfile_Automation_Webhook",
+    "filename": "1659_Rssfeedread_Extractfromfile_Automation_Webhook.json",
+    "category": "Rssfeedread",
+    "path": "workflows/Rssfeedread/1659_Rssfeedread_Extractfromfile_Automation_Webhook.json",
+    "name": "YouTube Videos with AI Summaries on Discord",
+    "description": "Automated workflow: YouTube Videos with AI Summaries on Discord. This workflow integrates 8 different services: stickyNote, httpRequest, rssFeedReadTrigger, discord, set. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.rssFeedReadTrigger",
+        "name": "YouTube Video Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Retrieve Caption Data"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Captions"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Caption File Conversion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Caption Summary with ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Post to Discord"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Find English Captions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.rssFeedReadTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

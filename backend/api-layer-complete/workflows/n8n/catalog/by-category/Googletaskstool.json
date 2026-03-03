@@ -1,0 +1,188 @@
+[
+  {
+    "id": "1103_Googletaskstool_Telegram_Automation_Webhook",
+    "filename": "1103_Googletaskstool_Telegram_Automation_Webhook.json",
+    "category": "Googletaskstool",
+    "path": "workflows/Googletaskstool/1103_Googletaskstool_Telegram_Automation_Webhook.json",
+    "name": "agente",
+    "description": "Automated workflow: agente. This workflow integrates 19 different services: convertToFile, stickyNote, scheduleTrigger, switch, lmChatOpenAi. It contains 56 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assistente clinica interno"
+      },
+      {
+        "type": "n8n-nodes-base.googleTasksTool",
+        "name": "Google Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Google Calendar"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Receber Mensagem Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assistente Clínica"
+      },
+      {
+        "type": "n8n-nodes-base.telegramTool",
+        "name": "Enviar alerta de cancelamento"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Gatilho diário"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assistente de confirmação"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Google Calendar2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP GMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP CALENDAR"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-evolution-api.evolutionApi",
+        "name": "Evolution API"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-evolution-api.evolutionApi",
+        "name": "Evolution API2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "CallToHuman"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-evolution-api.evolutionApi",
+        "name": "REMINDER"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.googleTasksTool",
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.telegramTool",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-evolution-api.evolutionApi",
+      "n8n-nodes-base.convertToFile"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

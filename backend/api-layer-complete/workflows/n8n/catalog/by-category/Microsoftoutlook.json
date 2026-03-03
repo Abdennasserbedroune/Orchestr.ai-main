@@ -1,0 +1,247 @@
+[
+  {
+    "id": "0835_Microsoftoutlook_Schedule_Automation_Scheduled",
+    "filename": "0835_Microsoftoutlook_Schedule_Automation_Scheduled.json",
+    "category": "Microsoftoutlook",
+    "path": "workflows/Microsoftoutlook/0835_Microsoftoutlook_Schedule_Automation_Scheduled.json",
+    "name": "Mysql Workflow",
+    "description": "Automated workflow: Mysql Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "MySQL"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Microsoft Outlook6"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Microsoft Outlook1"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Microsoft Outlook7"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1870_Microsoftoutlook_GoogleCalendar_Automation_Triggered",
+    "filename": "1870_Microsoftoutlook_GoogleCalendar_Automation_Triggered.json",
+    "category": "Microsoftoutlook",
+    "path": "workflows/Microsoftoutlook/1870_Microsoftoutlook_GoogleCalendar_Automation_Triggered.json",
+    "name": "Google calendar to Outlook",
+    "description": "Automated workflow: Google calendar to Outlook. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTrigger",
+        "name": "Incoming Event Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTrigger",
+        "name": "Cancel Event Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Create Outlook Event"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Get Event to Cancel"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Delete Event"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Send E-mail with details"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleCalendarTrigger",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1925_Microsoftoutlook_Microsoftoutlooktool_Automation_Triggered",
+    "filename": "1925_Microsoftoutlook_Microsoftoutlooktool_Automation_Triggered.json",
+    "category": "Microsoftoutlook",
+    "path": "workflows/Microsoftoutlook/1925_Microsoftoutlook_Microsoftoutlooktool_Automation_Triggered.json",
+    "name": "Outlook",
+    "description": "Automated workflow: Outlook. This workflow integrates 6 different services: stickyNote, agent, microsoftOutlookTrigger, stopAndError, lmChatOpenAi. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.microsoftOutlookTrigger",
+        "name": "Connect Outlook & Set Filter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Add OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Add AI Agent Instructions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlookTool",
+        "name": "Reply to Email"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.microsoftOutlookTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.microsoftOutlookTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1944_Microsoftoutlook_Telegram_Send_Triggered",
+    "filename": "1944_Microsoftoutlook_Telegram_Send_Triggered.json",
+    "category": "Microsoftoutlook",
+    "path": "workflows/Microsoftoutlook/1944_Microsoftoutlook_Telegram_Send_Triggered.json",
+    "name": "send file to kindle through telegram bot",
+    "description": "Automated workflow: send file to kindle through telegram bot. This workflow integrates 7 different services: telegramTrigger, microsoftOutlook, stickyNote, telegram, code. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "receive file message from telegram bot"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "check if there is a file in the message"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "reply to warn that file is missing"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "rename file to as attachment out email"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "send email with the file as attchament to kindle"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "reply to telegram chat that the file has been sent successfully"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

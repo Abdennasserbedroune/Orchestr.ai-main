@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1822_Baserow_Stickynote_Automation_Webhook",
+    "filename": "1822_Baserow_Stickynote_Automation_Webhook.json",
+    "category": "Baserow",
+    "path": "workflows/Baserow/1822_Baserow_Stickynote_Automation_Webhook.json",
+    "name": "Baserow markdown to html",
+    "description": "Automated workflow: Baserow markdown to html. This workflow integrates 6 different services: webhook, stickyNote, markdown, stopAndError, baserow. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Get single record from baserow"
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Update single record in baserow"
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Update all records in baserow"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if it's 1 record or all records - Baserow"
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Get all records from baserow"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Baserow sync video description"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert markdown to HTML (single)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert markdown to HTML (all records)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.baserow",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

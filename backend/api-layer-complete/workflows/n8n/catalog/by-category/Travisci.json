@@ -1,0 +1,49 @@
+[
+  {
+    "id": "0060_Travisci_GitHub_Automate_Triggered",
+    "filename": "0060_Travisci_GitHub_Automate_Triggered.json",
+    "category": "Travisci",
+    "path": "workflows/Travisci/0060_Travisci_GitHub_Automate_Triggered.json",
+    "name": "Githubtrigger Workflow",
+    "description": "Automated workflow: Githubtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.travisCi",
+        "name": "TravisCI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NoOp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.travisCi",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

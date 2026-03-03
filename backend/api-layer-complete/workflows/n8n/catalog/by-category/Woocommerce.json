@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1148_Woocommerce_Slack_Create_Triggered",
+    "filename": "1148_Woocommerce_Slack_Create_Triggered.json",
+    "category": "Woocommerce",
+    "path": "workflows/Woocommerce/1148_Woocommerce_Slack_Create_Triggered.json",
+    "name": "New WooCommerce product to Slack",
+    "description": "Automated workflow: New WooCommerce product to Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.wooCommerceTrigger",
+        "name": "Product Created"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.wooCommerceTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1151_Woocommerce_Slack_Create_Triggered",
+    "filename": "1151_Woocommerce_Slack_Create_Triggered.json",
+    "category": "Woocommerce",
+    "path": "workflows/Woocommerce/1151_Woocommerce_Slack_Create_Triggered.json",
+    "name": "New WooCommerce order to Slack",
+    "description": "Automated workflow: New WooCommerce order to Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.wooCommerceTrigger",
+        "name": "Order Created"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Price over 100"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.wooCommerceTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1155_Woocommerce_Slack_Create_Triggered",
+    "filename": "1155_Woocommerce_Slack_Create_Triggered.json",
+    "category": "Woocommerce",
+    "path": "workflows/Woocommerce/1155_Woocommerce_Slack_Create_Triggered.json",
+    "name": "New WooCommerce refund to Slack",
+    "description": "Automated workflow: New WooCommerce refund to Slack. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.wooCommerceTrigger",
+        "name": "Order Updated"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Refund and Over 100"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.wooCommerceTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

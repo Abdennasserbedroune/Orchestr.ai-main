@@ -1,0 +1,49 @@
+[
+  {
+    "id": "0616_Elasticsearch_Cron_Create_Webhook",
+    "filename": "0616_Elasticsearch_Cron_Create_Webhook.json",
+    "category": "Elasticsearch",
+    "path": "workflows/Elasticsearch/0616_Elasticsearch_Cron_Create_Webhook.json",
+    "name": "Cron Workflow",
+    "description": "Automated workflow: Cron Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.elasticsearch",
+        "name": "Elasticsearch Query"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check for Alerts"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Create Work Item"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.elasticsearch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

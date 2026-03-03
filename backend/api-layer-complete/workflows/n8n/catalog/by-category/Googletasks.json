@@ -1,0 +1,149 @@
+[
+  {
+    "id": "0881_Googletasks_HTTP_Update_Webhook",
+    "filename": "0881_Googletasks_HTTP_Update_Webhook.json",
+    "category": "Googletasks",
+    "path": "workflows/Googletasks/0881_Googletasks_HTTP_Update_Webhook.json",
+    "name": "Splitinbatches Workflow",
+    "description": "Automated workflow: Splitinbatches Workflow. This workflow integrates 12 different services: stickyNote, httpRequest, googleTasks, merge, set. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Extract Yesterday Records"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "Extract HTML Blocks"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "Parse Blocks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleTasks",
+        "name": "Google Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Classification Agent"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Collect Answer"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Record Sustainability Procedures"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Links"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.googleTasks",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleSheets"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2031_Googletasks_Gmail_Create_Triggered",
+    "filename": "2031_Googletasks_Gmail_Create_Triggered.json",
+    "category": "Googletasks",
+    "path": "workflows/Googletasks/2031_Googletasks_Gmail_Create_Triggered.json",
+    "name": "📦 New Email ➔ Create Google Task",
+    "description": "Automated workflow: 📦 New Email ➔ Create Google Task. This workflow integrates 4 different services: gmailTrigger, stickyNote, stopAndError, googleTasks. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleTasks",
+        "name": "Google Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.googleTasks",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

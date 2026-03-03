@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1229_Wise_Automate",
+    "filename": "1229_Wise_Automate.json",
+    "category": "Wise",
+    "path": "workflows/Wise/1229_Wise_Automate.json",
+    "name": "Wise Workflow",
+    "description": "Automated workflow: Wise Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.wise",
+        "name": "Wise"
+      },
+      {
+        "type": "n8n-nodes-base.wise",
+        "name": "Wise1"
+      },
+      {
+        "type": "n8n-nodes-base.wise",
+        "name": "Wise2"
+      },
+      {
+        "type": "n8n-nodes-base.wise",
+        "name": "Wise3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.wise",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1230_Wise_Airtable_Automate_Triggered",
+    "filename": "1230_Wise_Airtable_Automate_Triggered.json",
+    "category": "Wise",
+    "path": "workflows/Wise/1230_Wise_Airtable_Automate_Triggered.json",
+    "name": "Wisetrigger Workflow",
+    "description": "Automated workflow: Wisetrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.wiseTrigger",
+        "name": "Wise Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.wise",
+        "name": "Wise"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.wiseTrigger",
+      "n8n-nodes-base.wise",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

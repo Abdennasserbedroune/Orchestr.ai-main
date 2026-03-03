@@ -1,0 +1,84 @@
+[
+  {
+    "id": "0623_Comparedatasets_Manual_Create_Triggered",
+    "filename": "0623_Comparedatasets_Manual_Create_Triggered.json",
+    "category": "Comparedatasets",
+    "path": "workflows/Comparedatasets/0623_Comparedatasets_Manual_Create_Triggered.json",
+    "name": "Comparedatasets Workflow",
+    "description": "Automated workflow: Comparedatasets Workflow. This workflow integrates 7 different services: stickyNote, youTube, set, spotify, manualTrigger. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.compareDatasets",
+        "name": "Compare the two Datasets"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract the spotify track ID"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract the Spotify Track ID"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Find the returned tracks on Spotify"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Get my tracks inside my playlist"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Get tracks inside the Spotify Playlist"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Add tracks not already in playlist"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.compareDatasets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.spotify",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

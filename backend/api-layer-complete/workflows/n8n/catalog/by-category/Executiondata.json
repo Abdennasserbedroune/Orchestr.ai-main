@@ -1,0 +1,152 @@
+[
+  {
+    "id": "1754_Executiondata_Slack_Automate_Webhook",
+    "filename": "1754_Executiondata_Slack_Automate_Webhook.json",
+    "category": "Executiondata",
+    "path": "workflows/Executiondata/1754_Executiondata_Slack_Automate_Webhook.json",
+    "name": "ClockifyBlockiaWorkflow",
+    "description": "Automated workflow: ClockifyBlockiaWorkflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create New Time Entry"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "GetClientsTool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get All Time Entries"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Current loggedin user"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "GetProjectsTool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Update Time Entry"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Delete Time Entry"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DateConverter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ClockifyBlockia"
+      },
+      {
+        "type": "n8n-nodes-base.slackTrigger",
+        "name": "Slack Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executionData",
+        "name": "Execution Data"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Add reaction"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send reply"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.slackTrigger",
+      "n8n-nodes-base.executionData",
+      "n8n-nodes-base.slack"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1972_Executiondata_Stickynote_Automation_Webhook",
+    "filename": "1972_Executiondata_Stickynote_Automation_Webhook.json",
+    "category": "Executiondata",
+    "path": "workflows/Executiondata/1972_Executiondata_Stickynote_Automation_Webhook.json",
+    "name": "Luma AI - Webhook Response v1 - AK",
+    "description": "Automated workflow: Luma AI - Webhook Response v1 - AK. This workflow integrates 7 different services: webhook, stickyNote, executionData, airtable, set. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Video JSON"
+      },
+      {
+        "type": "n8n-nodes-base.executionData",
+        "name": "Execution Data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Global SETTINGS"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "ADD Video and Thumbnail URL"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.executionData",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.airtable"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

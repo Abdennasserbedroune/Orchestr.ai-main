@@ -1,0 +1,150 @@
+[
+  {
+    "id": "1261_Airtabletool_Stickynote_Automation_Triggered",
+    "filename": "1261_Airtabletool_Stickynote_Automation_Triggered.json",
+    "category": "Airtabletool",
+    "path": "workflows/Airtabletool/1261_Airtabletool_Stickynote_Automation_Triggered.json",
+    "name": "AI Social Media Caption Creator",
+    "description": "Automated workflow: AI Social Media Caption Creator. This workflow integrates 10 different services: airtableTrigger, stickyNote, wait, airtable, agent. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Airtable Record Data"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait 1 Minute"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format Fields"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Post Caption into Airtable Record"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTrigger",
+        "name": "Airtable Trigger: New Record"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Background Info"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtableTrigger",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1723_Airtabletool_Stickynote_Automation_Triggered",
+    "filename": "1723_Airtabletool_Stickynote_Automation_Triggered.json",
+    "category": "Airtabletool",
+    "path": "workflows/Airtabletool/1723_Airtabletool_Stickynote_Automation_Triggered.json",
+    "name": "AI Social Media Caption Creator",
+    "description": "Automated workflow: AI Social Media Caption Creator. This workflow integrates 10 different services: airtableTrigger, stickyNote, wait, airtable, agent. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Airtable Record Data"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait 1 Minute"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format Fields"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Post Caption into Airtable Record"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTrigger",
+        "name": "Airtable Trigger: New Record"
+      },
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Background Info"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.airtableTrigger",
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

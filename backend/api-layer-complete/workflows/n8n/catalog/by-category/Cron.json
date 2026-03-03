@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0822_Cron_Postgres_Automation_Scheduled",
+    "filename": "0822_Cron_Postgres_Automation_Scheduled.json",
+    "category": "Cron",
+    "path": "workflows/Cron/0822_Cron_Postgres_Automation_Scheduled.json",
+    "name": "Postgres Data Ingestion",
+    "description": "Automated workflow: Postgres Data Ingestion. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

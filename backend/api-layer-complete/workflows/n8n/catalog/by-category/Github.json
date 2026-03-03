@@ -1,0 +1,606 @@
+[
+  {
+    "id": "0135_GitHub_Cron_Create_Scheduled",
+    "filename": "0135_GitHub_Cron_Create_Scheduled.json",
+    "category": "Github",
+    "path": "workflows/Github/0135_GitHub_Cron_Create_Scheduled.json",
+    "name": "Github Workflow",
+    "description": "Automated workflow: Github Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Get latest release"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "No issue for release?"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "Create issue"
+      },
+      {
+        "type": "n8n-nodes-base.gitlab",
+        "name": "List issues"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.gitlab",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0264_GitHub_Stickynote_Create_Triggered",
+    "filename": "0264_GitHub_Stickynote_Create_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/0264_GitHub_Stickynote_Create_Triggered.json",
+    "name": "Notion Workflow",
+    "description": "Automated workflow: Notion Workflow. This workflow integrates 6 different services: stickyNote, function, githubTrigger, switch, if. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Create database page"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Find database page"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Edit issue"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Delete issue"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Create custom Notion filters"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Close issue"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Reopen issue"
+      },
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Trigger on issues"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0289_GitHub_Stickynote_Update_Triggered",
+    "filename": "0289_GitHub_Stickynote_Update_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/0289_GitHub_Stickynote_Update_Triggered.json",
+    "name": "Githubtrigger Workflow",
+    "description": "Automated workflow: Githubtrigger Workflow. This workflow integrates 3 different services: stickyNote, githubTrigger, homeAssistant. It contains 4 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "On any update in repository"
+      },
+      {
+        "type": "n8n-nodes-base.homeAssistant",
+        "name": "Turn a light red"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.homeAssistant",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0876_GitHub_Aggregate_Create_Webhook",
+    "filename": "0876_GitHub_Aggregate_Create_Webhook.json",
+    "category": "Github",
+    "path": "workflows/Github/0876_GitHub_Aggregate_Create_Webhook.json",
+    "name": "Executeworkflowtrigger Workflow",
+    "description": "Automated workflow: Executeworkflowtrigger Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, switch, set, mcpTrigger. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Operation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Github MCP Server"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Latest Issues"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Add Issue Comment"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Issues"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate Results"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Issue Comments"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Comments"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Comments"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate Comments"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Get Many Issues"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Get Single Issue"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Create Comment"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.github"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0973_GitHub_Slack_Create_Triggered",
+    "filename": "0973_GitHub_Slack_Create_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/0973_GitHub_Slack_Create_Triggered.json",
+    "name": "Githubtrigger Workflow",
+    "description": "Automated workflow: Githubtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack - Add"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack - Remove"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0997_GitHub_Automate_Triggered",
+    "filename": "0997_GitHub_Automate_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/0997_GitHub_Automate_Triggered.json",
+    "name": "Githubtrigger Workflow",
+    "description": "Automated workflow: Githubtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1068_GitHub_Slack_Automation_Triggered",
+    "filename": "1068_GitHub_Slack_Automation_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/1068_GitHub_Slack_Automation_Triggered.json",
+    "name": "Extranet Releases",
+    "description": "Automated workflow: Extranet Releases. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.githubTrigger",
+        "name": "Github Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.githubTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1149_GitHub_Manual_Create_Scheduled",
+    "filename": "1149_GitHub_Manual_Create_Scheduled.json",
+    "category": "Github",
+    "path": "workflows/Github/1149_GitHub_Manual_Create_Scheduled.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "dataArray"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "N8N Workflows"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "N8N Workflow Detail"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "github_status"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "same"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "different"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "new"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub Edit"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub Create"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "isDiffOrNew"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Daily @ 20:00"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "OneAtATime"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Globals"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1988_GitHub_Manual_Automate_Triggered",
+    "filename": "1988_GitHub_Manual_Automate_Triggered.json",
+    "category": "Github",
+    "path": "workflows/Github/1988_GitHub_Manual_Automate_Triggered.json",
+    "name": "[OPS] Restore workflows from GitHub to n8n",
+    "description": "Automated workflow: [OPS] Restore workflows from GitHub to n8n. This workflow integrates 8 different services: stickyNote, n8n, merge, set, manualTrigger. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Globals"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Workflow name already exists"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If workflow already exists"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set n8n existing workflows names"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub - get all files"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n - get all workflows"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "GitHub - get each file"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set name and content"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n - create workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge globals and files"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Github and n8n workflows - Keep only non existing workflows based on the name"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

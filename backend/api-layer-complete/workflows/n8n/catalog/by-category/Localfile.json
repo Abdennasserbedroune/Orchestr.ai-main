@@ -1,0 +1,918 @@
+[
+  {
+    "id": "0535_Localfile_Manual_Create_Webhook",
+    "filename": "0535_Localfile_Manual_Create_Webhook.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/0535_Localfile_Manual_Create_Webhook.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 17 different services: stickyNote, httpRequest, embeddingsMistralCloud, textSplitterRecursiveCharacterTextSplitter, chainRetrievalQa. It contains 39 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Read File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Embedding Document"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Question and Answer Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Remap for File_Added Flow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search For Existing Point"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Existing Point?"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Delete Existing Point"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search For Existing Point1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Existing Point?1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Delete Existing Point1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Handle File Event"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0536_Localfile_Splitout_Send_Triggered",
+    "filename": "0536_Localfile_Splitout_Send_Triggered.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/0536_Localfile_Splitout_Send_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 12 different services: stickyNote, code, agent, readWriteFile, splitOut. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Watch For Bank Statements"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Tenant Details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Get Bank Statement File"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Get CSV Data"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Alert Actions To List"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Property Details"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Append To Spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reconcile Rental Payments"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0537_Localfile_Wait_Create_Triggered",
+    "filename": "0537_Localfile_Wait_Create_Triggered.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/0537_Localfile_Wait_Create_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 23 different services: convertToFile, stickyNote, embeddingsMistralCloud, textSplitterRecursiveCharacterTextSplitter, lmChatMistralCloud. It contains 49 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prep Incoming Doc"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Doc Types"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out Doc Types"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Doc Type..."
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Item List Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Discover"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "2secs"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Generated Documents"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prep For AI"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "To Binary"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Export to Folder"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Get FileType"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Import File"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from PDF"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from DOCX"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from TEXT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Interview"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1357_Localfile_Wait_Automation_Triggered",
+    "filename": "1357_Localfile_Wait_Automation_Triggered.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/1357_Localfile_Wait_Automation_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 23 different services: convertToFile, stickyNote, embeddingsMistralCloud, textSplitterRecursiveCharacterTextSplitter, lmChatMistralCloud. It contains 49 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prep Incoming Doc"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Doc Types"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out Doc Types"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Doc Type..."
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Item List Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Discover"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "2secs"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Generated Documents"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prep For AI"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "To Binary"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Export to Folder"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Get FileType"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Import File"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from PDF"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from DOCX"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from TEXT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Interview"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1358_Localfile_Manual_Create_Webhook",
+    "filename": "1358_Localfile_Manual_Create_Webhook.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/1358_Localfile_Manual_Create_Webhook.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 17 different services: stickyNote, httpRequest, embeddingsMistralCloud, textSplitterRecursiveCharacterTextSplitter, chainRetrievalQa. It contains 39 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Read File"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Embedding Document"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Question and Answer Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Mistral Cloud Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Vector Store Retriever"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Mistral Cloud1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Remap for File_Added Flow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search For Existing Point"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Existing Point?"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Delete Existing Point"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Search For Existing Point1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Has Existing Point?1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Delete Existing Point1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Handle File Event"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Qdrant Vector Store1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1635_Localfile_Splitout_Automation_Triggered",
+    "filename": "1635_Localfile_Splitout_Automation_Triggered.json",
+    "category": "Localfile",
+    "path": "workflows/Localfile/1635_Localfile_Splitout_Automation_Triggered.json",
+    "name": "Localfiletrigger Workflow",
+    "description": "Automated workflow: Localfiletrigger Workflow. This workflow integrates 12 different services: stickyNote, code, agent, readWriteFile, splitOut. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Watch For Bank Statements"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Tenant Details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.readWriteFile",
+        "name": "Get Bank Statement File"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Get CSV Data"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Alert Actions To List"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Property Details"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Variables"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Append To Spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reconcile Rental Payments"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.readWriteFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

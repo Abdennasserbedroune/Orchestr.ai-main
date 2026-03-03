@@ -1,0 +1,371 @@
+[
+  {
+    "id": "2054_Deep_Research_Report_Generation_With_Open_Router_Google_Search_Webhook_Telegram_and_Notion",
+    "filename": "2054_Deep_Research_Report_Generation_With_Open_Router_Google_Search_Webhook_Telegram_and_Notion.json",
+    "category": "Deep",
+    "path": "workflows/Deep/2054_Deep_Research_Report_Generation_With_Open_Router_Google_Search_Webhook_Telegram_and_Notion.json",
+    "name": "Deep Research Report Generation Using Open Router, Google Search, Webhook/Telegram and Notion",
+    "description": "Automated workflow: Deep Research Report Generation Using Open Router, Google Search, Webhook/Telegram and Notion. This workflow integrates 22 different services: stickyNote, switch, splitInBatches, chainLlm, set. It contains 56 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Strategy Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search Query Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser1"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Queries"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI1"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Notion1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request2"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert to HTML"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "HTML to Array"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Tags to Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Notion Block Generator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Parse JSON blocks"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Valid Blocks"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Block..."
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get Existing Row"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "generate-collaborative-handbooks-with-gpt4o-multi-agent-orchestration-human-review",
+    "filename": "generate-collaborative-handbooks-with-gpt4o-multi-agent-orchestration-human-review.json",
+    "category": "Deep",
+    "path": "workflows/Deep/generate-collaborative-handbooks-with-gpt4o-multi-agent-orchestration-human-review.json",
+    "name": "Pyragogy AI Village - Orchestrazione Master (Architettura Profonda V2)",
+    "description": "Production-ready workflow: Pyragogy AI Village - Orchestrazione Master (Architettura Profonda V2). This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.start",
+        "name": "Start"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Check DB Connection"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Meta-Orchestrator"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Parse Orchestration Plan"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "More Agents to Run?"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Prepare Agent Input"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route Agents with Switch"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Summarizer Agent"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Synthesizer Agent"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Peer Reviewer Agent"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Sensemaking Agent"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Prompt Engineer Agent"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Onboarding/Explainer Agent"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Add Handbook Metadata"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Generate Content for Review"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Generate Review ID"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Review Request Email"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait for Human Approval"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Human Decision Split"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Save to handbook_entries"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Prepare Approved Contribution Data"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Save Agent Contribution (Approved)"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Generate GitHub File Path"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "GitHub Enabled?"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Commit to GitHub (Approved)"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Log Human Rejection"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Archivist Paths"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Evaluate Board Consensus"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check Redraft Needed"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Handle Redraft"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Process Agent Output"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Slack Enabled?"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Notify Slack"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Final Response"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.start",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

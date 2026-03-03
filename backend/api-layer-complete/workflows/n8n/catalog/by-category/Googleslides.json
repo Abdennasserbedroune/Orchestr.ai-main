@@ -1,0 +1,271 @@
+[
+  {
+    "id": "0095_Googleslides_Slack_Automate_Triggered",
+    "filename": "0095_Googleslides_Slack_Automate_Triggered.json",
+    "category": "Googleslides",
+    "path": "workflows/Googleslides/0095_Googleslides_Slack_Automate_Triggered.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "high-priority"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "low-priority"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "#closedwon"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.googleSlides",
+        "name": "Google Slides"
+      },
+      {
+        "type": "n8n-nodes-base.hubspotTrigger",
+        "name": "Hubspot Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Hubspot"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleSlides",
+      "n8n-nodes-base.hubspotTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0754_Googleslides_Noop_Automation_Triggered",
+    "filename": "0754_Googleslides_Noop_Automation_Triggered.json",
+    "category": "Googleslides",
+    "path": "workflows/Googleslides/0754_Googleslides_Noop_Automation_Triggered.json",
+    "name": "DSP Certificate w/ Google Forms",
+    "description": "Automated workflow: DSP Certificate w/ Google Forms. This workflow integrates 9 different services: stickyNote, googleSheetsTrigger, googleSlides, googleDrive, set. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Google Sheets Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract essential data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Score Checker"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Copy from your template"
+      },
+      {
+        "type": "n8n-nodes-base.googleSlides",
+        "name": "Replace text"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Convert to PDF"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send to user's email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.googleSlides",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1845_Googleslides_Extractfromfile_Create_Triggered",
+    "filename": "1845_Googleslides_Extractfromfile_Create_Triggered.json",
+    "category": "Googleslides",
+    "path": "workflows/Googleslides/1845_Googleslides_Extractfromfile_Create_Triggered.json",
+    "name": "Create Custom Presentations per Lead",
+    "description": "Automated workflow: Create Custom Presentations per Lead. This workflow integrates 9 different services: stickyNote, googleDriveTrigger, googleSlides, googleDrive, switch. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download by ID"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "MoveToLeadListFolder"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add Presentation ID to Lead List"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get all Leads"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Create new Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Merge Data for new Lead Document"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "New Leads Arrived"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "File Type?"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine Empty New Document with CSV Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleSlides",
+        "name": "Create Custom Presentation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract Information from CSV file"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Copy Presentation Template"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleSlides",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

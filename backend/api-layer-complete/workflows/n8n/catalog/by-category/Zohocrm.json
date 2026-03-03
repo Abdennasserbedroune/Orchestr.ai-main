@@ -1,0 +1,73 @@
+[
+  {
+    "id": "0086_Zohocrm_Trello_Create_Triggered",
+    "filename": "0086_Zohocrm_Trello_Create_Triggered.json",
+    "category": "Zohocrm",
+    "path": "workflows/Zohocrm/0086_Zohocrm_Trello_Create_Triggered.json",
+    "name": "Zohocrm Workflow",
+    "description": "Automated workflow: Zohocrm Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.zohoCrm",
+        "name": "Zoho"
+      },
+      {
+        "type": "n8n-nodes-base.trello",
+        "name": "Trello"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail - coupon"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail - thankyou"
+      },
+      {
+        "type": "n8n-nodes-base.mailchimp",
+        "name": "Mailchimp"
+      },
+      {
+        "type": "n8n-nodes-base.shopifyTrigger",
+        "name": "order created"
+      },
+      {
+        "type": "n8n-nodes-base.harvest",
+        "name": "Harvest"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.zohoCrm",
+      "n8n-nodes-base.trello",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.mailchimp",
+      "n8n-nodes-base.shopifyTrigger",
+      "n8n-nodes-base.harvest",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

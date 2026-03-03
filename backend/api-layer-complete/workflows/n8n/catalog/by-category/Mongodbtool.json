@@ -1,0 +1,136 @@
+[
+  {
+    "id": "0511_Mongodbtool_Stickynote_Automation_Triggered",
+    "filename": "0511_Mongodbtool_Stickynote_Automation_Triggered.json",
+    "category": "Mongodbtool",
+    "path": "workflows/Mongodbtool/0511_Mongodbtool_Stickynote_Automation_Triggered.json",
+    "name": "MongoDB Agent",
+    "description": "Automated workflow: MongoDB Agent. This workflow integrates 8 different services: stickyNote, agent, mongoDbTool, stopAndError, lmChatOpenAi. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDbTool",
+        "name": "MongoDBAggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "insertFavorite"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent - Movie Recommendation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mongoDbTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1555_Mongodbtool_Stickynote_Automation_Triggered",
+    "filename": "1555_Mongodbtool_Stickynote_Automation_Triggered.json",
+    "category": "Mongodbtool",
+    "path": "workflows/Mongodbtool/1555_Mongodbtool_Stickynote_Automation_Triggered.json",
+    "name": "MongoDB Agent",
+    "description": "Automated workflow: MongoDB Agent. This workflow integrates 8 different services: stickyNote, agent, mongoDbTool, stopAndError, lmChatOpenAi. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDbTool",
+        "name": "MongoDBAggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "insertFavorite"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent - Movie Recommendation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mongoDbTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

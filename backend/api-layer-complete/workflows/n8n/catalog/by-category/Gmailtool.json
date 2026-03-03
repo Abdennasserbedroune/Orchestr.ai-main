@@ -1,0 +1,558 @@
+[
+  {
+    "id": "0677_Gmailtool_Splitout_Create_Webhook",
+    "filename": "0677_Gmailtool_Splitout_Create_Webhook.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/0677_Gmailtool_Splitout_Create_Webhook.json",
+    "name": "Agent Workflow",
+    "description": "Automated workflow: Agent Workflow. This workflow integrates 12 different services: webhook, stickyNote, httpRequest, airtable, gmailTool. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Notify Client About Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create Task"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Meeting Content"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1142_Gmailtool_Stickynote_Automation_Triggered",
+    "filename": "1142_Gmailtool_Stickynote_Automation_Triggered.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/1142_Gmailtool_Stickynote_Automation_Triggered.json",
+    "name": "DeepSeek v3.1",
+    "description": "Automated workflow: DeepSeek v3.1. This workflow integrates 8 different services: notionTrigger, stickyNote, gmailTool, agent, mcpClientTool. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notionTrigger",
+        "name": "Watch Notion Updates"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Task Planner"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.wordpressTool",
+        "name": "Publish Blog Post"
+      },
+      {
+        "type": "n8n-nodes-mcp.mcpClientTool",
+        "name": "Notion List Available Tools"
+      },
+      {
+        "type": "n8n-nodes-mcp.mcpClientTool",
+        "name": "Notion Run a Tool"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Workflow Variables"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "DeepSeek Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notionTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.wordpressTool",
+      "n8n-nodes-mcp.mcpClientTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1248_Gmailtool_Splitout_Automation_Webhook",
+    "filename": "1248_Gmailtool_Splitout_Automation_Webhook.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/1248_Gmailtool_Splitout_Automation_Webhook.json",
+    "name": "Agent Workflow",
+    "description": "Automated workflow: Agent Workflow. This workflow integrates 12 different services: webhook, stickyNote, httpRequest, airtable, gmailTool. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Notify Client About Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create Task"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Create Event"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Meeting Content"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1613_Gmailtool_Stickynote_Automation_Triggered",
+    "filename": "1613_Gmailtool_Stickynote_Automation_Triggered.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/1613_Gmailtool_Stickynote_Automation_Triggered.json",
+    "name": "Gmail MCP Server",
+    "description": "Automated workflow: Gmail MCP Server. This workflow integrates 3 different services: gmailTool, stickyNote, mcpTrigger. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "addLabels"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "delete"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "get"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "search"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "markAsRead"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "markAsUnread"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "reply"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "removeLabels"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getLabels"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getLabel"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "deleteLabel"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "createLabel"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "deleteDraft"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "createDraft"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getDraft"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getManyDrafts"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getManyThreads"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "getThread"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "addLabelThread"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "removeLabelThread"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "replyThread"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gmail MCP Server"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1795_Gmailtool_Executeworkflow_Send_Triggered",
+    "filename": "1795_Gmailtool_Executeworkflow_Send_Triggered.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/1795_Gmailtool_Executeworkflow_Send_Triggered.json",
+    "name": "🤖Email Agent",
+    "description": "Automated workflow: 🤖Email Agent. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Try Again"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Success"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Agent"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Get Emails"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Create Draft"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Email Reply"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Get Labels"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Label Emails"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "Mark Unread"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1909_Gmailtool_Automation_Triggered",
+    "filename": "1909_Gmailtool_Automation_Triggered.json",
+    "category": "Gmailtool",
+    "path": "workflows/Gmailtool/1909_Gmailtool_Automation_Triggered.json",
+    "name": "MCP_GMAIL",
+    "description": "Automated workflow: MCP_GMAIL. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "SEND_EMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "REPLY_EMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "GET_EMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "SEND_AND_WAIT"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP_GMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

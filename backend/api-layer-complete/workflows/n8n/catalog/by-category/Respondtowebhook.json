@@ -1,0 +1,1723 @@
+[
+  {
+    "id": "0121_Respondtowebhook_Webhook_Automate_Webhook",
+    "filename": "0121_Respondtowebhook_Webhook_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0121_Respondtowebhook_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0163_Respondtowebhook_Spreadsheetfile_Automate_Webhook",
+    "filename": "0163_Respondtowebhook_Spreadsheetfile_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0163_Respondtowebhook_Spreadsheetfile_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "Item Lists"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0194_Respondtowebhook_Webhook_Import_Webhook",
+    "filename": "0194_Respondtowebhook_Webhook_Import_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0194_Respondtowebhook_Webhook_Import_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "POST"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "reg-GET"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "webhook-response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "SetWebhookData"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0232_Respondtowebhook_Stickynote_Create_Webhook",
+    "filename": "0232_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0232_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 5 different services: webhook, stickyNote, set, respondToWebhook, stopAndError. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note1"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Create URL string"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0576_Respondtowebhook_Form_Automation_Webhook",
+    "filename": "0576_Respondtowebhook_Form_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0576_Respondtowebhook_Form_Automation_Webhook.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow integrates 8 different services: s3, stickyNote, formTrigger, httpRequest, switch. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Vivid Pop Explosion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "AI Dystopia"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Post-Analog Glitchscape"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Neon Fauvism"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "None"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Serve webpage"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond with error"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.s3",
+        "name": "Upload image to S3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Hyper-Surreal Escape"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call hugginface inference api"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route by style"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.s3",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0586_Respondtowebhook_Stickynote_Automate_Webhook",
+    "filename": "0586_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0586_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 6 different services: webhook, stickyNote, agent, respondToWebhook, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Apple Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "When called by Apple Shortcut"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0590_Respondtowebhook_Stickynote_Send_Webhook",
+    "filename": "0590_Respondtowebhook_Stickynote_Send_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0590_Respondtowebhook_Stickynote_Send_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 11 different services: webhook, stickyNote, toolHttpRequest, agent, respondToWebhook. It contains 41 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "calendarAgent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "taskAgent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Map Fields"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Map Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Exclude Previews from Speech"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Main Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format output"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Notion Task Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get calendar availability"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Book appointment"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Calendar Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format output1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0597_Respondtowebhook_Stickynote_Automate_Webhook",
+    "filename": "0597_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0597_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: webhook, stickyNote, switch, respondToWebhook, stopAndError. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook from Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Shorter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Longer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Correct Grammar"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To Spanish"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To English"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0811_Respondtowebhook_Webhook_Automate_Webhook",
+    "filename": "0811_Respondtowebhook_Webhook_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0811_Respondtowebhook_Webhook_Automate_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HTML to PDF"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0900_Respondtowebhook_Stickynote_Automate_Webhook",
+    "filename": "0900_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/0900_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 5 different services: webhook, stickyNote, set, respondToWebhook, stopAndError. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "[Replace me!] Set response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1266_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1266_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1266_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "InstaTest",
+    "description": "Automated workflow: InstaTest. This workflow integrates 8 different services: webhook, stickyNote, agent, respondToWebhook, set. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set your system promt for AI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Local n8n memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ChatGPT model"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Send respond "
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Getting message from Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1311_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1311_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1311_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "chrome extension backend with AI",
+    "description": "Automated workflow: chrome extension backend with AI. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1387_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1387_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1387_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "Image Generation API",
+    "description": "Automated workflow: Image Generation API. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1455_Respondtowebhook_Form_Automation_Webhook",
+    "filename": "1455_Respondtowebhook_Form_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1455_Respondtowebhook_Form_Automation_Webhook.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow integrates 8 different services: s3, stickyNote, formTrigger, httpRequest, switch. It contains 25 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Vivid Pop Explosion"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "AI Dystopia"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Post-Analog Glitchscape"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Neon Fauvism"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "None"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Serve webpage"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond with error"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.s3",
+        "name": "Upload image to S3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Hyper-Surreal Escape"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call hugginface inference api"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Route by style"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.s3",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1466_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1466_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1466_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "TEMPLATE - Multi Methods API Endpoint",
+    "description": "Automated workflow: TEMPLATE - Multi Methods API Endpoint. This workflow integrates 5 different services: webhook, stickyNote, airtable, respondToWebhook, stopAndError. It contains 32 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook1"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook2"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get All"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Single"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Single1"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook (with ID)"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1474_Respondtowebhook_Stickynote_Create_Webhook",
+    "filename": "1474_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1474_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "name": "Generate audio from text using OpenAI - text-to-speech Workflow",
+    "description": "Automated workflow: Generate audio from text using OpenAI - text-to-speech Workflow. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1476_Respondtowebhook_Stickynote_Import_Webhook",
+    "filename": "1476_Respondtowebhook_Stickynote_Import_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1476_Respondtowebhook_Stickynote_Import_Webhook.json",
+    "name": "Get Airtable data in Obsidian Notes",
+    "description": "Automated workflow: Get Airtable data in Obsidian Notes. This workflow integrates 7 different services: webhook, stickyNote, agent, respondToWebhook, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Obsidian"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook Set Up in Obsidian"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1577_Respondtowebhook_Stickynote_Create_Webhook",
+    "filename": "1577_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1577_Respondtowebhook_Stickynote_Create_Webhook.json",
+    "name": "Generate audio from text using OpenAI - text-to-speech Workflow",
+    "description": "Automated workflow: Generate audio from text using OpenAI - text-to-speech Workflow. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1608_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1608_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1608_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "chrome extension backend with AI",
+    "description": "Automated workflow: chrome extension backend with AI. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1662_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1662_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1662_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 6 different services: webhook, stickyNote, agent, respondToWebhook, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Apple Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "When called by Apple Shortcut"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1692_Respondtowebhook_Stickynote_Automate_Webhook",
+    "filename": "1692_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1692_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: webhook, stickyNote, switch, respondToWebhook, stopAndError. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook from Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Shorter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Longer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Correct Grammar"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To Spanish"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To English"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1693_Respondtowebhook_Stickynote_Automate_Webhook",
+    "filename": "1693_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1693_Respondtowebhook_Stickynote_Automate_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: webhook, stickyNote, switch, respondToWebhook, stopAndError. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook from Shortcut"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Shorter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Make Longer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - Correct Grammar"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To Spanish"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI - To English"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1803_Respondtowebhook_Stickynote_Import_Webhook",
+    "filename": "1803_Respondtowebhook_Stickynote_Import_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1803_Respondtowebhook_Stickynote_Import_Webhook.json",
+    "name": "Get Airtable data in Obsidian Notes",
+    "description": "Automated workflow: Get Airtable data in Obsidian Notes. This workflow integrates 7 different services: webhook, stickyNote, agent, respondToWebhook, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtableTool",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Obsidian"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook Set Up in Obsidian"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtableTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1953_Respondtowebhook_Stickynote_Monitor_Webhook",
+    "filename": "1953_Respondtowebhook_Stickynote_Monitor_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1953_Respondtowebhook_Stickynote_Monitor_Webhook.json",
+    "name": "Track Working Time and Pauses",
+    "description": "Automated workflow: Track Working Time and Pauses. This workflow integrates 8 different services: webhook, stickyNote, switch, set, respondToWebhook. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Create new page"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update page with end date"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If pause_in_minuten is empty"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If page responded"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If page exist"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If page exist1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Break Duration"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update break duration for current day"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Set break duration for current day"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get notion page by date"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - End time already tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - End time tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Start time not yet tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Start not yet tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Break time tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Break time updated"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Start time already tracked"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Message - Start time already tracked1"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get notion page with todays date"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Get notion page with todays date1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook - Track Time"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1967_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1967_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1967_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "InstaTest",
+    "description": "Automated workflow: InstaTest. This workflow integrates 8 different services: webhook, stickyNote, agent, respondToWebhook, set. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set your system promt for AI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Local n8n memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "ChatGPT model"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Send respond "
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Getting message from Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1997_Respondtowebhook_Stickynote_Automation_Webhook",
+    "filename": "1997_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "category": "Respondtowebhook",
+    "path": "workflows/Respondtowebhook/1997_Respondtowebhook_Stickynote_Automation_Webhook.json",
+    "name": "Image Generation API",
+    "description": "Automated workflow: Image Generation API. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, openAi. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

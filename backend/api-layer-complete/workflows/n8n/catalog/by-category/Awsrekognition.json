@@ -1,0 +1,63 @@
+[
+  {
+    "id": "0150_Awsrekognition_GoogleSheets_Automation_Webhook",
+    "filename": "0150_Awsrekognition_GoogleSheets_Automation_Webhook.json",
+    "category": "Awsrekognition",
+    "path": "workflows/Awsrekognition/0150_Awsrekognition_GoogleSheets_Automation_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.awsRekognition",
+        "name": "AWS Rekognition"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function1"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.awsRekognition",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

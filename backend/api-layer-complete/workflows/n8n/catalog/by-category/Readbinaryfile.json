@@ -1,0 +1,269 @@
+[
+  {
+    "id": "0118_Readbinaryfile_Onfleet_Create",
+    "filename": "0118_Readbinaryfile_Onfleet_Create.json",
+    "category": "Readbinaryfile",
+    "path": "workflows/Readbinaryfile/0118_Readbinaryfile_Onfleet_Create.json",
+    "name": "Create Onfleet tasks from Spreadsheets",
+    "description": "Automated workflow: Create Onfleet tasks from Spreadsheets. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.onfleet",
+        "name": "Onfleet"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.onfleet",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0220_Readbinaryfile_Manual_Automate_Triggered",
+    "filename": "0220_Readbinaryfile_Manual_Automate_Triggered.json",
+    "category": "Readbinaryfile",
+    "path": "workflows/Readbinaryfile/0220_Readbinaryfile_Manual_Automate_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File1"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Move Binary Data"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0351_Readbinaryfile_Manual_Automate_Triggered",
+    "filename": "0351_Readbinaryfile_Manual_Automate_Triggered.json",
+    "category": "Readbinaryfile",
+    "path": "workflows/Readbinaryfile/0351_Readbinaryfile_Manual_Automate_Triggered.json",
+    "name": "My workflow",
+    "description": "Automated workflow: My workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "SplitInBatches"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.splitInBatches"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0352_Readbinaryfile_Spreadsheetfile_Create",
+    "filename": "0352_Readbinaryfile_Spreadsheetfile_Create.json",
+    "category": "Readbinaryfile",
+    "path": "workflows/Readbinaryfile/0352_Readbinaryfile_Spreadsheetfile_Create.json",
+    "name": "Readbinaryfile Workflow",
+    "description": "Automated workflow: Readbinaryfile Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.spreadsheetFile",
+        "name": "Spreadsheet File1"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Insert Rows1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.spreadsheetFile",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0749_Readbinaryfile_Movebinarydata_Send_Scheduled",
+    "filename": "0749_Readbinaryfile_Movebinarydata_Send_Scheduled.json",
+    "category": "Readbinaryfile",
+    "path": "workflows/Readbinaryfile/0749_Readbinaryfile_Movebinarydata_Send_Scheduled.json",
+    "name": "SIGNL4 Alert",
+    "description": "Automated workflow: SIGNL4 Alert. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Write Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Binary File"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Binary to JSON"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "JSON to Binary"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Mark as Done"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.signl4",
+        "name": "SIGNL4 Resolve"
+      },
+      {
+        "type": "n8n-nodes-base.signl4",
+        "name": "SIGNL4 Alert"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.signl4",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

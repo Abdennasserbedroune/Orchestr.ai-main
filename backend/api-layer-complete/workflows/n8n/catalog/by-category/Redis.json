@@ -1,0 +1,288 @@
+[
+  {
+    "id": "0387_Redis_Code_Create_Scheduled",
+    "filename": "0387_Redis_Code_Create_Scheduled.json",
+    "category": "Redis",
+    "path": "workflows/Redis/0387_Redis_Code_Create_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, code, scheduleTrigger, merge. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Meraki Organizations"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Network IDs"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Org Name & ID"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine latency to its respective Network"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Makes Latency and Loss Filterable"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Filters Problematic sites"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Average Latency & Loss over 5m"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Uplink Loss and Latency"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Sets Network Variables"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Check if Alert Exists"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Create Response"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftTeams",
+        "name": "Message Techs"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Log the Alert"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.redis",
+      "n8n-nodes-base.microsoftTeams",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0497_Redis_Schedule_Import_Scheduled",
+    "filename": "0497_Redis_Schedule_Import_Scheduled.json",
+    "category": "Redis",
+    "path": "workflows/Redis/0497_Redis_Schedule_Import_Scheduled.json",
+    "name": "Executeworkflow Workflow",
+    "description": "Automated workflow: Executeworkflow Workflow. This workflow integrates 8 different services: filter, stickyNote, scheduleTrigger, redis, executeWorkflow. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Get Status"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Set Running"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Set Idle"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Continue if Idle"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Redis Key exists"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Reset to Idle"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.redis",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1933_Redis_Code_Create_Webhook",
+    "filename": "1933_Redis_Code_Create_Webhook.json",
+    "category": "Redis",
+    "path": "workflows/Redis/1933_Redis_Code_Create_Webhook.json",
+    "name": "New Ticket Alerts to Teams",
+    "description": "Automated workflow: New Ticket Alerts to Teams. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Add Filterable Parameter"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Query Database"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Filter Out Tickets that have already been sent"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get New Tickets"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Combine like Companies"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftTeams",
+        "name": "Teams to Dispatch"
+      },
+      {
+        "type": "n8n-nodes-base.redis",
+        "name": "Log in Redis"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.redis",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.microsoftTeams"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

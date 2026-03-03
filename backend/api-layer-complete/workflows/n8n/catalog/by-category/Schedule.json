@@ -1,0 +1,4550 @@
+[
+  {
+    "id": "0382_Schedule_Spotify_Create_Scheduled",
+    "filename": "0382_Schedule_Spotify_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0382_Schedule_Spotify_Create_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 6 different services: stickyNote, scheduleTrigger, merge, switch, spotify. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "CRON"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Get User's Playlists"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Get Discover Tracks"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Get Archive Tracks"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if tracks to add is NOT empty"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Add tracks to Archive playlist"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.spotify",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0402_Schedule_Filter_Update_Scheduled",
+    "filename": "0402_Schedule_Filter_Update_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0402_Schedule_Filter_Update_Scheduled.json",
+    "name": "Filter Workflow",
+    "description": "Automated workflow: Filter Workflow. This workflow integrates 8 different services: filter, stickyNote, scheduleTrigger, merge, set. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter Status (Waiting for sending)"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Retrieve Customer Messages Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Message Status"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send a message (Gmail)"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge fields"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0412_Schedule_HTTP_Update_Scheduled",
+    "filename": "0412_Schedule_HTTP_Update_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0412_Schedule_HTTP_Update_Scheduled.json",
+    "name": "Httprequest Workflow",
+    "description": "Automated workflow: Httprequest Workflow. This workflow integrates 9 different services: stickyNote, httpRequest, scheduleTrigger, merge, set. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request - Utilize Prospeo.io LinkedIn Email Finder API1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Conditional Check"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Field Editing"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Data Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get links from Google Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update the sheet with information"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleSheets"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0417_Schedule_Gmail_Send_Scheduled",
+    "filename": "0417_Schedule_Gmail_Send_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0417_Schedule_Gmail_Send_Scheduled.json",
+    "name": "Gmail Workflow",
+    "description": "Automated workflow: Gmail Workflow. This workflow integrates 5 different services: stickyNote, hubspot, scheduleTrigger, set, gmail. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send outreach email"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get uncontacted HubSpot contacts"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every day at 9 am"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set keys"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Record engagement in HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0422_Schedule_HTTP_Send_Webhook",
+    "filename": "0422_Schedule_HTTP_Send_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0422_Schedule_HTTP_Send_Webhook.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, hubspot, scheduleTrigger, set. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every day at 9 am"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send outreach email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Record engagement in HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get previously HubSpot contacts"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if last contacted before a month"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Hubspot Contact to engagement"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if there has been only one engagement"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set email keys"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0432_Schedule_Filter_Create_Scheduled",
+    "filename": "0432_Schedule_Filter_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0432_Schedule_Filter_Create_Scheduled.json",
+    "name": "Hubspot Workflow",
+    "description": "Automated workflow: Hubspot Workflow. This workflow integrates 6 different services: stickyNote, filter, hubspot, scheduleTrigger, stopAndError. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get leads created last 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Notify sales rep"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Trigger every 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Keep the ones that make more than $5M in revenue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0443_Schedule_Filter_Automation_Scheduled",
+    "filename": "0443_Schedule_Filter_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0443_Schedule_Filter_Automation_Scheduled.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 5 different services: stickyNote, itemLists, filter, scheduleTrigger, gmail. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "At midnight every work day"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get all emails in the last day"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get the thread of each email"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Keep only starred emails in inbox"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "for each message in the thread"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Archive message (remove from inbox)"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Archive thread  (remove from inbox)"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0448_Schedule_HTTP_Create_Webhook",
+    "filename": "0448_Schedule_HTTP_Create_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0448_Schedule_HTTP_Create_Webhook.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, scheduleTrigger, n8n, set. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every 15 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "Get all workflows with tag"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set fields"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get notion page with workflow id"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Map fields"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if newly added workflow"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Add to Notion"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update in Notion"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0474_Schedule_GoogleSheets_Automation_Scheduled",
+    "filename": "0474_Schedule_GoogleSheets_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0474_Schedule_GoogleSheets_Automation_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 5 different services: stickyNote, scheduleTrigger, stopAndError, googleSheets, twitter. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Tweets"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Post on X"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Remove from list"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0478_Schedule_HTTP_Create_Webhook",
+    "filename": "0478_Schedule_HTTP_Create_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0478_Schedule_HTTP_Create_Webhook.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow integrates 9 different services: stickyNote, httpRequest, formTrigger, scheduleTrigger, set. It contains 20 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add Log in History"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Products Infos"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If price below price alert"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "List Products"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format Product"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Scrap Product"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Notify Price Reduction"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Monitor Zalando Product"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add Product"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0486_Schedule_Telegram_Create_Scheduled",
+    "filename": "0486_Schedule_Telegram_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0486_Schedule_Telegram_Create_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 9 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, telegram, scheduleTrigger, set. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Prompt for DALL-E"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Audio for the story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate a Picture for the story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Story Text"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Audio for the story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Story Picture"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Config"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0487_Schedule_Telegram_Create_Scheduled",
+    "filename": "0487_Schedule_Telegram_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0487_Schedule_Telegram_Create_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 8 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, telegram, scheduleTrigger, stopAndError. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Prompt for DALL-E"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate an Image for the Story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Audio for the Story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send the Story To Channel"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Image to the Channel"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Translate the Story to Arabic"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Audio to the Channel"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Story for Kids"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0526_Schedule_Slack_Create_Scheduled",
+    "filename": "0526_Schedule_Slack_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0526_Schedule_Slack_Create_Scheduled.json",
+    "name": "Slack Workflow",
+    "description": "Automated workflow: Slack Workflow. This workflow integrates 12 different services: stickyNote, scheduleTrigger, chainLlm, outputParserStructured, merge. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Values"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Create New Ticket?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.linear",
+        "name": "Get Existing Issues"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Ticket Using ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.linear",
+        "name": "Create Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Hashes Only"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Collect Descriptions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.linear",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0527_Schedule_Manual_Update_Scheduled",
+    "filename": "0527_Schedule_Manual_Update_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0527_Schedule_Manual_Update_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 13 different services: stickyNote, splitInBatches, toolSerpApi, scheduleTrigger, agent. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Input"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get website content"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI - Search Google"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "AI Researcher Output Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets - Update Row with data"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get rows to enrich"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI company researcher"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search Google with ScrapingBee"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0529_Schedule_Slack_Update_Webhook",
+    "filename": "0529_Schedule_Slack_Update_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0529_Schedule_Slack_Update_Webhook.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, scheduleTrigger, switch, set. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Calculate Status"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Sites"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send Chat Alert"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Email Alert"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Log Uptime Event"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Site Status"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Perform Site Test"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Site..."
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Status Router"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0539_Schedule_Twilio_Create_Webhook",
+    "filename": "0539_Schedule_Twilio_Create_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0539_Schedule_Twilio_Create_Webhook.json",
+    "name": "Twiliotrigger Workflow",
+    "description": "Automated workflow: Twiliotrigger Workflow. This workflow integrates 13 different services: stickyNote, airtable, toolHttpRequest, scheduleTrigger, agent. It contains 51 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twilioTrigger",
+        "name": "Twilio Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Find Follow-Up Candidates"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Follow Up Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update Follow-Up Count and Date"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create/Update Session"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Existing Chat Session"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every 24hrs"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Reply"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Confirmation"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "User Request STOP"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check For Command  Words"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Follow Up Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Availability"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Existing Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Find Existing Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reschedule Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Cancel Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Booking"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Appointment Scheduling Agent1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twilioTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0563_Schedule_Filter_Update_Scheduled",
+    "filename": "0563_Schedule_Filter_Update_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0563_Schedule_Filter_Update_Scheduled.json",
+    "name": "Todoist Workflow",
+    "description": "Automated workflow: Todoist Workflow. This workflow integrates 7 different services: stickyNote, filter, scheduleTrigger, set, stopAndError. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Update priority in todoist"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Get inbox tasks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Your Projects"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Categorize"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "If task is not a subtask"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "If other or ai hallucinates"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.todoist",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0631_Schedule_Wordpress_Automate_Scheduled",
+    "filename": "0631_Schedule_Wordpress_Automate_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0631_Schedule_Wordpress_Automate_Scheduled.json",
+    "name": "Zoom Workflow",
+    "description": "Automated workflow: Zoom Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.zoom",
+        "name": "Zoom"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.zoom",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0711_Schedule_Slack_Create_Scheduled",
+    "filename": "0711_Schedule_Slack_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0711_Schedule_Slack_Create_Scheduled.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow integrates 9 different services: mongoDb, httpRequest, stickyNote, scheduleTrigger, merge. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Assign parameters"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Query For Upwork Job Posts"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Working Hours"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "Find Existing Entries"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Output New Entries"
+      },
+      {
+        "type": "n8n-nodes-base.mongoDb",
+        "name": "Add New Entries To MongoDB"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send message in #general"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mongoDb",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.slack"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0720_Schedule_Filter_Create_Scheduled",
+    "filename": "0720_Schedule_Filter_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0720_Schedule_Filter_Create_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "On clicking 'execute'"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "create new folder"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "delete folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get folders"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0729_Schedule_Stickynote_Send_Scheduled",
+    "filename": "0729_Schedule_Stickynote_Send_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0729_Schedule_Stickynote_Send_Scheduled.json",
+    "name": "Emailsend Workflow",
+    "description": "Automated workflow: Emailsend Workflow. This workflow integrates 7 different services: stickyNote, scheduleTrigger, merge, ssh, stopAndError. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.ssh",
+        "name": "Check RAM usage"
+      },
+      {
+        "type": "n8n-nodes-base.ssh",
+        "name": "Check Disk usage"
+      },
+      {
+        "type": "n8n-nodes-base.ssh",
+        "name": "Check CPU usage"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge check results"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check results against thresholds"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.ssh",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0758_Schedule_Manual_Monitor_Scheduled",
+    "filename": "0758_Schedule_Manual_Monitor_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0758_Schedule_Manual_Monitor_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 9 different services: stickyNote, salesforce, scheduleTrigger, set, sort. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if Primary Opportunity Contains Value"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if Opportunity Stage is Meeting Booked or Discovery"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format call into correct JSON Object"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Pass to Gong Call Preprocessor"
+      },
+      {
+        "type": "n8n-nodes-base.gong",
+        "name": "Get Gong Call"
+      },
+      {
+        "type": "n8n-nodes-base.sort",
+        "name": "Sort by date"
+      },
+      {
+        "type": "n8n-nodes-base.salesforce",
+        "name": "Get all custom Salesforce Gong Objects"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Run Hourly"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.gong",
+      "n8n-nodes-base.sort",
+      "n8n-nodes-base.salesforce",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0795_Schedule_Mailchimp_Create_Scheduled",
+    "filename": "0795_Schedule_Mailchimp_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0795_Schedule_Mailchimp_Create_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 7 different services: stickyNote, scheduleTrigger, stopAndError, mailchimp, manualTrigger. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Squarespace newsletter submissions"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over each item"
+      },
+      {
+        "type": "n8n-nodes-base.mailchimp",
+        "name": "Add new member to Mailchimp"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.mailchimp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0817_Schedule_Removeduplicates_Create_Webhook",
+    "filename": "0817_Schedule_Removeduplicates_Create_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0817_Schedule_Removeduplicates_Create_Webhook.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 12 different services: stickyNote, markdown, httpRequest, scheduleTrigger, googleDrive. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.crypto",
+        "name": "Get Hash of Contents"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Notify of Change"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Variables"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Only New Hashes"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Log Record"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch Webpage"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "Extract Contents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Take a Snapshot"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.crypto",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.googleDrive"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0907_Schedule_Removeduplicates_Create_Scheduled",
+    "filename": "0907_Schedule_Removeduplicates_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0907_Schedule_Removeduplicates_Create_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 12 different services: stickyNote, scheduleTrigger, chainLlm, outputParserStructured, set. It contains 30 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get Open Tickets"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Label, Prioritize & Rewrite"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Update Labels, Priority and Description"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get Recent Similar Issues Resolved"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Issue Ref"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Get Comments"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Comments"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarise Resolution"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Issue"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return Fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Attempt to Resolve Issue"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Add Comment to Issue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Mark as Seen"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0911_Schedule_Removeduplicates_Create_Scheduled",
+    "filename": "0911_Schedule_Removeduplicates_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0911_Schedule_Removeduplicates_Create_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 10 different services: microsoftOutlook, stickyNote, markdown, scheduleTrigger, chainLlm. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Get Recent Messages"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Create Issue"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Mark as Seen"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Issue From Support Request"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.microsoftOutlook",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0912_Schedule_Removeduplicates_Create_Scheduled",
+    "filename": "0912_Schedule_Removeduplicates_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/0912_Schedule_Removeduplicates_Create_Scheduled.json",
+    "name": "Scheduletrigger Workflow",
+    "description": "Automated workflow: Scheduletrigger Workflow. This workflow integrates 10 different services: stickyNote, markdown, scheduleTrigger, chainLlm, outputParserStructured. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Mark as Seen"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Issue From Support Request"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Get Recent Messages"
+      },
+      {
+        "type": "n8n-nodes-base.linear",
+        "name": "Create Issue in Linear.App"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.linear",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1270_Schedule_Manual_Automation_Scheduled",
+    "filename": "1270_Schedule_Manual_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1270_Schedule_Manual_Automation_Scheduled.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 13 different services: stickyNote, splitInBatches, toolSerpApi, scheduleTrigger, agent. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Input"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get website content"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI - Search Google"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "AI Researcher Output Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets - Update Row with data"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get rows to enrich"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI company researcher"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Search Google with ScrapingBee"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1275_Schedule_Telegram_Automation_Scheduled",
+    "filename": "1275_Schedule_Telegram_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1275_Schedule_Telegram_Automation_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 8 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, telegram, scheduleTrigger, stopAndError. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Prompt for DALL-E"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate an Image for the Story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Audio for the Story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send the Story To Channel"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Image to the Channel"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Translate the Story to Arabic"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Audio to the Channel"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Story for Kids"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1276_Schedule_Telegram_Automation_Scheduled",
+    "filename": "1276_Schedule_Telegram_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1276_Schedule_Telegram_Automation_Scheduled.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 9 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, telegram, scheduleTrigger, set. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Prompt for DALL-E"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Audio for the story"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate a Picture for the story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Story Text"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Audio for the story"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Story Picture"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Config"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1345_Schedule_Discord_Automation_Scheduled",
+    "filename": "1345_Schedule_Discord_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1345_Schedule_Discord_Automation_Scheduled.json",
+    "name": "YouTube to X Post- AlexK1919",
+    "description": "Automated workflow: YouTube to X Post- AlexK1919. This workflow integrates 16 different services: stickyNote, youTube, scheduleTrigger, set, discord. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Post to X"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Fetch Latest Videos"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check Every 2 Hours"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator2"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "GS - Add Tweet"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "GS - Update Tweet"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Test workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.discord",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Remove Duplicates"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate X Post"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Fields"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Rewrite X Post to 220 Characters"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Verify character limit constraints"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Final Fields"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Array is empty?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.discord",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1399_Schedule_Slack_Automation_Scheduled",
+    "filename": "1399_Schedule_Slack_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1399_Schedule_Slack_Automation_Scheduled.json",
+    "name": "Slack Workflow",
+    "description": "Automated workflow: Slack Workflow. This workflow integrates 12 different services: stickyNote, scheduleTrigger, chainLlm, outputParserStructured, merge. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Values"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Create New Ticket?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.linear",
+        "name": "Get Existing Issues"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Ticket Using ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.linear",
+        "name": "Create Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Get Hashes Only"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Collect Descriptions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.linear",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1406_Schedule_Slack_Automation_Scheduled",
+    "filename": "1406_Schedule_Slack_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1406_Schedule_Slack_Automation_Scheduled.json",
+    "name": "Daily meetings summarization with Gemini AI",
+    "description": "Automated workflow: Daily meetings summarization with Gemini AI. This workflow integrates 7 different services: stickyNote, scheduleTrigger, agent, lmChatGoogleGemini, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send response back to slack channel"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar - Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1418_Schedule_Nocodb_Automation_Scheduled",
+    "filename": "1418_Schedule_Nocodb_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1418_Schedule_Nocodb_Automation_Scheduled.json",
+    "name": "Noco Kanban Board with AI Prioritization",
+    "description": "Automated workflow: Noco Kanban Board with AI Prioritization. This workflow integrates 15 different services: stickyNote, formTrigger, scheduleTrigger, agent, outputParserStructured. It contains 33 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Incident Form"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Assign Category"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structure Output Todoist Ready1"
+      },
+      {
+        "type": "n8n-nodes-base.nocoDb",
+        "name": "Get incident definitions"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.nocoDb",
+        "name": "Insert Incident"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate for AI parsing"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On schedule or during flow"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Task is not picked up after expected response"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send email to client"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check status every day"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send email to asignee"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.nocoDb",
+        "name": "Get Unpicked Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.nocoDb",
+        "name": "Get Unfinished Tasks"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Task is not complete in expected time"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send email to client1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If there is asignee email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If there is assignee slack"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack to assignee"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send another email to asignee"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format for Noco"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.nocoDb",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.set"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1492_Schedule_Twilio_Automation_Webhook",
+    "filename": "1492_Schedule_Twilio_Automation_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1492_Schedule_Twilio_Automation_Webhook.json",
+    "name": "Twiliotrigger Workflow",
+    "description": "Automated workflow: Twiliotrigger Workflow. This workflow integrates 13 different services: stickyNote, airtable, toolHttpRequest, scheduleTrigger, agent. It contains 51 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twilioTrigger",
+        "name": "Twilio Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Find Follow-Up Candidates"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Follow Up Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update Follow-Up Count and Date"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create/Update Session"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Existing Chat Session"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every 24hrs"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Reply"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Send Confirmation"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "User Request STOP"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Check For Command Words"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Follow Up Message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Availability"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Existing Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Find Existing Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reschedule Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Cancel Booking"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create a Booking"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Appointment Scheduling Agent1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twilioTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1524_Schedule_Manual_Automation_Scheduled",
+    "filename": "1524_Schedule_Manual_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1524_Schedule_Manual_Automation_Scheduled.json",
+    "name": "Retry Execution Hourly",
+    "description": "Automated workflow: Retry Execution Hourly. This workflow integrates 10 different services: stickyNote, httpRequest, scheduleTrigger, n8n, set. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Log into n8n"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "retry workflow automatically"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "login_details"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.scheduleTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1574_Schedule_Youtube_Create_Scheduled",
+    "filename": "1574_Schedule_Youtube_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1574_Schedule_Youtube_Create_Scheduled.json",
+    "name": "Post New YouTube Videos to X",
+    "description": "Automated workflow: Post New YouTube Videos to X. This workflow integrates 6 different services: stickyNote, youTube, scheduleTrigger, stopAndError, twitter. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Post to X"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Post for X with ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Fetch Latest Videos"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check Every 30 Min"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1602_Schedule_Youtube_Create_Scheduled",
+    "filename": "1602_Schedule_Youtube_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1602_Schedule_Youtube_Create_Scheduled.json",
+    "name": "Post New YouTube Videos to X",
+    "description": "Automated workflow: Post New YouTube Videos to X. This workflow integrates 6 different services: stickyNote, youTube, scheduleTrigger, stopAndError, twitter. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Post to X"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Post for X with ChatGPT"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "Fetch Latest Videos"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Check Every 30 Min"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1607_Schedule_Notion_Sync_Scheduled",
+    "filename": "1607_Schedule_Notion_Sync_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1607_Schedule_Notion_Sync_Scheduled.json",
+    "name": "Sync Todoist tasks to Notion",
+    "description": "Automated workflow: Sync Todoist tasks to Notion. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "On schedule"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Get all tasks with specific label"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Add to Notion database"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Replace label on task"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.todoist",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1614_Schedule_HTTP_Send_Webhook",
+    "filename": "1614_Schedule_HTTP_Send_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1614_Schedule_HTTP_Send_Webhook.json",
+    "name": "SSL Expiry Alert",
+    "description": "Automated workflow: SSL Expiry Alert. This workflow integrates 7 different services: stickyNote, httpRequest, scheduleTrigger, stopAndError, gmail. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "URLs to Monitor"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Weekly Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Fetch URLs"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Check SSL"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Expiry Alert"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Alert Email"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1629_Schedule_Stickynote_Automation_Scheduled",
+    "filename": "1629_Schedule_Stickynote_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1629_Schedule_Stickynote_Automation_Scheduled.json",
+    "name": "Reschedule overdue Asana tasks and clean up completed tasks",
+    "description": "Automated workflow: Reschedule overdue Asana tasks and clean up completed tasks. This workflow integrates 4 different services: scheduleTrigger, asana, stickyNote, if. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Everyday at 7am"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Get user tasks"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Get task infos"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Task is open?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Due date in the past?"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Set due date to Today"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Clean up task"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.asana",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1697_Schedule_HTTP_Monitor_Scheduled",
+    "filename": "1697_Schedule_HTTP_Monitor_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1697_Schedule_HTTP_Monitor_Scheduled.json",
+    "name": "Amazon Product Price Tracker",
+    "description": "Automated workflow: Amazon Product Price Tracker. This workflow integrates 9 different services: stickyNote, httpRequest, scheduleTrigger, set, stopAndError. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Products to Monitor"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Scrapeops - Amazon Product"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Fields"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Last Price"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Price Change"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Alert Status"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Insert - Price History"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update - Products to Monitor"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check Valid Price"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Alert Decision"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Setup"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1718_Schedule_Filter_Automation_Scheduled",
+    "filename": "1718_Schedule_Filter_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1718_Schedule_Filter_Automation_Scheduled.json",
+    "name": "Todoist Workflow",
+    "description": "Automated workflow: Todoist Workflow. This workflow integrates 7 different services: stickyNote, filter, scheduleTrigger, set, stopAndError. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Update priority in todoist"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.todoist",
+        "name": "Get inbox tasks"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Your Projects"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Categorize"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "If task is not a subtask"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "If other or ai hallucinates"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.todoist",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1738_Schedule_Comparedatasets_Automation_Scheduled",
+    "filename": "1738_Schedule_Comparedatasets_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1738_Schedule_Comparedatasets_Automation_Scheduled.json",
+    "name": "GoogleSheets MySQL Integration",
+    "description": "Automated workflow: GoogleSheets MySQL Integration. This workflow integrates 10 different services: stickyNote, mySql, scheduleTrigger, noOp, set. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking \"Execute Workflow\""
+      },
+      {
+        "type": "n8n-nodes-base.compareDatasets",
+        "name": "Compare Datasets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Send Notifications"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheet Data"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "SQL Get inquiries from Google"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Add MySQL records"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Rename GSheet variables"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "No reply too long?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "DB Status assigned?"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update GSheet status"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "DB Status in sync?"
+      },
+      {
+        "type": "n8n-nodes-base.mySql",
+        "name": "Sync MySQL data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.compareDatasets",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.mySql",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1750_Schedule_Extractfromfile_Import_Scheduled",
+    "filename": "1750_Schedule_Extractfromfile_Import_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1750_Schedule_Extractfromfile_Import_Scheduled.json",
+    "name": "Vector DB Loader from Google Drive",
+    "description": "Automated workflow: Vector DB Loader from Google Drive. This workflow integrates 12 different services: stickyNote, textSplitterRecursiveCharacterTextSplitter, scheduleTrigger, googleDrive, switch. It contains 22 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Recursive Character Text Splitter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres PGVector Store"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Move File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Download File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Search Folder"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from PDF"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from Text"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from JSON"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1820_Schedule_N8N_Automate_Scheduled",
+    "filename": "1820_Schedule_N8N_Automate_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1820_Schedule_N8N_Automate_Scheduled.json",
+    "name": "💻 Schedule workflow activity time",
+    "description": "Automated workflow: 💻 Schedule workflow activity time. This workflow integrates 5 different services: stickyNote, scheduleTrigger, merge, n8n, set. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n Activate"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n Deactivate"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Workflow ID"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge in Workflow ID for deactivation"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge in Workflow ID for activation"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Activate at 08:00 daily"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Deactivate at 20:00 daily"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1859_Schedule_Slack_Monitor_Scheduled",
+    "filename": "1859_Schedule_Slack_Monitor_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1859_Schedule_Slack_Monitor_Scheduled.json",
+    "name": "Monitor ProductHunt",
+    "description": "Automated workflow: Monitor ProductHunt. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define relevant products"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Found products?"
+      },
+      {
+        "type": "n8n-nodes-base.airtop",
+        "name": "Look up products"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send slack message"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Trigger daily"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.airtop",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1867_Schedule_Filter_Sync_Scheduled",
+    "filename": "1867_Schedule_Filter_Sync_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1867_Schedule_Filter_Sync_Scheduled.json",
+    "name": "Spotify Sync Liked Songs to Playlist",
+    "description": "Automated workflow: Spotify Sync Liked Songs to Playlist. This workflow integrates 13 different services: filter, stickyNote, gotify, scheduleTrigger, merge. It contains 40 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Start"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.sort",
+        "name": "Sort first added to first item"
+      },
+      {
+        "type": "n8n-nodes-base.gotify",
+        "name": "Gotify Send deleted n from x"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop delete old"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Spotify delete old"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit set Vars"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit success to del"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter Playlist x"
+      },
+      {
+        "type": "n8n-nodes-base.compareDatasets",
+        "name": "Compare Datasets"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "count added"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop add missing"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Spotify add Missing to x"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit snapshot to added"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Cound deleted"
+      },
+      {
+        "type": "n8n-nodes-base.sort",
+        "name": "Sort"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set pluri"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.gotify",
+        "name": "Gotify"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit set intern vars"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "END"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note14"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note15"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Spotify get Liked Songs"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Spotify get all playlists"
+      },
+      {
+        "type": "n8n-nodes-base.spotify",
+        "name": "Spotify get Tracks of X"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.sort",
+      "n8n-nodes-base.gotify",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.spotify",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.compareDatasets",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1891_Schedule_Slack_Automation_Scheduled",
+    "filename": "1891_Schedule_Slack_Automation_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1891_Schedule_Slack_Automation_Scheduled.json",
+    "name": "Daily meetings summarization with Gemini AI",
+    "description": "Automated workflow: Daily meetings summarization with Gemini AI. This workflow integrates 7 different services: stickyNote, scheduleTrigger, agent, lmChatGoogleGemini, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send response back to slack channel"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "Google Calendar - Get Events"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calendar AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1932_Schedule_Telegram_Send_Scheduled",
+    "filename": "1932_Schedule_Telegram_Send_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1932_Schedule_Telegram_Send_Scheduled.json",
+    "name": "Automatically Send Daily Meeting List to Telegram",
+    "description": "Automated workflow: Automatically Send Daily Meeting List to Telegram. This workflow integrates 7 different services: stickyNote, telegram, scheduleTrigger, function, set. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Get meetings for today"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Every morning @ 6"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Function"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1952_Schedule_HTTP_Monitor_Webhook",
+    "filename": "1952_Schedule_HTTP_Monitor_Webhook.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/1952_Schedule_HTTP_Monitor_Webhook.json",
+    "name": "Web Server Monitor.",
+    "description": "Automated workflow: Web Server Monitor.. This workflow integrates 6 different services: stickyNote, httpRequest, scheduleTrigger, stopAndError, gmail. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Server-Monitor"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Server_Status_Alive"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Server_Status_Down"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2045_Schedule_HTTP_Create_Scheduled",
+    "filename": "2045_Schedule_HTTP_Create_Scheduled.json",
+    "category": "Schedule",
+    "path": "workflows/Schedule/2045_Schedule_HTTP_Create_Scheduled.json",
+    "name": "Html Workflow",
+    "description": "Automated workflow: Html Workflow. This workflow integrates 9 different services: stickyNote, httpRequest, microsoftOutlook, scheduleTrigger, lmChatGoogleGemini. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "Extract specific content"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get financial news online"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Gather the elements"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOutlook",
+        "name": "Send the summary by e-mail"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.microsoftOutlook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

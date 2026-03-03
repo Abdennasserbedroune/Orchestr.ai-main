@@ -1,0 +1,53 @@
+[
+  {
+    "id": "0026_Mailcheck_Airtable_Monitor",
+    "filename": "0026_Mailcheck_Airtable_Monitor.json",
+    "category": "Mailcheck",
+    "path": "workflows/Mailcheck/0026_Mailcheck_Airtable_Monitor.json",
+    "name": "Airtable Workflow",
+    "description": "Automated workflow: Airtable Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.mailcheck",
+        "name": "Mailcheck"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable1"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.mailcheck",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

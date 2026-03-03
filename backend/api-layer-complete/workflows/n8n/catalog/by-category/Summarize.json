@@ -1,0 +1,365 @@
+[
+  {
+    "id": "1582_Summarize_Stickynote_Automation_Triggered",
+    "filename": "1582_Summarize_Stickynote_Automation_Triggered.json",
+    "category": "Summarize",
+    "path": "workflows/Summarize/1582_Summarize_Stickynote_Automation_Triggered.json",
+    "name": "OpenAI Assistant with custom n8n tools",
+    "description": "Automated workflow: OpenAI Assistant with custom n8n tools. This workflow integrates 12 different services: stickyNote, openAiAssistant, code, merge, summarize. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "On new manual Chat Message"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Assistant"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Mapping data"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "List countries?"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Mapping data1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return country list"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Return specific capital"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tool to call the workflow below"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Concatenate country names"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Get the matching country's details"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Tool: Get current date and time"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1706_Summarize_Stickynote_Automation_Triggered",
+    "filename": "1706_Summarize_Stickynote_Automation_Triggered.json",
+    "category": "Summarize",
+    "path": "workflows/Summarize/1706_Summarize_Stickynote_Automation_Triggered.json",
+    "name": "Jira Retrospective",
+    "description": "Automated workflow: Jira Retrospective. This workflow integrates 11 different services: stickyNote, agent, summarize, set, stopAndError. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Jira Get All Issues"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Jira Get All Comments"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Summarize"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Google Docs"
+      },
+      {
+        "type": "n8n-nodes-base.jiraTrigger",
+        "name": "Jira Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.googleDocs",
+      "n8n-nodes-base.jiraTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1829_Summarize_Respondtowebhook_Automation_Webhook",
+    "filename": "1829_Summarize_Respondtowebhook_Automation_Webhook.json",
+    "category": "Summarize",
+    "path": "workflows/Summarize/1829_Summarize_Respondtowebhook_Automation_Webhook.json",
+    "name": "Adaptive RAG",
+    "description": "Automated workflow: Adaptive RAG. This workflow integrates 13 different services: stickyNote, embeddingsGoogleGemini, vectorStoreQdrant, lmChatGoogleGemini, agent. It contains 48 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Query Classification"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Factual Strategy - Focus on Precision"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Analytical Strategy - Comprehensive Coverage"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Opinion Strategy - Diverse Perspectives"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Contextual Strategy - User Context Integration"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Factual Prompt and Output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Contextual Prompt and Output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Opinion Prompt and Output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Analytical Prompt and Output"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Classification"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Factual"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Analytical"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Buffer Memory Analytical"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Buffer Memory Factual"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Opinion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Buffer Memory Opinion"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Contextual"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Buffer Memory Contextual"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Concatenate Context"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Retrieve Documents from Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Prompt and Output"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Gemini Answer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Answer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Combined Fields"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.executeWorkflowTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

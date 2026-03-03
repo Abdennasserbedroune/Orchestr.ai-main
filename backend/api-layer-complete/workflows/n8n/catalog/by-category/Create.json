@@ -1,0 +1,84 @@
+[
+  {
+    "id": "1124_Create",
+    "filename": "1124_Create.json",
+    "category": "Create",
+    "path": "workflows/Create/1124_Create.json",
+    "name": "Function Workflow",
+    "description": "Automated workflow: Function Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Mock Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Create JSON-items"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1125_Create",
+    "filename": "1125_Create.json",
+    "category": "Create",
+    "path": "workflows/Create/1125_Create.json",
+    "name": "Function Workflow",
+    "description": "Automated workflow: Function Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Mock Data"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Create an array of objects"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

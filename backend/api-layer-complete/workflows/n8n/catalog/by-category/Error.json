@@ -1,0 +1,1008 @@
+[
+  {
+    "id": "0126_Error_Slack_Automate_Triggered",
+    "filename": "0126_Error_Slack_Automate_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0126_Error_Slack_Automate_Triggered.json",
+    "name": "Slack Workflow",
+    "description": "Automated workflow: Slack Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0395_Error_Mondaycom_Update_Triggered",
+    "filename": "0395_Error_Mondaycom_Update_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0395_Error_Mondaycom_Update_Triggered.json",
+    "name": "Mondaycom Workflow",
+    "description": "Automated workflow: Mondaycom Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "Monday"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Date & Time"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code"
+      },
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "UPDATE"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.dateTime",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0447_Error_Slack_Send_Triggered",
+    "filename": "0447_Error_Slack_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0447_Error_Slack_Send_Triggered.json",
+    "name": "Slack Workflow",
+    "description": "Automated workflow: Slack Workflow. This workflow integrates 5 different services: stickyNote, errorTrigger, set, stopAndError, slack. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Slack"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "On Error"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0454_Error_Telegram_Send_Triggered",
+    "filename": "0454_Error_Telegram_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0454_Error_Telegram_Send_Triggered.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow integrates 5 different services: stickyNote, telegram, errorTrigger, set, stopAndError. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "On Error"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set message"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0456_Error_Gmail_Send_Triggered",
+    "filename": "0456_Error_Gmail_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0456_Error_Gmail_Send_Triggered.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow integrates 3 different services: stickyNote, gmail, errorTrigger. It contains 4 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "On Error"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0518_Error_Code_Update_Scheduled",
+    "filename": "0518_Error_Code_Update_Scheduled.json",
+    "category": "Error",
+    "path": "workflows/Error/0518_Error_Code_Update_Scheduled.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow integrates 7 different services: stickyNote, code, scheduleTrigger, n8n, errorTrigger. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "get error handler"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n | update"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "set fields"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "active && no error handler set && not this  handler workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0545_Error_N8N_Import_Triggered",
+    "filename": "0545_Error_N8N_Import_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0545_Error_N8N_Import_Triggered.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract webhook data"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "Get execution data"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0945_Error_Code_Send_Triggered",
+    "filename": "0945_Error_Code_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/0945_Error_Code_Send_Triggered.json",
+    "name": "Error Alert and Summarizer",
+    "description": "Automated workflow: Error Alert and Summarizer. This workflow integrates 11 different services: stickyNote, code, agent, outputParserStructured, errorTrigger. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "SET EMAIL"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Remove Manual Exec"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "Get Failed Exec"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Error Details"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Error Solver Agent"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Diagnosis Fields"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Generate Email"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1036_Error_Twilio_Send_Triggered",
+    "filename": "1036_Error_Twilio_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1036_Error_Twilio_Send_Triggered.json",
+    "name": "Send an SMS when a workflow fails",
+    "description": "Automated workflow: Send an SMS when a workflow fails. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1099_Error_Gmail_Send_Triggered",
+    "filename": "1099_Error_Gmail_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1099_Error_Gmail_Send_Triggered.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1179_Error_Mailgun_Automate_Triggered",
+    "filename": "1179_Error_Mailgun_Automate_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1179_Error_Mailgun_Automate_Triggered.json",
+    "name": "Errortrigger Workflow",
+    "description": "Automated workflow: Errortrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.mailgun",
+        "name": "Mailgun"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.mailgun",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1237_Error_Telegram_Automation_Webhook",
+    "filename": "1237_Error_Telegram_Automation_Webhook.json",
+    "category": "Error",
+    "path": "workflows/Error/1237_Error_Telegram_Automation_Webhook.json",
+    "name": "google drive to instagram, tiktok and youtube",
+    "description": "Automated workflow: google drive to instagram, tiktok and youtube. This workflow integrates 11 different services: writeBinaryFile, stickyNote, httpRequest, googleDriveTrigger, telegram. It contains 27 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Audio from Video"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Read video from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Description for Videos  in Tiktok and Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Video from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Video from Google Drive2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload Video and Description to Tiktok"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload Video and Description to Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Video from Google Drive3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload Video and Description to Youtube"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1715_Error_Telegram_Automation_Webhook",
+    "filename": "1715_Error_Telegram_Automation_Webhook.json",
+    "category": "Error",
+    "path": "workflows/Error/1715_Error_Telegram_Automation_Webhook.json",
+    "name": "template in store",
+    "description": "Automated workflow: template in store. This workflow integrates 11 different services: writeBinaryFile, stickyNote, httpRequest, googleDriveTrigger, telegram. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Get Audio from Video"
+      },
+      {
+        "type": "n8n-nodes-base.writeBinaryFile",
+        "name": "Read video from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Description for Videos in Tiktok and Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Video from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.readBinaryFile",
+        "name": "Read Video from Google Drive2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload Video and Description to Tiktok"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Upload Video and Description to Instagram"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.writeBinaryFile",
+      "n8n-nodes-base.readBinaryFile",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1777_Error_Postgres_Send_Triggered",
+    "filename": "1777_Error_Postgres_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1777_Error_Postgres_Send_Triggered.json",
+    "name": "Log errors and avoid sending too many emails",
+    "description": "Automated workflow: Log errors and avoid sending too many emails. This workflow integrates 12 different services: postgres, stickyNote, code, errorTrigger, pushover. It contains 18 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Insert Log"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Count for 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Principal E-Mail"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Fallback E-Mail"
+      },
+      {
+        "type": "n8n-nodes-base.pushover",
+        "name": "Push mobile notification"
+      },
+      {
+        "type": "n8n-nodes-base.postgres",
+        "name": "Truncate Log Database"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Sometimes... just cleanup"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Call this Sample - Prepend to your error catcher"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "See below to prepend this at your error handling"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If there is no logs in 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "CleanUp execution. See below if you will prepend this workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Insert your error handling logic after this"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.postgres",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.pushover",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.noOp"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1849_Error_Stickynote_Automation_Webhook",
+    "filename": "1849_Error_Stickynote_Automation_Webhook.json",
+    "category": "Error",
+    "path": "workflows/Error/1849_Error_Stickynote_Automation_Webhook.json",
+    "name": "n8n Error Report to Line",
+    "description": "Automated workflow: n8n Error Report to Line. This workflow integrates 4 different services: stickyNote, httpRequest, errorTrigger, stopAndError. It contains 6 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1948_Error_Telegram_Send_Triggered",
+    "filename": "1948_Error_Telegram_Send_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1948_Error_Telegram_Send_Triggered.json",
+    "name": "Error Handler send Telegram",
+    "description": "Automated workflow: Error Handler send Telegram. This workflow integrates 5 different services: stickyNote, telegram, errorTrigger, set, stopAndError. It contains 5 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram"
+      },
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Config"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1991_Error_Code_Automation_Triggered",
+    "filename": "1991_Error_Code_Automation_Triggered.json",
+    "category": "Error",
+    "path": "workflows/Error/1991_Error_Code_Automation_Triggered.json",
+    "name": "CV Evaluation - Error Handling",
+    "description": "Automated workflow: CV Evaluation - Error Handling. This workflow integrates 8 different services: stickyNote, code, merge, errorTrigger, set. It contains 13 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.errorTrigger",
+        "name": "Error Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Config"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Constants"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML for Execution Error"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML for Trigger Error"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "KeepEitherOfHTMLs"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.errorTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

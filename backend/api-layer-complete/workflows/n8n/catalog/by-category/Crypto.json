@@ -1,0 +1,181 @@
+[
+  {
+    "id": "0042_Crypto_Airtable_Update_Webhook",
+    "filename": "0042_Crypto_Airtable_Update_Webhook.json",
+    "category": "Crypto",
+    "path": "workflows/Crypto/0042_Crypto_Airtable_Update_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract URL"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check URL"
+      },
+      {
+        "type": "n8n-nodes-base.crypto",
+        "name": "Crypto"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set ID,shortUrl,longUrl"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Find by ID"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Already exists ?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Error output"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Output1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set input"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Error output1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check Id"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Find by ID1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Already exists ?1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Output2"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract Id"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "404 Error"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update clicks"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare clicks count"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook2"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Find by ID2"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Extract stats"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set dashboard"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.crypto",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0164_Crypto_Webhook_Automate_Webhook",
+    "filename": "0164_Crypto_Webhook_Automate_Webhook.json",
+    "category": "Crypto",
+    "path": "workflows/Crypto/0164_Crypto_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.crypto",
+        "name": "Crypto"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.crypto",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1035_Jira_Automate_Triggered",
+    "filename": "1035_Jira_Automate_Triggered.json",
+    "category": "Jira",
+    "path": "workflows/Jira/1035_Jira_Automate_Triggered.json",
+    "name": "Jiratrigger Workflow",
+    "description": "Automated workflow: Jiratrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.jiraTrigger",
+        "name": "Jira Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.jiraTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1769_Jira_Stickynote_Sync_Triggered",
+    "filename": "1769_Jira_Stickynote_Sync_Triggered.json",
+    "category": "Jira",
+    "path": "workflows/Jira/1769_Jira_Stickynote_Sync_Triggered.json",
+    "name": "Sync Jira issues with subsequent comments to Notion database",
+    "description": "Automated workflow: Sync Jira issues with subsequent comments to Notion database. This workflow integrates 6 different services: stickyNote, code, switch, jiraTrigger, if. It contains 10 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Create database page"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Find database page"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Delete issue"
+      },
+      {
+        "type": "n8n-nodes-base.jiraTrigger",
+        "name": "On issues created/updated/deleted"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Lookup table"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Create custom Notion filters"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update issue"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.jiraTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,2024 @@
+[
+  {
+    "id": "0847_Linkedin_Splitout_Create_Triggered",
+    "filename": "0847_Linkedin_Splitout_Create_Triggered.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/0847_Linkedin_Splitout_Create_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 7 different services: stickyNote, splitOut, stopAndError, manualTrigger, gmail. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Extract News Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Create LinkedIn Posts"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1121_Linkedin_Wait_Create_Webhook",
+    "filename": "1121_Linkedin_Wait_Create_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1121_Linkedin_Wait_Create_Webhook.json",
+    "name": "Hacker News to Video Template - AlexK1919",
+    "description": "Automated workflow: Hacker News to Video Template - AlexK1919. This workflow integrates 22 different services: stickyNote, youTube, lmChatOpenAi, if, splitInBatches. It contains 82 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.hackerNews",
+        "name": "Hacker News"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.s3",
+        "name": "Upload to Minio"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "News1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Improve Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Get imageId"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Create Video"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Get Video"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Topic"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prompt Settings1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Generate Image"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait1"
+      },
+      {
+        "type": "n8n-nodes-base.limit",
+        "name": "Limit"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Article Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Dropbox"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Microsoft OneDrive"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "YouTube"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Improve Prompt2"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait4"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait6"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Generate Image2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Get imageId2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Create Video2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Get Video2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Cre - Generate Video1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Cre - Get Video"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Article Prep"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.hackerNews",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.s3",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.limit",
+      "n8n-nodes-base.dropbox",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.microsoftOneDrive",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.linkedIn"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1280_Linkedin_Telegram_Automation_Scheduled",
+    "filename": "1280_Linkedin_Telegram_Automation_Scheduled.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1280_Linkedin_Telegram_Automation_Scheduled.json",
+    "name": "Social Media AI Agent - Telegram",
+    "description": "Automated workflow: Social Media AI Agent - Telegram. This workflow integrates 15 different services: filter, markdown, httpRequest, stickyNote, airtable. It contains 32 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Crawl HN Home"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Meta"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Filter Unposted Items"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Visit GH Page"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert HTML To Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter Errored"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update X Status"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update L Status"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Search Item"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create Item"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Validate Generate Content"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Content"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Ping Me"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait for 5 mins before posting"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.wait"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1330_Linkedin_Schedule_Automate_Webhook",
+    "filename": "1330_Linkedin_Schedule_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1330_Linkedin_Schedule_Automate_Webhook.json",
+    "name": "Automate LinkedIn Posts with AI",
+    "description": "Automated workflow: Automate LinkedIn Posts with AI. This workflow integrates 9 different services: stickyNote, httpRequest, scheduleTrigger, merge, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Set post status to \"Done\""
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "Post on LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine text+image"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch image from post"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reformat Post Text"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "get all content from post page"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Pull together all text blocks + image"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "query entries from Notion table for today"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.aggregate"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1342_Linkedin_Telegram_Automate_Webhook",
+    "filename": "1342_Linkedin_Telegram_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1342_Linkedin_Telegram_Automate_Webhook.json",
+    "name": "✨🩷Automated Social Media Content Publishing Factory + System Prompt Composition",
+    "description": "Automated workflow: ✨🩷Automated Social Media Content Publishing Factory + System Prompt Composition. This workflow integrates 24 different services: stickyNote, facebookGraphApi, merge, switch, lmChatOpenAi. It contains 126 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note20"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note21"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note22"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note32"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note33"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "X-Twiter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note34"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note35"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note36"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Facebook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note37"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note38"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Short"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "YouTube Short"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note18"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note25"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "pollinations.ai1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note26"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Save Image to imgbb.com"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note41"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note42"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Social Media Schema"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Social Media System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-40-mini"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Instagram Image"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "X Post"
+      },
+      {
+        "type": "n8n-nodes-base.facebookGraphApi",
+        "name": "Instragram Post"
+      },
+      {
+        "type": "n8n-nodes-base.facebookGraphApi",
+        "name": "Facebook Post"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn Post"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail User for Approval"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Social Post Image"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-40-mini1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Schema"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Compose Prompt & Schema"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Social Media Content Creator"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Prompts and Schema"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Social Content"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Save Image to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Save Social Post to Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Google Drive Image Meta"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Social Post JSON"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Respond with Google Drive Id"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram Success Message (Optional)"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Telegram Error Message (Optional)"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Social Media Publishing Router"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Prepare Email Contents"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is Approved?"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "File Id"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Get Social Post from Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract as JSON"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Image and Post Contents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Implement Threads Here"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Implement YouTube Shorts Here"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "X Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Instagram Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Facebook Response"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "LinkedIn Response"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "🤖Social Media Router Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note14"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note15"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note16"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note17"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note19"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note23"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note24"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note27"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note28"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note29"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note30"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Prepare Social Media Email Contents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note43"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note44"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note45"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleDocs",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.facebookGraphApi",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.extractFromFile"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1491_Linkedin_Wait_Create_Webhook",
+    "filename": "1491_Linkedin_Wait_Create_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1491_Linkedin_Wait_Create_Webhook.json",
+    "name": "Hacker News to Video Template - AlexK1919",
+    "description": "Automated workflow: Hacker News to Video Template - AlexK1919. This workflow integrates 22 different services: stickyNote, youTube, lmChatOpenAi, if, splitInBatches. It contains 82 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.hackerNews",
+        "name": "Hacker News"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.s3",
+        "name": "Upload to Minio"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "News1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Improve Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Get imageId"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Create Video"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Get Video"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Topic"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prompt Settings1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Generate Image"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait1"
+      },
+      {
+        "type": "n8n-nodes-base.limit",
+        "name": "Limit"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Article Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Dropbox"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Microsoft OneDrive"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "YouTube"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Improve Prompt2"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait4"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait6"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Generate Image2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Leo - Get imageId2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Create Video2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Runway - Get Video2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Cre - Generate Video1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Cre - Get Video"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Article Prep"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.hackerNews",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.s3",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.limit",
+      "n8n-nodes-base.dropbox",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.microsoftOneDrive",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.linkedIn"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1709_Linkedin_Wordpress_Automation_Webhook",
+    "filename": "1709_Linkedin_Wordpress_Automation_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1709_Linkedin_Wordpress_Automation_Webhook.json",
+    "name": "AI Social Media Publisher from WordPress",
+    "description": "Automated workflow: AI Social Media Publisher from WordPress. This workflow integrates 13 different services: stickyNote, wordpress, facebookGraphApi, httpRequest, twitter. It contains 31 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Facebook e Linkedin"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Social Media Manager"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Linkedin OK"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Facebook Ok"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Instagram OK"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Get Post"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Publish on X"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "X OK"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "Publish on LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.facebookGraphApi",
+        "name": "Publish on Facebook"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Publish on Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.facebookGraphApi",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1782_Linkedin_Telegram_Automation_Scheduled",
+    "filename": "1782_Linkedin_Telegram_Automation_Scheduled.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1782_Linkedin_Telegram_Automation_Scheduled.json",
+    "name": "Social Media AI Agent - Telegram",
+    "description": "Automated workflow: Social Media AI Agent - Telegram. This workflow integrates 15 different services: filter, markdown, httpRequest, stickyNote, airtable. It contains 32 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Crawl HN Home"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Meta"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Filter Unposted Items"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Visit GH Page"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert HTML To Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter Errored"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update X Status"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update L Status"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Search Item"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Create Item"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Validate Generate Content"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Generate Content"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Ping Me"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait for 5 mins before posting"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.wait"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1807_Linkedin_Googledocs_Automate_Webhook",
+    "filename": "1807_Linkedin_Googledocs_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1807_Linkedin_Googledocs_Automate_Webhook.json",
+    "name": "✨🩷Automated Social Media Content Publishing Factory + System Prompt Composition",
+    "description": "Automated workflow: ✨🩷Automated Social Media Content Publishing Factory + System Prompt Composition. This workflow integrates 16 different services: stickyNote, httpRequest, facebookGraphApi, code, agent. It contains 74 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note20"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note21"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note22"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note32"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note33"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "X-Twiter"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note34"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Instagram"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note35"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note36"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Facebook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note37"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note38"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Short"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "YouTube Short"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note18"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note25"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "pollinations.ai1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note26"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Save Image to imgbb.com"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note41"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note42"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Social Media Schema"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Social Media System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-40-mini"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Instagram Image"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "X Post"
+      },
+      {
+        "type": "n8n-nodes-base.facebookGraphApi",
+        "name": "Instragram Post"
+      },
+      {
+        "type": "n8n-nodes-base.facebookGraphApi",
+        "name": "Facebook Post"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn Post"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail User for Approval"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Social Post Image"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-40-mini1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o-mini"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Schema"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Schema"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse System Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Compose Prompt & Schema"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Social Media Content Creator"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Prepare Social Media Email Contents"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note43"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note44"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note45"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "gpt-4o"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleDocs",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.facebookGraphApi",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.code"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1922_Linkedin_Schedule_Automate_Webhook",
+    "filename": "1922_Linkedin_Schedule_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1922_Linkedin_Schedule_Automate_Webhook.json",
+    "name": "Automate LinkedIn Posts with AI",
+    "description": "Automated workflow: Automate LinkedIn Posts with AI. This workflow integrates 9 different services: stickyNote, httpRequest, scheduleTrigger, merge, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Set post status to \"Done\""
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "Post on LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine text+image"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch image from post"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Reformat Post Text"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "get all content from post page"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Pull together all text blocks + image"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "query entries from Notion table for today"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.aggregate"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1939_Linkedin_Code_Automation_Webhook",
+    "filename": "1939_Linkedin_Code_Automation_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1939_Linkedin_Code_Automation_Webhook.json",
+    "name": "Notion to Linkedin",
+    "description": "Automated workflow: Notion to Linkedin. This workflow integrates 9 different services: stickyNote, httpRequest, code, scheduleTrigger, merge. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Filter the table for the day's post"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Fetch the content on the page"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate the Notion blocks"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Format the post"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download image"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "Publish on LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.notion",
+        "name": "Update post status in notion database"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.notion",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.linkedIn"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1951_Linkedin_Webhook_Automate_Webhook",
+    "filename": "1951_Linkedin_Webhook_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/1951_Linkedin_Webhook_Automate_Webhook.json",
+    "name": "Training Feedback Automation",
+    "description": "Automated workflow: Training Feedback Automation. This workflow integrates 8 different services: airtableTrigger, webhook, stickyNote, linkedIn, httpRequest. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtableTrigger",
+        "name": "Airtable Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook - Action Task Poor"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch1"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "LinkedIn"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Poor  - Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Usertask - Create task"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Usertask - Create Task - Pair and good"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email after WebHook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Usertask - Detail Task"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email - Information for marcketing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Call Usertask - Create Task - Dissatisfaction"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtableTrigger",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.linkedIn",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "2024_Linkedin_Telegram_Automate_Webhook",
+    "filename": "2024_Linkedin_Telegram_Automate_Webhook.json",
+    "category": "Linkedin",
+    "path": "workflows/Linkedin/2024_Linkedin_Telegram_Automate_Webhook.json",
+    "name": "Linkedin Automation",
+    "description": "Automated workflow: Linkedin Automation. This workflow integrates 10 different services: filter, stickyNote, httpRequest, telegram, airtable. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get List of records used"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update the used node"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "map used articls ids"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "filter only unused Ids"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "get random tags"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "sent the status"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Morning  9 Clock"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "fetch article ids from tag"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch Medium post using Article Id"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.linkedIn",
+        "name": "make Linkedin post"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Fetch Medium post content"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "download image for post"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.linkedIn"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

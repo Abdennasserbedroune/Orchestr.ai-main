@@ -1,0 +1,354 @@
+[
+  {
+    "id": "0274_Zendesk_Asana_Create_Webhook",
+    "filename": "0274_Zendesk_Asana_Create_Webhook.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0274_Zendesk_Asana_Create_Webhook.json",
+    "name": "Zendesk Workflow",
+    "description": "Automated workflow: Zendesk Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get ticket"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Create task"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update ticket"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Determine"
+      },
+      {
+        "type": "n8n-nodes-base.asana",
+        "name": "Create comment on existing task"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "On new Zendesk ticket"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.asana",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0279_Zendesk_GitHub_Create_Webhook",
+    "filename": "0279_Zendesk_GitHub_Create_Webhook.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0279_Zendesk_GitHub_Create_Webhook.json",
+    "name": "Zendesk Workflow",
+    "description": "Automated workflow: Zendesk Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get ticket"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update ticket"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Determine"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Create issue"
+      },
+      {
+        "type": "n8n-nodes-base.github",
+        "name": "Create comment on existing issue"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "On new Zendesk ticket"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.github",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0280_Zendesk_Jira_Create_Webhook",
+    "filename": "0280_Zendesk_Jira_Create_Webhook.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0280_Zendesk_Jira_Create_Webhook.json",
+    "name": "If Workflow",
+    "description": "Automated workflow: If Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Create issue"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update ticket"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get ticket"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Determine"
+      },
+      {
+        "type": "n8n-nodes-base.jira",
+        "name": "Create comment to existing issue"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "On new Zendesk ticket"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.jira",
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0285_Zendesk_HubSpot_Create_Scheduled",
+    "filename": "0285_Zendesk_HubSpot_Create_Scheduled.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0285_Zendesk_HubSpot_Create_Scheduled.json",
+    "name": "Merge Workflow",
+    "description": "Automated workflow: Merge Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add Zendesk company data to Hubspot data"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Get modified companies"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get all Zendesk organisations"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Company exists in Zendesk"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Create organisation"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update organisation"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0286_Zendesk_HubSpot_Create_Scheduled",
+    "filename": "0286_Zendesk_HubSpot_Create_Scheduled.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0286_Zendesk_HubSpot_Create_Scheduled.json",
+    "name": "If Workflow",
+    "description": "Automated workflow: If Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Ticket Exists"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get user data of Ticket requester"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Only keep needed data"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Add user data"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Update existing ticket"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update Zendesk ticket with External Id"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Get last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Get tickets updated after last execution"
+      },
+      {
+        "type": "n8n-nodes-base.functionItem",
+        "name": "Set new last execution timestamp"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Every 5 minutes"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Create new Ticket"
+      },
+      {
+        "type": "n8n-nodes-base.zendesk",
+        "name": "Update External Id in Zendesk for contact"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Create or update contact"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.zendesk",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.functionItem",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0823_Zendesk_Update_Triggered",
+    "filename": "0823_Zendesk_Update_Triggered.json",
+    "category": "Zendesk",
+    "path": "workflows/Zendesk/0823_Zendesk_Update_Triggered.json",
+    "name": "Receive updates for support in Zendesk",
+    "description": "Automated workflow: Receive updates for support in Zendesk. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.zendeskTrigger",
+        "name": "Zendesk Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.zendeskTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

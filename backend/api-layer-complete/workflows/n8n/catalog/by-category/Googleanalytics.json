@@ -1,0 +1,479 @@
+[
+  {
+    "id": "0475_Googleanalytics_Code_Automate_Scheduled",
+    "filename": "0475_Googleanalytics_Code_Automate_Scheduled.json",
+    "category": "Googleanalytics",
+    "path": "workflows/Googleanalytics/0475_Googleanalytics_Code_Automate_Scheduled.json",
+    "name": "Automate Google Analytics Reporting - AlexK1919",
+    "description": "Automated workflow: Automate Google Analytics Reporting - AlexK1919. This workflow integrates 8 different services: stickyNote, code, scheduleTrigger, googleAnalytics, set. It contains 29 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for this week"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Aggregate Data"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Get Page Engagement This Week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Get Page Engagement Prior Week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Get Google Search This Week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Get Google Search Prior Week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Country Views This Week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse - Country Views Prior Week"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set urlStrings"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Format Data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Input All"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Email the Report"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleAnalytics",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1480_Googleanalytics_Code_Automation_Webhook",
+    "filename": "1480_Googleanalytics_Code_Automation_Webhook.json",
+    "category": "Googleanalytics",
+    "path": "workflows/Googleanalytics/1480_Googleanalytics_Code_Automation_Webhook.json",
+    "name": "Google analytics template",
+    "description": "Automated workflow: Google analytics template. This workflow integrates 8 different services: stickyNote, httpRequest, code, scheduleTrigger, googleAnalytics. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse data from Google Analytics"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse GA data"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page Search data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send country view data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Save A.I. output to Baserow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleAnalytics",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.baserow"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1529_Googleanalytics_Code_Automation_Webhook",
+    "filename": "1529_Googleanalytics_Code_Automation_Webhook.json",
+    "category": "Googleanalytics",
+    "path": "workflows/Googleanalytics/1529_Googleanalytics_Code_Automation_Webhook.json",
+    "name": "Google analytics template",
+    "description": "Automated workflow: Google analytics template. This workflow integrates 8 different services: stickyNote, httpRequest, code, scheduleTrigger, googleAnalytics. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse data from Google Analytics"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse GA data"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page Search data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send country view data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Save A.I. output to Baserow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleAnalytics",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.baserow"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1652_Googleanalytics_Code_Automation_Webhook",
+    "filename": "1652_Googleanalytics_Code_Automation_Webhook.json",
+    "category": "Googleanalytics",
+    "path": "workflows/Googleanalytics/1652_Googleanalytics_Code_Automation_Webhook.json",
+    "name": "Google analytics template",
+    "description": "Automated workflow: Google analytics template. This workflow integrates 8 different services: stickyNote, httpRequest, code, scheduleTrigger, googleAnalytics. It contains 34 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Page Engagement Stats for prior week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse data from Google Analytics"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse GA data"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Google Search Results for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google Analytics Data1"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for this week"
+      },
+      {
+        "type": "n8n-nodes-base.googleAnalytics",
+        "name": "Get Country views data for last week"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Parse Google analytics data1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send page Search data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send country view data to A.I."
+      },
+      {
+        "type": "n8n-nodes-base.baserow",
+        "name": "Save A.I. output to Baserow"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleAnalytics",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.baserow"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,261 @@
+[
+  {
+    "id": "1240_Markdown_Stickynote_Send",
+    "filename": "1240_Markdown_Stickynote_Send.json",
+    "category": "Markdown",
+    "path": "workflows/Markdown/1240_Markdown_Stickynote_Send.json",
+    "name": "Very simple Human in the loop system email with AI e IMAP",
+    "description": "Automated workflow: Very simple Human in the loop system email with AI e IMAP. This workflow integrates 10 different services: stickyNote, markdown, agent, set, stopAndError. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Approve Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Email text"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Approved?"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1540_Markdown_Stickynote_Automation_Webhook",
+    "filename": "1540_Markdown_Stickynote_Automation_Webhook.json",
+    "category": "Markdown",
+    "path": "workflows/Markdown/1540_Markdown_Stickynote_Automation_Webhook.json",
+    "name": "Airtable markdown to html",
+    "description": "Automated workflow: Airtable markdown to html. This workflow integrates 6 different services: webhook, stickyNote, markdown, airtable, stopAndError. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if it's 1 record or all records - Airtable"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get single record from airtable"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert markdown to HTML1"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Convert markdown to HTML2"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update single record in airtable"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update all records in airtable"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get all records from airtable"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Airtable sync video description"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1571_Markdown_Stickynote_Send",
+    "filename": "1571_Markdown_Stickynote_Send.json",
+    "category": "Markdown",
+    "path": "workflows/Markdown/1571_Markdown_Stickynote_Send.json",
+    "name": "Very simple Human in the loop system email with AI e IMAP",
+    "description": "Automated workflow: Very simple Human in the loop system email with AI e IMAP. This workflow integrates 10 different services: stickyNote, markdown, agent, set, stopAndError. It contains 21 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Write email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.emailSend",
+        "name": "Approve Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Email text"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Approved?"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.emailSend",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.if"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

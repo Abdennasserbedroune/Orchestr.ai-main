@@ -1,0 +1,180 @@
+[
+  {
+    "id": "1242_Discordtool_Stickynote_Automation_Triggered",
+    "filename": "1242_Discordtool_Stickynote_Automation_Triggered.json",
+    "category": "Discordtool",
+    "path": "workflows/Discordtool/1242_Discordtool_Stickynote_Automation_Triggered.json",
+    "name": "Discord Agent",
+    "description": "Automated workflow: Discord Agent. This workflow integrates 8 different services: stickyNote, agent, discordTool, stopAndError, lmChatOpenAi. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Discord"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Discord1"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Discord2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.discordTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1913_Discordtool_Stickynote_Automation_Webhook",
+    "filename": "1913_Discordtool_Stickynote_Automation_Webhook.json",
+    "category": "Discordtool",
+    "path": "workflows/Discordtool/1913_Discordtool_Stickynote_Automation_Webhook.json",
+    "name": "Discord MCP Server",
+    "description": "Automated workflow: Discord MCP Server. This workflow integrates 5 different services: stickyNote, mcpTrigger, stopAndError, discordTool, httpRequestTool. It contains 26 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Send Discord Message to Channel"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Add Role To Member"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Remove Role from member"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Discord MCP Server Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Get channels of server by server ID"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Get members of server by server ID"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Send DM and Wait for reply"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Send to Channel and Wait for Reply"
+      },
+      {
+        "type": "n8n-nodes-base.discordTool",
+        "name": "Send DM to User"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequestTool",
+        "name": "Get Discord Server IDs"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.discordTool",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequestTool",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

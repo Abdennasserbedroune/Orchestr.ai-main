@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0479_Grist_Stickynote_Create_Webhook",
+    "filename": "0479_Grist_Stickynote_Create_Webhook.json",
+    "category": "Grist",
+    "path": "workflows/Grist/0479_Grist_Stickynote_Create_Webhook.json",
+    "name": "Webhook Workflow",
+    "description": "Automated workflow: Webhook Workflow. This workflow integrates 5 different services: webhook, stickyNote, grist, stopAndError, if. It contains 9 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.grist",
+        "name": "Create Row"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Confirmed?"
+      },
+      {
+        "type": "n8n-nodes-base.grist",
+        "name": "get existing"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "has existing?"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Confirmation-based"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Runs once"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.grist",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

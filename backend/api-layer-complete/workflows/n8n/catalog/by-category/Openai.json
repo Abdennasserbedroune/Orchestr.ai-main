@@ -1,0 +1,574 @@
+[
+  {
+    "id": "0248_Openai_Telegram_Automate_Triggered",
+    "filename": "0248_Openai_Telegram_Automate_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/0248_Openai_Telegram_Automate_Triggered.json",
+    "name": "Telegram AI-bot",
+    "description": "Automated workflow: Telegram AI-bot. This workflow integrates 8 different services: telegramTrigger, stickyNote, telegram, merge, switch. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "CheckCommand"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Chat_mode"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Greeting"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Text reply"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Typing action"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Create an image"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send error message"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "PreProcessing"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0334_Openai_Form_Create_Triggered",
+    "filename": "0334_Openai_Form_Create_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/0334_Openai_Form_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: stickyNote, formTrigger, merge, stopAndError, googleSheets. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add customer feedback to Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge sentiment with form content"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Classify feedback with OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Submit form with customer feedback"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0464_Openai_Form_Create_Webhook",
+    "filename": "0464_Openai_Form_Create_Webhook.json",
+    "category": "Openai",
+    "path": "workflows/Openai/0464_Openai_Form_Create_Webhook.json",
+    "name": "Set Workflow",
+    "description": "Automated workflow: Set Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Create input to open ai"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.formTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0785_Openai_Twitter_Create",
+    "filename": "0785_Openai_Twitter_Create.json",
+    "category": "Openai",
+    "path": "workflows/Openai/0785_Openai_Twitter_Create.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Content Ideas"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Generate Post with OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check Platform"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Post to Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Google Sheet"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1177_Openai_GoogleSheets_Create_Triggered",
+    "filename": "1177_Openai_GoogleSheets_Create_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/1177_Openai_GoogleSheets_Create_Triggered.json",
+    "name": "Qualify new leads in Google Sheets via OpenAI's GPT-4",
+    "description": "Automated workflow: Qualify new leads in Google Sheets via OpenAI's GPT-4. This workflow integrates 7 different services: stickyNote, googleSheetsTrigger, merge, set, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update lead status"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract JSON reply"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Qualify leads with GPT"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Check for new entries"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1256_Openai_Form_Automation_Triggered",
+    "filename": "1256_Openai_Form_Automation_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/1256_Openai_Form_Automation_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 6 different services: stickyNote, formTrigger, merge, stopAndError, googleSheets. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Add customer feedback to Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge sentiment with form content"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Classify feedback with OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Submit form with customer feedback"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1618_Openai_GoogleSheets_Create_Triggered",
+    "filename": "1618_Openai_GoogleSheets_Create_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/1618_Openai_GoogleSheets_Create_Triggered.json",
+    "name": "Qualify new leads in Google Sheets via OpenAI's GPT-4",
+    "description": "Automated workflow: Qualify new leads in Google Sheets via OpenAI's GPT-4. This workflow integrates 7 different services: stickyNote, googleSheetsTrigger, merge, set, stopAndError. It contains 12 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update lead status"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Extract JSON reply"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Qualify leads with GPT"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Check for new entries"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1685_Openai_Telegram_Automate_Triggered",
+    "filename": "1685_Openai_Telegram_Automate_Triggered.json",
+    "category": "Openai",
+    "path": "workflows/Openai/1685_Openai_Telegram_Automate_Triggered.json",
+    "name": "Telegram AI-bot",
+    "description": "Automated workflow: Telegram AI-bot. This workflow integrates 8 different services: telegramTrigger, stickyNote, telegram, merge, switch. It contains 24 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.telegramTrigger",
+        "name": "Telegram Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "CheckCommand"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Settings"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Chat_mode"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Greeting"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Text reply"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send Typing action"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.openAi",
+        "name": "Create an image"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send error message"
+      },
+      {
+        "type": "n8n-nodes-base.telegram",
+        "name": "Send image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "PreProcessing"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.telegramTrigger",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.openAi",
+      "n8n-nodes-base.telegram",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

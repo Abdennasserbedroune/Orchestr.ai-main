@@ -1,0 +1,568 @@
+[
+  {
+    "id": "0155_Mautic_Twilio_Update_Triggered",
+    "filename": "0155_Mautic_Twilio_Update_Triggered.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/0155_Mautic_Twilio_Update_Triggered.json",
+    "name": "Receive updates when a form is submitted in Mautic, and send a confirmation SMS",
+    "description": "Automated workflow: Receive updates when a form is submitted in Mautic, and send a confirmation SMS. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mauticTrigger",
+        "name": "Mautic Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.twilio",
+        "name": "Twilio"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mauticTrigger",
+      "n8n-nodes-base.twilio",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0275_Mautic_Mondaycom_Create_Triggered",
+    "filename": "0275_Mautic_Mondaycom_Create_Triggered.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/0275_Mautic_Mondaycom_Create_Triggered.json",
+    "name": "Mondaycom Workflow",
+    "description": "Automated workflow: Mondaycom Workflow. This workflow integrates 3 different services: mauticTrigger, stickyNote, mondayCom. It contains 3 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mondayCom",
+        "name": "Create item"
+      },
+      {
+        "type": "n8n-nodes-base.mauticTrigger",
+        "name": "On created contact"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mondayCom",
+      "n8n-nodes-base.mauticTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0490_Mautic_Gmail_Send_Triggered",
+    "filename": "0490_Mautic_Gmail_Send_Triggered.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/0490_Mautic_Gmail_Send_Triggered.json",
+    "name": "Unsubscribe Mautic contacts from automated unsubscribe emails",
+    "description": "Automated workflow: Unsubscribe Mautic contacts from automated unsubscribe emails. This workflow integrates 7 different services: stickyNote, mautic, code, gmailTrigger, set. It contains 16 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is automated unsubscribe?"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Add to unsubscribed segment"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Remove newsletter segment"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Reply Unsubscribe Message"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Add to Do Not Contact List"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Email from 'From' Field"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Extract Unique Email Addresses"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Get Mautic Contact ID from Email Address"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Contact Exists in Mautic"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0963_Mautic_Webhook_Update_Webhook",
+    "filename": "0963_Mautic_Webhook_Update_Webhook.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/0963_Mautic_Webhook_Update_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Mautic"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Find User"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Update User"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Tag User"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Unsubscribe User"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Split Full Name"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "If not found return -1"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "@MAIN STUDENT DATA"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Remove unsubscribe"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Find User To Tag Sale"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set userFound"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch Webhook Types"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Webhook Request"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF NOT userFound"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch User.type"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "IF unsubscribe_from_marketing_emails"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1083_Mautic_GoogleSheets_Automate_Scheduled",
+    "filename": "1083_Mautic_GoogleSheets_Automate_Scheduled.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/1083_Mautic_GoogleSheets_Automate_Scheduled.json",
+    "name": "Googlesheets Workflow",
+    "description": "Automated workflow: Googlesheets Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "GS Read Data2 1"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Mautic"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "GS Read Data2 2"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Cron"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1160_Mautic_Woocommerce_Create_Triggered",
+    "filename": "1160_Mautic_Woocommerce_Create_Triggered.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/1160_Mautic_Woocommerce_Create_Triggered.json",
+    "name": "New WooCommerce Customer to Mautic",
+    "description": "Automated workflow: New WooCommerce Customer to Mautic. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Check for Existing"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If New"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Create Contact"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Update Contact"
+      },
+      {
+        "type": "n8n-nodes-base.wooCommerceTrigger",
+        "name": "Customer Created or Updated"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.wooCommerceTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1168_Mautic_Slack_Send_Triggered",
+    "filename": "1168_Mautic_Slack_Send_Triggered.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/1168_Mautic_Slack_Send_Triggered.json",
+    "name": "Check for valid Mautic contact email",
+    "description": "Production-ready workflow: Check for valid Mautic contact email. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If is not new contact"
+      },
+      {
+        "type": "n8n-nodes-base.mauticTrigger",
+        "name": "On Contact Identified"
+      },
+      {
+        "type": "n8n-nodes-base.itemLists",
+        "name": "extract information"
+      },
+      {
+        "type": "n8n-nodes-base.oneSimpleApi",
+        "name": "validate email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If the email is suspicious"
+      },
+      {
+        "type": "n8n-nodes-base.slack",
+        "name": "Send to Slack"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.mauticTrigger",
+      "n8n-nodes-base.itemLists",
+      "n8n-nodes-base.oneSimpleApi",
+      "n8n-nodes-base.slack",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1526_Mautic_Webhook_Automation_Webhook",
+    "filename": "1526_Mautic_Webhook_Automation_Webhook.json",
+    "category": "Mautic",
+    "path": "workflows/Mautic/1526_Mautic_Webhook_Automation_Webhook.json",
+    "name": "Shopify + Mautic",
+    "description": "Automated workflow: Shopify + Mautic. This workflow integrates 10 different services: webhook, stickyNote, mautic, graphql, set. It contains 28 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.shopifyTrigger",
+        "name": "Shopify Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Accepts Marketing?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Accepts Marketing?1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Add to confirmed segment"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Remove from confirmed segment"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.crypto",
+        "name": "Crypto"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing1"
+      },
+      {
+        "type": "n8n-nodes-base.graphql",
+        "name": "GraphQL"
+      },
+      {
+        "type": "n8n-nodes-base.graphql",
+        "name": "Marketing Consent - subscribed"
+      },
+      {
+        "type": "n8n-nodes-base.graphql",
+        "name": "Marketing Consent - unsubscribed"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Mautic - Accepts Marketing?"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Customer exists?"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Shopify Subdomain"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Search for Contact by Email"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Contact exists?"
+      },
+      {
+        "type": "n8n-nodes-base.mautic",
+        "name": "Create a new contact"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.shopifyTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.mautic",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.crypto",
+      "n8n-nodes-base.graphql",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.set"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

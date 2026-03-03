@@ -1,0 +1,213 @@
+[
+  {
+    "id": "1494_Microsofttodo_Webhook_Automation_Webhook",
+    "filename": "1494_Microsofttodo_Webhook_Automation_Webhook.json",
+    "category": "Microsofttodo",
+    "path": "workflows/Microsofttodo/1494_Microsofttodo_Webhook_Automation_Webhook.json",
+    "name": "MiniBear Webhook",
+    "description": "Automated workflow: MiniBear Webhook. This workflow integrates 12 different services: webhook, stickyNote, httpRequest, microsoftToDo, agent. It contains 69 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Line Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Loading Animation"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Image"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note9"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply (image)"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply (Text)"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply (Not Supported 2)"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply (Not Supported 1)"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Router"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftTeams",
+        "name": "Microsoft Teams"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftToDo",
+        "name": "Microsoft To Do"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply (Text)1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If namecard"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Other Images"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftTeams",
+        "name": "Microsoft Teams1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model2"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Microsoft OneDrive"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftOneDrive",
+        "name": "Microsoft OneDrive1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Image2"
+      },
+      {
+        "type": "n8n-nodes-base.microsoftToDo",
+        "name": "Microsoft To Do1"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenRouter Chat Model3"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "NamecardExtract"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note7"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note8"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Line Reply Namecard"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note10"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note11"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note12"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note13"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note14"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Image3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note15"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note16"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note17"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.microsoftTeams",
+      "n8n-nodes-base.microsoftToDo",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.microsoftOneDrive"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

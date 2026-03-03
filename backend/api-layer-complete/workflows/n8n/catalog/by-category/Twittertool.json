@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1744_Twittertool_Automation_Triggered",
+    "filename": "1744_Twittertool_Automation_Triggered.json",
+    "category": "Twittertool",
+    "path": "workflows/Twittertool/1744_Twittertool_Automation_Triggered.json",
+    "name": "Automatizacion X",
+    "description": "Automated workflow: Automatizacion X. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Simple Memory"
+      },
+      {
+        "type": "n8n-nodes-base.twitterTool",
+        "name": "first tweet"
+      },
+      {
+        "type": "n8n-nodes-base.twitterTool",
+        "name": "hilo"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Agente X"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.twitterTool",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

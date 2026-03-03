@@ -1,0 +1,61 @@
+[
+  {
+    "id": "1874_Mailerlite_Gumroad_Automation_Webhook",
+    "filename": "1874_Mailerlite_Gumroad_Automation_Webhook.json",
+    "category": "Mailerlite",
+    "path": "workflows/Mailerlite/1874_Mailerlite_Gumroad_Automation_Webhook.json",
+    "name": "Gumroad sale trigger",
+    "description": "Automated workflow: Gumroad sale trigger. This workflow integrates 6 different services: stickyNote, httpRequest, stopAndError, mailerLite, googleSheets. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Assign to group"
+      },
+      {
+        "type": "n8n-nodes-base.gumroadTrigger",
+        "name": "Gumroad Sale Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "append row in CRM"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.mailerLite",
+        "name": "add subscriber to MailerLite"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.gumroadTrigger",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.mailerLite"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

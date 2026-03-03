@@ -1,0 +1,66 @@
+[
+  {
+    "id": "0177_Coingecko_Cron_Update_Scheduled",
+    "filename": "0177_Coingecko_Cron_Update_Scheduled.json",
+    "category": "Coingecko",
+    "path": "workflows/Coingecko/0177_Coingecko_Cron_Update_Scheduled.json",
+    "name": "Update Crypto Values",
+    "description": "Automated workflow: Update Crypto Values. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.coinGecko",
+        "name": "CoinGecko"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Portfolio"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.cron",
+        "name": "Run Top of Hour"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Get Portfolio Values"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Determine Total Value"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Update Values"
+      },
+      {
+        "type": "n8n-nodes-base.airtable",
+        "name": "Append Portfolio Value"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.coinGecko",
+      "n8n-nodes-base.airtable",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.cron",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

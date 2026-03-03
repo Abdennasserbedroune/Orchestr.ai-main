@@ -1,0 +1,84 @@
+[
+  {
+    "id": "0413_Intercom_Code_Create_Webhook",
+    "filename": "0413_Intercom_Code_Create_Webhook.json",
+    "category": "Intercom",
+    "path": "workflows/Intercom/0413_Intercom_Code_Create_Webhook.json",
+    "name": "Noop Workflow",
+    "description": "Automated workflow: Noop Workflow. This workflow integrates 9 different services: webhook, stickyNote, httpRequest, code, intercom. It contains 19 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Could not find user"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "On Webhook event from Intercom"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "set key fields"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Update data in Intercom"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Other event"
+      },
+      {
+        "type": "n8n-nodes-base.intercom",
+        "name": "Intercom"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "massage data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "On user created"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Enrich user from ExactBuyer"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.intercom",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

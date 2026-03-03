@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1004_Invoiceninja_Automate_Triggered",
+    "filename": "1004_Invoiceninja_Automate_Triggered.json",
+    "category": "Invoiceninja",
+    "path": "workflows/Invoiceninja/1004_Invoiceninja_Automate_Triggered.json",
+    "name": "Invoiceninjatrigger Workflow",
+    "description": "Automated workflow: Invoiceninjatrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.invoiceNinjaTrigger",
+        "name": "Invoice Ninja Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.invoiceNinjaTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

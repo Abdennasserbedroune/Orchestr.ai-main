@@ -1,0 +1,403 @@
+[
+  {
+    "id": "0361_Hunter_Noop_Send_Triggered",
+    "filename": "0361_Hunter_Noop_Send_Triggered.json",
+    "category": "Hunter",
+    "path": "workflows/Hunter/0361_Hunter_Noop_Send_Triggered.json",
+    "name": "Email form",
+    "description": "Automated workflow: Email form. This workflow integrates 6 different services: stickyNote, hunter, formTrigger, if, noOp. It contains 7 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Verify email"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Submit form"
+      },
+      {
+        "type": "n8n-nodes-base.sendGrid",
+        "name": "Add contact to list"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.sendGrid",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": true,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0420_Hunter_Form_Create_Triggered",
+    "filename": "0420_Hunter_Form_Create_Triggered.json",
+    "category": "Hunter",
+    "path": "workflows/Hunter/0420_Hunter_Form_Create_Triggered.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 7 different services: stickyNote, formTrigger, hunter, hubspot, clearbit. It contains 11 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.clearbit",
+        "name": "Enrich company"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Add lead to Hubspot"
+      },
+      {
+        "type": "n8n-nodes-base.clearbit",
+        "name": "Enrich person"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.clearbit",
+      "n8n-nodes-base.hubspot",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0424_Hunter_Form_Send_Webhook",
+    "filename": "0424_Hunter_Form_Send_Webhook.json",
+    "category": "Hunter",
+    "path": "workflows/Hunter/0424_Hunter_Form_Send_Webhook.json",
+    "name": "Formtrigger Workflow",
+    "description": "Automated workflow: Formtrigger Workflow. This workflow integrates 8 different services: stickyNote, httpRequest, formTrigger, hunter, stopAndError. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Score lead with MadKudu"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Verify email with Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not interesting enough"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if customer fit score > 60"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.gmail"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0426_Hunter_Form_Send_Webhook",
+    "filename": "0426_Hunter_Form_Send_Webhook.json",
+    "category": "Hunter",
+    "path": "workflows/Hunter/0426_Hunter_Form_Send_Webhook.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 10 different services: stickyNote, httpRequest, formTrigger, hunter, hubspot. It contains 17 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Score lead with MadKudu"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Verify email with Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Not interesting enough"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "if customer fit score > 60"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Send outreach email"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set keys"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "Record engagement in HubSpot"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.hubspot",
+        "name": "HubSpot"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.hubspot"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0436_Hunter_Pipedrive_Create_Triggered",
+    "filename": "0436_Hunter_Pipedrive_Create_Triggered.json",
+    "category": "Hunter",
+    "path": "workflows/Hunter/0436_Hunter_Pipedrive_Create_Triggered.json",
+    "name": "Stickynote Workflow",
+    "description": "Automated workflow: Stickynote Workflow. This workflow integrates 7 different services: pipedrive, stickyNote, hunter, formTrigger, clearbit. It contains 15 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "n8n Form Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Check if the email is valid"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Email is not valid, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.hunter",
+        "name": "Verify email with Hunter"
+      },
+      {
+        "type": "n8n-nodes-base.clearbit",
+        "name": "Clearbit"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Person already exists in Pipedrive, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is this a new person?"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Search for person in Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is this a new organization?"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Organization"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Search for organization in Pipedrive"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create Person"
+      },
+      {
+        "type": "n8n-nodes-base.pipedrive",
+        "name": "Create lead"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.hunter",
+      "n8n-nodes-base.clearbit",
+      "n8n-nodes-base.pipedrive",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

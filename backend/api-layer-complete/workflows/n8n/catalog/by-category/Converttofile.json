@@ -1,0 +1,345 @@
+[
+  {
+    "id": "0508_Converttofile_Manual_Process_Triggered",
+    "filename": "0508_Converttofile_Manual_Process_Triggered.json",
+    "category": "Converttofile",
+    "path": "workflows/Converttofile/0508_Converttofile_Manual_Process_Triggered.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 6 different services: convertToFile, stickyNote, n8n, stopAndError, manualTrigger. It contains 8 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.n8n",
+        "name": "n8n | Get all executions"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.n8n",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0889_Converttofile_HTTP_Create_Webhook",
+    "filename": "0889_Converttofile_HTTP_Create_Webhook.json",
+    "category": "Converttofile",
+    "path": "workflows/Converttofile/0889_Converttofile_HTTP_Create_Webhook.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 11 different services: convertToFile, stickyNote, httpRequest, chainLlm, merge. It contains 31 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Read Image URLs"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Images"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Analyze Images"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Product Photography Prompt"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send Image with Prompt to OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert Base64 to File"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Upload to Drive"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Insert Image URL in Table"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking 'Test workflow'"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Generate Image"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.manualTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1985_Converttofile_HTTP_Automation_Webhook",
+    "filename": "1985_Converttofile_HTTP_Automation_Webhook.json",
+    "category": "Converttofile",
+    "path": "workflows/Converttofile/1985_Converttofile_HTTP_Automation_Webhook.json",
+    "name": "n8n Graphic Design Team",
+    "description": "Automated workflow: n8n Graphic Design Team. This workflow integrates 14 different services: convertToFile, stickyNote, httpRequest, formTrigger, chainLlm. It contains 58 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "SetImageData"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Image3"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "ideogram Remix"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Upload Fields1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Image Reviewer"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive Remix Image"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets - Add Remix"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "genImageURL1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "genImageURL2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Download Image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "TheImageURL"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "creative brief"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Ideogram Image generator"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GET image"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "RE creative brief"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Get Remixed Image"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive - Create Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive - Create Generations Folder"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Google Drive - Upload Spreadsheet"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail - Send Setup Details"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.formTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

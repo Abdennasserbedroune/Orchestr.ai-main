@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0081_Xml_Respondtowebhook_Automate_Webhook",
+    "filename": "0081_Xml_Respondtowebhook_Automate_Webhook.json",
+    "category": "Xml",
+    "path": "workflows/Xml/0081_Xml_Respondtowebhook_Automate_Webhook.json",
+    "name": "Xml Workflow",
+    "description": "Automated workflow: Xml Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.xml",
+        "name": "XML"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.xml",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.webhook"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

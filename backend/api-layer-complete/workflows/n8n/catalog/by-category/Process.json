@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0009_Process",
+    "filename": "0009_Process.json",
+    "category": "Process",
+    "path": "workflows/Process/0009_Process.json",
+    "name": "Function Workflow",
+    "description": "Automated workflow: Function Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Data 1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Data 2"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Convert Data 1"
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "Convert Data 2"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.function",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

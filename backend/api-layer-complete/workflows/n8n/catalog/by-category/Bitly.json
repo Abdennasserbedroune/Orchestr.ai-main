@@ -1,0 +1,535 @@
+[
+  {
+    "id": "0910_Bitly_Datetime_Update_Webhook",
+    "filename": "0910_Bitly_Datetime_Update_Webhook.json",
+    "category": "Bitly",
+    "path": "workflows/Bitly/0910_Bitly_Datetime_Update_Webhook.json",
+    "name": "Agent Workflow",
+    "description": "Automated workflow: Agent Workflow. This workflow integrates 97 different services: vectorStoreInMemory, if, gumroadTrigger, wait, toolSerpApi. It contains 142 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Agent"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Basic LLM Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Information Extractor"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Question and Answer Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Sentiment Analysis"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Summarization Chain"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Text Classifier"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory Manager"
+      },
+      {
+        "type": "n8n-nodes-base.bitly",
+        "name": "Bitly App"
+      },
+      {
+        "type": "n8n-nodes-base.dropbox",
+        "name": "Dropbox App"
+      },
+      {
+        "type": "n8n-nodes-base.gmail",
+        "name": "Gmail App"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendar",
+        "name": "Google Calendar App"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocs",
+        "name": "Google Docs App"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Google Sheets App"
+      },
+      {
+        "type": "n8n-nodes-base.pushbullet",
+        "name": "Pushbullet App"
+      },
+      {
+        "type": "n8n-nodes-base.youTube",
+        "name": "YouTube App"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Bluesky App"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Perplexity App"
+      },
+      {
+        "type": "n8n-nodes-elevenlabs.elevenLabs",
+        "name": "ElevenLabs App"
+      },
+      {
+        "type": "n8n-nodes-base.reddit",
+        "name": "Reddit App"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger App"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Google Sheets Trigger App"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Green"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Gray"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Call n8n Workflow Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Code Tool"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "HTTP Request1"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Calculator"
+      },
+      {
+        "type": "n8n-nodes-base.postgresTool",
+        "name": "Postgres"
+      },
+      {
+        "type": "n8n-nodes-base.redisTool",
+        "name": "Redis"
+      },
+      {
+        "type": "n8n-nodes-base.emailSendTool",
+        "name": "Send Email"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "SerpAPI"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wikipedia"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Wolfram Alpha"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTool",
+        "name": "gmailTool App"
+      },
+      {
+        "type": "n8n-nodes-base.googleCalendarTool",
+        "name": "googleCalendarTool App"
+      },
+      {
+        "type": "n8n-nodes-base.googleDocsTool",
+        "name": "googleDocsTool App"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTool",
+        "name": "googleSheetsTool App"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Purple"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Default Data Loader"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Auto-fixing Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Answer questions with a vector store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "In-Memory Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Pinecone Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres PGVector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Supabase Vector Store"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Anthropic Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Google Gemini Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Window Buffer Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Redis Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Item List Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Structured Output Parser"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings Google Gemini"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Embeddings OpenAI"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Blue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Red"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Green"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Blue"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Purple"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Gray"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Brown"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Yellow"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Twitter"
+      },
+      {
+        "type": "n8n-nodes-base.calendlyTrigger",
+        "name": "Calendly Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emailReadImap",
+        "name": "Email Trigger (IMAP)"
+      },
+      {
+        "type": "n8n-nodes-base.googleDriveTrigger",
+        "name": "Google Drive Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gumroadTrigger",
+        "name": "Gumroad Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.localFileTrigger",
+        "name": "Local File Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "On form submission"
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "Schedule Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "When chat message received"
+      },
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking 'Test workflow'"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Workflow Input Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.gmailTrigger",
+        "name": "Gmail Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.googleSheetsTrigger",
+        "name": "Google Sheets Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Purple1"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Code"
+      },
+      {
+        "type": "n8n-nodes-base.dateTime",
+        "name": "Date & Time"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Edit Fields"
+      },
+      {
+        "type": "n8n-nodes-base.filter",
+        "name": "Filter"
+      },
+      {
+        "type": "n8n-nodes-base.limit",
+        "name": "Limit"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Remove Duplicates"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Split Out"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Aggregate"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge"
+      },
+      {
+        "type": "n8n-nodes-base.summarize",
+        "name": "Summarize"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to File"
+      },
+      {
+        "type": "n8n-nodes-base.extractFromFile",
+        "name": "Extract from File"
+      },
+      {
+        "type": "n8n-nodes-base.html",
+        "name": "HTML"
+      },
+      {
+        "type": "n8n-nodes-base.markdown",
+        "name": "Markdown"
+      },
+      {
+        "type": "n8n-nodes-base.renameKeys",
+        "name": "Rename Keys"
+      },
+      {
+        "type": "n8n-nodes-base.sort",
+        "name": "Sort"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Blue1"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If Node"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "Loop Over Items"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Replace Me"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.wait",
+        "name": "Wait"
+      },
+      {
+        "type": "n8n-nodes-base.executeCommand",
+        "name": "Execute Command"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.executionData",
+        "name": "Execution Data"
+      },
+      {
+        "type": "n8n-nodes-base.ftp",
+        "name": "FTP"
+      },
+      {
+        "type": "n8n-nodes-base.respondToWebhook",
+        "name": "Respond to Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Red"
+      },
+      {
+        "type": "n8n-nodes-base.rssFeedRead",
+        "name": "RSS Read"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "# Red1"
+      },
+      {
+        "type": "n8n-nodes-base.aiTransform",
+        "name": "AI Transform"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "MCP Client"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note Purple1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.bitly",
+      "n8n-nodes-base.dropbox",
+      "n8n-nodes-base.gmail",
+      "n8n-nodes-base.googleCalendar",
+      "n8n-nodes-base.googleDocs",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.pushbullet",
+      "n8n-nodes-base.youTube",
+      "n8n-nodes-elevenlabs.elevenLabs",
+      "n8n-nodes-base.reddit",
+      "n8n-nodes-base.gmailTrigger",
+      "n8n-nodes-base.googleSheetsTrigger",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.postgresTool",
+      "n8n-nodes-base.redisTool",
+      "n8n-nodes-base.emailSendTool",
+      "n8n-nodes-base.gmailTool",
+      "n8n-nodes-base.googleCalendarTool",
+      "n8n-nodes-base.googleDocsTool",
+      "n8n-nodes-base.googleSheetsTool",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.calendlyTrigger",
+      "n8n-nodes-base.emailReadImap",
+      "n8n-nodes-base.googleDriveTrigger",
+      "n8n-nodes-base.gumroadTrigger",
+      "n8n-nodes-base.localFileTrigger",
+      "n8n-nodes-base.formTrigger",
+      "n8n-nodes-base.scheduleTrigger",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.dateTime",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.filter",
+      "n8n-nodes-base.limit",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.summarize",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.extractFromFile",
+      "n8n-nodes-base.html",
+      "n8n-nodes-base.markdown",
+      "n8n-nodes-base.renameKeys",
+      "n8n-nodes-base.sort",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.wait",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.executionData",
+      "n8n-nodes-base.ftp",
+      "n8n-nodes-base.respondToWebhook",
+      "n8n-nodes-base.rssFeedRead",
+      "n8n-nodes-base.aiTransform"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

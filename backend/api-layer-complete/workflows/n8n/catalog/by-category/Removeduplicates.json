@@ -1,0 +1,88 @@
+[
+  {
+    "id": "1854_Removeduplicates_Converttofile_Automation_Webhook",
+    "filename": "1854_Removeduplicates_Converttofile_Automation_Webhook.json",
+    "category": "Removeduplicates",
+    "path": "workflows/Removeduplicates/1854_Removeduplicates_Converttofile_Automation_Webhook.json",
+    "name": "Query List of Sign-in IPs",
+    "description": "Automated workflow: Query List of Sign-in IPs. This workflow integrates 9 different services: convertToFile, stickyNote, httpRequest, formTrigger, merge. It contains 23 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GET Events - Login Successful"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "Send Email Upon Completion (SMTP2Go)"
+      },
+      {
+        "type": "n8n-nodes-base.removeDuplicates",
+        "name": "Remove Duplicate IPs"
+      },
+      {
+        "type": "n8n-nodes-base.moveBinaryData",
+        "name": "Convert CSV to Base64"
+      },
+      {
+        "type": "n8n-nodes-base.convertToFile",
+        "name": "Convert to CSV"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Filter IP Information"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Combine all Authentication Events"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GET Events - OAuth Authentication"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GET Events - Office365 Shell WCSS"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Set Date and Form Variables"
+      },
+      {
+        "type": "n8n-nodes-base.formTrigger",
+        "name": "Authentication Request Form"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.httpRequest",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.removeDuplicates",
+      "n8n-nodes-base.moveBinaryData",
+      "n8n-nodes-base.convertToFile",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.formTrigger"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

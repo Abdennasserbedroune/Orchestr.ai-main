@@ -1,0 +1,34 @@
+[
+  {
+    "id": "0999_Bitbucket_Automate_Triggered",
+    "filename": "0999_Bitbucket_Automate_Triggered.json",
+    "category": "Bitbucket",
+    "path": "workflows/Bitbucket/0999_Bitbucket_Automate_Triggered.json",
+    "name": "Bitbuckettrigger Workflow",
+    "description": "Automated workflow: Bitbuckettrigger Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.bitbucketTrigger",
+        "name": "Bitbucket Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.bitbucketTrigger",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "0806_Googlebigquery_Stickynote_Automate_Triggered",
+    "filename": "0806_Googlebigquery_Stickynote_Automate_Triggered.json",
+    "category": "Googlebigquery",
+    "path": "workflows/Googlebigquery/0806_Googlebigquery_Stickynote_Automate_Triggered.json",
+    "name": "Lmchatopenai Workflow",
+    "description": "Automated workflow: Lmchatopenai Workflow. This workflow integrates 10 different services: stickyNote, code, agent, stopAndError, lmChatOpenAi. It contains 14 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Control Tower Agent"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Call Query Tool"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.googleBigQuery",
+        "name": "Query Database"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Trigger Executed by the AI Tool"
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Sanitising the Query"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat Memory"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "Chat with the User"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.googleBigQuery",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.code",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

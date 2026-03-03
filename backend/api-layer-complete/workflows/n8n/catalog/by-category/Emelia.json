@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1214_Emelia_Automate",
+    "filename": "1214_Emelia_Automate.json",
+    "category": "Emelia",
+    "path": "workflows/Emelia/1214_Emelia_Automate.json",
+    "name": "Emelia Workflow",
+    "description": "Automated workflow: Emelia Workflow. This workflow processes data and performs automated tasks.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "Manual Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.emelia",
+        "name": "Emelia"
+      },
+      {
+        "type": "n8n-nodes-base.emelia",
+        "name": "Emelia1"
+      },
+      {
+        "type": "n8n-nodes-base.emelia",
+        "name": "Emelia2"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.emelia",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

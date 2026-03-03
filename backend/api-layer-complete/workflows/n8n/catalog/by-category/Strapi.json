@@ -1,0 +1,550 @@
+[
+  {
+    "id": "0183_Strapi_Webhook_Automation_Webhook",
+    "filename": "0183_Strapi_Webhook_Automation_Webhook.json",
+    "category": "Strapi",
+    "path": "workflows/Strapi/0183_Strapi_Webhook_Automation_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Result"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Store in Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "Every 30 Minutes"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is Retweet or Old?"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Search Tweets"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Webhook Result"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Analyze Form Submission"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Analyze Tweet"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Form Sentiment with Source"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Tweet Sentiment with Source"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Positive Form Sentiment?"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Store Form Submission in Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Positive Tweet Sentiment?"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.strapi",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "0584_Strapi_Splitout_Create_Webhook",
+    "filename": "0584_Strapi_Splitout_Create_Webhook.json",
+    "category": "Strapi",
+    "path": "workflows/Strapi/0584_Strapi_Splitout_Create_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 19 different services: stickyNote, switch, lmChatOpenAi, executeWorkflow, if. It contains 44 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format QA Pair1"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Question...1"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Question to List1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Questions to Object...1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format DisplayName + Questions1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Create From Text"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Sheets To List..."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Services"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Cred-only"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Native"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Categories"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Sheet..."
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Job"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Service..."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Row Status"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Non-native"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If has Data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Needs AI Completion?1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress"
+      },
+      {
+        "type": "n8n-nodes-base.webflow",
+        "name": "Webflow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Completion1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.strapi",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.webflow",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1336_Strapi_Webhook_Automate_Webhook",
+    "filename": "1336_Strapi_Webhook_Automate_Webhook.json",
+    "category": "Strapi",
+    "path": "workflows/Strapi/1336_Strapi_Webhook_Automate_Webhook.json",
+    "name": "Production Workflow",
+    "description": "Production-ready workflow: Production Workflow. This workflow has been optimized for production use with comprehensive error handling, security, and documentation.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Result"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Store in Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.interval",
+        "name": "Every 30 Minutes"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Is Retweet or Old?"
+      },
+      {
+        "type": "n8n-nodes-base.twitter",
+        "name": "Search Tweets"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "Webhook"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Simplify Webhook Result"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Analyze Form Submission"
+      },
+      {
+        "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+        "name": "Analyze Tweet"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Form Sentiment with Source"
+      },
+      {
+        "type": "n8n-nodes-base.merge",
+        "name": "Merge Tweet Sentiment with Source"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Positive Form Sentiment?"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Store Form Submission in Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "Positive Tweet Sentiment?"
+      },
+      {
+        "type": "n8n-nodes-base.stopAndError",
+        "name": "Error Handler"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.strapi",
+      "n8n-nodes-base.interval",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.twitter",
+      "n8n-nodes-base.webhook",
+      "n8n-nodes-base.googleCloudNaturalLanguage",
+      "n8n-nodes-base.merge",
+      "n8n-nodes-base.stopAndError"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  {
+    "id": "1434_Strapi_Splitout_Automation_Webhook",
+    "filename": "1434_Strapi_Splitout_Automation_Webhook.json",
+    "category": "Strapi",
+    "path": "workflows/Strapi/1434_Strapi_Splitout_Automation_Webhook.json",
+    "name": "Manualtrigger Workflow",
+    "description": "Automated workflow: Manualtrigger Workflow. This workflow integrates 19 different services: stickyNote, switch, lmChatOpenAi, executeWorkflow, if. It contains 44 nodes and follows best practices for error handling and security.",
+    "tags": [
+      "automation",
+      "n8n",
+      "production-ready",
+      "excellent",
+      "optimized"
+    ],
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.manualTrigger",
+        "name": "When clicking ‘Test workflow’"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format QA Pair1"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Question...1"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Question to List1"
+      },
+      {
+        "type": "n8n-nodes-base.aggregate",
+        "name": "Questions to Object...1"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Format DisplayName + Questions1"
+      },
+      {
+        "type": "n8n-nodes-base.googleDrive",
+        "name": "Create From Text"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Define Sheets"
+      },
+      {
+        "type": "n8n-nodes-base.splitOut",
+        "name": "Sheets To List..."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Get Services"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Cred-only"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Native"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Categories"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Sheet..."
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "name": "Execute Workflow Trigger"
+      },
+      {
+        "type": "n8n-nodes-base.executeWorkflow",
+        "name": "Execute Workflow"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Prepare Job"
+      },
+      {
+        "type": "n8n-nodes-base.splitInBatches",
+        "name": "For Each Service..."
+      },
+      {
+        "type": "n8n-nodes-base.googleSheets",
+        "name": "Update Row Status"
+      },
+      {
+        "type": "n8n-nodes-base.set",
+        "name": "Single Integration Non-native"
+      },
+      {
+        "type": "n8n-nodes-base.if",
+        "name": "If has Data"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Needs AI Completion?1"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note1"
+      },
+      {
+        "type": "n8n-nodes-base.switch",
+        "name": "Switch"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note2"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note3"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note4"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note5"
+      },
+      {
+        "type": "n8n-nodes-base.strapi",
+        "name": "Strapi"
+      },
+      {
+        "type": "n8n-nodes-base.stickyNote",
+        "name": "Sticky Note6"
+      },
+      {
+        "type": "n8n-nodes-base.wordpress",
+        "name": "Wordpress"
+      },
+      {
+        "type": "n8n-nodes-base.webflow",
+        "name": "Webflow"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "HTTP Request"
+      },
+      {
+        "type": "n8n-nodes-base.noOp",
+        "name": "AI Completion1"
+      }
+    ],
+    "nodeTypes": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.noOp",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.splitInBatches",
+      "n8n-nodes-base.splitOut",
+      "n8n-nodes-base.aggregate",
+      "n8n-nodes-base.googleDrive",
+      "n8n-nodes-base.googleSheets",
+      "n8n-nodes-base.executeWorkflowTrigger",
+      "n8n-nodes-base.executeWorkflow",
+      "n8n-nodes-base.if",
+      "n8n-nodes-base.stickyNote",
+      "n8n-nodes-base.switch",
+      "n8n-nodes-base.strapi",
+      "n8n-nodes-base.wordpress",
+      "n8n-nodes-base.webflow",
+      "n8n-nodes-base.httpRequest"
+    ],
+    "active": false,
+    "createdAt": null,
+    "updatedAt": null
+  }
+]

@@ -1,0 +1,68 @@
+name: Sync n8n workflows
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Branch, tag, or commit SHA in Zie619/n8n-workflows"
+        required: false
+        default: "main"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-n8n-workflows
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          ref: backend/api-layer-complete
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Clone source workflows repo
+        env:
+          SOURCE_REF: ${{ inputs.source_ref }}
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/n8n-workflows
+          git clone --depth 1 --branch "${SOURCE_REF}" https://github.com/Zie619/n8n-workflows /tmp/n8n-workflows
+
+      - name: Replace local workflows
+        run: |
+          set -euo pipefail
+          rm -rf workflows/n8n/workflows workflows/n8n/catalog
+          mkdir -p workflows/n8n
+          cp -R /tmp/n8n-workflows/workflows workflows/n8n/workflows
+
+      - name: Generate catalog
+        run: |
+          set -euo pipefail
+          node scripts/generate-n8n-catalog.mjs workflows/n8n/workflows workflows/n8n/catalog
+
+      - name: Commit and push
+        env:
+          SOURCE_REF: ${{ inputs.source_ref }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git add workflows/n8n scripts/generate-n8n-catalog.mjs .github/workflows/sync-n8n-workflows.yml
+          git commit -m "chore(n8n): sync workflows + regenerate catalog (${SOURCE_REF})"
+          git push origin backend/api-layer-complete

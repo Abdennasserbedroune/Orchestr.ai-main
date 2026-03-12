@@ -1,154 +1,119 @@
-import { MOCK_TASKS, DOMAIN_META } from '@/lib/mock-data'
-import type { TaskStatus } from '@/lib/mock-data'
-import { TaskCard } from '@/components/TaskCard'
+'use client'
+import { Cpu, Zap, GitBranch, Activity, Clock, ArrowRight } from 'lucide-react'
 
-type ColumnDef = {
-  status: TaskStatus
-  label: string
-  color: string
-  bg: string
-  border: string
-  dotClass: string
-}
-
-const COLUMNS: ColumnDef[] = [
+const UPCOMING = [
   {
-    status: 'backlog',
-    label: 'En attente',
-    color: '#4B5563',
-    bg: 'rgba(75,85,99,0.08)',
-    border: 'rgba(75,85,99,0.2)',
-    dotClass: 'idle',
+    icon: Activity,
+    color: '#6366f1',
+    bg: 'rgba(99,102,241,0.08)',
+    border: 'rgba(99,102,241,0.2)',
+    title: 'Tableau de bord temps réel',
+    desc: 'Visualisez chaque agent en action — entrées, sorties et latences en direct.',
   },
   {
-    status: 'in-progress',
-    label: 'En cours',
-    color: '#F59E0B',
+    icon: GitBranch,
+    color: '#a855f7',
+    bg: 'rgba(168,85,247,0.08)',
+    border: 'rgba(168,85,247,0.2)',
+    title: 'Logs de pipeline',
+    desc: 'Tracez le chemin complet de chaque requête à travers vos agents orchestrés.',
+  },
+  {
+    icon: Zap,
+    color: '#f59e0b',
     bg: 'rgba(245,158,11,0.08)',
-    border: 'rgba(245,158,11,0.25)',
-    dotClass: 'running',
+    border: 'rgba(245,158,11,0.2)',
+    title: 'Historique des workflows n8n',
+    desc: 'Consultez et rejouez chaque workflow JSON généré et exécuté dans n8n.',
   },
   {
-    status: 'complete',
-    label: 'Terminé',
-    color: '#22C55E',
-    bg: 'rgba(34,197,94,0.08)',
-    border: 'rgba(34,197,94,0.25)',
-    dotClass: 'active',
-  },
-  {
-    status: 'error',
-    label: 'Erreur',
-    color: '#EF4444',
-    bg: 'rgba(239,68,68,0.08)',
-    border: 'rgba(239,68,68,0.25)',
-    dotClass: 'error',
+    icon: Clock,
+    color: '#10b981',
+    bg: 'rgba(16,185,129,0.08)',
+    border: 'rgba(16,185,129,0.2)',
+    title: 'Planification des tâches',
+    desc: 'Programmez des automatisations récurrentes directement depuis l’interface.',
   },
 ]
 
-function StatCounter({
-  label, count, color,
-}: {
-  label: string; count: number; color: string
-}) {
-  return (
-    <div className="flex flex-col gap-1 px-6 py-5 rounded-[20px] border border-white/[0.06] bg-[#111111]/50 backdrop-blur-sm shadow-sm transition-all hover:border-white/[0.12]">
-      <span className="font-display text-3xl font-semibold tracking-tight" style={{ color }}>
-        {count.toString().padStart(2, '0')}
-      </span>
-      <span className="text-[13px] font-medium text-[#a1a1aa] uppercase tracking-wider">
-        {label}
-      </span>
-    </div>
-  )
-}
-
 export default function OperationsPage() {
-  const byStatus = (s: TaskStatus) => MOCK_TASKS.filter(t => t.status === s)
-
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16">
+
       {/* Ambient glow */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-gradient-to-b from-brand/10 to-transparent blur-[120px] pointer-events-none z-0 rounded-full opacity-30"></div>
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] pointer-events-none z-0 rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)', filter: 'blur(100px)' }} />
 
-      <div className="relative p-8 max-w-[1400px] mx-auto flex flex-col gap-8">
+      <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center gap-8">
 
-        {/* ── Header ────────────────────────────────── */}
-        <header className="animate-fade-in">
-          <h1 className="font-display text-2xl font-semibold text-foreground">Opérations</h1>
-          <p className="text-sm text-muted mt-1">Toutes les tâches de votre équipe d&apos;agents, en temps réel.</p>
-        </header>
+        {/* Icon */}
+        <div style={{
+          width: 72, height: 72, borderRadius: 20,
+          background: 'rgba(99,102,241,0.1)',
+          border: '1px solid rgba(99,102,241,0.25)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 0 40px rgba(99,102,241,0.2)',
+        }}>
+          <Cpu size={32} style={{ color: '#6366f1' }} strokeWidth={1.5} />
+        </div>
 
-        {/* ── Stat counters row ─────────────────────── */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 animate-slide-up">
-          {COLUMNS.map(col => (
-            <StatCounter
-              key={col.status}
-              label={col.label}
-              count={byStatus(col.status).length}
-              color={col.color}
-            />
+        {/* Badge */}
+        <span style={{
+          display: 'inline-flex', alignItems: 'center', gap: 6,
+          padding: '4px 14px', borderRadius: 99,
+          background: 'rgba(99,102,241,0.12)',
+          border: '1px solid rgba(99,102,241,0.3)',
+          fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 700,
+          letterSpacing: '0.12em', textTransform: 'uppercase',
+          color: '#818cf8',
+        }}>
+          <span style={{ width:6, height:6, borderRadius:'50%', background:'#6366f1', boxShadow:'0 0 8px rgba(99,102,241,0.9)', animation:'pulse 1.5s ease-in-out infinite', flexShrink:0 }} />
+          Fonctionnalité à venir
+        </span>
+
+        {/* Title */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl font-semibold tracking-tight" style={{ color: '#fafafa' }}>
+            Opérations
+          </h1>
+          <p className="mt-3 text-[15px] leading-relaxed" style={{ color: '#71717a', maxWidth: 480, margin: '12px auto 0' }}>
+            Le centre de contrôle de vos agents IA arrive bientôt.
+            Suivez, planifiez et rejouez chaque workflow orchestré.
+          </p>
+        </div>
+
+        {/* Feature cards */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+          {UPCOMING.map(({ icon: Icon, color, bg, border, title, desc }) => (
+            <div key={title}
+              style={{ background: bg, border: `1px solid ${border}`, borderRadius: 16, padding: '18px 20px', textAlign: 'left' }}
+            >
+              <div style={{ width:36, height:36, borderRadius:10, background:`${color}18`, border:`1px solid ${color}35`,
+                display:'flex', alignItems:'center', justifyContent:'center', marginBottom: 12 }}>
+                <Icon size={18} style={{ color }} strokeWidth={1.7} />
+              </div>
+              <p style={{ fontSize: 14, fontWeight: 600, color: '#e4e4e7', marginBottom: 4 }}>{title}</p>
+              <p style={{ fontSize: 12, color: '#71717a', lineHeight: 1.6 }}>{desc}</p>
+            </div>
           ))}
         </div>
 
-        {/* ── Kanban board ──────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pb-10">
-          {COLUMNS.map(col => {
-            const tasks = byStatus(col.status)
-            return (
-              <div key={col.status} className="flex flex-col gap-3">
-
-                {/* Column header */}
-                <div className="flex items-center justify-between px-1">
-                  <div className="flex items-center gap-2">
-                    <span className={`status-dot ${col.dotClass}`} />
-                    <span className="section-label">{col.label}</span>
-                  </div>
-                  <span
-                    className="chip font-mono text-2xs py-0.5 px-2.5"
-                    style={{
-                      color: col.color,
-                      background: col.bg,
-                      borderColor: col.border,
-                      boxShadow: tasks.length > 0 ? `0 0 10px ${col.color}20` : 'none',
-                    }}
-                  >
-                    {tasks.length}
-                  </span>
-                </div>
-
-                {/* Column lane */}
-                <div
-                  className="flex flex-col gap-3 rounded-2xl p-3 min-h-[420px]"
-                  style={{
-                    background: 'rgba(255,255,255,0.015)',
-                    border: '1px solid rgba(255,255,255,0.05)',
-                  }}
-                >
-                  {tasks.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center h-full py-12 gap-2 opacity-40">
-                      <div
-                        className="w-8 h-8 rounded-xl flex items-center justify-center"
-                        style={{ background: col.bg, border: `1px solid ${col.border}` }}
-                      >
-                        <span className={`status-dot ${col.dotClass}`} />
-                      </div>
-                      <p className="font-mono text-2xs text-subtle uppercase tracking-widest">
-                        Vide
-                      </p>
-                    </div>
-                  ) : (
-                    tasks.map(task => (
-                      <TaskCard key={task.id} task={task} />
-                    ))
-                  )}
-                </div>
-
-              </div>
-            )
-          })}
-        </div>
-
+        {/* Notify CTA */}
+        <button
+          style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            padding: '10px 24px', borderRadius: 12,
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.09)',
+            color: '#a1a1aa', fontSize: 14, cursor: 'pointer',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.07)'; (e.currentTarget as HTMLButtonElement).style.color = '#e4e4e7' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.04)'; (e.currentTarget as HTMLButtonElement).style.color = '#a1a1aa' }}
+        >
+          Retourner au chat
+          <ArrowRight size={14} strokeWidth={2} />
+        </button>
       </div>
     </div>
   )

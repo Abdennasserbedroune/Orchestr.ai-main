@@ -1,6 +1,6 @@
 'use client'
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Paperclip, Box, Mic, CornerDownLeft } from 'lucide-react'
+import { Paperclip, Box, Mic, CornerDownLeft, Info } from 'lucide-react'
 import { ChatMessageBubble } from '@/components/ChatMessage'
 import type { Message } from '@/components/ChatMessage'
 import Image from 'next/image'
@@ -25,34 +25,21 @@ function getGreeting(): string {
   return 'Pendant que vous dormez, vos agents agissent.'
 }
 
-// ── Small toast for "coming soon" features ──────────────────────
+// ── Coming-soon toast ──────────────────────────────────────────────
 function ComingSoonToast({ label, visible }: { label: string; visible: boolean }) {
   return (
-    <div
-      style={{
-        position: 'fixed',
-        bottom: 100,
-        left: '50%',
-        transform: `translateX(-50%) translateY(${visible ? 0 : 12}px)`,
-        opacity: visible ? 1 : 0,
-        transition: 'opacity 0.2s ease, transform 0.2s ease',
-        pointerEvents: 'none',
-        zIndex: 9999,
-        background: '#1a1a1a',
-        border: '1px solid rgba(255,255,255,0.1)',
-        borderRadius: 12,
-        padding: '8px 16px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 8,
-        boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
-      }}
-    >
-      <span style={{
-        width: 6, height: 6, borderRadius: '50%', background: '#6366f1',
-        flexShrink: 0, boxShadow: '0 0 8px rgba(99,102,241,0.8)',
-        animation: 'pulse 1.5s ease-in-out infinite',
-      }} />
+    <div style={{
+      position: 'fixed', bottom: 110, left: '50%',
+      transform: `translateX(-50%) translateY(${visible ? 0 : 10}px)`,
+      opacity: visible ? 1 : 0,
+      transition: 'opacity 0.22s ease, transform 0.22s ease',
+      pointerEvents: 'none', zIndex: 9999,
+      background: '#1c1c1c', border: '1px solid rgba(255,255,255,0.1)',
+      borderRadius: 14, padding: '9px 18px',
+      display: 'flex', alignItems: 'center', gap: 9,
+      boxShadow: '0 8px 32px rgba(0,0,0,0.7)',
+    }}>
+      <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6366f1', flexShrink: 0, boxShadow: '0 0 8px rgba(99,102,241,0.8)', animation: 'pulse 1.5s ease-in-out infinite' }} />
       <span style={{ fontSize: 13, color: '#a1a1aa', fontFamily: 'inherit' }}>
         <span style={{ color: '#e4e4e7', fontWeight: 500 }}>{label}</span>
         {' '}— Fonctionnalité à venir
@@ -61,50 +48,79 @@ function ComingSoonToast({ label, visible }: { label: string; visible: boolean }
   )
 }
 
+// ── No-history disclaimer banner ───────────────────────────────────
+function DisclaimerBanner() {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 10,
+      padding: '10px 16px', borderRadius: 12, marginBottom: 32,
+      background: 'rgba(99,102,241,0.07)',
+      border: '1px solid rgba(99,102,241,0.2)',
+      maxWidth: 640, width: '100%',
+    }}>
+      <Info size={15} style={{ color: '#6366f1', flexShrink: 0 }} strokeWidth={2} />
+      <span style={{ fontSize: 13, color: '#71717a', lineHeight: 1.5 }}>
+        <span style={{ color: '#a1a1aa', fontWeight: 500 }}>Aucun historique sauvegardé</span>
+        {' '}— Vos conversations ne sont pas enregistrées et seront perdues si vous quittez ou rechargez la page.
+      </span>
+    </div>
+  )
+}
+
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [focused, setFocused] = useState(false)
-  const [greetings, setGreetings] = useState('')
+  const [messages, setMessages]   = useState<Message[]>([])
+  const [input, setInput]         = useState('')
+  const [loading, setLoading]     = useState(false)
+  const [focused, setFocused]     = useState(false)
+  const [greeting, setGreeting]   = useState('')
   const [greetingDone, setGreetingDone] = useState(false)
-  const [toast, setToast] = useState<{ label: string; visible: boolean }>({ label: '', visible: false })
-  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [toast, setToast]         = useState<{ label: string; visible: boolean }>({ label: '', visible: false })
+  const [inputExpanded, setInputExpanded] = useState(true)
 
-  const bottomRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLTextAreaElement>(null)
-  const abortRef = useRef<AbortController | null>(null)
-  const messagesRef = useRef(messages)
+  const bottomRef    = useRef<HTMLDivElement>(null)
+  const inputRef     = useRef<HTMLTextAreaElement>(null)
+  const abortRef     = useRef<AbortController | null>(null)
+  const messagesRef  = useRef(messages)
+  const toastTimer   = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Show a 2-second "coming soon" toast
   const showToast = useCallback((label: string) => {
     if (toastTimer.current) clearTimeout(toastTimer.current)
     setToast({ label, visible: true })
     toastTimer.current = setTimeout(() => setToast(t => ({ ...t, visible: false })), 2200)
   }, [])
 
+  // Greeting typewriter
   useEffect(() => {
-    if (messages.length === 0) {
-      const fullText = getGreeting()
-      setGreetings(''); setGreetingDone(false)
-      let i = 0
-      const timer = setInterval(() => {
-        if (i < fullText.length) { setGreetings(cur => cur + fullText.charAt(i)); i++ }
-        else { clearInterval(timer); setGreetingDone(true) }
-      }, 38)
-      return () => clearInterval(timer)
-    }
+    if (messages.length > 0) return
+    const fullText = getGreeting()
+    setGreeting(''); setGreetingDone(false)
+    let i = 0
+    const timer = setInterval(() => {
+      if (i < fullText.length) { setGreeting(cur => cur + fullText.charAt(i)); i++ }
+      else { clearInterval(timer); setGreetingDone(true) }
+    }, 36)
+    return () => clearInterval(timer)
   }, [messages.length])
 
   useEffect(() => { messagesRef.current = messages }, [messages])
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
 
+  // Smooth scroll to bottom on new message
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.style.height = 'auto'
-      inputRef.current.style.height = Math.min(inputRef.current.scrollHeight, 160) + 'px'
-    }
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
+
+  // Auto-resize textarea
+  useEffect(() => {
+    const el = inputRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = Math.min(el.scrollHeight, 160) + 'px'
   }, [input])
+
+  // Collapse input bar after message is sent, expand on focus
+  useEffect(() => {
+    if (loading) setInputExpanded(false)
+  }, [loading])
 
   const sendMessage = useCallback(async (text: string) => {
     const trimmed = text.trim()
@@ -113,6 +129,7 @@ export default function ChatPage() {
     setMessages(prev => [...prev, userMsg])
     setInput('')
     setLoading(true)
+    setInputExpanded(false)
     const assistantId = createId()
     setMessages(prev => [...prev, { id: assistantId, role: 'assistant', content: '', streaming: true }])
     const history = [...messagesRef.current, userMsg].map(({ role, content }) => ({ role, content }))
@@ -125,19 +142,25 @@ export default function ChatPage() {
         signal: abortRef.current.signal,
       })
       if (!res.ok || !res.body) throw new Error(`Erreur API ${res.status}`)
-      const reader = res.body.getReader()
+      const reader  = res.body.getReader()
       const decoder = new TextDecoder()
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
         const chunk = decoder.decode(value, { stream: true })
-        setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content: m.content + chunk } : m))
+        setMessages(prev => prev.map(m =>
+          m.id === assistantId ? { ...m, content: m.content + chunk } : m
+        ))
       }
-      setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, streaming: false } : m))
+      setMessages(prev => prev.map(m =>
+        m.id === assistantId ? { ...m, streaming: false } : m
+      ))
     } catch (err: unknown) {
       if (err instanceof Error && err.name === 'AbortError') return
       setMessages(prev => prev.map(m =>
-        m.id === assistantId ? { ...m, content: 'Une erreur est survenue. Veuillez réessayer.', streaming: false } : m
+        m.id === assistantId
+          ? { ...m, content: 'Une erreur est survenue. Veuillez réessayer.', streaming: false }
+          : m
       ))
     } finally {
       setLoading(false)
@@ -151,123 +174,217 @@ export default function ChatPage() {
   }
 
   const isFirstMessage = messages.length === 0
-  const inputActive = focused || input.length > 0
+  const isInputActive  = focused || input.length > 0
+  // Input bar is tall (expanded) only when empty + on welcome screen, or user explicitly focused it
+  const showExpandedInput = isInputActive || (isFirstMessage && !loading)
 
   return (
-    <div className="flex flex-col h-[calc(100vh-56px)] md:h-screen max-h-[calc(100vh-56px)] md:max-h-screen items-center relative overflow-hidden">
+    <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 56px)', overflow: 'hidden', position: 'relative', background: 'var(--color-bg, #0a0a0a)' }}>
 
-      {/* Ambient glow */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vh] pointer-events-none z-0 rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle,rgba(29,78,216,0.15) 0%,transparent 70%)', filter: 'blur(80px)' }} />
+      {/* Ambient glow — subtle, centred */}
+      <div style={{
+        position: 'fixed', top: '50%', left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '60vw', height: '60vh',
+        background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)',
+        filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0,
+      }} />
 
-      {/* Coming soon toast */}
       <ComingSoonToast label={toast.label} visible={toast.visible} />
 
-      {/* Messages area */}
-      <div className="flex-1 w-full overflow-y-auto px-4 md:px-8 mt-12 z-10 flex flex-col items-center">
-        <div className="w-full max-w-4xl py-8 flex flex-col gap-6 items-center">
+      {/* ── Messages area ───────────────────────────────────────────── */}
+      <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 24px', display: 'flex', flexDirection: 'column', gap: 0 }}>
+
           {isFirstMessage ? (
-            <div className="flex flex-col items-center mt-6 w-full animate-fade-in text-center">
-              <div className="mb-7" style={{ width:120, height:120, borderRadius:'50%', overflow:'hidden', flexShrink:0,
-                boxShadow:'0 0 0 2.5px rgba(99,102,241,0.45),0 0 48px rgba(99,102,241,0.28)' }}>
-                <Image src="/logo.jpg" alt="OrchestrAI" width={120} height={120} className="w-full h-full object-cover" priority />
+            /* ── Welcome screen ── */
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 32, paddingBottom: 24 }}>
+
+              {/* Logo + title in the same vertical axis, centred */}
+              <div style={{
+                width: 88, height: 88, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, marginBottom: 24,
+                boxShadow: '0 0 0 2.5px rgba(99,102,241,0.45), 0 0 48px rgba(99,102,241,0.22)',
+              }}>
+                <Image src="/logo.jpg" alt="OrchestrAI" width={88} height={88}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} priority />
               </div>
-              <h1 className="font-display text-4xl md:text-[52px] font-semibold tracking-tight text-foreground mb-4 leading-tight min-h-[1.2em]">
-                {greetings}
-                {!greetingDone && <span className="inline-block w-[3px] h-[0.85em] bg-white ml-1 align-middle animate-pulse" />}
+
+              <h1 style={{
+                fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 700,
+                color: '#f4f4f5', textAlign: 'center',
+                letterSpacing: '-0.03em', lineHeight: 1.15,
+                marginBottom: 14, minHeight: '1.3em',
+              }}>
+                {greeting}
+                {!greetingDone && (
+                  <span style={{ display: 'inline-block', width: 3, height: '0.8em', background: '#6366f1', borderRadius: 2, marginLeft: 4, verticalAlign: 'middle', animation: 'blink 0.9s step-end infinite' }} />
+                )}
               </h1>
-              <p className="text-[#71717a] text-[15px] font-normal mb-10">
-                Choisissez un domaine pour commencer ou décrivez votre besoin directement.
+
+              <p style={{ fontSize: 15, color: '#71717a', textAlign: 'center', marginBottom: 12, lineHeight: 1.6 }}>
+                Choisissez un domaine ou décrivez votre besoin ci-dessous.
               </p>
-              <div className="flex flex-wrap justify-center gap-2 w-full max-w-3xl mb-8">
+
+              <DisclaimerBanner />
+
+              {/* Category chips — centred, wrapped */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, maxWidth: 620 }}>
                 {CATEGORIES.map((cat, i) => (
-                  <button key={i} onClick={() => { setInput(cat); inputRef.current?.focus() }}
-                    className="flex items-center gap-2 px-4 py-2 rounded-[14px] border border-white/[0.07] bg-[#111111] hover:bg-[#1a1a1a] hover:border-white/[0.14] transition-all duration-200 text-[14px] font-medium text-[#a1a1aa] hover:text-[#fafafa] cursor-pointer">
+                  <button key={i}
+                    onClick={() => { setInput(cat); setInputExpanded(true); inputRef.current?.focus() }}
+                    style={{
+                      padding: '8px 16px', borderRadius: 100,
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      background: '#111111',
+                      color: '#a1a1aa', fontSize: 13, fontWeight: 500,
+                      cursor: 'pointer', transition: 'all 0.18s ease',
+                      outline: 'none',
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#1a1a1a'; (e.currentTarget as HTMLButtonElement).style.color = '#f4f4f5'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.15)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#111111'; (e.currentTarget as HTMLButtonElement).style.color = '#a1a1aa'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.08)' }}
+                  >
                     {cat}
                   </button>
                 ))}
               </div>
             </div>
           ) : (
-            <div className="w-full max-w-[760px] flex flex-col gap-6">
-              {messages.map(msg => <ChatMessageBubble key={msg.id} message={msg} />)}
+            /* ── Conversation ── */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 28, paddingBottom: 16 }}>
+              {messages.map(msg => (
+                <ChatMessageBubble key={msg.id} message={msg} />
+              ))}
             </div>
           )}
-          <div ref={bottomRef} />
+
+          <div ref={bottomRef} style={{ height: 1 }} />
         </div>
       </div>
 
-      {/* Input bar */}
-      <div className="w-full px-4 md:px-8 py-6 z-10 flex justify-center pb-10">
-        <div className="w-full transition-all duration-300 ease-out" style={{ maxWidth: inputActive ? '860px' : '700px' }}>
-          <div className="relative w-full rounded-[28px] border transition-all duration-300"
-            style={{
+      {/* ── Input bar ────────────────────────────────────────────────── */}
+      <div style={{
+        position: 'relative', zIndex: 10,
+        padding: '12px 24px 20px',
+        background: 'linear-gradient(to top, #0a0a0a 70%, transparent)',
+      }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+
+          {/* Collapsed pill — shown after message sent, tap to expand */}
+          {!showExpandedInput && (
+            <button
+              onClick={() => { setInputExpanded(true); setFocused(true); setTimeout(() => inputRef.current?.focus(), 50) }}
+              style={{
+                width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                gap: 10, padding: '12px 20px', borderRadius: 100,
+                background: '#141414', border: '1px solid rgba(255,255,255,0.1)',
+                color: '#52525b', fontSize: 14, cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.2)'; (e.currentTarget as HTMLButtonElement).style.color = '#a1a1aa' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.currentTarget as HTMLButtonElement).style.color = '#52525b' }}
+            >
+              <CornerDownLeft size={15} strokeWidth={2} />
+              <span>Écrire un message…</span>
+            </button>
+          )}
+
+          {/* Full input box */}
+          {showExpandedInput && (
+            <div style={{
               background: '#131313',
-              borderColor: inputActive ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.07)',
-              boxShadow: inputActive ? '0 20px 56px -12px rgba(0,0,0,0.9),0 0 0 1px rgba(29,78,216,0.14)' : '0 8px 24px -8px rgba(0,0,0,0.6)',
+              border: `1px solid ${isInputActive ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.08)'}`,
+              borderRadius: 20,
+              boxShadow: isInputActive
+                ? '0 0 0 3px rgba(99,102,241,0.1), 0 20px 48px rgba(0,0,0,0.7)'
+                : '0 8px 24px rgba(0,0,0,0.5)',
+              transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+              overflow: 'hidden',
             }}>
-            <div className="px-4 pt-4 pb-[64px]">
-              <textarea ref={inputRef} value={input}
-                onChange={e => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
-                placeholder="Décrivez ce dont vous avez besoin…"
-                rows={focused || input.length > 0 ? 2 : 1}
-                className="w-full bg-transparent text-[16px] text-[#fafafa] outline-none focus:outline-none focus:ring-0 placeholder:text-[#3f3f46] ml-1 caret-white resize-none overflow-hidden leading-relaxed"
-                style={{ border: 'none', boxShadow: 'none', minHeight: '28px', maxHeight: '160px' }}
-                aria-label="Message" disabled={loading} autoComplete="off"
-              />
-            </div>
-            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-              <div className="flex items-center gap-1">
-                {/* Attach — coming soon */}
-                <button
-                  onClick={() => showToast('Joindre un fichier')}
-                  className="w-9 h-9 flex items-center justify-center rounded-full transition-all"
-                  style={{ color: '#3f3f46' }}
-                  title="Joindre un fichier"
-                >
-                  <Paperclip size={18} strokeWidth={1.5} />
-                </button>
-                {/* Tools — coming soon */}
-                <button
-                  onClick={() => showToast('Outils')}
-                  className="w-9 h-9 flex items-center justify-center rounded-full transition-all relative"
-                  style={{ color: '#3f3f46' }}
-                  title="Outils"
-                >
-                  <Box size={18} strokeWidth={1.5} />
-                  <div className="absolute top-[5px] right-[5px] w-[13px] h-[13px] bg-white rounded-full flex items-center justify-center">
-                    <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  </div>
-                </button>
-              </div>
-              <div className="flex items-center gap-1">
-                {/* Mic — coming soon */}
-                <button
-                  onClick={() => showToast('Microphone')}
-                  className="w-9 h-9 flex items-center justify-center rounded-full transition-all"
-                  style={{ color: '#3f3f46' }}
-                  title="Microphone"
-                >
-                  <Mic size={18} strokeWidth={1.5} />
-                </button>
-                {/* Send */}
-                <button onClick={() => sendMessage(input)} disabled={loading || !input.trim()}
-                  className="w-9 h-9 flex items-center justify-center rounded-full transition-all duration-200"
+              {/* Textarea */}
+              <div style={{ padding: '14px 16px 8px' }}>
+                <textarea
+                  ref={inputRef}
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => setFocused(true)}
+                  onBlur={() => setFocused(false)}
+                  placeholder="Décrivez ce dont vous avez besoin…"
+                  rows={1}
+                  disabled={loading}
+                  autoComplete="off"
+                  aria-label="Message"
                   style={{
-                    background: input.trim() && !loading ? '#ffffff' : '#1f1f1f',
-                    color: input.trim() && !loading ? '#000000' : '#3f3f46',
-                    cursor: input.trim() && !loading ? 'pointer' : 'not-allowed',
-                    boxShadow: input.trim() && !loading ? '0 0 20px rgba(255,255,255,0.2)' : 'none',
-                  }} title="Envoyer">
-                  <CornerDownLeft size={16} strokeWidth={2.5} />
-                </button>
+                    width: '100%', background: 'transparent',
+                    border: 'none', outline: 'none', resize: 'none',
+                    fontSize: 15, lineHeight: 1.6,
+                    color: '#f4f4f5',
+                    caretColor: '#6366f1',
+                    minHeight: 28, maxHeight: 160,
+                    overflowY: 'auto',
+                    fontFamily: 'inherit',
+                  }}
+                />
+              </div>
+
+              {/* Toolbar */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 10px 10px' }}>
+                {/* Left — coming-soon buttons */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <button onClick={() => showToast('Joindre un fichier')}
+                    title="Joindre un fichier"
+                    style={{ width: 36, height: 36, borderRadius: 10, border: 'none', background: 'transparent', color: '#3f3f46', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'color 0.15s, background 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = '#71717a'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.05)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = '#3f3f46'; (e.currentTarget as HTMLButtonElement).style.background = 'transparent' }}
+                  >
+                    <Paperclip size={17} strokeWidth={1.8} />
+                  </button>
+                  <button onClick={() => showToast('Outils')}
+                    title="Outils"
+                    style={{ width: 36, height: 36, borderRadius: 10, border: 'none', background: 'transparent', color: '#3f3f46', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'color 0.15s, background 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = '#71717a'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.05)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = '#3f3f46'; (e.currentTarget as HTMLButtonElement).style.background = 'transparent' }}
+                  >
+                    <Box size={17} strokeWidth={1.8} />
+                  </button>
+                </div>
+
+                {/* Right — mic + send */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <button onClick={() => showToast('Microphone')}
+                    title="Microphone"
+                    style={{ width: 36, height: 36, borderRadius: 10, border: 'none', background: 'transparent', color: '#3f3f46', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'color 0.15s, background 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = '#71717a'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.05)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = '#3f3f46'; (e.currentTarget as HTMLButtonElement).style.background = 'transparent' }}
+                  >
+                    <Mic size={17} strokeWidth={1.8} />
+                  </button>
+
+                  <button
+                    onClick={() => sendMessage(input)}
+                    disabled={loading || !input.trim()}
+                    title="Envoyer"
+                    style={{
+                      width: 36, height: 36, borderRadius: 10, border: 'none',
+                      background: input.trim() && !loading ? '#6366f1' : '#1f1f1f',
+                      color: input.trim() && !loading ? '#ffffff' : '#3f3f46',
+                      cursor: input.trim() && !loading ? 'pointer' : 'not-allowed',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      transition: 'all 0.2s ease',
+                      boxShadow: input.trim() && !loading ? '0 0 16px rgba(99,102,241,0.4)' : 'none',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <CornerDownLeft size={16} strokeWidth={2.5} />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <p className="text-center text-[11px] text-[#2a2a2a] mt-3 font-mono">
+          )}
+
+          {/* Disclaimer footer */}
+          <p style={{ textAlign: 'center', fontSize: 11, color: '#2a2a2a', marginTop: 10, fontFamily: 'monospace', letterSpacing: '0.02em' }}>
             Orchestrai peut commettre des erreurs. Vérifiez les informations importantes.
           </p>
         </div>

@@ -19,42 +19,38 @@ const MODES = [
   { label: 'Image', icon: ImageIcon },
 ]
 
-function getGreeting(): string {
+const SLOGANS = [
+  { from: 5,  to: 12, text: "Orchestrez vos agents. Automatisez l\u2019avenir." },
+  { from: 12, to: 18, text: "Vos agents travaillent. Vous dirigez." },
+  { from: 18, to: 22, text: "L\u2019orchestration ne dort jamais." },
+  { from: 22, to: 5,  text: "Pendant que vous dormez, vos agents agissent." },
+]
+
+function getSlogan(): string {
   const h = new Date().getHours()
-  if (h >= 5 && h < 12) return `Orchestrez vos agents. Automatisez l'avenir.`
-  if (h >= 12 && h < 18) return `Vos agents travaillent. Vous dirigez.`
-  if (h >= 18 && h < 22) return `L'orchestration ne dort jamais.`
-  return `Pendant que vous dormez, vos agents agissent.`
+  for (const s of SLOGANS) {
+    if (s.from < s.to) {
+      if (h >= s.from && h < s.to) return s.text
+    } else {
+      if (h >= s.from || h < s.to) return s.text
+    }
+  }
+  return SLOGANS[1].text
 }
 
 export default function Home() {
   const router = useRouter()
   const [showBanner, setShowBanner] = useState(true)
-  const [greetings, setGreetings] = useState('')
-  const [done, setDone] = useState(false)
+  const [slogan, setSlogan] = useState('')
   const [input, setInput] = useState('')
   const [focused, setFocused] = useState(false)
   const [showRedirect, setShowRedirect] = useState(false)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    const fullText = getGreeting()
-    setGreetings('')
-    setDone(false)
-    let i = 0
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setGreetings(cur => cur + fullText.charAt(i))
-        i++
-      } else {
-        clearInterval(timer)
-        setDone(true)
-      }
-    }, 42)
-    return () => clearInterval(timer)
+    setSlogan(getSlogan())
   }, [])
 
-  // Auto-resize textarea
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.style.height = 'auto'
@@ -77,12 +73,36 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen flex flex-col bg-bg overflow-hidden font-sans">
+      <style>{`
+        @keyframes slogan-fade-up {
+          0%   { opacity: 0; transform: translateY(18px) scale(0.98); filter: blur(6px); }
+          100% { opacity: 1; transform: translateY(0)   scale(1);    filter: blur(0); }
+        }
+        .slogan-reveal {
+          animation: slogan-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        @keyframes cursor-blink {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0; }
+        }
+        .slogan-cursor {
+          display: inline-block;
+          width: 3px;
+          height: 0.85em;
+          background: white;
+          margin-left: 4px;
+          vertical-align: middle;
+          border-radius: 1px;
+          animation: cursor-blink 1s step-end infinite;
+        }
+      `}</style>
+
       <div
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vh] pointer-events-none rounded-full opacity-20 -z-10"
         style={{ background: 'radial-gradient(circle, rgba(29,78,216,0.15) 0%, transparent 70%)', filter: 'blur(80px)' }}
       />
 
-      {/* Minimal Navbar */}
+      {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-8 py-5">
         <div className="flex items-center gap-3 cursor-pointer">
           <div style={{ width: 40, height: 40, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 0 0 1.5px rgba(99,102,241,0.4), 0 0 16px rgba(99,102,241,0.2)' }}>
@@ -106,11 +126,17 @@ export default function Home() {
 
         <div className="text-center mb-8 animate-fade-in">
           <h1 className="font-display text-4xl md:text-[52px] font-semibold tracking-tight text-foreground mb-4 leading-tight min-h-[1.2em]">
-            {greetings}
-            {!done && <span className="inline-block w-[3px] h-[0.85em] bg-white ml-1 align-middle animate-pulse" />}
+            {slogan ? (
+              <span key={slogan} className="slogan-reveal">
+                {slogan}
+                <span className="slogan-cursor" />
+              </span>
+            ) : (
+              <span className="opacity-0">placeholder</span>
+            )}
           </h1>
           <p className="text-[#71717a] text-[15px] font-normal">
-            {`Décrivez votre workflow. Vos agents s'en chargent.`}
+            D&eacute;crivez votre workflow. Vos agents s&apos;en chargent.
           </p>
         </div>
 
@@ -135,7 +161,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[15px] font-medium text-foreground">Unlock the full Orchestrai experience</span>
-                  <span className="text-[13px] text-[#a1a1aa] mt-0.5">Advanced mode, 100+ Integrations, Triggers, Custom AI Workers & more</span>
+                  <span className="text-[13px] text-[#a1a1aa] mt-0.5">Advanced mode, 100+ Integrations, Triggers, Custom AI Workers &amp; more</span>
                 </div>
               </div>
               <button onClick={() => setShowBanner(false)} className="text-[#a1a1aa] hover:text-white transition-colors p-1">
@@ -161,7 +187,7 @@ export default function Home() {
                 onKeyDown={handleKeyDown}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
-                placeholder="Décrivez votre besoin, lancez un workflow, interrogez un agent…"
+                placeholder="D\u00e9crivez votre besoin, lancez un workflow, interrogez un agent\u2026"
                 rows={focused || input.length > 0 ? 2 : 1}
                 className="w-full bg-transparent text-[16px] text-[#fafafa] outline-none focus:outline-none focus:ring-0 placeholder:text-[#3f3f46] ml-1 caret-white resize-none overflow-hidden leading-relaxed"
                 style={{ border: 'none', boxShadow: 'none', minHeight: '28px', maxHeight: '160px' }}
@@ -200,12 +226,12 @@ export default function Home() {
           </div>
 
           <p className="text-center text-[11px] text-[#2a2a2a] mt-3 font-mono">
-            {`Orchestrai peut commettre des erreurs. Vérifiez les informations importantes.`}
+            Orchestrai peut commettre des erreurs. V&eacute;rifiez les informations importantes.
           </p>
         </div>
       </main>
 
-      {/* Redirect modal overlay */}
+      {/* Redirect modal */}
       {showRedirect && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
@@ -224,13 +250,11 @@ export default function Home() {
                 Lancez vos agents
               </h2>
               <p className="text-[14px] text-[#71717a] text-center leading-relaxed">
-                {`Connectez-vous ou créez un compte pour orchestrer vos workflows et lancer vos agents IA.`}
+                Connectez-vous ou cr&eacute;ez un compte pour orchestrer vos workflows et lancer vos agents IA.
               </p>
             </div>
 
-            <div
-              className="mb-4 px-4 py-3 rounded-[14px] border border-white/[0.06] bg-[#0d0d0d] text-[13px] text-[#52525b] font-mono truncate"
-            >
+            <div className="mb-4 px-4 py-3 rounded-[14px] border border-white/[0.06] bg-[#0d0d0d] text-[13px] text-[#52525b] font-mono truncate">
               <span className="text-[#6366f1]">&#x276F;</span> {input}
             </div>
 
@@ -245,7 +269,7 @@ export default function Home() {
                 href="/register"
                 className="w-full flex items-center justify-center gap-2 bg-[#18181b] border border-white/[0.08] text-foreground hover:bg-[#222] transition-colors rounded-[12px] py-3 text-[15px] font-medium"
               >
-                {`Créer un compte`}
+                Cr&eacute;er un compte
               </Link>
             </div>
 

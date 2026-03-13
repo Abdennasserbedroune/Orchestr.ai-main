@@ -20,9 +20,9 @@ const MODES = [
 
 function getSlogan(): string {
   const h = new Date().getHours()
-  if (h >= 5  && h < 12) return 'Orchestrez vos agents. Automatisez l’avenir.'
+  if (h >= 5  && h < 12) return 'Orchestrez vos agents. Automatisez l\u2019avenir.'
   if (h >= 12 && h < 18) return 'Vos agents travaillent. Vous dirigez.'
-  if (h >= 18 && h < 22) return 'L’orchestration ne dort jamais.'
+  if (h >= 18 && h < 22) return 'L\u2019orchestration ne dort jamais.'
   return 'Pendant que vous dormez, vos agents agissent.'
 }
 
@@ -59,49 +59,36 @@ export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col bg-bg overflow-hidden font-sans">
       <style>{`
-        /* Ambient background glow */
         @keyframes ambient-drift {
-          0%, 100% { transform: translate(-50%, -50%) scale(1);   opacity: 0.18; }
+          0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.18; }
           50%       { transform: translate(-50%, -52%) scale(1.08); opacity: 0.26; }
         }
-        .ambient-glow {
-          animation: ambient-drift 8s ease-in-out infinite;
-        }
+        .ambient-glow { animation: ambient-drift 8s ease-in-out infinite; }
 
-        /* Logo: slow continuous rotation of the outer ring */
-        @keyframes ring-spin {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
-        }
-        /* Logo: subtle breathe scale */
         @keyframes logo-breathe {
           0%, 100% { transform: scale(1); }
           50%       { transform: scale(1.06); }
         }
-        /* Logo: orbit dot */
         @keyframes orbit {
-          from { transform: rotate(0deg) translateX(68px) rotate(0deg); }
+          from { transform: rotate(0deg)   translateX(68px) rotate(0deg); }
           to   { transform: rotate(360deg) translateX(68px) rotate(-360deg); }
         }
-        /* Logo: pulse ring */
         @keyframes pulse-ring {
           0%   { transform: scale(0.95); opacity: 0.7; }
           70%  { transform: scale(1.35); opacity: 0; }
           100% { transform: scale(1.35); opacity: 0; }
         }
-        .logo-breathe  { animation: logo-breathe 4s ease-in-out infinite; }
-        .orbit-dot     { animation: orbit 6s linear infinite; }
-        .pulse-ring    { animation: pulse-ring 2.4s ease-out infinite; }
-        .pulse-ring-2  { animation: pulse-ring 2.4s ease-out 0.8s infinite; }
+        .logo-breathe { animation: logo-breathe 4s ease-in-out infinite; }
+        .orbit-dot    { animation: orbit 6s linear infinite; }
+        .pulse-ring   { animation: pulse-ring 2.4s ease-out infinite; }
+        .pulse-ring-2 { animation: pulse-ring 2.4s ease-out 0.8s infinite; }
 
-        /* Slogan reveal */
         @keyframes slogan-fade-up {
           0%   { opacity: 0; transform: translateY(16px); filter: blur(5px); }
           100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
         }
         .slogan-reveal { animation: slogan-fade-up 0.85s cubic-bezier(0.22,1,0.36,1) both; }
 
-        /* Cursor blink */
         @keyframes cursor-blink {
           0%, 100% { opacity: 1; }
           50%       { opacity: 0; }
@@ -116,7 +103,6 @@ export default function Home() {
           animation: cursor-blink 1.1s step-end infinite;
         }
 
-        /* Fade-in for sections */
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(24px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -124,7 +110,7 @@ export default function Home() {
         .fade-in-up { animation: fade-in-up 0.7s cubic-bezier(0.22,1,0.36,1) both; }
       `}</style>
 
-      {/* Ambient glow */}
+      {/* Ambient glow — pointer-events none so it never blocks clicks */}
       <div
         className="ambient-glow fixed top-1/2 left-1/2 pointer-events-none rounded-full -z-10"
         style={{
@@ -142,31 +128,25 @@ export default function Home() {
           </div>
           <span className="font-display font-semibold text-base text-foreground tracking-tight">Orchestrai</span>
         </div>
-        <Link
-          href="/login"
-          className="text-sm font-medium text-foreground hover:opacity-80 transition-opacity bg-white/5 border border-white/10 px-5 py-2 rounded-full hover:bg-white/10"
-        >
+        <Link href="/login" className="text-sm font-medium text-foreground hover:opacity-80 transition-opacity bg-white/5 border border-white/10 px-5 py-2 rounded-full hover:bg-white/10">
           Commencer
         </Link>
       </nav>
 
       {/* Main */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 relative z-10 gap-0" style={{ paddingBottom: '2vh' }}>
+      <main className="flex-1 flex flex-col items-center justify-center px-6 relative z-10" style={{ paddingBottom: '2vh' }}>
 
-        {/* Animated Logo */}
-        <div className="relative flex items-center justify-center mb-8 fade-in-up" style={{ width: 140, height: 140 }}>
+        {/* Animated Logo — entire container is pointer-events-none so animations never block UI */}
+        <div
+          className="relative flex items-center justify-center mb-8 fade-in-up pointer-events-none"
+          style={{ width: 140, height: 140 }}
+        >
           {/* Pulse rings */}
-          <div
-            className="pulse-ring absolute rounded-full"
-            style={{ width: 140, height: 140, border: '1.5px solid rgba(99,102,241,0.5)', top: 0, left: 0 }}
-          />
-          <div
-            className="pulse-ring-2 absolute rounded-full"
-            style={{ width: 140, height: 140, border: '1.5px solid rgba(99,102,241,0.35)', top: 0, left: 0 }}
-          />
+          <div className="pulse-ring absolute rounded-full" style={{ width: 140, height: 140, border: '1.5px solid rgba(99,102,241,0.5)', top: 0, left: 0 }} />
+          <div className="pulse-ring-2 absolute rounded-full" style={{ width: 140, height: 140, border: '1.5px solid rgba(99,102,241,0.35)', top: 0, left: 0 }} />
 
-          {/* Orbit dot */}
-          <div className="absolute" style={{ width: 0, height: 0, top: '50%', left: '50%' }}>
+          {/* Orbit dot — zero-size anchor at center, pointer-events-none */}
+          <div className="absolute pointer-events-none" style={{ width: 0, height: 0, top: '50%', left: '50%' }}>
             <div
               className="orbit-dot"
               style={{
@@ -207,10 +187,7 @@ export default function Home() {
         </div>
 
         {/* Mode chips */}
-        <div
-          className="flex flex-wrap items-center justify-center gap-2 mb-7 max-w-3xl fade-in-up"
-          style={{ animationDelay: '0.18s' }}
-        >
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-7 max-w-3xl fade-in-up" style={{ animationDelay: '0.18s' }}>
           {MODES.map((mode) => (
             <button
               key={mode.label}
@@ -261,7 +238,7 @@ export default function Home() {
                 onKeyDown={handleKeyDown}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
-                placeholder="Décrivez votre besoin, lancez un workflow, interrogez un agent…"
+                placeholder="D\u00e9crivez votre besoin, lancez un workflow, interrogez un agent\u2026"
                 rows={focused || input.length > 0 ? 2 : 1}
                 className="w-full bg-transparent text-[15px] text-[#fafafa] outline-none focus:outline-none focus:ring-0 placeholder:text-[#3f3f46] ml-1 caret-white resize-none overflow-hidden leading-relaxed"
                 style={{ border: 'none', boxShadow: 'none', minHeight: '26px', maxHeight: '160px' }}

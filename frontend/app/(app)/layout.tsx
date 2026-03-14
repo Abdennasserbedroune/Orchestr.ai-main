@@ -1,4 +1,5 @@
-// App shell — sidebar only (BriefButton removed)
+'use client'
+// App shell — sidebar + mobile nav
 import { Sidebar } from '@/components/Sidebar'
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {

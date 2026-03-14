@@ -4,17 +4,34 @@
 
 /* ── Design tokens ─────────────────────────────────────────── */
 :root {
+  --color-bg:         #0A0A0A;
   --color-background: #0A0A0A;
   --color-surface:    #111111;
+  --color-panel:      #141414;
   --color-border:     rgba(255,255,255,0.06);
   --color-foreground: #e4e4e7;
   --color-muted:      #71717a;
+  --color-subtle:     #3f3f46;
   --color-brand:      #6366f1;
+  --color-brand-hover:#818cf8;
+  --color-brand-muted:rgba(99,102,241,0.15);
   --color-brand-dim:  rgba(99,102,241,0.15);
-  --font-sans:        var(--font-inter), system-ui, sans-serif;
-  --font-mono:        var(--font-mono), 'JetBrains Mono', monospace;
-  --font-display:     var(--font-inter), system-ui, sans-serif;
-  --radius-card:      16px;
+  --color-status-active:  #22c55e;
+  --color-status-running: #6366f1;
+  --color-status-idle:    #71717a;
+  --color-status-error:   #ef4444;
+  --color-domain-content:  #818cf8;
+  --color-domain-sales:    #34d399;
+  --color-domain-ops:      #fb923c;
+  --color-domain-research: #38bdf8;
+  --color-domain-finance:  #facc15;
+  --color-domain-hr:       #f472b6;
+  --color-domain-tech:     #a78bfa;
+  /* Font variables set by Next.js font loader */
+  --font-sans:    var(--font-sans-var, system-ui, sans-serif);
+  --font-display: var(--font-display-var, system-ui, sans-serif);
+  --font-mono:    var(--font-mono-var, 'JetBrains Mono', monospace);
+  --radius-card:  16px;
 }
 
 /* ── Base reset ────────────────────────────────────────────── */
@@ -77,6 +94,41 @@ body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
+/* Moved from inline <style> in page.tsx */
+@keyframes slogan-fade-up {
+  0%   { opacity: 0; transform: translateY(18px) scale(0.98); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);    filter: blur(0); }
+}
+.slogan-reveal {
+  animation: slogan-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.slogan-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: white;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Page-level entry animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in  { animation: fade-in 0.5s ease both; }
+.animate-slide-up { animation: slide-up 0.5s ease both; }
+
 .animate-spin          { animation: spin 1s linear infinite; }
 .animate-pulse         { animation: pulse 2s ease-in-out infinite; }
 .animate-ping          { animation: ping 1s cubic-bezier(0,0,0.2,1) infinite; }
@@ -102,3 +154,10 @@ input, textarea, select {
 
 /* ── Selection ──────────────────────────────────────────────── */
 ::selection { background: rgba(99,102,241,0.3); color: #fff; }
+
+/* ── Scrollbar hide utility ─────────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }

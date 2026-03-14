@@ -2,9 +2,11 @@ import { NextRequest } from 'next/server'
 import Groq from 'groq-sdk'
 import { buildSystemPrompt } from '@/lib/system-prompt'
 
-// ── Rate limiting (in-memory, per-IP, resets on cold start) ────────────
-const RATE_LIMIT_WINDOW_MS = 60_000   // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 15    // 15 req / min / IP (generous for free tier)
+// ── Rate limiting ─────────────────────────────────────────────────────
+// NOTE: In-memory rate limiter resets on Vercel cold starts.
+// For production, replace with @upstash/ratelimit + Redis.
+const RATE_LIMIT_WINDOW_MS   = 60_000
+const RATE_LIMIT_MAX_REQUESTS = 15
 const ipRequestMap = new Map<string, { count: number; resetAt: number }>()
 
 function checkRateLimit(ip: string): boolean {
@@ -19,7 +21,7 @@ function checkRateLimit(ip: string): boolean {
   return true
 }
 
-// ── Input validation ────────────────────────────────────────────────
+// ── Input validation ──────────────────────────────────────────────────
 type ChatMessage = { role: 'user' | 'assistant' | 'system'; content: string }
 
 function validateMessages(body: unknown): ChatMessage[] | null {
@@ -32,12 +34,12 @@ function validateMessages(body: unknown): ChatMessage[] | null {
     const { role, content } = m as Record<string, unknown>
     if (!['user', 'assistant'].includes(role as string)) return null
     if (typeof content !== 'string' || content.length === 0) return null
-    if (content.length > 8000) return null  // prevent prompt stuffing
+    if (content.length > 8000) return null
   }
   return messages as ChatMessage[]
 }
 
-// ── Groq client (lazy init so missing key only throws on use) ────────
+// ── Groq client (lazy init) ───────────────────────────────────────────
 let groqClient: Groq | null = null
 function getGroqClient(): Groq {
   if (!groqClient) {
@@ -48,7 +50,7 @@ function getGroqClient(): Groq {
   return groqClient
 }
 
-// ── Fallback: HuggingFace Inference API (streaming via fetch) ───────
+// ── HuggingFace fallback ──────────────────────────────────────────────
 async function streamFromHuggingFace(
   messages: ChatMessage[],
   systemPrompt: string,
@@ -70,7 +72,11 @@ async function streamFromHuggingFace(
     {
       method: 'POST',
       headers: { Authorization: `Bearer ${hfKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 1024, temperature: 0.7, return_full_text: false }, stream: true }),
+      body: JSON.stringify({
+        inputs: prompt,
+        parameters: { max_new_tokens: 1024, temperature: 0.7, return_full_text: false },
+        stream: true,
+      }),
     }
   )
   if (!res.ok || !res.body) throw new Error(`HuggingFace error: ${res.status}`)
@@ -81,51 +87,56 @@ async function streamFromHuggingFace(
     const { done, value } = await reader.read()
     if (done) break
     const text = decoder.decode(value, { stream: true })
-    // HF streams as "data: {...}" SSE lines
     for (const line of text.split('\n')) {
       if (!line.startsWith('data:')) continue
       try {
         const json = JSON.parse(line.slice(5).trim())
         const token = json?.token?.text ?? ''
         if (token) controller.enqueue(new TextEncoder().encode(token))
-      } catch { /* skip malformed lines */ }
+      } catch { /* skip malformed SSE lines */ }
     }
   }
 }
 
-// ── Route handler ─────────────────────────────────────────────────
+// ── Route handler ─────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
-  // 1. Rate limit check
+  // 1. Rate limit
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? '127.0.0.1'
   if (!checkRateLimit(ip)) {
     return new Response(
-      JSON.stringify({ error: 'Trop de requêtes. Attendez une minute et réessayez.' }),
+      JSON.stringify({ error: 'Trop de requ\u00eates. Attendez une minute et r\u00e9essayez.' }),
       { status: 429, headers: { 'Content-Type': 'application/json' } }
     )
   }
 
-  // 2. Parse & validate body
+  // 2. Parse & validate
   let body: unknown
   try { body = await req.json() } catch {
-    return new Response(JSON.stringify({ error: 'Corps de requête invalide.' }), { status: 400, headers: { 'Content-Type': 'application/json' } })
+    return new Response(
+      JSON.stringify({ error: 'Corps de requ\u00eate invalide.' }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } }
+    )
   }
 
   const messages = validateMessages(body)
   if (!messages) {
-    return new Response(JSON.stringify({ error: 'Format de messages invalide.' }), { status: 422, headers: { 'Content-Type': 'application/json' } })
+    return new Response(
+      JSON.stringify({ error: 'Format de messages invalide.' }),
+      { status: 422, headers: { 'Content-Type': 'application/json' } }
+    )
   }
 
-  // 3. Build system prompt
+  // 3. System prompt
   const systemPrompt = buildSystemPrompt()
 
   // 4. Stream response
+  // Note: Transfer-Encoding: chunked is NOT set — Vercel serverless handles framing automatically.
   const stream = new ReadableStream({
     async start(controller) {
       try {
         const model = process.env.GROQ_MODEL ?? 'llama-3.3-70b-versatile'
 
         if (process.env.GROQ_API_KEY) {
-          // ── Groq path ──
           const groq = getGroqClient()
           const completion = await groq.chat.completions.create({
             model,
@@ -143,13 +154,14 @@ export async function POST(req: NextRequest) {
             if (text) controller.enqueue(new TextEncoder().encode(text))
           }
         } else {
-          // ── HuggingFace fallback path ──
           await streamFromHuggingFace(messages, systemPrompt, controller)
         }
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : 'Erreur inconnue'
         console.error('[OrchestrAI /api/chat]', msg)
-        controller.enqueue(new TextEncoder().encode('\n\n> **Erreur système** — ' + msg))
+        controller.enqueue(
+          new TextEncoder().encode('\n\n> **Erreur syst\u00e8me** \u2014 ' + msg)
+        )
       } finally {
         controller.close()
       }
@@ -159,7 +171,7 @@ export async function POST(req: NextRequest) {
   return new Response(stream, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'Transfer-Encoding': 'chunked',
+      // Transfer-Encoding: chunked intentionally omitted — breaks Vercel serverless
       'X-Content-Type-Options': 'nosniff',
       'Cache-Control': 'no-store',
     },

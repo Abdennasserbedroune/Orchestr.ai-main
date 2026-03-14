@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg:       'var(--color-bg)',
-        surface:  'var(--color-surface)',
-        panel:    'var(--color-panel)',
-        border:   'var(--color-border)',
+        bg:         'var(--color-bg)',
+        surface:    'var(--color-surface)',
+        panel:      'var(--color-panel)',
+        border:     'var(--color-border)',
         foreground: 'var(--color-foreground)',
         muted:      'var(--color-muted)',
         subtle:     'var(--color-subtle)',

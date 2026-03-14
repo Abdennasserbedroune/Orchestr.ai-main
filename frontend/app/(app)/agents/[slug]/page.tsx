@@ -1,4 +1,4 @@
-// Next.js 14 — params is synchronous (not a Promise)
+// Next.js 15 — params is now a Promise that must be awaited
 // Bug 10 fix retained: notFound() replaced with redirect for client-safety
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
@@ -24,11 +24,12 @@ function StarRow({ rating }: { rating: number }) {
 }
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export default function AgentDetailPage({ params }: PageProps) {
-  const agent = AGENTS_CATALOG.find(a => a.slug === params.slug)
+export default async function AgentDetailPage({ params }: PageProps) {
+  const { slug } = await params
+  const agent = AGENTS_CATALOG.find(a => a.slug === slug)
   if (!agent) redirect('/agents')
 
   const meta = DOMAIN_META[agent.domain]

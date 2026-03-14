@@ -4,9 +4,7 @@ const nextConfig = {
   // Required for Vercel serverless/edge deployment
   output: 'standalone',
   // Prevent bundling of server-only packages
-  experimental: {
-    serverComponentsExternalPackages: ['groq-sdk'],
-  },
+  serverExternalPackages: ['groq-sdk'],
   images: {
     remotePatterns: [],
     unoptimized: false,

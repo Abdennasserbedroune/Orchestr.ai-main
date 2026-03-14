@@ -8,8 +8,10 @@ import { MOCK_TYPEWRITER_RESPONSES } from '@/lib/mock-data'
 // POST /api/agents/[slug]/run
 export async function POST(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
+  const { slug } = await params
+
   let body: Record<string, unknown>
   try {
     body = await req.json()
@@ -24,7 +26,7 @@ export async function POST(
     return NextResponse.json({ error: 'input is required' }, { status: 400 })
   }
 
-  const agent = AGENTS_CATALOG.find(a => a.slug === params.slug)
+  const agent = AGENTS_CATALOG.find(a => a.slug === slug)
   if (!agent) {
     return NextResponse.json({ error: 'Agent not found' }, { status: 404 })
   }
@@ -47,7 +49,7 @@ export async function POST(
           .from('tasks')
           .insert({
             workspace_id,
-            agent_slug: params.slug,
+            agent_slug: slug,
             title: input.slice(0, 120),
             status: 'complete',
             input,
@@ -60,7 +62,7 @@ export async function POST(
         if (newTask?.id) {
           await client.from('activity_log').insert({
             workspace_id,
-            agent_slug: params.slug,
+            agent_slug: slug,
             action: `Ran task: ${input.slice(0, 80)}`,
             metadata: {
               source: 'agent_run',

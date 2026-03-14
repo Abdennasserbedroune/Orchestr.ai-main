@@ -5,15 +5,16 @@ import { getAuthUser, unauthorized, forbidden, notFound } from '@/lib/auth'
 // GET /api/workspaces/[id]
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   const user = await getAuthUser(req)
   if (!user) return unauthorized()
 
   const { data, error } = await supabase
     .from('workspaces')
     .select('*')
-    .eq('id', params.id)
+    .eq('id', id)
     .maybeSingle()
 
   if (error) {

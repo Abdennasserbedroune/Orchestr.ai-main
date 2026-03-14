@@ -30,12 +30,13 @@ async function resolveTaskWithOwnership(
 // GET /api/tasks/[id]
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   const user = await getAuthUser(req)
   if (!user) return unauthorized()
 
-  const { task, reason } = await resolveTaskWithOwnership(params.id, user.id)
+  const { task, reason } = await resolveTaskWithOwnership(id, user.id)
   if (reason === 'not_found') return notFound('Task not found.')
   if (reason === 'forbidden') return forbidden()
 
@@ -45,12 +46,13 @@ export async function GET(
 // DELETE /api/tasks/[id]
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   const user = await getAuthUser(req)
   if (!user) return unauthorized()
 
-  const { task, reason } = await resolveTaskWithOwnership(params.id, user.id)
+  const { task, reason } = await resolveTaskWithOwnership(id, user.id)
   if (reason === 'not_found') return notFound('Task not found.')
   if (reason === 'forbidden') return forbidden()
 
@@ -64,7 +66,7 @@ export async function DELETE(
   const { error } = await supabase
     .from('tasks')
     .delete()
-    .eq('id', params.id)
+    .eq('id', id)
 
   if (error) {
     return NextResponse.json({ error: 'Failed to delete task.' }, { status: 500 })

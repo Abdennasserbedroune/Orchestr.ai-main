@@ -11,8 +11,9 @@
   "dependencies": {
     "@lobehub/icons": "^5.0.1",
     "@lobehub/ui": "^5.5.2",
-    "antd-style": "^3.7.1",
     "@supabase/supabase-js": "^2.43.0",
+    "antd": "^6.3.3",
+    "antd-style": "^3.7.1",
     "clsx": "^2.1.1",
     "groq-sdk": "^0.9.0",
     "lucide-react": "^0.395.0",

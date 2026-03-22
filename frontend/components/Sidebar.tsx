@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
-  MessageSquare, Layers, Cpu,
+  MessageSquare, Layers, Cpu, Bot,
   Menu, X, ChevronRight,
   Zap, Settings,
 } from 'lucide-react'
@@ -14,6 +14,7 @@ const NAV_MAIN = [
   { href: '/chat',       label: 'Chat',       icon: MessageSquare, description: 'Assistant IA',    accent: '#3B82F6' },
   { href: '/agents',     label: 'Agents',     icon: Layers,        description: 'Bibliothèque',     accent: '#A855F7' },
   { href: '/operations', label: 'Opérations', icon: Cpu,           description: 'Tâches en cours', accent: '#10B981' },
+  { href: '/skills',     label: 'Skills',     icon: Bot,           description: 'Compétences IA',   accent: '#F59E0B' },
 ]
 
 function useActiveRoute(href: string) {

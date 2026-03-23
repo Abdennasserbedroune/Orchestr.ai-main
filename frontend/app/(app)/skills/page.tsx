@@ -25,6 +25,7 @@ import {
   Settings,
   AlertCircle
 } from 'lucide-react'
+import { AmbientBackground } from '@/components/AmbientBackground'
 
 // ── Constants ───────────────────────────────────────────────────────────────
 const GH_USER = 'alirezarezvani'
@@ -460,7 +461,7 @@ function SkillModal({ skill, onClose, onDownload }: SkillModalProps) {
 }
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
-export default function SkillsPage(): JSX.Element {
+export default function SkillsPage() {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | 'Tous'>('Tous')
   const [selectedModelle, setSelectedModelle] = useState<Modell>('Tous')
@@ -580,21 +581,7 @@ export default function SkillsPage(): JSX.Element {
   return (
     <div className="relative min-h-full overflow-y-auto">
 
-      {/* ── Ambient background glows ──────────────────────────── */}
-      <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div style={{
-          position: 'absolute', top: '-15%', left: '-10%',
-          width: '60vw', height: '60vw',
-          background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 60%)',
-          filter: 'blur(90px)',
-        }} />
-        <div style={{
-          position: 'absolute', bottom: '-20%', left: '20%',
-          width: '60vw', height: '50vw',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.03) 0%, transparent 65%)',
-          filter: 'blur(100px)',
-        }} />
-      </div>
+      <AmbientBackground accentColor="#F59E0B" />
 
       <div className="relative z-10 p-6 md:p-10 max-w-[1400px] mx-auto flex flex-col gap-8">
 

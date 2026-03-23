@@ -10,6 +10,8 @@ export type Message = {
   role: 'user' | 'assistant'
   content: string
   streaming?: boolean
+  modelUsed?: string
+  attempts?: number
 }
 
 function useDisplayContent(content: string, streaming?: boolean) {

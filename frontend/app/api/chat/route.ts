@@ -1,204 +1,201 @@
-import { NextRequest } from 'next/server'
-import Groq from 'groq-sdk'
-import { buildSystemPrompt } from '@/lib/system-prompt'
+// FILE: frontend/app/api/chat/route.ts
 
-// ── Rate limiting ─────────────────────────────────────────────────────
-// NOTE: In-memory rate limiter resets on Vercel cold starts.
-// For production, replace with @upstash/ratelimit + Redis.
-const RATE_LIMIT_WINDOW_MS   = 60_000
-const RATE_LIMIT_MAX_REQUESTS = 15
-const ipRequestMap = new Map<string, { count: number; resetAt: number }>()
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
+import { buildSystemPrompt } from '@/config/prompts';
+import { callWithFallback } from '@/lib/orchestrai';
+import { MODELS, CHAINS, Mode } from '@/config/models';
 
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now()
-  const entry = ipRequestMap.get(ip)
-  if (!entry || now > entry.resetAt) {
-    ipRequestMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
-    return true
-  }
-  if (entry.count >= RATE_LIMIT_MAX_REQUESTS) return false
-  entry.count++
-  return true
-}
+/**
+ * Validateur de requête Zod
+ */
+const RequestSchema = z.object({
+  message: z.string().min(1).max(8000),
+  mode: z.enum(['workflow', 'skill', 'agent']),
+  selectedModel: z.string(),
+  history: z.array(z.object({
+    role: z.enum(['user', 'assistant', 'system']),
+    content: z.string()
+  })).optional()
+});
 
-// ── Input validation ──────────────────────────────────────────────────
-type ChatMessage = { role: 'user' | 'assistant' | 'system'; content: string }
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
-function validateMessages(body: unknown): ChatMessage[] | null {
-  if (!body || typeof body !== 'object') {
-    console.error('[API] Validation failed: body is not an object', body)
-    return null
-  }
-  const { messages } = body as Record<string, unknown>
-  if (!Array.isArray(messages)) {
-    console.error('[API] Validation failed: messages is not an array')
-    return null
-  }
-  if (messages.length === 0 || messages.length > 100) {
-    console.error('[API] Validation failed: messages length invalid', messages.length)
-    return null
-  }
-  
-  const valid: ChatMessage[] = []
-  for (const m of messages) {
-    if (!m || typeof m !== 'object') continue
-    const { role, content } = m as Record<string, unknown>
-    if (!['user', 'assistant'].includes(role as string)) continue
-    if (typeof content !== 'string') continue
-    
-    // Ignore empty messages quietly to avoid breaking the whole history
-    if (content.trim().length === 0) continue
-    
-    // Safeguard length
-    valid.push({ 
-      role: role as 'user' | 'assistant',
-      content: content.length > 15000 ? content.slice(0, 15000) + '...' : content 
-    })
-  }
-  
-  if (valid.length === 0) {
-    console.error('[API] Validation failed: no valid messages after filtering')
-    return null
-  }
-  
-  return valid
-}
-
-// ── Groq client (lazy init) ───────────────────────────────────────────
-let groqClient: Groq | null = null
-function getGroqClient(): Groq {
-  if (!groqClient) {
-    const apiKey = process.env.GROQ_API_KEY
-    if (!apiKey) throw new Error('GROQ_API_KEY environment variable is not set.')
-    groqClient = new Groq({ apiKey })
-  }
-  return groqClient
-}
-
-// ── HuggingFace fallback ──────────────────────────────────────────────
-async function streamFromHuggingFace(
-  messages: ChatMessage[],
-  systemPrompt: string,
-  controller: ReadableStreamDefaultController
-) {
-  const hfKey = process.env.HUGGINGFACE_API_KEY
-  if (!hfKey) throw new Error('No LLM provider available. Set GROQ_API_KEY or HUGGINGFACE_API_KEY.')
-
-  const model = 'mistralai/Mistral-7B-Instruct-v0.3'
-  const prompt = [
-    `<s>[INST] ${systemPrompt} [/INST]`,
-    ...messages.map(m =>
-      m.role === 'user' ? `[INST] ${m.content} [/INST]` : `${m.content}`
-    ),
-  ].join('\n')
-
-  const res = await fetch(
-    `https://api-inference.huggingface.co/models/${model}`,
-    {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${hfKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        inputs: prompt,
-        parameters: { max_new_tokens: 1024, temperature: 0.7, return_full_text: false },
-        stream: true,
-      }),
-    }
-  )
-  if (!res.ok || !res.body) throw new Error(`HuggingFace error: ${res.status}`)
-
-  const reader = res.body.getReader()
-  const decoder = new TextDecoder()
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    const text = decoder.decode(value, { stream: true })
-    for (const line of text.split('\n')) {
-      if (!line.startsWith('data:')) continue
-      try {
-        const json = JSON.parse(line.slice(5).trim())
-        const token = json?.token?.text ?? ''
-        if (token) controller.enqueue(new TextEncoder().encode(token))
-      } catch { /* skip malformed SSE lines */ }
-    }
-  }
-}
-
-// ── Route handler ─────────────────────────────────────────────────────
-export async function POST(req: NextRequest) {
-  // 1. Rate limit
-  const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? '127.0.0.1'
-  if (!checkRateLimit(ip)) {
-    return new Response(
-      JSON.stringify({ error: 'Trop de requ\u00eates. Attendez une minute et r\u00e9essayez.' }),
-      { status: 429, headers: { 'Content-Type': 'application/json' } }
-    )
-  }
-
-  // 2. Parse & validate
-  let body: unknown
-  try { body = await req.json() } catch {
-    return new Response(
-      JSON.stringify({ error: 'Corps de requ\u00eate invalide.' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } }
-    )
-  }
-
-  const messages = validateMessages(body)
-  if (!messages) {
-    return new Response(
-      JSON.stringify({ error: 'Format de messages invalide.' }),
-      { status: 422, headers: { 'Content-Type': 'application/json' } }
-    )
-  }
-
-  // 3. System prompt
-  const systemPrompt = buildSystemPrompt()
-
-  // 4. Stream response
-  // Note: Transfer-Encoding: chunked is NOT set — Vercel serverless handles framing automatically.
-  const stream = new ReadableStream({
-    async start(controller) {
-      try {
-        const model = process.env.GROQ_MODEL ?? 'llama-3.1-8b-instant'
-
-        if (process.env.GROQ_API_KEY) {
-          const groq = getGroqClient()
-          const completion = await groq.chat.completions.create({
-            model,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              ...messages,
-            ],
-            stream: true,
-            temperature: 0.72,
-            max_tokens: 2048,
-            top_p: 0.95,
-          })
-          for await (const chunk of completion) {
-            const text = chunk.choices[0]?.delta?.content ?? ''
-            if (text) controller.enqueue(new TextEncoder().encode(text))
+export async function POST(request: NextRequest) {
+  try {
+    // 1. Authentification — Toujours en premier
+    const cookieStore = await cookies();
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() { return cookieStore.getAll() },
+          setAll(cookiesToSet) { 
+            try {
+              cookiesToSet.forEach(({ name, value, options }) => {
+                cookieStore.set({ name, value, ...options })
+              })
+            } catch (error) {}
           }
-        } else {
-          await streamFromHuggingFace(messages, systemPrompt, controller)
-        }
-      } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : 'Erreur inconnue'
-        console.error('[OrchestrAI /api/chat]', msg)
-        controller.enqueue(
-          new TextEncoder().encode('\n\n> **Erreur syst\u00e8me** \u2014 ' + msg)
-        )
-      } finally {
-        controller.close()
+        },
       }
-    },
-  })
+    );
+    
+    // Fallback: check Authorization header if cookie fails
+    const authHeader = request.headers.get('Authorization');
+    const token = authHeader ? authHeader.replace('Bearer ', '') : undefined;
+    
+    const { data: { user } } = token 
+      ? await supabase.auth.getUser(token)
+      : await supabase.auth.getUser();
+    
+    if (!user) {
+      return NextResponse.json(
+        { data: null, error: 'Accès non autorisé. Connecte-toi pour continuer.', code: 'AUTH_REQUIRED' },
+        { status: 401 }
+      );
+    }
 
-  return new Response(stream, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      // Transfer-Encoding: chunked intentionally omitted — breaks Vercel serverless
-      'X-Content-Type-Options': 'nosniff',
-      'Cache-Control': 'no-store',
-    },
-  })
+    // 2. Validation des données
+    const body = await request.json();
+    const parsed = RequestSchema.safeParse(body);
+    
+    if (!parsed.success) {
+      return NextResponse.json(
+        { data: null, error: 'Format de requête invalide.', code: 'VALIDATION_ERROR' },
+        { status: 400 }
+      );
+    }
+
+    const { message, mode, selectedModel, history = [] } = parsed.data;
+
+    // Guardrail de détection d'injection de prompt
+    const INJECTION_PATTERNS = [
+      /ignore.{0,20}(previous|prior|above|instructions)/i,
+      /reveal.{0,20}(prompt|system|instructions)/i,
+      /show.{0,20}(prompt|system|instructions)/i,
+      /what are you/i,
+      /qui es.?tu/i,
+      /montre.{0,10}(ton|le|ce).{0,10}prompt/i,
+      /répète.{0,10}(tes|les).{0,10}instructions/i,
+      /oublie.{0,10}(tes|les).{0,10}instructions/i,
+      /act as/i,
+      /jailbreak/i,
+      /DAN/,
+    ];
+
+    const isInjection = INJECTION_PATTERNS.some(p => p.test(message));
+    if (isInjection) {
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        start(controller) {
+          const content = "Je suis OrchestrAI ton assistant pour générer des workflows n8n, des skills .md et des agents IA. Comment puis-je t'aider ? 😊";
+          
+          controller.enqueue(encoder.encode(
+            `data: ${JSON.stringify({ type: 'meta', modelUsed: 'guardrail', attempts: 0, duration: 0 })}\n\n`
+          ));
+          
+          const words = content.split(' ');
+          let i = 0;
+          const interval = setInterval(() => {
+            if (i < words.length) {
+              const chunk = (i === 0 ? '' : ' ') + words[i];
+              controller.enqueue(encoder.encode(
+                `data: ${JSON.stringify({ type: 'chunk', text: chunk })}\n\n`
+              ));
+              i++;
+            } else {
+              controller.enqueue(encoder.encode(
+                `data: ${JSON.stringify({ type: 'done' })}\n\n`
+              ));
+              clearInterval(interval);
+              controller.close();
+            }
+          }, 18);
+        }
+      });
+
+      return new Response(stream, {
+        headers: {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive',
+        },
+      });
+    }
+
+    // 3. Prompt système par mode
+    const systemPrompt = buildSystemPrompt(mode as Mode);
+
+    // 4. Chaîne de fallback des modèles
+    let chain = CHAINS[mode as Mode];
+    if (selectedModel !== 'auto' && MODELS[selectedModel]) {
+      const chosen = MODELS[selectedModel];
+      const rest = chain.filter(m => m.id !== selectedModel);
+      chain = [chosen, ...rest];
+    }
+
+    // 5. Préparation de l'historique
+    const messages = [
+      { role: 'system' as const, content: systemPrompt },
+      ...history.map(m => ({
+        role: m.role as 'user' | 'assistant' | 'system',
+        content: m.content
+      })),
+      { role: 'user' as const, content: message }
+    ];
+
+    // 6. Appel avec fallback OrchestrAI
+    const start = Date.now();
+    const result = await callWithFallback(chain, messages);
+    const duration = Date.now() - start;
+
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      start(controller) {
+        // Send model info first as a header chunk
+        controller.enqueue(encoder.encode(
+          `data: ${JSON.stringify({ type: 'meta', modelUsed: result.modelUsed, attempts: result.attempts, duration })}\n\n`
+        ));
+        
+        // Stream the content word by word
+        const words = result.content.split(' ');
+        let i = 0;
+        const interval = setInterval(() => {
+          if (i < words.length) {
+            const chunk = (i === 0 ? '' : ' ') + words[i];
+            controller.enqueue(encoder.encode(
+              `data: ${JSON.stringify({ type: 'chunk', text: chunk })}\n\n`
+            ));
+            i++;
+          } else {
+            controller.enqueue(encoder.encode(
+              `data: ${JSON.stringify({ type: 'done' })}\n\n`
+            ));
+            clearInterval(interval);
+            controller.close();
+          }
+        }, 18); // ~18ms between words = natural reading speed
+      }
+    });
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
+    });
+
+  } catch (error) {
+    console.error('[API /chat]', error);
+    return NextResponse.json(
+      { data: null, error: 'Erreur interne du serveur.', code: 'INTERNAL_ERROR' },
+      { status: 500 }
+    );
+  }
 }

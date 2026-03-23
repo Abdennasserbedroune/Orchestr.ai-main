@@ -5,6 +5,7 @@ import {
   Video, Search, Image as ImageIcon,
   Paperclip, Box, Mic, CornerDownLeft, X, ArrowRight
 } from 'lucide-react'
+import { AmbientBackground } from '@/components/AmbientBackground'
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -79,30 +80,28 @@ export default function Home() {
   void router
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-bg overflow-hidden font-sans">
-      {/* Premium ambient glow matching chat page */}
-      <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-        {/* Top-left subtle indigo glow */}
-        <div style={{ position: 'absolute', top: '-15%', left: '-10%', width: '60vw', height: '60vw', background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 60%)', filter: 'blur(90px)' }} />
-        {/* Center-right deeper violet/blue glow */}
-        <div style={{ position: 'absolute', top: '25%', right: '-15%', width: '70vw', height: '70vw', background: 'radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 60%)', filter: 'blur(120px)' }} />
-        {/* Bottom subtle glow */}
-        <div style={{ position: 'absolute', bottom: '-20%', left: '15%', width: '60vw', height: '50vw', background: 'radial-gradient(circle, rgba(99,102,241,0.03) 0%, transparent 65%)', filter: 'blur(100px)' }} />
-        {/* Noise texture overlay */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")", opacity: 0.035, mixBlendMode: 'overlay' }} />
-      </div>
+    <div className="relative min-h-screen flex flex-col overflow-hidden font-sans" style={{ background: 'var(--bg-base)' }}>
+      <AmbientBackground accentColor="#6c63ff" />
 
       {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
         <div className="flex items-center gap-3 cursor-pointer">
-          <div style={{ width: 40, height: 40, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 0 0 1.5px rgba(99,102,241,0.4), 0 0 16px rgba(99,102,241,0.2)' }}>
+          <div style={{ width: 40, height: 40, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 0 0 1.5px rgba(108,99,255,0.45), 0 0 20px rgba(108,99,255,0.2)' }}>
             <Image src="/logo.jpg" alt="OrchestrAI logo" width={40} height={40} className="w-full h-full object-cover" priority />
           </div>
-          <span className="font-display font-medium text-lg text-foreground tracking-tight">Orchestrai</span>
+          <span className="font-display font-semibold text-lg tracking-tight" style={{ color: 'var(--text-primary)' }}>OrchestrAI</span>
         </div>
         <Link
           href="/login"
-          className="text-sm font-medium text-foreground hover:opacity-80 transition-opacity bg-white/5 border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full hover:bg-white/10"
+          className="text-sm font-semibold transition-all"
+          style={{
+            padding: '8px 20px', borderRadius: 100,
+            background: 'rgba(108,99,255,0.1)',
+            border: '1px solid rgba(108,99,255,0.28)',
+            color: '#c4bfff',
+          }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(108,99,255,0.18)'; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(108,99,255,0.1)'; }}
         >
           Commencer
         </Link>
@@ -113,7 +112,7 @@ export default function Home() {
         {/* Hero logo */}
         <div
           className="mb-7 animate-fade-in"
-          style={{ width: 100, height: 100, borderRadius: '50%', overflow: 'hidden', boxShadow: '0 0 0 2.5px rgba(99,102,241,0.45), 0 0 48px rgba(99,102,241,0.28)' }}
+          style={{ width: 100, height: 100, borderRadius: '50%', overflow: 'hidden', boxShadow: '0 0 0 3px rgba(108,99,255,0.5), 0 0 60px rgba(108,99,255,0.35)' }}
         >
           <Image src="/logo.jpg" alt="OrchestrAI" width={120} height={120} className="w-full h-full object-cover" priority />
         </div>
@@ -145,9 +144,27 @@ export default function Home() {
               key={mode.label}
               type="button"
               onClick={() => { setInput(mode.label); inputRef.current?.focus() }}
-              className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-[14px] border border-white/[0.07] bg-[#111111] hover:bg-[#1a1a1a] hover:border-white/[0.14] transition-all duration-200 text-[13px] sm:text-[14px] font-medium text-[#a1a1aa] hover:text-[#fafafa] cursor-pointer"
+              style={{
+                display: 'flex', alignItems: 'center', gap: 8,
+                padding: '7px 15px', borderRadius: 100,
+                border: '1px solid rgba(255,255,255,0.07)',
+                background: 'rgba(255,255,255,0.022)',
+                color: 'var(--text-secondary)',
+                fontSize: 13.5, fontWeight: 500, cursor: 'pointer',
+                transition: 'all 0.18s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(108,99,255,0.1)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(108,99,255,0.25)';
+                (e.currentTarget as HTMLButtonElement).style.color = '#d4d0ff';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.022)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.07)';
+                (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-secondary)';
+              }}
             >
-              <mode.icon size={15} className="text-[#71717a]" aria-hidden="true" />
+              <mode.icon size={14} aria-hidden="true" style={{ opacity: 0.7 }} />
               {mode.label}
             </button>
           ))}
@@ -156,23 +173,31 @@ export default function Home() {
         {/* Input area */}
         <div className="w-full max-w-[760px] flex flex-col gap-3 animate-slide-up px-0" style={{ animationDelay: '0.2s' }}>
           {showBanner && (
-            <div className="relative flex items-start sm:items-center justify-between px-4 py-3 rounded-[20px] border border-white/[0.08] bg-[#141414] shadow-md gap-3">
-              <div className="flex items-start sm:items-center gap-3">
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 flex-shrink-0 mt-0.5 sm:mt-0">
-                  <span className="text-[11px] font-semibold text-blue-300">Ultra</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[14px] sm:text-[15px] font-medium text-foreground">Unlock the full Orchestrai experience</span>
-                  <span className="text-[12px] sm:text-[13px] text-[#a1a1aa] mt-0.5">Advanced mode, 100+ Integrations, Triggers, Custom AI Workers &amp; more</span>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '12px 16px', borderRadius: 16, gap: 12,
+              background: 'rgba(108,99,255,0.07)',
+              border: '1px solid rgba(108,99,255,0.2)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{
+                  padding: '3px 10px', borderRadius: 100,
+                  background: 'rgba(108,99,255,0.2)', border: '1px solid rgba(108,99,255,0.35)',
+                  fontSize: 10, fontWeight: 700, color: '#a8a2ff', letterSpacing: '0.06em', whiteSpace: 'nowrap',
+                }}>PRO</div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--text-primary)' }}>Accède à toute l'expérience OrchestrAI</span>
+                  <span style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 2 }}>Mode avancé, 100+ intégrations, agents personnalisés et bien plus.</span>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setShowBanner(false)}
-                className="text-[#a1a1aa] hover:text-white transition-colors p-1 flex-shrink-0"
-                aria-label="Dismiss banner"
+                style={{ color: 'var(--text-muted)', background: 'none', border: 'none', cursor: 'pointer', padding: 4, flexShrink: 0 }}
+                aria-label="Fermer"
               >
-                <X size={18} aria-hidden="true" />
+                <X size={16} aria-hidden="true" />
               </button>
             </div>
           )}
@@ -272,47 +297,84 @@ export default function Home() {
           aria-labelledby="redirect-title"
         >
           <div
-            className="relative w-full max-w-[420px] rounded-[24px] border border-white/[0.1] bg-[#111111] p-8 sm:p-10 animate-slide-up shadow-2xl"
+            style={{
+              position: 'relative', width: '100%', maxWidth: 420,
+              borderRadius: 24, padding: '36px 32px',
+              background: 'rgba(10,10,18,0.97)',
+              border: '1px solid rgba(255,255,255,0.09)',
+              boxShadow: '0 0 0 1px rgba(108,99,255,0.1), 0 40px 100px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.04)',
+              animation: 'oSlideUp 0.35s cubic-bezier(0.16,1,0.3,1)',
+            }}
             onClick={e => e.stopPropagation()}
           >
-            <div className="flex flex-col items-center gap-3 mb-8">
-              <div style={{ width: 72, height: 72, borderRadius: '50%', overflow: 'hidden', boxShadow: '0 0 0 2px rgba(99,102,241,0.4), 0 0 24px rgba(99,102,241,0.2)' }}>
+            {/* Top brand line */}
+            <div style={{
+              position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
+              width: '50%', height: 1,
+              background: 'linear-gradient(90deg, transparent, rgba(108,99,255,0.6), transparent)',
+              boxShadow: '0 4px 20px rgba(108,99,255,0.4)',
+            }} />
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, marginBottom: 28 }}>
+              <div style={{ width: 72, height: 72, borderRadius: '50%', overflow: 'hidden', boxShadow: '0 0 0 2px rgba(108,99,255,0.45), 0 0 28px rgba(108,99,255,0.22)' }}>
                 <Image src="/logo.jpg" alt="OrchestrAI" width={72} height={72} className="w-full h-full object-cover" />
               </div>
-              <h2 id="redirect-title" className="font-display text-[22px] sm:text-[24px] font-semibold text-foreground tracking-tight text-center">
+              <h2 id="redirect-title" style={{ fontSize: 22, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em', textAlign: 'center' }}>
                 Lancez vos agents
               </h2>
-              <p className="text-[14px] text-[#71717a] text-center leading-relaxed">
-                Connectez-vous ou cr&eacute;ez un compte pour orchestrer vos workflows et lancer vos agents IA.
+              <p style={{ fontSize: 13.5, color: 'var(--text-secondary)', textAlign: 'center', lineHeight: 1.6 }}>
+                Connecte-toi ou crée un compte pour orchestrer tes workflows et lancer tes agents IA.
               </p>
             </div>
 
             {input && (
-              <div className="mb-4 px-4 py-3 rounded-[14px] border border-white/[0.06] bg-[#0d0d0d] text-[13px] text-[#52525b] font-mono truncate">
-                <span className="text-[#6366f1]" aria-hidden="true">&#x276F;</span>{' '}
-                <span className="text-[#71717a]">{input}</span>
+              <div style={{
+                marginBottom: 16, padding: '10px 14px', borderRadius: 12,
+                border: '1px solid rgba(255,255,255,0.06)',
+                background: 'rgba(255,255,255,0.02)',
+                fontSize: 12.5, color: 'var(--text-muted)', fontFamily: 'monospace', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+              }}>
+                <span style={{ color: '#6c63ff', marginRight: 6 }}>&#x276F;</span>
+                <span>{input}</span>
               </div>
             )}
 
-            <div className="flex flex-col gap-3">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <Link
                 href="/login"
-                className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-100 transition-colors rounded-[12px] py-3 text-[15px] font-semibold"
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                  padding: '13px 0', borderRadius: 12, fontSize: 14.5, fontWeight: 600,
+                  background: 'var(--brand)', color: '#fff',
+                  transition: 'opacity 0.15s', textDecoration: 'none',
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.88'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
               >
-                Se connecter <ArrowRight size={16} aria-hidden="true" />
+                Se connecter <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <Link
                 href="/register"
-                className="w-full flex items-center justify-center gap-2 bg-[#18181b] border border-white/[0.08] text-foreground hover:bg-[#222] transition-colors rounded-[12px] py-3 text-[15px] font-medium"
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  padding: '13px 0', borderRadius: 12, fontSize: 14.5, fontWeight: 500,
+                  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+                  color: 'var(--text-secondary)', textDecoration: 'none',
+                  transition: 'background 0.15s, color 0.15s',
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.08)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-primary)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.04)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-secondary)'; }}
               >
-                Cr&eacute;er un compte
+                Créer un compte
               </Link>
             </div>
 
             <button
               type="button"
               onClick={() => setShowRedirect(false)}
-              className="mt-6 w-full text-center text-[13px] text-[#3f3f46] hover:text-[#71717a] transition-colors"
+              style={{ marginTop: 20, width: '100%', textAlign: 'center', fontSize: 12.5, color: 'var(--text-muted)', background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.15s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-secondary)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-muted)'; }}
             >
               Annuler
             </button>

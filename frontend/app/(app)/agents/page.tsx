@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { Search, ChevronRight, ArrowLeft, ExternalLink, Copy, Check, Loader2, Download, X, Zap } from 'lucide-react'
+import { AmbientBackground } from '@/components/AmbientBackground'
 
 // ── Data sources ─────────────────────────────────────────────
 const GH_API = 'https://api.github.com/repos/Zie619/n8n-workflows/contents/workflows'
@@ -586,42 +587,7 @@ export default function AgentsPage() {
         input::placeholder{color:#52525b !important}
       `}</style>
       
-      {/* Premium ambient glow matching chat page */}
-      <div aria-hidden style={{
-        position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden'
-      }}>
-        {/* Top-left subtle indigo glow */}
-        <div style={{
-          position: 'absolute', top: '-15%', left: '-10%',
-          width: '60vw', height: '60vw',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 60%)',
-          filter: 'blur(90px)',
-        }} />
-        
-        {/* Center-right deeper violet/blue glow */}
-        <div style={{
-          position: 'absolute', top: '25%', right: '-15%',
-          width: '70vw', height: '70vw',
-          background: 'radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 60%)',
-          filter: 'blur(120px)',
-        }} />
-
-        {/* Bottom subtle glow */}
-        <div style={{
-          position: 'absolute', bottom: '-20%', left: '15%',
-          width: '60vw', height: '50vw',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.03) 0%, transparent 65%)',
-          filter: 'blur(100px)',
-        }} />
-
-        {/* Noise texture overlay */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
-          opacity: 0.035,
-          mixBlendMode: 'overlay',
-        }} />
-      </div>
+      <AmbientBackground accentColor="#A855F7" />
 
       <div className="relative z-10 p-6 md:p-10 max-w-[1400px] mx-auto flex flex-col gap-8">
 

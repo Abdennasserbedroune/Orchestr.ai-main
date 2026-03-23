@@ -1,5 +1,6 @@
 'use client'
 import { Cpu, Zap, GitBranch, Activity, Clock, ArrowRight } from 'lucide-react'
+import { AmbientBackground } from '@/components/AmbientBackground'
 import Link from 'next/link'
 
 const UPCOMING = [
@@ -41,9 +42,7 @@ export default function OperationsPage() {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16">
 
-      {/* Ambient glow */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] pointer-events-none z-0 rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+      <AmbientBackground accentColor="#10B981" />
 
       <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center gap-8">
 

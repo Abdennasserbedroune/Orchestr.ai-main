@@ -1,9 +1,15 @@
 'use client'
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { Paperclip, ArrowUp, Mic, Plug, X, Square } from 'lucide-react'
+import { AmbientBackground } from '@/components/AmbientBackground'
 import { ChatMessageBubble } from '@/components/ChatMessage'
 import type { Message } from '@/components/ChatMessage'
 import Image from 'next/image'
+import { supabase } from '@/lib/supabase'
+import { useChatStore } from '@/store/chat'
+import { ModeSelector } from '@/components/Chat/ModeSelector'
+import { ModelDropdown } from '@/components/Chat/ModelDropdown'
+import { FreeCounter } from '@/components/Chat/FreeCounter'
 
 // ── Inline SVG brand icons (no external dep) ──────────────────────────────────
 function GitHubIcon({ size = 20 }: { size?: number }) {
@@ -232,6 +238,7 @@ function ToolsDrawer({ onClose }: { onClose: () => void }) {
 // MAIN PAGE
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ChatPage() {
+  const { mode, selectedModel, incrementUsage } = useChatStore()
   const [messages, setMessages]         = useState<Message[]>([])
   const [input, setInput]               = useState('')
   const [loading, setLoading]           = useState(false)
@@ -314,27 +321,89 @@ export default function ChatPage() {
     abortRef.current = new AbortController()
 
     try {
+      const { data: { session } } = await supabase.auth.getSession()
+      
       const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history }),
+        headers: { 
+          'Content-Type': 'application/json',
+          ...(session?.access_token ? { 'Authorization': `Bearer ${session.access_token}` } : {})
+        },
+        credentials: 'include',
+        body: JSON.stringify({ 
+           message: trimmed,
+           mode: mode,
+           selectedModel: selectedModel,
+           history: history 
+        }),
         signal: abortRef.current.signal,
       })
-      if (!res.ok || !res.body) throw new Error(`Erreur ${res.status}`)
 
-      const reader  = res.body.getReader()
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}))
+        throw new Error(json.error || `Erreur ${res.status}`)
+      }
+
+      // Read the stream
+      const reader = res.body!.getReader()
       const decoder = new TextDecoder()
+      let buffer = ''
+
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
-        const chunk = decoder.decode(value, { stream: true })
-        setMessages(prev =>
-          prev.map(m => m.id === aId ? { ...m, content: m.content + chunk } : m)
-        )
+
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n\n')
+        buffer = lines.pop() ?? ''
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue
+          try {
+            const parsed = JSON.parse(line.slice(6))
+
+            if (parsed.type === 'meta') {
+              // Store model info on the message
+              setMessages(prev => prev.map(m =>
+                m.id === aId
+                  ? { ...m, modelUsed: parsed.modelUsed, attempts: parsed.attempts }
+                  : m
+              ))
+              if (parsed.attempts > 1) {
+                console.log(`Fallback: responded via ${parsed.modelUsed} after ${parsed.attempts} attempts`)
+              }
+              if (selectedModel !== 'auto') {
+                incrementUsage(selectedModel)
+                const { modelUsage, setSelectedModel } = useChatStore.getState()
+                const usage = modelUsage[selectedModel]
+                const today = new Date().toISOString().split('T')[0]
+                if (usage && usage.lastReset === today && usage.count >= 3) {
+                  setSelectedModel('auto')
+                }
+              }
+            }
+
+            if (parsed.type === 'chunk') {
+              setMessages(prev => prev.map(m =>
+                m.id === aId
+                  ? { ...m, content: (m.content || '') + parsed.text, streaming: true }
+                  : m
+              ))
+            }
+
+            if (parsed.type === 'done') {
+              setMessages(prev => prev.map(m =>
+                m.id === aId ? { ...m, streaming: false } : m
+              ))
+            }
+
+          } catch {
+            // malformed chunk, skip
+          }
+        }
       }
-      setMessages(prev => prev.map(m => m.id === aId ? { ...m, streaming: false } : m))
-    } catch (err: unknown) {
-      if (err instanceof Error && err.name === 'AbortError') return
+    } catch (err: any) {
+      if (err.name === 'AbortError') return
       setMessages(prev =>
         prev.map(m =>
           m.id === aId
@@ -348,7 +417,7 @@ export default function ChatPage() {
       abortRef.current = null
       inputRef.current?.focus()
     }
-  }, [loading])
+  }, [loading, mode, selectedModel, incrementUsage])
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -387,50 +456,28 @@ export default function ChatPage() {
         fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',
       }}>
 
-        {/* ambient glow - enhanced high quality */}
-        <div aria-hidden style={{
-          position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden'
-        }}>
-          {/* Top-left subtle indigo glow */}
-          <div style={{
-            position: 'absolute', top: '-15%', left: '-10%',
-            width: '60vw', height: '60vw',
-            background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 60%)',
-            filter: 'blur(90px)',
-          }} />
-          
-          {/* Center-right deeper violet/blue glow */}
-          <div style={{
-            position: 'absolute', top: '25%', right: '-15%',
-            width: '70vw', height: '70vw',
-            background: 'radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 60%)',
-            filter: 'blur(120px)',
-          }} />
-
-          {/* Bottom subtle glow */}
-          <div style={{
-            position: 'absolute', bottom: '-20%', left: '15%',
-            width: '60vw', height: '50vw',
-            background: 'radial-gradient(circle, rgba(99,102,241,0.03) 0%, transparent 65%)',
-            filter: 'blur(100px)',
-          }} />
-
-          {/* Noise texture overlay to eliminate color banding and add premium feel */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
-            opacity: 0.035,
-            mixBlendMode: 'overlay',
-          }} />
-        </div>
+        <AmbientBackground accentColor="#6c63ff" />
 
         {showTools && <ToolsDrawer onClose={() => setShowTools(false)} />}
 
         {/* ── MESSAGES ── */}
-        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', zIndex: 1 }}>
+        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', zIndex: 1, position: 'relative' }}>
+          
+          {/* STICKY HEADER for Controls */}
+          <div style={{
+            position: 'sticky', top: 0, zIndex: 40,
+            padding: '12px 0',
+            background: 'linear-gradient(to bottom, rgba(10,10,13,0.9) 20%, rgba(10,10,13,0))',
+            display: 'flex', justifyContent: 'center', pointerEvents: 'none'
+          }}>
+            <div style={{ pointerEvents: 'auto' }}>
+              <ModeSelector />
+            </div>
+          </div>
+
           <div style={{
             maxWidth: W, margin: '0 auto',
-            padding: '52px 20px 20px',
+            padding: '24px 20px 20px',
             display: 'flex', flexDirection: 'column',
           }}>
 
@@ -487,7 +534,12 @@ export default function ChatPage() {
         }}>
           <div style={{ maxWidth: W, margin: '0 auto' }}>
 
-            {/* category chips on top of chatbox */}
+            {/* Controls on top of chatbox */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+              <FreeCounter />
+            </div>
+
+            {/* category chips */}
             {isFirstMessage && (
               <div style={{ 
                 display: 'flex', flexWrap: 'nowrap', justifyContent: 'center', gap: 7, 
@@ -580,8 +632,8 @@ export default function ChatPage() {
                   ? '0 24px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 1px rgba(99,102,241,0.15)'
                   : '0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)',
                 transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
-                overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                zIndex: 20
               }}>
 
                 {/* Decorative top glow matching MCP modal, but subtle */}
@@ -627,6 +679,8 @@ export default function ChatPage() {
                 }}>
                   {/* left icons */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <ModelDropdown />
+                    
                     <TBtn title="Joindre un fichier">
                       <Paperclip size={16} strokeWidth={1.9} />
                     </TBtn>
